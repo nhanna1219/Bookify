@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useKeenSlider } from "keen-slider/react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import ProductCard from "./ProductCard";
+import ProductCard from "./ProductCard.jsx";
 
 const BookSlider = ({ books }) => {
     const [currentSlide, setCurrentSlide] = useState(0);

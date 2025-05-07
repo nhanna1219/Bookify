@@ -1,6 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 import { Heart, User, ShoppingCart } from "lucide-react";
-import { AuthContext } from "@contexts/AuthContext";
+import { AuthContext } from "@contexts/AuthContext.jsx";
 import { useContext, useState } from "react";
 import {showSuccess} from "@utils/toast.js";
 

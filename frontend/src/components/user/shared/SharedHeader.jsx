@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import NavCore from "@components/shared/NavCore";
+import NavCore from "@u_components/shared/NavCore.jsx";
 import logoWhite from "@assets/brand-logo-white.png";
 
 export default function SharedHeader() {

@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import RegisterForm from '@components/user/forms/RegisterForm';
+import RegisterForm from '@u_components/forms/RegisterForm.jsx';
 import Logo from '@assets/brand-logo-black.png';
 
 export default function RegisterPage() {

@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { registerUser } from '@services/authService';
-import { showPromise } from '@utils/toast';
+import { registerUser } from '@u_services/authService.js';
+import { showPromise } from '@utils/toast.js';
 
 export function useRegister() {
     const [loading, setLoading] = useState(false);

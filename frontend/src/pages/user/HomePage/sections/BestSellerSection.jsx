@@ -1,5 +1,5 @@
 import { Star } from 'lucide-react';
-import BookSlider from '@components/user/products/BookSlider';
+import BookSlider from '@u_components/products/BookSlider.jsx';
 import { books } from '@data/sampleData.js';
 
 export default function BestSellerSection() {

@@ -1,8 +1,8 @@
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { resetPasswordSchema } from '@utils/validate';
-import { useResetPassword } from '@hooks/useResetPassword';
-import FormInput from '@components/shared/FormInput';
+import { resetPasswordSchema } from '@utils/validate.js';
+import { useResetPassword } from '@u_hooks/useResetPassword.js';
+import FormInput from '@u_components/shared/FormInput.jsx';
 
 export default function ResetPasswordForm() {
     const { loading, submit } = useResetPassword();

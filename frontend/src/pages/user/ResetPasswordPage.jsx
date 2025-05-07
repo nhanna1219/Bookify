@@ -1,4 +1,4 @@
-import ResetPasswordForm from '@components/user/forms/ResetPasswordForm';
+import ResetPasswordForm from '@u_components/forms/ResetPasswordForm.jsx';
 import Logo from '@assets/brand-logo-black.png';
 import { Link } from 'react-router-dom';
 

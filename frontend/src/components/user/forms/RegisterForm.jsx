@@ -1,8 +1,8 @@
 import { Controller, useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { registerSchema } from '@utils/validate';
-import { useRegister } from '@hooks/useRegister';
-import FormInput from '../shared/FormInput';
+import { registerSchema } from '@utils/validate.js';
+import { useRegister } from '@u_hooks/useRegister.js';
+import FormInput from '../shared/FormInput.jsx';
 import { Link } from 'react-router-dom';
 import GoogleLoginButton from "./GoogleLoginButton.jsx";
 import PhoneInput from 'react-phone-input-2';

@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { sendPasswordResetLink } from '@services/authService';
-import { showPromise } from '@utils/toast';
+import { sendPasswordResetLink } from '@u_services/authService.js';
+import { showPromise } from '@utils/toast.js';
 
 export const useForgotPassword = () => {
     const [loading, setLoading] = useState(false);

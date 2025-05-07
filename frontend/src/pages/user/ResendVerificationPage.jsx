@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import ResendVerificationForm from '@components/user/forms/ResendVerificationForm';
+import ResendVerificationForm from '@u_components/forms/ResendVerificationForm';
 import Logo from '@assets/brand-logo-black.png';
 
 export default function ResendVerificationPage() {

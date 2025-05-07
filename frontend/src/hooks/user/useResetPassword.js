@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { resetPassword } from '@services/authService';
-import { showPromise } from '@utils/toast';
+import { resetPassword } from '@u_services/authService.js';
+import { showPromise } from '@utils/toast.js';
 
 export const useResetPassword = () => {
     const [loading, setLoading] = useState(false);

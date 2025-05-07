@@ -2,7 +2,7 @@ import {createRoot} from 'react-dom/client'
 import './index.css'
 import '@smastrom/react-rating/style.css';
 import 'keen-slider/keen-slider.min.css';
-import AppRoutes from './routes';
+import AppRoutes from '@routes/index.jsx';
 import {GoogleOAuthProvider} from "@react-oauth/google";
 import {AuthProvider} from "@contexts/AuthContext";
 import {Toaster} from "react-hot-toast";

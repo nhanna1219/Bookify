@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import AnnouncementBar from "@components/shared/AnnouncementBar";
-import NavCore from "@components/shared/NavCore";
+import AnnouncementBar from "@u_components/shared/AnnouncementBar.jsx";
+import NavCore from "@u_components/shared/NavCore.jsx";
 
 export default function HomeHeader() {
     return (

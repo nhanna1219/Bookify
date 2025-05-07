@@ -2,8 +2,8 @@ import { GoogleLogin } from '@react-oauth/google';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { useContext } from 'react';
-import { AuthContext } from '@contexts/AuthContext';
-import { showPromise } from '@utils/toast';
+import { AuthContext } from '@contexts/AuthContext.jsx';
+import { showPromise } from '@utils/toast.js';
 
 export default function GoogleLoginButton() {
     const navigate = useNavigate();

@@ -1,7 +1,7 @@
 import { useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { loginUser } from '@services/authService.js';
-import { AuthContext } from '@contexts/AuthContext';
+import { loginUser } from '@u_services/authService.js';
+import { AuthContext } from '@contexts/AuthContext.jsx';
 import { showPromise } from '@utils/toast.js';
 
 export const useLogin = () => {

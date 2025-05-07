@@ -1,9 +1,9 @@
-// @components/shared/NavCore.jsx
+// @u_components/shared/NavCore.jsx
 import {Link} from "react-router-dom";
-import SearchBar from "@components/shared/SearchBar";
+import SearchBar from "@u_components/shared/SearchBar.jsx";
 import {Heart, User, ShoppingCart} from "lucide-react";
 import defaultLogo from "@assets/brand-logo-black.png";
-import TopIconsBar from "@components/shared/TopIconsBar.jsx";
+import TopIconsBar from "@u_components/shared/TopIconsBar.jsx";
 
 export default function NavCore({
                                     bgClass = "bg-white",

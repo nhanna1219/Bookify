@@ -1,8 +1,8 @@
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { resendVerificationSchema } from '@utils/validate';
-import { useResendVerification } from '@hooks/useResendVerification';
-import FormInput from '@components/shared/FormInput';
+import { resendVerificationSchema } from '@utils/validate.js';
+import { useResendVerification } from '@u_hooks/useResendVerification.js';
+import FormInput from '@u_components/shared/FormInput.jsx';
 import { Link } from 'react-router-dom';
 
 export default function ResendVerificationForm() {

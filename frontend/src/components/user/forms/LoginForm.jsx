@@ -1,12 +1,12 @@
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { loginSchema } from '@utils/validate';
-import { useLogin } from '@hooks/useLogin';
-import FormInput from '../shared/FormInput';
+import { loginSchema } from '@utils/validate.js';
+import { useLogin } from '@u_hooks/useLogin.js';
+import FormInput from '../shared/FormInput.jsx';
 import { Link, useLocation } from 'react-router-dom';
 import GoogleLoginButton from './GoogleLoginButton.jsx';
 import { useEffect } from 'react';
-import { showSuccess, showError, showWarning } from '@utils/toast';
+import { showSuccess, showError, showWarning } from '@utils/toast.js';
 
 export default function LoginForm() {
     const { loading, submit } = useLogin();

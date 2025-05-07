@@ -1,6 +1,6 @@
-import SharedHeader from '@components/user/shared/SharedHeader';
+import SharedHeader from '@u_components/shared/SharedHeader.jsx';
 import { Outlet } from 'react-router-dom';
-import Footer from "@components/user/shared/Footer";
+import Footer from "@u_components/shared/Footer.jsx";
 
 export default function DefaultLayout() {
     return (

@@ -1,8 +1,8 @@
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { forgotPasswordSchema } from '@utils/validate';
-import { useForgotPassword } from '@hooks/useForgotPassword';
-import FormInput from '@components/shared/FormInput';
+import { forgotPasswordSchema } from '@utils/validate.js';
+import { useForgotPassword } from '@u_hooks/useForgotPassword.js';
+import FormInput from '@u_components/shared/FormInput.jsx';
 import { Link } from 'react-router-dom';
 
 export default function ForgotPasswordForm() {

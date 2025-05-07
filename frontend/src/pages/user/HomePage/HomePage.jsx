@@ -1,9 +1,9 @@
-import HeroSection from './sections/HeroSection';
+import HeroSection from './sections/HeroSection.jsx';
 import ShopFeatureSection from './sections/ShopFeatureSection.jsx';
 import FeatureBookSection from './sections/FeatureBookSection.jsx';
-import BestSellerSection from './sections/BestSellerSection';
-import CategoriesSection from "@pages/HomePage/sections/CategoriesSection.jsx";
-import CustomerReviewSection from "@pages/HomePage/sections/CustomerReviewSection.jsx";
+import BestSellerSection from './sections/BestSellerSection.jsx';
+import CategoriesSection from "@u_pages/HomePage/sections/CategoriesSection.jsx";
+import CustomerReviewSection from "@u_pages/HomePage/sections/CustomerReviewSection.jsx";
 
 export default function HomePage() {
     return (

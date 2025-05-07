@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { resendVerificationEmail } from '@services/authService';
-import { showPromise } from '@utils/toast';
+import { resendVerificationEmail } from '@u_services/authService.js';
+import { showPromise } from '@utils/toast.js';
 
 export const useResendVerification = () => {
     const [loading, setLoading] = useState(false);
