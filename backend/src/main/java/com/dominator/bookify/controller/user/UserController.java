@@ -1,11 +1,11 @@
-package com.dominator.bookify.controller;
+package com.dominator.bookify.controller.user;
 
 import com.dominator.bookify.dto.LoginResponseDTO;
 import com.dominator.bookify.dto.ResetPasswordRequest;
 import com.dominator.bookify.dto.UserLoginRequest;
 import com.dominator.bookify.dto.UserRegisterRequest;
 import com.dominator.bookify.model.VerificationToken;
-import com.dominator.bookify.service.UserService;
+import com.dominator.bookify.service.user.UserService;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;

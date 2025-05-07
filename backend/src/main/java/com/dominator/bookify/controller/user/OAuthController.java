@@ -1,4 +1,4 @@
-package com.dominator.bookify.controller;
+package com.dominator.bookify.controller.user;
 
 import com.dominator.bookify.dto.LoginResponseDTO;
 import com.dominator.bookify.dto.UserResponseDTO;
@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.time.LocalDateTime;
-import java.util.Map;
 
 @RestController
 @RequestMapping("/api/auth/google")

@@ -1,4 +1,4 @@
-package com.dominator.bookify.service;
+package com.dominator.bookify.service.user;
 
 import com.dominator.bookify.dto.*;
 import com.dominator.bookify.model.Address;

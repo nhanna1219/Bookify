@@ -1,6 +1,6 @@
-import HomeHeader from '@components/shared/HomeHeader';
+import HomeHeader from '@components/user/shared/HomeHeader';
 import { Outlet } from 'react-router-dom';
-import Footer from "@components/shared/Footer";
+import Footer from "@components/user/shared/Footer";
 
 export default function HomeLayout() {
     return (
