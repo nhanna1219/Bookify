@@ -1,0 +1,29 @@
+@import "tailwindcss";
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+@layer components {
+    .form-input {
+        @apply w-full border border-gray-300 rounded-sm px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-black;
+    }
+    .form-error {
+        @apply mt-1 text-sm text-red-500;
+    }
+}
+
+button {
+    cursor: pointer;
+}
+
+.auth-link {
+    color: black;
+    text-decoration: underline;
+}
+
+.react-tel-input .form-control::placeholder {
+    color: #9ca3af !important; /* Tailwind's text-gray-400 */
+}
+
+

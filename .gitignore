@@ -1,33 +1,34 @@
-HELP.md
-target/
-!.mvn/wrapper/maven-wrapper.jar
-!**/src/main/**/target/
-!**/src/test/**/target/
+# === FRONTEND (React + Vite) ===
+frontend/node_modules/
+frontend/dist/
+frontend/.env
+frontend/.vite/
+frontend/.cache/
 
-### STS ###
-.apt_generated
-.classpath
-.factorypath
-.project
-.settings
-.springBeans
-.sts4-cache
+# === BACKEND (Spring Boot + Maven) ===
+backend/target/
+backend/.mvn/
+backend/.env
+backend/logs/
+backend/*.log
 
-### IntelliJ IDEA ###
-.idea
-*.iws
-*.iml
-*.ipr
-
-### NetBeans ###
-/nbproject/private/
-/nbbuild/
-/dist/
-/nbdist/
-/.nb-gradle/
-build/
-!**/src/main/**/build/
-!**/src/test/**/build/
-
-### VS Code ###
+# === IDEs and Editors ===
+.idea/
 .vscode/
+*.iml
+
+# === OS / Misc ===
+.DS_Store
+Thumbs.db
+
+# === General ===
+*.log
+*.tmp
+*.swp
+.env
+.env.local
+*.bak
+
+# Scripts
+*.sh
+*.bat

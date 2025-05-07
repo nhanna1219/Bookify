@@ -1,2 +1,45 @@
+# === Maven Wrapper Scripts ===
 /mvnw text eol=lf
 *.cmd text eol=crlf
+
+# === General Text Files ===
+*.java text eol=lf
+*.js text eol=lf
+*.jsx text eol=lf
+*.ts text eol=lf
+*.tsx text eol=lf
+*.html text eol=lf
+*.css text eol=lf
+*.scss text eol=lf
+*.json text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+*.md text eol=lf
+*.xml text eol=lf
+*.properties text eol=lf
+*.env text eol=lf
+*.txt text eol=lf
+
+# === Binary Files ===
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.svg binary
+*.woff binary
+*.woff2 binary
+*.ttf binary
+*.eot binary
+*.pdf binary
+*.zip binary
+
+# === IntelliJ and IDE specific ===
+*.iml text eol=lf
+.idea/ export-ignore
+.vscode/ export-ignore
+
+# === Prevent merging issues in lock files ===
+package-lock.json merge=union
+pnpm-lock.yaml merge=union
+yarn.lock merge=union
