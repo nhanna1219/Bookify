@@ -31,7 +31,7 @@ Bookify is a comprehensive online bookstore platform designed to facilitate the 
 ## Installation
 1. Clone the repository:
 ```bash
-git clone [https://github.com/yourusername/bookify.git](https://github.com/nhanna1219/Bookify.git)
+git clone https://github.com/nhanna1219/Bookify.git
 ```
 2. Navigate to the project directory:
 ```bash
