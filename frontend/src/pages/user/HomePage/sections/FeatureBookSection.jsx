@@ -1,8 +1,7 @@
 import { BookOpen } from 'lucide-react';
 import BookSlider from '@u_components/products/BookSlider.jsx';
-import { books } from '@data/sampleData.js';
 
-export default function FeatureBookSection() {
+export default function FeatureBookSection({ books }) {
     return (
         <section className="relative w-full pt-16 text-center" aria-label="Featured Books">
             <h2 className="inline-flex items-center gap-3 px-6 py-2 border border-[#1C387F] rounded-full text-[#1C387F] font-semibold uppercase tracking-wide text-lg bg-white shadow-md">

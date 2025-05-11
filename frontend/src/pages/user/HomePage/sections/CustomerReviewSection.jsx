@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { MessageSquare, CheckCircle } from "lucide-react";
-import { reviews } from "@data/sampleData.js";
+import { reviews } from "@data/sampleData";
 import { Rating, RoundedStar } from "@smastrom/react-rating";
 import "@smastrom/react-rating/style.css";
 

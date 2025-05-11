@@ -1,24 +1,8 @@
 import { useKeenSlider } from "keen-slider/react"
 import { Layers } from 'lucide-react'
 import { useState } from "react"
-import { books } from "@data/sampleData.js"
+import { books } from "@data/sampleData"
 import { Link } from "react-router-dom"
-
-function getCategoryCounts() {
-    const categoryCounts = {}
-    books.forEach((book) => {
-        book.genre.forEach((category) => {
-            categoryCounts[category] = (categoryCounts[category] || 0) + 1
-        })
-    })
-    return categoryCounts
-}
-
-const categoryCounts = getCategoryCounts()
-const categories = Object.keys(categoryCounts).map((category) => ({
-    name: category,
-    count: categoryCounts[category],
-}))
 
 const getCategoryColor = (index) => {
     const colors = [
@@ -50,7 +34,7 @@ const getCategoryColor = (index) => {
 // Animation configuration
 const animation = { duration: 15000, easing: (t) => t }
 
-const CategorySlider = () => {
+const CategorySlider = ({ categories }) => {
     const [loaded, setLoaded] = useState(false)
 
     const [sliderRef, instanceRef] = useKeenSlider(
@@ -106,8 +90,8 @@ const CategorySlider = () => {
                 <div ref={sliderRef} className="keen-slider">
                     {categories.map((category, idx) => (
                         <Link
-                            key={idx}
-                            to={`/shop?category=${encodeURIComponent(category.name)}`}
+                            key={category.id}
+                            to={`/shop?genres=${encodeURIComponent(category.name)}`}
                             className="keen-slider__slide px-1 py-2"
                         >
                             <div
@@ -130,7 +114,7 @@ const CategorySlider = () => {
                                 </div>
                                 <div className="absolute top-6 right-6">
                         <span className="px-4 py-1.5 bg-white/20 backdrop-blur-sm rounded-full text-white text-sm font-medium">
-                            {category.count} {category.count === 1 ? "book" : "books"}
+                            {category.bookCount} {category.bookCount === 1 ? "book" : "books"}
                         </span>
                                 </div>
                                 <div className="absolute bottom-6 left-6 right-6">

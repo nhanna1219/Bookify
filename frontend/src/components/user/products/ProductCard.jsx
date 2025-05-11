@@ -19,6 +19,12 @@ const ratingStyles = {
 const ProductCard = ({ product, scale = 0.9 }) => {
     const [liked, setLiked] = useState(false);
 
+    const authorName = product.authors && product.authors.length > 0 ? product.authors[0] : "";
+
+    const hasRating = product.ratingCount > 0;
+    const ratingValue = hasRating ? product.averageRating : 0;
+
+    const imageUrl = product.images && product.images.length > 0 ? product.images[0].url : "/book-placeholder.jpg";
     return (
         <div
             className="inline-block"
@@ -49,7 +55,7 @@ const ProductCard = ({ product, scale = 0.9 }) => {
                 {/* Book Image */}
                 <div className="flex justify-center pt-11 relative z-0">
                     <img
-                        src={product.image}
+                        src={imageUrl}
                         alt={product.title}
                         className="h-40 object-contain rounded shadow-xl drop-shadow-[0_6px_6px_rgba(0,0,0,0.35)]"
                     />
@@ -58,19 +64,21 @@ const ProductCard = ({ product, scale = 0.9 }) => {
                 {/* Title & Author */}
                 <div className="text-center relative z-0">
                     <h3 className="text-sm font-semibold leading-tight">{product.title}</h3>
-                    <p className="text-xs text-gray-500 font-medium mt-1">{product.author}</p>
+                    <p className="text-xs text-gray-500 font-medium mt-1">{authorName}</p>
                 </div>
 
                 {/* Price & Rating */}
                 <div className="flex items-center justify-between px-1 mt-2 relative z-0">
-                    <Rating
-                        style={{ maxWidth: 90 }}
-                        value={product.rating}
-                        readOnly
-                        itemStyles={ratingStyles}
-                    />
+                    {hasRating && (
+                        <Rating
+                            style={{ maxWidth: 90 }}
+                            value={ratingValue}
+                            readOnly
+                            itemStyles={ratingStyles}
+                        />
+                    )}
                     <p className="text-[#1C387F] font-semibold text-sm">
-                        ${product.price.toFixed(2)}
+                        ${product.price ? product.price.toFixed(2) : 'N/A'}
                     </p>
                 </div>
 

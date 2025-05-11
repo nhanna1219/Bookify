@@ -15,7 +15,7 @@ export default defineConfig({
             '@contexts': path.resolve(__dirname, './src/contexts'),
             '@routes': path.resolve(__dirname, './src/routes'),
             '@utils': path.resolve(__dirname, './src/utils'),
-            '@data': path.resolve(__dirname, './src/data'),
+            '@data': path.resolve(__dirname, './public/data'),
 
             // User
             '@u_components': path.resolve(__dirname, './src/components/user'),

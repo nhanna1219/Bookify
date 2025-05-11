@@ -1,23 +1,21 @@
-import axios from 'axios';
-
-const API = import.meta.env.VITE_API_ENDPOINT;
+import api from '../api';
 
 export const registerUser = (data) => {
-    return axios.post(`${API}/users/register`, data);
+    return api.post('/users/register', data);
 };
 
 export const loginUser = (data) => {
-    return axios.post(`${API}/users/login`, data)
-}
+    return api.post('/users/login', data);
+};
 
 export const resendVerificationEmail = (email) => {
-    return axios.post(`${API}/users/resend-verification`, { email });
-}
+    return api.post('/users/resend-verification', { email });
+};
 
 export const sendPasswordResetLink = (email) => {
-    return axios.post(`${API}/users/forgot-password`, { email });
-}
+    return api.post('/users/forgot-password', { email });
+};
 
 export const resetPassword = (data) => {
-    return axios.post(`${API}/users/reset-password`, data);
-}
+    return api.post('/users/reset-password', data);
+};

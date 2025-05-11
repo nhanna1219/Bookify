@@ -5,21 +5,19 @@ import PublicOnlyRoute from '@u_components/routing/PublicOnlyRoute.jsx';
 import PrivateRoute from '@u_components/routing/PrivateRoute.jsx';
 import ScrollToTop from '@u_components/shared/ScrollToTop';
 import LoadingScreen from '@u_components/shared/LoadingScreen';
-
-import LoginPage from '@u_pages/LoginPage';
-import RegisterPage from '@u_pages/RegisterPage.jsx';
-import ShopPage from '@u_pages/ShopPage';
-import ResendVerificationPage from '@u_pages/ResendVerificationPage';
-import ForgotPasswordPage from '@u_pages/ForgotPasswordPage';
-import ResetPasswordPage from '@u_pages/ResetPasswordPage.jsx';
-import AccountPage from '@u_pages/AccountPage.jsx';
-import OrdersPage from '@u_pages/OrdersPage.jsx';
-import ChangePasswordPage from '@u_pages/ChangePasswordPage.jsx';
-
 import { lazy, Suspense } from 'react';
 import ScrollToTopButton from "@u_components/shared/ScrollToTopButton.jsx";
 
 const HomePage = lazy(() => import('@u_pages/HomePage/HomePage.jsx'));
+const ShopPage = lazy(() => import('@u_pages/ShopPage/ShopPage.jsx'));
+const ResendVerificationPage = lazy(() => import('@u_pages/ResendVerificationPage'));
+const ForgotPasswordPage = lazy(() => import('@u_pages/ForgotPasswordPage'));
+const ResetPasswordPage = lazy(() => import('@u_pages/ResetPasswordPage.jsx'));
+const AccountPage = lazy(() => import('@u_pages/AccountPage.jsx'));
+const OrdersPage = lazy(() => import('@u_pages/OrdersPage.jsx'));
+const ChangePasswordPage = lazy(() => import('@u_pages/ChangePasswordPage.jsx'));
+const LoginPage = lazy(() => import('@u_pages/LoginPage'));
+const RegisterPage = lazy(() => import('@u_pages/RegisterPage.jsx'));
 
 export default function UserRoutes() {
     return (
@@ -29,6 +27,7 @@ export default function UserRoutes() {
                 <Routes>
                     <Route element={<HomeLayout />}>
                         <Route path="/" element={<HomePage />} />
+                        <Route path="/home" element={<HomePage />} />
                     </Route>
                     <Route element={<PublicOnlyRoute />}>
                         <Route path="/login" element={<LoginPage />} />

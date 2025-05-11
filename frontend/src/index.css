@@ -26,4 +26,8 @@ button {
     color: #9ca3af !important; /* Tailwind's text-gray-400 */
 }
 
+input[type="radio"] {
+    accent-color: #1C387F;
+    cursor: pointer;
+}
 

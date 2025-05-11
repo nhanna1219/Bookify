@@ -5,8 +5,8 @@ const colorMap = {
     ACCEPTABLE: 'bg-[#FFC107]',
 };
 
-const ConditionTag = ({ type }) => (
-    <span className={`${colorMap[type]} text-white font-semibold text-[10px] px-3 py-1 rounded shadow-xl drop-shadow-[0_3px_3px_rgba(0,0,0,0.4)]`}>
+const ConditionTag = ({ type, isFilter = false }) => (
+    <span className={`${colorMap[type]} text-white font-semibold px-3 py-1 rounded shadow-xl ${isFilter ? 'w-18 text-center text-[8px]' : 'text-[10px]'}  h-5 drop-shadow-[0_3px_3px_rgba(0,0,0,0.4)]`}>
         {type}
     </span>
 );
