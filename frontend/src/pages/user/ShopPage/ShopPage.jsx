@@ -1,252 +1,299 @@
-// src/pages/ShopPage/ShopPage.jsx
-import {useEffect, useRef, useState} from 'react'
-import {useLocation, useNavigate} from 'react-router-dom'
-import HeaderBreadcrumb from '@u_components/shared/HeaderBreadcrumb'
-import SearchAndCount from './sections/SearchAndCount'
-import ActiveFilters from './sections/ActiveFilters'
-import MobileFiltersToggle from './sections/MobileFiltersToggle'
-import FiltersSidebar from './sections/FiltersSidebar'
-import BookGrid from './sections/BookGrid'
-import Pagination from './sections/Pagination'
-import {books} from '@data/sampleData'
+import {useEffect, useMemo, useRef, useState} from "react";
+import {useSearchParams} from "react-router-dom";
+import {useShopData} from "@u_hooks/useShopData";
+import HeaderBreadcrumb from "@u_components/shared/HeaderBreadcrumb";
+import SearchAndCount from "./sections/SearchAndCount";
+import ActiveFilters from "./sections/ActiveFilters";
+import MobileFiltersToggle from "./sections/MobileFiltersToggle";
+import FiltersSidebar from "./sections/FiltersSidebar";
+import BookGrid from "./sections/BookGrid";
+import Pagination from "./sections/Pagination";
+import LoadingScreen from "@u_components/shared/LoadingScreen";
+import ErrorScreen from "@u_components/shared/ErrorScreen";
+import { safeInteger, safeNumber, safeString } from "@utils/safeType"
+import {useDebounce} from "use-debounce";
+
+// Options
+const validSortOptions = new Set(["title-az", "title-za", "newest", "price-low", "price-high"]);
+const validConditionOptions = new Set(["NEW", "LIKE NEW", "GOOD", "ACCEPTABLE"]);
+
+// Validate genres
+const safeGenres = (value) => {
+    return value ? value.split(",")?.filter((genre) => genre.trim() !== "") : [];
+};
 
 export default function ShopPage() {
-    const navigate = useNavigate()
-    const location = useLocation()
-    const isFirstUpdate = useRef(true)
+    const [searchParams, setSearchParams] = useSearchParams();
+    const isFirst = useRef(true);
+    const gridRef = useRef(null)
 
-    const [currentPage, setCurrentPage] = useState(1)
-    const itemsPerPage = 4
 
-    const [condition, setCondition] = useState('')
-    const [priceRange, setPriceRange] = useState([0, 200])
-    const [selectedGenres, setSelectedGenres] = useState([])
-    const [sortBy, setSortBy] = useState('title-az')
-    const [titleAndAuthorFilter, setTitleAndAuthorFilter] = useState('')
-    const [minRatingFilter, setMinRatingFilter] = useState(0)
+    const [state, setState] = useState(() => {
+        const pageNumber = safeInteger(searchParams.get("page"), 1, Infinity, 1);
+        const minPrice = safeNumber(searchParams.get("minPrice"), 0, 199.99, 0);
+        const maxPrice = safeNumber(searchParams.get("maxPrice"), 0.1, 200, 200);
+        const minRating = safeNumber(searchParams.get("minRating"), 0, 5, 0);
+        const sortBy = safeString(searchParams.get("sortBy"), validSortOptions, "title-az");
+        const condition = safeString(searchParams.get("condition"), validConditionOptions, "");
+        const selectedGenres = safeGenres(searchParams.get("genres"));
+        const searchText = searchParams.get("search") || "";
 
-    const [filteredBooks, setFilteredBooks] = useState(books)
-    const [activeFilters, setActiveFilters] = useState([])
-    const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false)
-    const [showAllConditions, setShowAllConditions] = useState(false)
-    const [showAllRatings, setShowAllRatings] = useState(false)
+        return {
+            page: {
+                number: pageNumber - 1,
+                size: 12,
+                totalPages: 0,
+                totalElements: 0,
+            },
+            condition,
+            priceRange: [minPrice, maxPrice],
+            selectedGenres,
+            sortBy,
+            searchText,
+            minRating,
+            mobileFiltersOpen: false,
+            showAllConditions: false,
+            showAllRatings: false,
+        };
 
-    const totalPages = Math.ceil(filteredBooks.length / itemsPerPage)
-    const allGenres = [...new Set(books.flatMap(b => b.genre))].sort()
+    });
 
-    useEffect(() => {
-        const params = new URLSearchParams(location.search)
-        if (params.get('condition')) setCondition(params.get('condition'))
-        if (params.get('minPrice') || params.get('maxPrice')) {
-            setPriceRange([
-                Number(params.get('minPrice')) || 0,
-                Number(params.get('maxPrice')) || 200,
-            ])
-        }
-        if (params.get('genres')) setSelectedGenres(params.get('genres').split(','))
-        if (params.get('sort')) setSortBy(params.get('sort'))
-        if (params.get('search')) setTitleAndAuthorFilter(params.get('search'))
-        if (params.get('minRating')) setMinRatingFilter(Number(params.get('minRating')))
-        if (params.get('page')) setCurrentPage(Number(params.get('page')))
-    }, [])
+    // Update state
+    const updateState = (key, value) => {
+        setState((prev) => ({
+            ...prev,
+            [key]: value,
+        }));
+    };
 
-    useEffect(() => {
-        let result = [...books]
-        if (condition) result = result.filter(b => b.condition === condition)
-        result = result.filter(b => b.price >= priceRange[0] && b.price <= priceRange[1])
-        if (selectedGenres.length)
-            result = result.filter(b => selectedGenres.some(g => b.genre.includes(g)))
-        if (titleAndAuthorFilter) {
-            const t = titleAndAuthorFilter.toLowerCase()
-            result = result.filter(
-                b => b.title.toLowerCase().includes(t) || b.author.toLowerCase().includes(t)
-            )
-        }
-        if (minRatingFilter > 0) result = result.filter(b => b.rating >= minRatingFilter)
+    // Update page number
+    const updatePageNumber = (number) => {
+        setState((prev) => ({
+            ...prev,
+            page: { ...prev.page, number }
+        }));
+    };
 
-        switch (sortBy) {
-            case 'newest':
-                result.sort((a, b) => b.year - a.year)
-                break
-            case 'price-low':
-                result.sort((a, b) => a.price - b.price)
-                break
-            case 'price-high':
-                result.sort((a, b) => b.price - a.price)
-                break
-            case 'title-az':
-                result.sort((a, b) => a.title.localeCompare(b.title))
-                break
-            case 'title-za':
-                result.sort((a, b) => b.title.localeCompare(a.title))
-                break
-        }
+    const queryParams = useMemo(() => ({
+        condition: state.condition,
+        minPrice: state.priceRange[0],
+        maxPrice: state.priceRange[1],
+        genres: state.selectedGenres.join(","),
+        sortBy: state.sortBy,
+        search: state.searchText,
+        minRating: state.minRating === 0 ? state.minRating : state.minRating - 0.25,
+        page: state.page.number,
+        size: state.page.size,
+    }), [state]);
 
-        setFilteredBooks(result)
-        setCurrentPage(1)
-    }, [condition, priceRange, selectedGenres, sortBy, titleAndAuthorFilter, minRatingFilter])
+    const [debouncedParams] = useDebounce(queryParams, 300);
+    const { categories, books, isLoading, isError } = useShopData(debouncedParams);
 
     useEffect(() => {
-        const af = []
-        if (condition) af.push({type: 'condition', value: `Condition: ${condition}`})
-        if (selectedGenres.length)
-            af.push({type: 'genre', value: `Genres: ${selectedGenres.join(', ')}`})
-        if (priceRange[0] !== 0 || priceRange[1] !== 200)
-            af.push({type: 'price', value: `$${priceRange[0]} - $${priceRange[1]}`})
-        if (titleAndAuthorFilter)
-            af.push({type: 'title', value: `Search: ${titleAndAuthorFilter}`})
-        if (minRatingFilter > 0)
-            af.push({type: 'rating', value: `Rating: ${minRatingFilter}+`})
-        setActiveFilters(af)
-    }, [condition, selectedGenres, priceRange, titleAndAuthorFilter, minRatingFilter])
-
-    useEffect(() => {
-        if (isFirstUpdate.current) {
-            isFirstUpdate.current = false
-            return
-        }
-        const params = new URLSearchParams()
-        if (condition) params.set('condition', condition)
-        if (priceRange[0] !== 0) params.set('minPrice', priceRange[0].toString())
-        if (priceRange[1] !== 200) params.set('maxPrice', priceRange[1].toString())
-        if (selectedGenres.length) params.set('genres', selectedGenres.join(','))
-        if (sortBy !== 'title-az') params.set('sort', sortBy)
-        if (titleAndAuthorFilter) params.set('search', titleAndAuthorFilter)
-        if (minRatingFilter > 0) params.set('minRating', minRatingFilter.toString())
-        if (currentPage > 1) params.set('page', currentPage.toString())
-        navigate(`/shop?${params.toString()}`, {replace: true})
-    }, [condition, priceRange, selectedGenres, sortBy, titleAndAuthorFilter, minRatingFilter, currentPage])
-
-    const genreCounts = books.reduce((acc, book) => {
-        book.genre.forEach(g => {
-            acc[g] = (acc[g] || 0) + 1;
+        if (!books) return;
+        const {number, size, totalPages, totalElements} = books;
+        updateState("page", {
+            number: totalPages !== 0 ? Math.min(Math.max(number, 0), totalPages - 1) : 0,
+            size,
+            totalPages,
+            totalElements
         });
-        return acc;
-    }, {});
+    }, [books]);
 
-    const generatePaginationItems = () => {
-        if (totalPages <= 5) return Array.from({length: totalPages}, (_, i) => i + 1)
-        const pages = []
-        pages.push(1)
-        const start = Math.max(2, currentPage - 1)
-        const end = Math.min(totalPages - 1, currentPage + 1)
-        if (start > 2) pages.push('ellipsis1')
-        for (let i = start; i <= end; i++) pages.push(i)
-        if (end < totalPages - 1) pages.push('ellipsis2')
-        pages.push(totalPages)
-        return pages
-    }
-
-    const currentBooks = filteredBooks.slice(
-        (currentPage - 1) * itemsPerPage,
-        currentPage * itemsPerPage
-    )
-
-    const handleGenreChange = g =>
-        setSelectedGenres(s =>
-            s.includes(g) ? s.filter(x => x !== g) : [...s, g]
-        )
-    const removeFilter = type => {
-        switch (type) {
-            case 'condition':
-                setCondition('')
-                break
-            case 'genre':
-                setSelectedGenres([])
-                break
-            case 'price':
-                setPriceRange([0, 200])
-                break
-            case 'title':
-                setTitleAndAuthorFilter('')
-                break
-            case 'rating':
-                setMinRatingFilter(0)
-                break
+    useEffect(() => {
+        if (isFirst.current) {
+            isFirst.current = false;
+            return;
         }
-    }
-    const clearAllFilters = () => {
-        setCondition('')
-        setSelectedGenres([])
-        setPriceRange([0, 200])
-        setSortBy('title-az')
-        setTitleAndAuthorFilter('')
-        setMinRatingFilter(0)
-    }
 
+        const params = {};
+        if (state.condition) params.condition = state.condition;
+        if (state.priceRange[0]) params.minPrice = state.priceRange[0];
+        if (state.priceRange[1] !== 200) params.maxPrice = state.priceRange[1];
+        if (state.selectedGenres.length) params.genres = state.selectedGenres.join(",");
+        if (state.sortBy !== "title-az") params.sortBy = state.sortBy;
+        if (state.searchText) params.search = state.searchText;
+        if (state.minRating > 0) params.minRating = state.minRating;
+        if (state.page.number) params.page = state.page.number + 1;
+
+        setSearchParams(params, { replace: true });
+    }, [
+        state.condition,
+        state.priceRange,
+        state.selectedGenres,
+        state.sortBy,
+        state.searchText,
+        state.minRating,
+        state.page,
+    ]);
+
+    const mapGenreIdsToNames = useMemo(() => {
+        if (!Array.isArray(state.selectedGenres) || !Array.isArray(categories)) return [];
+        const categoryMap = new Map(categories.map((c) => [c.id, c.name]));
+        return state.selectedGenres
+            .map((catId) => categoryMap.get(catId))
+            .filter(Boolean);
+    },[categories, state.selectedGenres]);
+
+    const activeFilters = useMemo(() => {
+        const af = [];
+        if (state.condition) af.push({ type: "condition", value: `Condition: ${state.condition}` });
+        if (mapGenreIdsToNames.length > 0) af.push({ type: "selectedGenres", value: `Genres: ${mapGenreIdsToNames.join(", ")}` });
+        if (state.priceRange[0] || state.priceRange[1] !== 200) af.push({ type: "priceRange", value: `Price: $${state.priceRange[0]} - $${state.priceRange[1]}` });
+        if (state.searchText) af.push({ type: "searchText", value: `Search: ${state.searchText}` });
+        if (state.minRating > 0) af.push({ type: "minRating", value: `Rating: ${state.minRating}+` });
+        if (state.sortBy !== "title-az") af.push({ type: "sortBy", value: `Sort By: ${state.sortBy}` });
+        return af;
+    }, [state]);
+
+    const genPageIndex = useMemo(() => {
+        const {totalPages, number} = state.page;
+        if (totalPages <= 5) return Array.from({length: totalPages}, (_, i) => i + 1);
+
+        const pages = [];
+        const current = number + 1;
+        const start = Math.max(2, current - 1);
+        const end = Math.min(totalPages - 1, current + 1);
+
+        pages.push(1);
+        if (start > 2) pages.push("...");
+
+        for (let i = start; i <= end; i++) {
+            pages.push(i);
+        }
+
+        if (end < totalPages - 1) pages.push("...");
+        pages.push(totalPages);
+        return pages;
+    },[state.page]);
+
+    const handleGenreChange = (g) => {
+        updateState("selectedGenres", state.selectedGenres.includes(g) ? state.selectedGenres.filter((x) => x !== g) : [...state.selectedGenres, g]);
+    };
+
+    const removeFilter = (type) => {
+        const resetValues = {
+            condition: "",
+            selectedGenres: [],
+            priceRange: [0, 200],
+            searchText: "",
+            minRating: 0,
+            sortBy: "title-az",
+        };
+
+        if (type in resetValues) {
+            updateState(type, resetValues[type]);
+        }
+
+        updatePageNumber(0);
+    };
+
+    const clearAll = () => {
+        setState((prev) => ({
+            ...prev,
+            condition: "",
+            selectedGenres: [],
+            priceRange: [0, 200],
+            sortBy: "title-az",
+            searchText: "",
+            minRating: 0,
+            page: { ...prev.page, number: 0 },
+        }));
+    };
     return (
         <div className="w-full mb-10">
-            <HeaderBreadcrumb
-                title="Book Shop"
-                crumbs={[
-                    {name: 'Home', path: '/'},
-                    {name: 'Shop', path: '/shop'},
-                ]}
-            />
-            <div className="max-w-screen-xl mx-auto px-4">
-                <SearchAndCount
-                    total={filteredBooks.length}
-                    currentPage={currentPage}
-                    itemsPerPage={itemsPerPage}
-                    onSearchChange={setTitleAndAuthorFilter}
-                    value={titleAndAuthorFilter}
+            {useMemo(() => (
+                <HeaderBreadcrumb
+                    title="Book Shop"
+                    crumbs={[{ name: "Home", path: "/" }, { name: "Shop", path: "/shop" }]}
                 />
-                <ActiveFilters
-                    activeFilters={activeFilters}
-                    removeFilter={removeFilter}
-                    clearAll={clearAllFilters}
-                />
-                <MobileFiltersToggle
-                    openCount={activeFilters.length}
-                    mobileOpen={mobileFiltersOpen}
-                    toggleMobile={() => setMobileFiltersOpen(!mobileFiltersOpen)}
-                />
-                <div className="flex flex-col md:flex-row md:gap-6">
-                    <FiltersSidebar
-                        // Condition
-                        condition={condition}
-                        setCondition={setCondition}
-                        showAllConditions={showAllConditions}
-                        toggleShowAllConditions={() => setShowAllConditions(!showAllConditions)}
+            ), [])}
 
-                        // Rating
-                        minRating={minRatingFilter}
-                        setMinRating={setMinRatingFilter}
-                        showAllRatings={showAllRatings}
-                        toggleShowAllRatings={() => setShowAllRatings(!showAllRatings)}
-
-                        // Price Range
-                        priceRange={priceRange}
-                        setPriceRange={setPriceRange}
-
-                        // Genres
-                        allGenres={allGenres}
-                        selectedGenres={selectedGenres}
-                        handleGenreChange={handleGenreChange}
-                        genreCounts={genreCounts}
-
-                        // Sort
-                        sortBy={sortBy}
-                        setSortBy={setSortBy}
-                        mobileFiltersOpen={mobileFiltersOpen}
+            <div className="max-w-screen-xl mx-auto px-4" ref={gridRef}>
+                {useMemo(() => (
+                    <SearchAndCount
+                        total={state.page.totalElements}
+                        currentPage={state.page.number + 1}
+                        itemsPerPage={state.page.size}
+                        onSearchChange={(text) => updateState("searchText", text)}
+                        value={state.searchText}
                     />
+                ), [state.page.totalElements, state.page.number, state.page.size, state.searchText])}
+
+                {useMemo(() => (
+                    <ActiveFilters
+                        activeFilters={activeFilters}
+                        removeFilter={removeFilter}
+                        clearAll={clearAll}
+                    />
+                ), [activeFilters])}
+
+                {useMemo(() => (
+                    <MobileFiltersToggle
+                        openCount={activeFilters.length}
+                        mobileOpen={state.mobileFiltersOpen}
+                        toggleMobile={() => updateState("mobileFiltersOpen", !state.mobileFiltersOpen)}
+                    />
+                ), [activeFilters.length, state.mobileFiltersOpen])}
+
+                <div className="flex flex-col md:flex-row md:gap-6">
+                    {useMemo(() => (
+                        <FiltersSidebar
+                            condition={state.condition}
+                            setCondition={(v) => updateState("condition", v)}
+                            showAllConditions={state.showAllConditions}
+                            toggleShowAllConditions={() => updateState("showAllConditions", !state.showAllConditions)}
+                            minRating={state.minRating}
+                            setMinRating={(v) => updateState("minRating", v)}
+                            showAllRatings={state.showAllRatings}
+                            toggleShowAllRatings={() => updateState("showAllRatings", !state.showAllRatings)}
+                            priceRange={state.priceRange}
+                            setPriceRange={(v) => updateState("priceRange", v)}
+                            genres={categories || []}
+                            selectedGenres={state.selectedGenres}
+                            handleGenreChange={handleGenreChange}
+                            sortBy={state.sortBy}
+                            setSortBy={(v) => updateState("sortBy", v)}
+                            mobileFiltersOpen={state.mobileFiltersOpen}
+                        />
+                    ), [state, categories])}
+
                     <div className="flex-1 ml-10">
-                        <BookGrid
-                            books={filteredBooks}
-                            currentBooks={currentBooks}
-                            clearAllFilters={clearAllFilters}
-                        />
-                        <Pagination
-                            totalPages={totalPages}
-                            currentPage={currentPage}
-                            onPageChange={setCurrentPage}
-                            onPrev={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
-                            onNext={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))}
-                            generateItems={generatePaginationItems}
-                        />
+                        {isLoading ? (
+                            <LoadingScreen />
+                        ) : isError ? (
+                            <ErrorScreen />
+                        ) : (
+                            <>
+                                <BookGrid books={books.content} clearAllFilters={clearAll} />
+                                <Pagination
+                                    totalPages={state.page.totalPages}
+                                    currentPage={state.page.number + 1}
+                                    onPageChange={page => {
+                                        updatePageNumber(page - 1)
+                                        setTimeout(() => {
+                                            gridRef.current?.scrollIntoView({ behavior: 'smooth' })
+                                        }, 250);
+                                    }}
+                                    onPrev={() => {
+                                        updatePageNumber(Math.max(state.page.number - 1, 0))
+                                        setTimeout(() => {
+                                            gridRef.current?.scrollIntoView({ behavior: 'smooth' })
+                                        }, 250);
+                                    }}
+                                    onNext={() => {
+                                        updatePageNumber(Math.min(state.page.number + 1, state.page.totalPages - 1))
+                                        setTimeout(() => {
+                                            gridRef.current?.scrollIntoView({ behavior: 'smooth' })
+                                        }, 250);
+                                    }}
+                                    pageIndex={genPageIndex}
+                                />
+                            </>
+                        )}
                     </div>
                 </div>
             </div>
         </div>
-    )
+    );
 }

@@ -1,9 +1,9 @@
 import {useQueries} from '@tanstack/react-query'
-import {getBestBooks} from '@u_services/bookService'
+import {getBooks} from '@u_services/bookService'
 import {getCategories} from '@u_services/categoryService'
 
-export const useHomeData = () => {
-    const [categoriesQ, bestBooksQ] = useQueries({
+export const useShopData = (queryParams) => {
+    const [categoriesQ, booksQ] = useQueries({
         queries: [
             {
                 queryKey: ['categories'],
@@ -12,16 +12,17 @@ export const useHomeData = () => {
                 cacheTime: 1000 * 60 * 60,     // 1 hour
             },
             {
-                queryKey: ['bestBooks'],
-                queryFn: () => getBestBooks().then(r => r.data),
+                queryKey: ['shopData', queryParams],
+                queryFn: () => getBooks(queryParams).then(r => r.data),
+                keepPreviousData: true,
             },
         ]
     })
 
     return {
         categories: categoriesQ.data,
-        bestBooks: bestBooksQ.data,
-        isLoading: categoriesQ.isLoading || bestBooksQ.isLoading,
-        isError: categoriesQ.isError || bestBooksQ.isError,
+        books: booksQ.data,
+        isLoading: categoriesQ.isLoading || booksQ.isLoading,
+        isError: categoriesQ.isError || booksQ.isError,
     }
 }

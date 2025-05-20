@@ -1,7 +1,6 @@
 import { useKeenSlider } from "keen-slider/react"
 import { Layers } from 'lucide-react'
 import { useState } from "react"
-import { books } from "@data/sampleData"
 import { Link } from "react-router-dom"
 
 const getCategoryColor = (index) => {

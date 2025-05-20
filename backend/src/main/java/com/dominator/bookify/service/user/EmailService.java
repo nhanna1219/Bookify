@@ -2,18 +2,15 @@ package com.dominator.bookify.service.user;
 
 import jakarta.mail.MessagingException;
 import jakarta.mail.internet.MimeMessage;
+import lombok.AllArgsConstructor;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;
 
+@AllArgsConstructor
 @Service
 public class EmailService {
-
     private final JavaMailSender mailSender;
-
-    public EmailService(JavaMailSender mailSender) {
-        this.mailSender = mailSender;
-    }
 
     public void sendVerificationEmail(String to, String fullName, String token) {
         String link = "http://localhost:8080/api/users/verify?token=" + token + "&tokenType=EMAIL_VERIFICATION";

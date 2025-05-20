@@ -37,8 +37,14 @@ export default function PriceRangeFilter({priceRange, setPriceRange}) {
 
     const handleInputChange = (type) => (e) => {
         let value = e.target.value;
-        value = value.replace(/[^0-9]/g, '');
-        if (value !== '0') {
+        value = value.replace(/[^0-9.]/g, '');
+
+        const parts = value.split('.');
+        if (parts.length > 2) {
+            value = parts[0] + '.' + parts.slice(1).join('');
+        }
+
+        if (value !== '0' && !value.startsWith('0.')) {
             value = value.replace(/^0+/, '');
         }
         if (value === '') {
@@ -55,12 +61,12 @@ export default function PriceRangeFilter({priceRange, setPriceRange}) {
 
         if (type === 'min') {
             if (minInput === '' || isNaN(value)) value = min;
-            value = clamp(value, 0, max - 1);
+            value = clamp(value, 0, max - 0.1);
             setMinInput(value.toString());
             setPriceRange([value, max]);
         } else {
             if (maxInput === '' || isNaN(value)) value = max;
-            value = clamp(value, min + 1, 200);
+            value = clamp(value, min + 0.1, 200);
             setMaxInput(value.toString());
             setPriceRange([min, value]);
         }

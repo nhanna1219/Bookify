@@ -5,25 +5,21 @@ import FeatureBookSection from './sections/FeatureBookSection.jsx';
 import BestSellerSection from './sections/BestSellerSection.jsx';
 import CategoriesSection from '@u_pages/HomePage/sections/CategoriesSection.jsx';
 import CustomerReviewSection from '@u_pages/HomePage/sections/CustomerReviewSection.jsx';
+import LoadingScreen from "@u_components/shared/LoadingScreen.jsx";
+import ErrorScreen from "@u_components/shared/ErrorScreen.jsx";
 
 export default function HomePage() {
-    const { data, isLoading, isError } = useHomeData();
+    const { categories, bestBooks, isLoading, isError } = useHomeData();
     if (isLoading) {
         return (
-            <div className="flex justify-center items-center min-h-screen">
-                <p className="text-gray-500">Loading...</p>
-            </div>
+            <LoadingScreen />
         );
     }
     if (isError) {
         return (
-            <div className="flex justify-center items-center min-h-screen">
-                <p className="text-red-500">Error loading data. Please try again later.</p>
-            </div>
+            <ErrorScreen />
         );
     }
-
-    const { bestBooks = [], categories = [] } = data || {};
 
     // Split books into two parts
     const halfway = Math.ceil(bestBooks.length / 2);

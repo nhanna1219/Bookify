@@ -1,13 +1,14 @@
 package com.dominator.bookify.controller.user;
 
 import com.dominator.bookify.dto.LoginResponseDTO;
-import com.dominator.bookify.dto.ResetPasswordRequest;
-import com.dominator.bookify.dto.UserLoginRequest;
-import com.dominator.bookify.dto.UserRegisterRequest;
+import com.dominator.bookify.dto.ResetPasswordRequestDTO;
+import com.dominator.bookify.dto.UserLoginRequestDTO;
+import com.dominator.bookify.dto.UserRegisterRequestDTO;
 import com.dominator.bookify.model.VerificationToken;
 import com.dominator.bookify.service.user.UserService;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.validation.Valid;
+import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -16,18 +17,14 @@ import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
 import java.util.Map;
 
+@AllArgsConstructor
 @RestController
 @RequestMapping("/api/users")
 public class UserController {
-
     private final UserService userService;
 
-    public UserController(UserService userService) {
-        this.userService = userService;
-    }
-
     @PostMapping("/login")
-    public ResponseEntity<?> login(@RequestBody @Valid UserLoginRequest req) {
+    public ResponseEntity<?> login(@RequestBody @Valid UserLoginRequestDTO req) {
         try {
             LoginResponseDTO response = userService.login(req);
             return ResponseEntity.ok(response);
@@ -37,12 +34,12 @@ public class UserController {
     }
 
     @PostMapping("/register")
-    public ResponseEntity<?> register(@RequestBody @Valid UserRegisterRequest req) {
+    public ResponseEntity<?> register(@RequestBody @Valid UserRegisterRequestDTO req) {
         try {
             userService.register(req);
             return ResponseEntity.ok(Map.of("message", "Verification email sent, please check your email to verify your email address!"));
         } catch (Exception e) {
-            return ResponseEntity.status(401).body(Map.of("error", e.getMessage()));
+            return ResponseEntity.status(400).body(Map.of("error", e.getMessage()));
         }
     }
 
@@ -73,7 +70,7 @@ public class UserController {
             userService.resendVerification(email);
             return ResponseEntity.ok(Map.of("message", "Verification email re-sent."));
         } catch (Exception e) {
-            return ResponseEntity.status(401).body(Map.of("error", e.getMessage()));
+            return ResponseEntity.status(404).body(Map.of("error", e.getMessage()));
         }
     }
 
@@ -84,12 +81,12 @@ public class UserController {
             userService.handleForgotPassword(email);
             return ResponseEntity.ok(Map.of("message", "Password reset link sent."));
         } catch (Exception e) {
-            return ResponseEntity.status(401).body(Map.of("error", e.getMessage()));
+            return ResponseEntity.status(404).body(Map.of("error", e.getMessage()));
         }
     }
 
     @PostMapping("/reset-password")
-    public ResponseEntity<?> resetPassword(@RequestBody @Valid ResetPasswordRequest req) {
+    public ResponseEntity<?> resetPassword(@RequestBody @Valid ResetPasswordRequestDTO req) {
         try {
             userService.resetPassword(req);
             return ResponseEntity.ok(Map.of("message", "Password reset successful."));

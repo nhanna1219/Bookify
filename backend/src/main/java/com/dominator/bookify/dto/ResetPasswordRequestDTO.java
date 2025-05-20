@@ -6,7 +6,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class ResetPasswordRequest {
+public class ResetPasswordRequestDTO {
     @NotBlank
     private String token;
 

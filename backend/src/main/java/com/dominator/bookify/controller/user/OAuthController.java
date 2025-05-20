@@ -49,8 +49,6 @@ public class OAuthController {
             u.setFullName(name);
             u.setRole("CUSTOMER");
             u.setVerified(true);
-            u.setCreatedAt(LocalDateTime.now());
-            u.setUpdatedAt(LocalDateTime.now());
             return userRepository.save(u);
         });
 

@@ -1,18 +1,18 @@
 package com.dominator.bookify.dto;
 
+import com.dominator.bookify.model.Image;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.List;
-import java.util.Objects;
 
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class BookSummary {
+public class BookSummaryDTO {
     private String id;
     private String title;
     private List<String> authors;
@@ -21,6 +21,6 @@ public class BookSummary {
     private double averageRating;
     private int ratingCount;
     private int totalRating;
-    private List<Object> images;
+    private List<Image> images;
 }
 

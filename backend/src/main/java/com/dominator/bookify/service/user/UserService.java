@@ -7,15 +7,16 @@ import com.dominator.bookify.model.VerificationToken;
 import com.dominator.bookify.repository.UserRepository;
 import com.dominator.bookify.repository.VerificationTokenRepository;
 import com.dominator.bookify.security.JwtUtil;
+import lombok.AllArgsConstructor;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.util.UUID;
 
+@AllArgsConstructor
 @Service
 public class UserService {
-
     private final UserRepository userRepository;
 
     private final JwtUtil jwtUtil;
@@ -26,15 +27,7 @@ public class UserService {
 
     private final VerificationTokenRepository verificationTokenRepo;
 
-    public UserService(UserRepository userRepository, JwtUtil jwtUtil, BCryptPasswordEncoder passwordEncoder, EmailService emailService, VerificationTokenRepository verificationTokenRepo) {
-        this.userRepository = userRepository;
-        this.jwtUtil = jwtUtil;
-        this.passwordEncoder = passwordEncoder;
-        this.emailService = emailService;
-        this.verificationTokenRepo = verificationTokenRepo;
-    }
-
-    public LoginResponseDTO login(UserLoginRequest req) {
+    public LoginResponseDTO login(UserLoginRequestDTO req) {
         User user = userRepository.findByEmail(req.getEmail())
                 .orElseThrow(() -> new RuntimeException("Invalid credentials"));
 
@@ -63,7 +56,7 @@ public class UserService {
     }
 
 
-    public void register(UserRegisterRequest req) {
+    public void register(UserRegisterRequestDTO req) {
         if (userRepository.findByEmail(req.getEmail()).isPresent()) {
             throw new RuntimeException("Email already registered.");
         }
@@ -84,15 +77,12 @@ public class UserService {
         user.setPasswordHash(passwordEncoder.encode(req.getPassword()));
         user.setRole("CUSTOMER");
         user.setVerified(false);
-        user.setCreatedAt(LocalDateTime.now());
-        user.setUpdatedAt(LocalDateTime.now());
         user.setAddress(address);
 
         userRepository.save(user);
 
         createAndSendToken(user, "EMAIL_VERIFICATION");
     }
-
 
     public void verifyToken(String token, VerificationToken.TokenType tokenType) {
         VerificationToken vt = verificationTokenRepo
@@ -157,7 +147,7 @@ public class UserService {
         createAndSendToken(user, "PASSWORD_RESET");
     }
 
-    public void resetPassword(ResetPasswordRequest req) {
+    public void resetPassword(ResetPasswordRequestDTO req) {
         VerificationToken vt = verificationTokenRepo
                 .findByTokenAndType(req.getToken(), VerificationToken.TokenType.PASSWORD_RESET)
                 .orElseThrow(() -> new RuntimeException("Invalid or expired token."));
