@@ -1,0 +1,2080 @@
+[{
+  "_id": {
+    "$oid": "682023424a1ae581e0445357"
+  },
+  "title": "A Baby Blessing",
+  "authors": [
+    "Welleran Poltarnees"
+  ],
+  "description": "In this book a baby is blessed in its coming, its blind infancy, its awakening sight and its growth toward laughter, mobility and speech. It uses old paintings and illustrations to make vivid each statement. Poltarnees speaks eloquently the sweet hopes we have for every baby. This blessing in book form makes a superb gift to any new parents and their baby.",
+  "price": 4.76,
+  "originalPrice": 5.29,
+  "condition": "LIKE NEW",
+  "stock": 71,
+  "categoryIds": [
+    {
+      "$oid": "681f3d085e99961322aef271"
+    },
+    {
+      "$oid": "681f3d085e99961322aef272"
+    }
+  ],
+  "images": [
+    {
+      "url": "/data/book-img/a-baby-blessing-1.jpg",
+      "alt": "Image 1 of A Baby Blessing"
+    },
+    {
+      "url": "/data/book-img/a-baby-blessing-2.jpg",
+      "alt": "Image 2 of A Baby Blessing"
+    },
+    {
+      "url": "/data/book-img/a-baby-blessing-3.jpg",
+      "alt": "Image 3 of A Baby Blessing"
+    },
+    {
+      "url": "/data/book-img/a-baby-blessing-4.jpg",
+      "alt": "Image 4 of A Baby Blessing"
+    }
+  ],
+  "addedAt": "2025-05-10T22:59:07.573741",
+  "modifiedAt": "2025-05-10T22:59:07.573741",
+  "averageRating": 5,
+  "ratingCount": 1,
+  "totalRating": 5
+},
+{
+  "_id": {
+    "$oid": "682023424a1ae581e0445358"
+  },
+  "title": "A Royal Quest",
+  "authors": [
+    "Mary Lide"
+  ],
+  "description": "The two sons and daughter of Ann of Cambray and Raoul of Sedgemont are caught in the border struggles between the Welsh and the Normans and in the intrigues of Henry II and Eleanor of Aquitaine",
+  "price": 5.64,
+  "originalPrice": 5.64,
+  "condition": "NEW",
+  "stock": 11,
+  "categoryIds": [
+    {
+      "$oid": "681f3d085e99961322aef273"
+    },
+    {
+      "$oid": "681f3d085e99961322aef274"
+    }
+  ],
+  "images": [
+    {
+      "url": "/data/book-img/a-royal-quest-1.jpg",
+      "alt": "Image 1 of A Royal Quest"
+    },
+    {
+      "url": "/data/book-img/a-royal-quest-2.jpg",
+      "alt": "Image 2 of A Royal Quest"
+    },
+    {
+      "url": "/data/book-img/a-royal-quest-3.jpg",
+      "alt": "Image 3 of A Royal Quest"
+    }
+  ],
+  "addedAt": "2025-05-10T22:59:07.574739",
+  "modifiedAt": "2025-05-10T22:59:07.574739",
+  "averageRating": 3,
+  "ratingCount": 1,
+  "totalRating": 3
+},
+{
+  "_id": {
+    "$oid": "682023424a1ae581e0445359"
+  },
+  "title": "A Tour of the Calculus",
+  "authors": [
+    "David Berlinsk"
+  ],
+  "description": "Were it not for the calculus, mathematicians would have no way to describe the acceleration of a motorcycle or the effect of gravity on thrown balls and distant planets, or to prove that a man could cross a room and eventually touch the opposite wall. Just how calculus makes these things possible and in doing so finds a correspondence between real numbers and the real world is the subject of this dazzling book by a writer of extraordinary clarity and stylistic brio. Even as he initiates us into the mysteries of real numbers, functions, and limits, Berlinski explores the furthest implications of his subject, revealing how the calculus reconciles the precision of numbers with the fluidity of the changing universe. \"An odd and tantalizing book by a writer who takes immense pleasure in this great mathematical tool, and tries to create it in others.\"--New York Times Book Review",
+  "price": 4.99,
+  "originalPrice": 4.99,
+  "condition": "NEW",
+  "stock": 49,
+  "categoryIds": [
+    {
+      "$oid": "681f3d085e99961322aef275"
+    },
+    {
+      "$oid": "681f3d085e99961322aef276"
+    }
+  ],
+  "images": [
+    {
+      "url": "/data/book-img/a-tour-of-the-calculus-1.jpg",
+      "alt": "Image 1 of A Tour of the Calculus"
+    },
+    {
+      "url": "/data/book-img/a-tour-of-the-calculus-2.jpg",
+      "alt": "Image 2 of A Tour of the Calculus"
+    },
+    {
+      "url": "/data/book-img/a-tour-of-the-calculus-3.jpg",
+      "alt": "Image 3 of A Tour of the Calculus"
+    }
+  ],
+  "addedAt": "2025-05-10T22:59:07.574739",
+  "modifiedAt": "2025-05-10T22:59:07.574739",
+  "averageRating": 3,
+  "ratingCount": 1,
+  "totalRating": 3
+},
+{
+  "_id": {
+    "$oid": "682023424a1ae581e044535a"
+  },
+  "title": "A Twist in the Tale",
+  "authors": [
+    "Jeffrey Archer"
+  ],
+  "description": "The best-selling author presents a collection of twelve stories filled with the wit and the surprises for which he is known",
+  "price": 2.65,
+  "originalPrice": 5.29,
+  "condition": "ACCEPTABLE",
+  "stock": 40,
+  "categoryIds": [
+    {
+      "$oid": "681f3d085e99961322aef273"
+    },
+    {
+      "$oid": "681f3d085e99961322aef277"
+    }
+  ],
+  "images": [
+    {
+      "url": "/data/book-img/a-twist-in-the-tale-1.jpg",
+      "alt": "Image 1 of A Twist in the Tale"
+    },
+    {
+      "url": "/data/book-img/a-twist-in-the-tale-2.jpg",
+      "alt": "Image 2 of A Twist in the Tale"
+    },
+    {
+      "url": "/data/book-img/a-twist-in-the-tale-3.jpg",
+      "alt": "Image 3 of A Twist in the Tale"
+    }
+  ],
+  "addedAt": "2025-05-10T22:59:07.575716",
+  "modifiedAt": "2025-05-10T22:59:07.575716",
+  "averageRating": 5,
+  "ratingCount": 1,
+  "totalRating": 5
+},
+{
+  "_id": {
+    "$oid": "682023424a1ae581e044535b"
+  },
+  "title": "An Armory of Swords",
+  "authors": [
+    "Fred Saberhagen"
+  ],
+  "description": "Fred Saberhagen has brought together a cast of some of the best fantasy writers in the field, to apply their talents to his Lost Swords universe. All have written tales that capture the enchanting spirit of the series, and the result is an irresistible collection that will delight both new and old books of Lost Swords fans alike.Forged by Vulcan with such magic and skill that even the Gods themselves are vulnerable to them, each weapon has its own special power, bestowed upon whoever unsheathes it. No longer are all humans mere playthings in the hands of the Gods.",
+  "price": 3.67,
+  "originalPrice": 4.89,
+  "condition": "GOOD",
+  "stock": 96,
+  "categoryIds": [
+    {
+      "$oid": "681f3d085e99961322aef273"
+    },
+    {
+      "$oid": "681f3d085e99961322aef278"
+    },
+    {
+      "$oid": "681f3d085e99961322aef274"
+    }
+  ],
+  "images": [
+    {
+      "url": "/data/book-img/an-armory-of-swords-1.jpg",
+      "alt": "Image 1 of An Armory of Swords"
+    },
+    {
+      "url": "/data/book-img/an-armory-of-swords-2.jpg",
+      "alt": "Image 2 of An Armory of Swords"
+    },
+    {
+      "url": "/data/book-img/an-armory-of-swords-3.jpg",
+      "alt": "Image 3 of An Armory of Swords"
+    }
+  ],
+  "addedAt": "2025-05-10T22:59:07.575716",
+  "modifiedAt": "2025-05-10T22:59:07.575716",
+  "averageRating": 3,
+  "ratingCount": 1,
+  "totalRating": 3
+},
+{
+  "_id": {
+    "$oid": "682023424a1ae581e044535c"
+  },
+  "title": "Anywhere but Here",
+  "authors": [
+    "Mona Simpson"
+  ],
+  "description": "The questions, discussion topics, and author biography that follow are designed to enhance your group's reading of Mona Simpson's novel Anywhere But Here . We hope that they will provide you with new ways of looking at a novel produced by an American realist hailed by critics as one of her generation's finest writers. With this work, Mona Simpson shows herself to be a sensitive and incisive analyst of the broken family, with an uncommon insight into the child who is at the mercy of parents who are absent, restless, narcissistic, dishonest or emotionally unstable. While it engages serious contemporary social issues, this work also makes for compulsive and deeply enjoyable reading, with characters who absorb our attention and involve us completely in their world.",
+  "price": 3.74,
+  "originalPrice": 4.99,
+  "condition": "GOOD",
+  "stock": 45,
+  "categoryIds": [
+    {
+      "$oid": "681f3d085e99961322aef273"
+    },
+    {
+      "$oid": "681f3d085e99961322aef279"
+    }
+  ],
+  "images": [
+    {
+      "url": "/data/book-img/anywhere-but-here-1.jpg",
+      "alt": "Image 1 of Anywhere but Here"
+    },
+    {
+      "url": "/data/book-img/anywhere-but-here-2.jpg",
+      "alt": "Image 2 of Anywhere but Here"
+    },
+    {
+      "url": "/data/book-img/anywhere-but-here-3.jpg",
+      "alt": "Image 3 of Anywhere but Here"
+    }
+  ],
+  "addedAt": "2025-05-10T22:59:07.575716",
+  "modifiedAt": "2025-05-10T22:59:07.575716",
+  "averageRating": 4,
+  "ratingCount": 1,
+  "totalRating": 4
+},
+{
+  "_id": {
+    "$oid": "682023424a1ae581e044535d"
+  },
+  "title": "Barnyard Banter",
+  "authors": [
+    "Denise Fleming"
+  ],
+  "description": "This farm favorite is now a board book, perfect for preschoolers. \"Cows in the pasture, moo, moo, moo. Roosters in the barnyard, cock-a-doodle-doo . . .\"It's another noisy morning on the farm, and all of the animals are where they should be -- except Goose. And where is Goose? Young children will enjoy clucking, mucking, mewing, and cooing while they search for Goose on every gorgeously illustrated spread.",
+  "price": 4.76,
+  "originalPrice": 5.29,
+  "condition": "LIKE NEW",
+  "stock": 7,
+  "categoryIds": [
+    {
+      "$oid": "681f3d085e99961322aef27a"
+    },
+    {
+      "$oid": "681f3d085e99961322aef27b"
+    },
+    {
+      "$oid": "681f3d085e99961322aef27c"
+    }
+  ],
+  "images": [
+    {
+      "url": "/data/book-img/barnyard-banter-1.jpg",
+      "alt": "Image 1 of Barnyard Banter"
+    },
+    {
+      "url": "/data/book-img/barnyard-banter-2.jpg",
+      "alt": "Image 2 of Barnyard Banter"
+    },
+    {
+      "url": "/data/book-img/barnyard-banter-3.jpg",
+      "alt": "Image 3 of Barnyard Banter"
+    }
+  ],
+  "addedAt": "2025-05-10T22:59:07.576740",
+  "modifiedAt": "2025-05-10T22:59:07.576740",
+  "averageRating": 4,
+  "ratingCount": 1,
+  "totalRating": 4
+},
+{
+  "_id": {
+    "$oid": "682023424a1ae581e044535e"
+  },
+  "title": "Celebrity",
+  "authors": [
+    "Thomas Thompson"
+  ],
+  "description": "Three gifted boys fulfill their early promise in their ascent to the top but are unable to escape the spectre of a graduation night spree that ended in tragedy",
+  "price": 5,
+  "originalPrice": 5.56,
+  "condition": "LIKE NEW",
+  "stock": 13,
+  "categoryIds": [
+    {
+      "$oid": "681f3d085e99961322aef273"
+    },
+    {
+      "$oid": "681f3d085e99961322aef274"
+    }
+  ],
+  "images": [
+    {
+      "url": "/data/book-img/celebrity-1.jpg",
+      "alt": "Image 1 of Celebrity"
+    },
+    {
+      "url": "/data/book-img/celebrity-2.jpg",
+      "alt": "Image 2 of Celebrity"
+    },
+    {
+      "url": "/data/book-img/celebrity-3.jpg",
+      "alt": "Image 3 of Celebrity"
+    }
+  ],
+  "addedAt": "2025-05-10T22:59:07.576740",
+  "modifiedAt": "2025-05-10T22:59:07.576740",
+  "averageRating": 5,
+  "ratingCount": 1,
+  "totalRating": 5
+},
+{
+  "_id": {
+    "$oid": "682023424a1ae581e044535f"
+  },
+  "title": "CURE FOR THE COMMON LIFE",
+  "authors": [
+    "Max Lucado"
+  ],
+  "description": "\"Sweet Spot.\"Ever swung a baseball bat or paddled a Ping-Pong ball? If so, you know the oh-so-nice feel of the sweet spot. Life in the sweet spot rolls like the downhill side of a downwind bike ride. But you don't have to swing a bat or a club to know this. What engineers give sports equipment, God gave you. A zone, a region, a life precinct in which you were made to dwell. He tailored the curves of your life to fit an empty space in his jigsaw puzzle. And life makes sweet sense when you find your spot.But if you're like 70 percent of working adults, you haven't found it. You don't find meaning in your work, or you don't believe your talents are used. What can you do? You're suffering from the common life, and you desperately need a cure.Best-selling author Max Lucado has found it. In Cure for the Common Life, he offers practical tools for exploring and identifying your own uniqueness, motivation to put your strengths to work, and the perfect prescription for finding and living in your sweet spot for the rest of your life.",
+  "price": 2.65,
+  "originalPrice": 5.29,
+  "condition": "ACCEPTABLE",
+  "stock": 17,
+  "categoryIds": [
+    {
+      "$oid": "681f3d085e99961322aef271"
+    },
+    {
+      "$oid": "681f3d085e99961322aef27d"
+    },
+    {
+      "$oid": "681f3d085e99961322aef272"
+    }
+  ],
+  "images": [
+    {
+      "url": "/data/book-img/cure-for-the-common-life-1.jpg",
+      "alt": "Image 1 of CURE FOR THE COMMON LIFE"
+    },
+    {
+      "url": "/data/book-img/cure-for-the-common-life-2.jpg",
+      "alt": "Image 2 of CURE FOR THE COMMON LIFE"
+    },
+    {
+      "url": "/data/book-img/cure-for-the-common-life-3.jpg",
+      "alt": "Image 3 of CURE FOR THE COMMON LIFE"
+    }
+  ],
+  "addedAt": "2025-05-10T22:59:07.577734",
+  "modifiedAt": "2025-05-10T22:59:07.577734",
+  "averageRating": 5,
+  "ratingCount": 1,
+  "totalRating": 5
+},
+{
+  "_id": {
+    "$oid": "682023424a1ae581e0445360"
+  },
+  "title": "Cut And Run",
+  "authors": [
+    "Carla Neggers"
+  ],
+  "description": "The largest uncut diamond in the world, the Minstrel's Rough, is little more than legend. Brought into the Pepperkamp family in 1548, it has been handed down to one keeper in each generation. Juliana Fall has inherited its splendor from her uncleand, unwittingly, its legacy of danger.Juliana's mother wants nothing more than to bury her memories of the Nazi occupation of the Netherlands. But with the diamond in her daughter's keeping, Juliana's safety becomes entangled in the secrets of the past.There are others who seek the Minstrel's Rough.A U.S. senator who will risk his career and face the ultimate scandal to claim its value. A Nazi collaborator willing to do anything to possess it. And a Vietnam war hero turned journalist, chasing the story of this mythic stone.Now Juliana has only two choices: uncover the past before they door cut and run.",
+  "price": 3.74,
+  "originalPrice": 4.99,
+  "condition": "GOOD",
+  "stock": 75,
+  "categoryIds": [
+    {
+      "$oid": "681f3d085e99961322aef273"
+    },
+    {
+      "$oid": "681f3d085e99961322aef27e"
+    },
+    {
+      "$oid": "681f3d085e99961322aef27f"
+    }
+  ],
+  "images": [
+    {
+      "url": "/data/book-img/cut-and-run-1.jpg",
+      "alt": "Image 1 of Cut And Run"
+    }
+  ],
+  "addedAt": "2025-05-10T22:59:07.577734",
+  "modifiedAt": "2025-05-10T22:59:07.577734",
+  "averageRating": 4,
+  "ratingCount": 1,
+  "totalRating": 4
+},
+{
+  "_id": {
+    "$oid": "682023424a1ae581e0445361"
+  },
+  "title": "Decline and Fall",
+  "authors": [
+    "Evelyn Waugh"
+  ],
+  "description": "Subtitled \"A Novel of Many Manners, \" Evelyn Waugh's notorious first novel lays waste the \"heathen idol\" of British sportsmanship, the cultured perfection of Oxford, and the inviolable honor codes of the English gentleman.",
+  "price": 4.76,
+  "originalPrice": 5.29,
+  "condition": "LIKE NEW",
+  "stock": 94,
+  "categoryIds": [
+    {
+      "$oid": "681f3d085e99961322aef273"
+    },
+    {
+      "$oid": "681f3d085e99961322aef280"
+    }
+  ],
+  "images": [
+    {
+      "url": "/data/book-img/decline-and-fall-1.jpg",
+      "alt": "Image 1 of Decline and Fall"
+    },
+    {
+      "url": "/data/book-img/decline-and-fall-2.jpg",
+      "alt": "Image 2 of Decline and Fall"
+    }
+  ],
+  "addedAt": "2025-05-10T22:59:07.577734",
+  "modifiedAt": "2025-05-10T22:59:07.577734",
+  "averageRating": 4,
+  "ratingCount": 1,
+  "totalRating": 4
+},
+{
+  "_id": {
+    "$oid": "682023424a1ae581e0445362"
+  },
+  "title": "Dictionary of Napoleonic Wars",
+  "authors": [
+    "Stephen Pope"
+  ],
+  "description": "With some 1,000 entries, this dictionary covers every aspect of the conflicts known as the Napoleonic Wars (1792-1815). The last and greatest clash of Europe's leading dynasties, the wars were also the first cataclysms of the industrial age. An introduction puts the era in context, guiding even novice scholars through its historical background, places, people, and campaigns. Includes cross-references, an extensive chronology, and 30 b&w maps. For high school and up. Pope is a scholar of modern history. Annotation c. Book News, Inc., Portland, OR (booknews.com)",
+  "price": 9.89,
+  "originalPrice": 10.99,
+  "condition": "LIKE NEW",
+  "stock": 50,
+  "categoryIds": [
+    {
+      "$oid": "681f3d085e99961322aef281"
+    },
+    {
+      "$oid": "681f3d085e99961322aef282"
+    },
+    {
+      "$oid": "681f3d085e99961322aef274"
+    }
+  ],
+  "images": [
+    {
+      "url": "/data/book-img/dictionary-of-napoleonic-wars-1.jpg",
+      "alt": "Image 1 of Dictionary of Napoleonic Wars"
+    },
+    {
+      "url": "/data/book-img/dictionary-of-napoleonic-wars-2.jpg",
+      "alt": "Image 2 of Dictionary of Napoleonic Wars"
+    },
+    {
+      "url": "/data/book-img/dictionary-of-napoleonic-wars-3.jpg",
+      "alt": "Image 3 of Dictionary of Napoleonic Wars"
+    }
+  ],
+  "addedAt": "2025-05-10T22:59:07.578734",
+  "modifiedAt": "2025-05-10T22:59:07.578734",
+  "averageRating": 4,
+  "ratingCount": 1,
+  "totalRating": 4
+},
+{
+  "_id": {
+    "$oid": "682023424a1ae581e0445363"
+  },
+  "title": "Donald Duk",
+  "authors": [
+    "Frank Chin"
+  ],
+  "description": "\"The 11-year-old hero of Mr. Chin's inventive, energetic first novel is educated in his Chinese heritage through a series of astonishing dreams about working on the Central Pacific Railroad in 1869.\"--New York Times Book Review \"Doubt not the ability of the gifted, passionate, funny Mr. Chin.\"--New Yorker",
+  "price": 4.76,
+  "originalPrice": 5.29,
+  "condition": "LIKE NEW",
+  "stock": 35,
+  "categoryIds": [
+    {
+      "$oid": "681f3d085e99961322aef27a"
+    },
+    {
+      "$oid": "681f3d085e99961322aef283"
+    },
+    {
+      "$oid": "681f3d085e99961322aef284"
+    },
+    {
+      "$oid": "681f3d085e99961322aef285"
+    }
+  ],
+  "images": [
+    {
+      "url": "/data/book-img/donald-duk-1.jpg",
+      "alt": "Image 1 of Donald Duk"
+    },
+    {
+      "url": "/data/book-img/donald-duk-2.jpg",
+      "alt": "Image 2 of Donald Duk"
+    }
+  ],
+  "addedAt": "2025-05-10T22:59:07.578734",
+  "modifiedAt": "2025-05-10T22:59:07.578734",
+  "averageRating": 4,
+  "ratingCount": 1,
+  "totalRating": 4
+},
+{
+  "_id": {
+    "$oid": "682023424a1ae581e0445364"
+  },
+  "title": "Ending the Homework Hassle",
+  "authors": [
+    "John Rosemond"
+  ],
+  "description": "Advises parents how to help children take responsibility for their own homework, and explains how to find remedial help, motivate an underachiever, and handle Attention Deficit Disorder",
+  "price": 2.5,
+  "originalPrice": 4.99,
+  "condition": "ACCEPTABLE",
+  "stock": 23,
+  "categoryIds": [
+    {
+      "$oid": "681f3d085e99961322aef286"
+    },
+    {
+      "$oid": "681f3d085e99961322aef274"
+    }
+  ],
+  "images": [
+    {
+      "url": "/data/book-img/ending-the-homework-hassle-1.jpg",
+      "alt": "Image 1 of Ending the Homework Hassle"
+    },
+    {
+      "url": "/data/book-img/ending-the-homework-hassle-2.jpg",
+      "alt": "Image 2 of Ending the Homework Hassle"
+    },
+    {
+      "url": "/data/book-img/ending-the-homework-hassle-3.jpg",
+      "alt": "Image 3 of Ending the Homework Hassle"
+    }
+  ],
+  "addedAt": "2025-05-10T22:59:07.578734",
+  "modifiedAt": "2025-05-10T22:59:07.578734",
+  "averageRating": 4,
+  "ratingCount": 1,
+  "totalRating": 4
+},
+{
+  "_id": {
+    "$oid": "682023424a1ae581e0445365"
+  },
+  "title": "Generation React",
+  "authors": [
+    "Danny Seo"
+  ],
+  "description": "A teenage crusader offers young people tips on how to become an activist, discussing the practicalities of changing the world, from winning media exposure and corporate sponsorship to working with legislators and launching a campaign. Original.",
+  "price": 5.29,
+  "originalPrice": 5.29,
+  "condition": "NEW",
+  "stock": 88,
+  "categoryIds": [
+    {
+      "$oid": "681f3d085e99961322aef287"
+    },
+    {
+      "$oid": "681f3d085e99961322aef288"
+    },
+    {
+      "$oid": "681f3d085e99961322aef274"
+    }
+  ],
+  "images": [
+    {
+      "url": "/data/book-img/generation-react-1.jpg",
+      "alt": "Image 1 of Generation React"
+    }
+  ],
+  "addedAt": "2025-05-10T22:59:07.579736",
+  "modifiedAt": "2025-05-10T22:59:07.579736",
+  "averageRating": 4,
+  "ratingCount": 1,
+  "totalRating": 4
+},
+{
+  "_id": {
+    "$oid": "682023424a1ae581e0445366"
+  },
+  "title": "Gentleman Thief",
+  "authors": [
+    "Deborah Simmons"
+  ],
+  "description": "The Gentleman Thief by Deborah Simmons released on Dec 24, 1999 is available now for purchase.",
+  "price": 2.65,
+  "originalPrice": 5.29,
+  "condition": "ACCEPTABLE",
+  "stock": 56,
+  "categoryIds": [
+    {
+      "$oid": "681f3d085e99961322aef273"
+    },
+    {
+      "$oid": "681f3d085e99961322aef27e"
+    },
+    {
+      "$oid": "681f3d085e99961322aef289"
+    },
+    {
+      "$oid": "681f3d085e99961322aef274"
+    }
+  ],
+  "images": [
+    {
+      "url": "/data/book-img/gentleman-thief-1.jpg",
+      "alt": "Image 1 of Gentleman Thief"
+    },
+    {
+      "url": "/data/book-img/gentleman-thief-2.jpg",
+      "alt": "Image 2 of Gentleman Thief"
+    },
+    {
+      "url": "/data/book-img/gentleman-thief-3.jpg",
+      "alt": "Image 3 of Gentleman Thief"
+    }
+  ],
+  "addedAt": "2025-05-10T22:59:07.579736",
+  "modifiedAt": "2025-05-10T22:59:07.579736",
+  "averageRating": 5,
+  "ratingCount": 1,
+  "totalRating": 5
+},
+{
+  "_id": {
+    "$oid": "682023424a1ae581e0445367"
+  },
+  "title": "GermLine",
+  "authors": [
+    "Nelson Erlick"
+  ],
+  "description": "Dr. Kevin Kincaid is on the verge of a major breakthrough.  He has developed a biological vector that can introduce new genes into the DNA of unborn children-and all their descendants.  He hopes to eradicate a wide variety of genetic defects, but others see more sinister uses for this new technology.Who will control mankind's genetic destiny?  The government?  The medical establishment?  Or an international conspiracy of the rich and powerful?  GermLine is a tense and topical thriller from the front lines of tomorrow's most wrenching scientific discoveries.",
+  "price": 2.65,
+  "originalPrice": 5.29,
+  "condition": "ACCEPTABLE",
+  "stock": 41,
+  "categoryIds": [
+    {
+      "$oid": "681f3d085e99961322aef273"
+    },
+    {
+      "$oid": "681f3d085e99961322aef28a"
+    },
+    {
+      "$oid": "681f3d085e99961322aef274"
+    }
+  ],
+  "images": [
+    {
+      "url": "/data/book-img/germline-1.jpg",
+      "alt": "Image 1 of GermLine"
+    },
+    {
+      "url": "/data/book-img/germline-2.jpg",
+      "alt": "Image 2 of GermLine"
+    }
+  ],
+  "addedAt": "2025-05-10T22:59:07.579736",
+  "modifiedAt": "2025-05-10T22:59:07.579736",
+  "averageRating": 4,
+  "ratingCount": 1,
+  "totalRating": 4
+},
+{
+  "_id": {
+    "$oid": "682023424a1ae581e0445368"
+  },
+  "title": "Hate List",
+  "authors": [
+    "Jennifer Brown"
+  ],
+  "description": "For readers of Marieke Nijkamp's This Is Where It Ends, a powerful and timely contemporary classic about the aftermath of a school shooting.Five months ago, Valerie Leftman's boyfriend, Nick, opened fire on their school cafeteria. Shot trying to stop him, Valerie inadvertently saved the life of a classmate, but was implicated in the shootings because of the list she helped create. A list of people and things she and Nick hated. The list he used to pick his targets.Now, after a summer of seclusion, Val is forced to confront her guilt as she returns to school to complete her senior year. Haunted by the memory of the boyfriend she still loves and navigating rocky relationships with her family, former friends, and the girl whose life she saved, Val must come to grips with the tragedy that took place and her role in it, in order to make amends and move on with her life.Jennifer Brown's critically acclaimed novel now includes the bonus novella Say Something, another arresting Hate List story.",
+  "price": 4.49,
+  "originalPrice": 4.99,
+  "condition": "LIKE NEW",
+  "stock": 87,
+  "categoryIds": [
+    {
+      "$oid": "681f3d085e99961322aef28b"
+    },
+    {
+      "$oid": "681f3d085e99961322aef28c"
+    },
+    {
+      "$oid": "681f3d085e99961322aef28d"
+    }
+  ],
+  "images": [
+    {
+      "url": "/data/book-img/hate-list-1.jpg",
+      "alt": "Image 1 of Hate List"
+    },
+    {
+      "url": "/data/book-img/hate-list-2.jpg",
+      "alt": "Image 2 of Hate List"
+    },
+    {
+      "url": "/data/book-img/hate-list-3.jpg",
+      "alt": "Image 3 of Hate List"
+    }
+  ],
+  "addedAt": "2025-05-10T22:59:07.580743",
+  "modifiedAt": "2025-05-10T22:59:07.580743",
+  "averageRating": 5,
+  "ratingCount": 1,
+  "totalRating": 5
+},
+{
+  "_id": {
+    "$oid": "682023424a1ae581e0445369"
+  },
+  "title": "Homestead",
+  "authors": [
+    "Rosina Lippi"
+  ],
+  "description": "Each life has its place, and every variation ripples the surface of the tiny alpine village called Rosenau. Be it a mysteriously misaddressed love letter or a girl's careless delivery of two helpless relatives into Nazi hands, the town's balance is ever tested, and ever tender. Here is a novel spanning eighty years -- years that bring factories and wars, store-bought cheese and city-trained teachers -- weaving the fates of the wives, mothers, and daughters in this remote corner of Austria. To quote Rosellen Brown, \"the women in this haunting book are deeply and uniquely of their place, yet they speak (often wordlessly) of women's longings and satisfactions everywhere.\"",
+  "price": 5.29,
+  "originalPrice": 5.29,
+  "condition": "NEW",
+  "stock": 16,
+  "categoryIds": [
+    {
+      "$oid": "681f3d085e99961322aef273"
+    },
+    {
+      "$oid": "681f3d085e99961322aef280"
+    }
+  ],
+  "images": [
+    {
+      "url": "/data/book-img/homestead-1.jpg",
+      "alt": "Image 1 of Homestead"
+    },
+    {
+      "url": "/data/book-img/homestead-2.jpg",
+      "alt": "Image 2 of Homestead"
+    },
+    {
+      "url": "/data/book-img/homestead-3.jpg",
+      "alt": "Image 3 of Homestead"
+    }
+  ],
+  "addedAt": "2025-05-10T22:59:07.580743",
+  "modifiedAt": "2025-05-10T22:59:07.580743",
+  "averageRating": 4,
+  "ratingCount": 1,
+  "totalRating": 4
+},
+{
+  "_id": {
+    "$oid": "682023424a1ae581e044536a"
+  },
+  "title": "Icons of the Century",
+  "authors": [
+    "Giorgio Taborelli"
+  ],
+  "description": "Profiles one noteworthy person for each year of the century, highlighting the personalities, the ideas, and the history-making acts that formed the twentieth-century world",
+  "price": 7.69,
+  "originalPrice": 7.69,
+  "condition": "NEW",
+  "stock": 52,
+  "categoryIds": [
+    {
+      "$oid": "681f3d085e99961322aef281"
+    },
+    {
+      "$oid": "681f3d085e99961322aef28e"
+    },
+    {
+      "$oid": "681f3d085e99961322aef28f"
+    }
+  ],
+  "images": [
+    {
+      "url": "/data/book-img/icons-of-the-century-1.jpg",
+      "alt": "Image 1 of Icons of the Century"
+    },
+    {
+      "url": "/data/book-img/icons-of-the-century-2.jpg",
+      "alt": "Image 2 of Icons of the Century"
+    },
+    {
+      "url": "/data/book-img/icons-of-the-century-3.jpg",
+      "alt": "Image 3 of Icons of the Century"
+    }
+  ],
+  "addedAt": "2025-05-10T22:59:07.580743",
+  "modifiedAt": "2025-05-10T22:59:07.580743",
+  "averageRating": 4,
+  "ratingCount": 1,
+  "totalRating": 4
+},
+{
+  "_id": {
+    "$oid": "682023424a1ae581e044536b"
+  },
+  "title": "Infinity Beach",
+  "authors": [
+    "Jack McDevitt"
+  ],
+  "description": "We are alone. That is the verdict, after centuries of Search for Extra-Terrestrial Intelligence missions and space exploration. The only living things in the Universe are found on the Nine Worlds settled from Earth, and the starships that knit them together. Or so it's believed, until Dr. Kimberly Brandywine sets out to find what happened to her clone-sister Emily, who, after the final, unsuccessful manned SETI expedition, disappeared along with the rest of her ship's crew.Following a few ominous clues, Kim discovers the ship's log was faked. Something happened out there in the darkness between the stars, and she's prepared to go to any length to find answers. Even if it means giving up her career...stealing a starship...losing her lover. Kim is about to discover the truth about her sister -- and about more than she ever dared imagine.",
+  "price": 14.62,
+  "originalPrice": 14.62,
+  "condition": "NEW",
+  "stock": 11,
+  "categoryIds": [
+    {
+      "$oid": "681f3d085e99961322aef273"
+    },
+    {
+      "$oid": "681f3d085e99961322aef290"
+    },
+    {
+      "$oid": "681f3d085e99961322aef274"
+    }
+  ],
+  "images": [
+    {
+      "url": "/data/book-img/infinity-beach-1.jpg",
+      "alt": "Image 1 of Infinity Beach"
+    },
+    {
+      "url": "/data/book-img/infinity-beach-2.jpg",
+      "alt": "Image 2 of Infinity Beach"
+    },
+    {
+      "url": "/data/book-img/infinity-beach-3.jpg",
+      "alt": "Image 3 of Infinity Beach"
+    }
+  ],
+  "addedAt": "2025-05-10T22:59:07.581739",
+  "modifiedAt": "2025-05-10T22:59:07.581739",
+  "averageRating": 4,
+  "ratingCount": 1,
+  "totalRating": 4
+},
+{
+  "_id": {
+    "$oid": "682023424a1ae581e044536c"
+  },
+  "title": "Japan Made Easy",
+  "authors": [
+    "Boye De Mente"
+  ],
+  "description": "This practical guide is filled with tips on handling everyday and unexpected events, along with insights about key customs in Japan.  It is a book that makes living and traveling in today's Japan a fascinating and satisfying experience by helping readers to cross the culture bridge.",
+  "price": 3.97,
+  "originalPrice": 5.29,
+  "condition": "GOOD",
+  "stock": 54,
+  "categoryIds": [
+    {
+      "$oid": "681f3d085e99961322aef291"
+    },
+    {
+      "$oid": "681f3d085e99961322aef292"
+    },
+    {
+      "$oid": "681f3d085e99961322aef293"
+    }
+  ],
+  "images": [
+    {
+      "url": "/data/book-img/japan-made-easy-1.jpg",
+      "alt": "Image 1 of Japan Made Easy"
+    },
+    {
+      "url": "/data/book-img/japan-made-easy-2.jpg",
+      "alt": "Image 2 of Japan Made Easy"
+    },
+    {
+      "url": "/data/book-img/japan-made-easy-3.jpg",
+      "alt": "Image 3 of Japan Made Easy"
+    }
+  ],
+  "addedAt": "2025-05-10T22:59:07.581739",
+  "modifiedAt": "2025-05-10T22:59:07.581739",
+  "averageRating": 5,
+  "ratingCount": 1,
+  "totalRating": 5
+},
+{
+  "_id": {
+    "$oid": "682023424a1ae581e044536d"
+  },
+  "title": "Kissing Snowflakes",
+  "authors": [
+    "Abby Sher"
+  ],
+  "description": "Just in time for the holidays comes the perfect winter break read!  This fun, sweet, wintertime book is filled with humor and romance.The picturesque montain ski lodge is the perfect place to spend winter break...if you have a boyfriend!  Otherwise, that cozy leather couch in front of the crackling fire looks a lot less inviting.  Good thing that there are lots of cute, blond, sweater-wearing ski instructors around to choose from....This fun, sweet tale of holiday romance on the slopes is the perfect wintertime read!",
+  "price": 2.65,
+  "originalPrice": 5.29,
+  "condition": "ACCEPTABLE",
+  "stock": 50,
+  "categoryIds": [
+    {
+      "$oid": "681f3d085e99961322aef28b"
+    },
+    {
+      "$oid": "681f3d085e99961322aef27e"
+    },
+    {
+      "$oid": "681f3d085e99961322aef274"
+    }
+  ],
+  "images": [
+    {
+      "url": "/data/book-img/kissing-snowflakes-1.jpg",
+      "alt": "Image 1 of Kissing Snowflakes"
+    }
+  ],
+  "addedAt": "2025-05-10T22:59:07.581739",
+  "modifiedAt": "2025-05-10T22:59:07.581739",
+  "averageRating": 3,
+  "ratingCount": 1,
+  "totalRating": 3
+},
+{
+  "_id": {
+    "$oid": "682023424a1ae581e044536e"
+  },
+  "title": "Life Among the Dead",
+  "authors": [
+    "Lisa Williams"
+  ],
+  "description": "The highly anticipated memoir from the star of the hit series Lisa Williams: Life Among the DeadWhen Lisa Williams was four years old, she told her parents about the spirits in her bedroom. Since those first sightings, Lisa has seen and communicated with thousands of people who have passed over, listening to their stories and delivering messages of comfort to the loved ones they left behind.In Life Among the Dead, Lisa invitesreaders into her extraordinary life, from her childhood in Birmingham, England, where her grandmother -- also a renowned psychic -- encouraged her to respect and nurture her talent, to her decision to move to Los Angeles, where her smash-hit Lifetime television show quickly made her one of the world's most beloved mediums. Lisa shares memories of her earliest psychic experiences and her gradual acceptance of her gift, and recalls many of the amazingly accurate communications she has shared with believersand skeptics alike. In her compassionate, down-to-earth style, she reveals exactly what it's like to live surrounded by spirits every day, and she recounts the joy she feels in bringing solace to those who have lost someone dear and the insights she has gleaned about spiritual phenomena,hauntings, psychic healing, and the afterlife. Warm, witty, and surprising, Life Among the Dead is a wonderfully intimate account of Lisa's life as a medium, healer, wife, mom, and TV star who has already won the hearts of millions,a woman with an astonishing gift for seeing beyond the ordinary and into a mysterious and fascinating realm.",
+  "price": 2.65,
+  "originalPrice": 5.29,
+  "condition": "ACCEPTABLE",
+  "stock": 31,
+  "categoryIds": [
+    {
+      "$oid": "681f3d085e99961322aef294"
+    },
+    {
+      "$oid": "681f3d085e99961322aef295"
+    },
+    {
+      "$oid": "681f3d085e99961322aef296"
+    }
+  ],
+  "images": [
+    {
+      "url": "/data/book-img/life-among-the-dead-1.jpg",
+      "alt": "Image 1 of Life Among the Dead"
+    },
+    {
+      "url": "/data/book-img/life-among-the-dead-2.jpg",
+      "alt": "Image 2 of Life Among the Dead"
+    }
+  ],
+  "addedAt": "2025-05-10T22:59:07.582738",
+  "modifiedAt": "2025-05-10T22:59:07.582738",
+  "averageRating": 3,
+  "ratingCount": 1,
+  "totalRating": 3
+},
+{
+  "_id": {
+    "$oid": "682023424a1ae581e044536f"
+  },
+  "title": "Means of Escape",
+  "authors": [
+    "Philip Caputo"
+  ],
+  "description": "Focuses on the author's experiences in some of the world's most punishing war zones, from Beirut to Saigon to Afghanistan, and portrays the horrors of modern war through the eyes of a foreign correspondent",
+  "price": 5.41,
+  "originalPrice": 5.41,
+  "condition": "NEW",
+  "stock": 94,
+  "categoryIds": [
+    {
+      "$oid": "681f3d085e99961322aef281"
+    },
+    {
+      "$oid": "681f3d085e99961322aef297"
+    }
+  ],
+  "images": [
+    {
+      "url": "/data/book-img/means-of-escape-1.jpg",
+      "alt": "Image 1 of Means of Escape"
+    },
+    {
+      "url": "/data/book-img/means-of-escape-2.jpg",
+      "alt": "Image 2 of Means of Escape"
+    }
+  ],
+  "addedAt": "2025-05-10T22:59:07.582738",
+  "modifiedAt": "2025-05-10T22:59:07.582738",
+  "averageRating": 3,
+  "ratingCount": 1,
+  "totalRating": 3
+},
+{
+  "_id": {
+    "$oid": "682023424a1ae581e0445370"
+  },
+  "title": "Mind Prey",
+  "authors": [
+    "John Sandford"
+  ],
+  "description": "In the wake of the abduction of a woman and her two young daughters, deputy chief Lucas Davenport faces the most challenging case of his career, while the victim, psychiatrist Andi Manette, applies all her skills to outwit her captor. Reissue.",
+  "price": 2.6,
+  "originalPrice": 5.19,
+  "condition": "ACCEPTABLE",
+  "stock": 52,
+  "categoryIds": [
+    {
+      "$oid": "681f3d085e99961322aef273"
+    },
+    {
+      "$oid": "681f3d085e99961322aef28a"
+    },
+    {
+      "$oid": "681f3d085e99961322aef27f"
+    }
+  ],
+  "images": [
+    {
+      "url": "/data/book-img/mind-prey-1.jpg",
+      "alt": "Image 1 of Mind Prey"
+    },
+    {
+      "url": "/data/book-img/mind-prey-2.jpg",
+      "alt": "Image 2 of Mind Prey"
+    },
+    {
+      "url": "/data/book-img/mind-prey-3.jpg",
+      "alt": "Image 3 of Mind Prey"
+    }
+  ],
+  "addedAt": "2025-05-10T22:59:07.583734",
+  "modifiedAt": "2025-05-10T22:59:07.583734",
+  "averageRating": 4,
+  "ratingCount": 1,
+  "totalRating": 4
+},
+{
+  "_id": {
+    "$oid": "682023424a1ae581e0445371"
+  },
+  "title": "Payback",
+  "authors": [
+    "Thomas Kelly"
+  ],
+  "description": "New York City in the boomtown 1980s: land values skyrocketing, new buildings going up on every block, fortunes being made overnight - and extorted in the morning. On the streets of Hell's Kitchen, the construction rackets are in the hands of the Irish mob. It's always been their turf; now it's their time. And the stakes are higher than ever before - which explains the sudden interest in the Irish on the part of both the Mafia and the feds (led by a female agent trapped by the necessity to prove what she is clearly capable of), and the growing struggle for position and profit within the mob itself, an internecine war that finally ignites in the back rooms and broad daylight of the neighborhood.At the heart of the story are the Adare brothers: Paddy, a failed boxer turned mob henchman who's never left the streets he grew up on and who, at thirty-two, is beginning to pay the price for years of living large; and Billy, a college graduate, back home for the summer to work in the tunnels as a sandhog before he enters law school and gets himself out of the old neighborhood and in on the American dream - brothers divided by everything but their powerful blood-tie. Now, as their paths converge on familiar streets in a cross fire of greed, treachery, and violence, their loyalties - to family, friends, neighborhood, and, most important, each other - will be put to a brutal and profoundly telling test.",
+  "price": 4.81,
+  "originalPrice": 5.35,
+  "condition": "LIKE NEW",
+  "stock": 22,
+  "categoryIds": [
+    {
+      "$oid": "681f3d085e99961322aef273"
+    },
+    {
+      "$oid": "681f3d085e99961322aef274"
+    }
+  ],
+  "images": [
+    {
+      "url": "/data/book-img/payback-1.jpg",
+      "alt": "Image 1 of Payback"
+    },
+    {
+      "url": "/data/book-img/payback-2.jpg",
+      "alt": "Image 2 of Payback"
+    },
+    {
+      "url": "/data/book-img/payback-3.jpg",
+      "alt": "Image 3 of Payback"
+    }
+  ],
+  "addedAt": "2025-05-10T22:59:07.583734",
+  "modifiedAt": "2025-05-10T22:59:07.583734",
+  "averageRating": 3,
+  "ratingCount": 1,
+  "totalRating": 3
+},
+{
+  "_id": {
+    "$oid": "682023424a1ae581e0445372"
+  },
+  "title": "Picturing Will",
+  "authors": [
+    "Ann Beattie"
+  ],
+  "description": "A five-year-old, his photographer mother, and his prepetually unlucky, philandering father populate this novel about the trials and rewards of both being and raising a child",
+  "price": 2.65,
+  "originalPrice": 5.29,
+  "condition": "ACCEPTABLE",
+  "stock": 37,
+  "categoryIds": [
+    {
+      "$oid": "681f3d085e99961322aef273"
+    },
+    {
+      "$oid": "681f3d085e99961322aef274"
+    }
+  ],
+  "images": [
+    {
+      "url": "/data/book-img/picturing-will-1.jpg",
+      "alt": "Image 1 of Picturing Will"
+    },
+    {
+      "url": "/data/book-img/picturing-will-2.jpg",
+      "alt": "Image 2 of Picturing Will"
+    },
+    {
+      "url": "/data/book-img/picturing-will-3.jpg",
+      "alt": "Image 3 of Picturing Will"
+    }
+  ],
+  "addedAt": "2025-05-10T22:59:07.583734",
+  "modifiedAt": "2025-05-10T22:59:07.583734",
+  "averageRating": 3,
+  "ratingCount": 1,
+  "totalRating": 3
+},
+{
+  "_id": {
+    "$oid": "682023424a1ae581e0445373"
+  },
+  "title": "Raising Strong Daughters",
+  "authors": [
+    "Jeanette Gadeberg"
+  ],
+  "description": "A delightful, upbeat compendium of tips for parents.",
+  "price": 4.76,
+  "originalPrice": 5.29,
+  "condition": "LIKE NEW",
+  "stock": 40,
+  "categoryIds": [
+    {
+      "$oid": "681f3d085e99961322aef286"
+    },
+    {
+      "$oid": "681f3d085e99961322aef298"
+    },
+    {
+      "$oid": "681f3d085e99961322aef274"
+    }
+  ],
+  "images": [
+    {
+      "url": "/data/book-img/raising-strong-daughters-1.jpg",
+      "alt": "Image 1 of Raising Strong Daughters"
+    },
+    {
+      "url": "/data/book-img/raising-strong-daughters-2.jpg",
+      "alt": "Image 2 of Raising Strong Daughters"
+    },
+    {
+      "url": "/data/book-img/raising-strong-daughters-3.jpg",
+      "alt": "Image 3 of Raising Strong Daughters"
+    }
+  ],
+  "addedAt": "2025-05-10T22:59:07.584716",
+  "modifiedAt": "2025-05-10T22:59:07.584716",
+  "averageRating": 5,
+  "ratingCount": 1,
+  "totalRating": 5
+},
+{
+  "_id": {
+    "$oid": "682023424a1ae581e0445374"
+  },
+  "title": "Scarlet And Gold",
+  "authors": [
+    "Ellen Tanner Marsh"
+  ],
+  "description": "Captain Lochiel Blackmoor will do anything to possess the beautiful untamed, and headstrong Athena Cortland, in a story of passion and peril set in colonial New York during the French and Indian War",
+  "price": 4.49,
+  "originalPrice": 4.99,
+  "condition": "LIKE NEW",
+  "stock": 34,
+  "categoryIds": [
+    {
+      "$oid": "681f3d085e99961322aef273"
+    },
+    {
+      "$oid": "681f3d085e99961322aef27e"
+    },
+    {
+      "$oid": "681f3d085e99961322aef289"
+    }
+  ],
+  "images": [
+    {
+      "url": "/data/book-img/scarlet-and-gold-1.jpg",
+      "alt": "Image 1 of Scarlet And Gold"
+    },
+    {
+      "url": "/data/book-img/scarlet-and-gold-2.jpg",
+      "alt": "Image 2 of Scarlet And Gold"
+    },
+    {
+      "url": "/data/book-img/scarlet-and-gold-3.jpg",
+      "alt": "Image 3 of Scarlet And Gold"
+    }
+  ],
+  "addedAt": "2025-05-10T22:59:07.584716",
+  "modifiedAt": "2025-05-10T22:59:07.584716",
+  "averageRating": 4,
+  "ratingCount": 1,
+  "totalRating": 4
+},
+{
+  "_id": {
+    "$oid": "682023424a1ae581e0445375"
+  },
+  "title": "Someday My Prince",
+  "authors": [
+    "Christina Dodd"
+  ],
+  "description": "The Princess Must MarryPrincess Laurentia leads a fairy-tale life, attending glittering balls and wearing beautiful gowns. But after the ball is over, Laurentia finds herself getting into bed...alone. She dutifully agrees to choose a husband, but when she casts her eyes over her sea of suitors, she doesn't see a single man worthy enough to claim her.But Who Will She Choose?Then suddenly, she is swept off her feet by Prince Dominick, soldier of fortune, black sheep of his family...and the man hired to protect her. He's brazen enough to steal her kisses, yet tender enough to soothe her with one touch. He makes no promises, speaks no vows of forever...yet Laurentia can't help but hope that her prince has finally arrived.",
+  "price": 5.29,
+  "originalPrice": 5.29,
+  "condition": "NEW",
+  "stock": 25,
+  "categoryIds": [
+    {
+      "$oid": "681f3d085e99961322aef273"
+    },
+    {
+      "$oid": "681f3d085e99961322aef27e"
+    },
+    {
+      "$oid": "681f3d085e99961322aef289"
+    },
+    {
+      "$oid": "681f3d085e99961322aef274"
+    }
+  ],
+  "images": [
+    {
+      "url": "/data/book-img/someday-my-prince-1.jpg",
+      "alt": "Image 1 of Someday My Prince"
+    },
+    {
+      "url": "/data/book-img/someday-my-prince-2.jpg",
+      "alt": "Image 2 of Someday My Prince"
+    }
+  ],
+  "addedAt": "2025-05-10T22:59:07.584716",
+  "modifiedAt": "2025-05-10T22:59:07.584716",
+  "averageRating": 4,
+  "ratingCount": 1,
+  "totalRating": 4
+},
+{
+  "_id": {
+    "$oid": "682023424a1ae581e0445376"
+  },
+  "title": "Story of My Life",
+  "authors": [
+    "Jay McInerney"
+  ],
+  "description": "Alison Poole, an aspiring actress whose numerous fixations include drugs, parasitic familiarity with fame, and lust, careens through life in monied Manhattan, a society consuming itself in reckless affluence",
+  "price": 4.49,
+  "originalPrice": 4.99,
+  "condition": "LIKE NEW",
+  "stock": 53,
+  "categoryIds": [
+    {
+      "$oid": "681f3d085e99961322aef273"
+    },
+    {
+      "$oid": "681f3d085e99961322aef274"
+    }
+  ],
+  "images": [
+    {
+      "url": "/data/book-img/story-of-my-life-1.jpg",
+      "alt": "Image 1 of Story of My Life"
+    },
+    {
+      "url": "/data/book-img/story-of-my-life-2.jpg",
+      "alt": "Image 2 of Story of My Life"
+    }
+  ],
+  "addedAt": "2025-05-10T22:59:07.585716",
+  "modifiedAt": "2025-05-10T22:59:07.585716",
+  "averageRating": 3,
+  "ratingCount": 1,
+  "totalRating": 3
+},
+{
+  "_id": {
+    "$oid": "682023424a1ae581e0445377"
+  },
+  "title": "Testament",
+  "authors": [
+    "David Morrell"
+  ],
+  "description": "Master of the high-action thriller, David Morrell is a five-time New York Times bestselling paperback author (First Blood, The Covenant of the Flame). Back in print after eight years, Testament--a chilling novel of a race for survival against a fanatical white supremacy group--is newly repackaged to kick off Warner's much-in-demand Morrell backlist program.",
+  "price": 2.5,
+  "originalPrice": 4.99,
+  "condition": "ACCEPTABLE",
+  "stock": 66,
+  "categoryIds": [
+    {
+      "$oid": "681f3d085e99961322aef273"
+    },
+    {
+      "$oid": "681f3d085e99961322aef274"
+    }
+  ],
+  "images": [
+    {
+      "url": "/data/book-img/testament-1.jpg",
+      "alt": "Image 1 of Testament"
+    },
+    {
+      "url": "/data/book-img/testament-2.jpg",
+      "alt": "Image 2 of Testament"
+    }
+  ],
+  "addedAt": "2025-05-10T22:59:07.585716",
+  "modifiedAt": "2025-05-10T22:59:07.585716",
+  "averageRating": 4,
+  "ratingCount": 1,
+  "totalRating": 4
+},
+{
+  "_id": {
+    "$oid": "682023424a1ae581e0445378"
+  },
+  "title": "The Black Knave",
+  "authors": [
+    "Patricia Potter"
+  ],
+  "description": "A political pawn trapped in a marriage of convenience, Bethia MacDonell plots to escape her dissolute husband, Rory Forbes, Marquis of Braemoor, with the help of legendary Jacobite rebel the Black Knave, not realizing that her hero may be nearer than she thinks. Original.",
+  "price": 4.76,
+  "originalPrice": 5.29,
+  "condition": "LIKE NEW",
+  "stock": 1,
+  "categoryIds": [
+    {
+      "$oid": "681f3d085e99961322aef273"
+    },
+    {
+      "$oid": "681f3d085e99961322aef27e"
+    },
+    {
+      "$oid": "681f3d085e99961322aef289"
+    }
+  ],
+  "images": [
+    {
+      "url": "/data/book-img/the-black-knave-1.jpg",
+      "alt": "Image 1 of The Black Knave"
+    },
+    {
+      "url": "/data/book-img/the-black-knave-2.jpg",
+      "alt": "Image 2 of The Black Knave"
+    },
+    {
+      "url": "/data/book-img/the-black-knave-3.jpg",
+      "alt": "Image 3 of The Black Knave"
+    }
+  ],
+  "addedAt": "2025-05-10T22:59:07.585716",
+  "modifiedAt": "2025-05-10T22:59:07.585716",
+  "averageRating": 3,
+  "ratingCount": 1,
+  "totalRating": 3
+},
+{
+  "_id": {
+    "$oid": "682023424a1ae581e0445379"
+  },
+  "title": "The Breaker",
+  "authors": [
+    "Minette Walters"
+  ],
+  "description": "Twelve hours after a woman's body is washed up on a deserted shore on the south coast of England, her traumatized three-year-old daughter is discovered twenty miles away, alone and apparently abandoned....The obvious suspect is a young actor, a handsome loner obsessed with pornography, who lies about his relationship with the murdered woman. But as the investigation progresses, police attention shifts to the woman'shusband. Was he in fact on a business trip to Liverpool the night she died? Was she indeed the \"respectable woman\" he claims her to have been? Did he love her or hate her?And more disturbing, why does his little daughter scream in horror every time he tries to pick her up?",
+  "price": 3.74,
+  "originalPrice": 4.99,
+  "condition": "GOOD",
+  "stock": 69,
+  "categoryIds": [
+    {
+      "$oid": "681f3d085e99961322aef273"
+    },
+    {
+      "$oid": "681f3d085e99961322aef280"
+    }
+  ],
+  "images": [
+    {
+      "url": "/data/book-img/the-breaker-1.jpg",
+      "alt": "Image 1 of The Breaker"
+    },
+    {
+      "url": "/data/book-img/the-breaker-2.jpg",
+      "alt": "Image 2 of The Breaker"
+    }
+  ],
+  "addedAt": "2025-05-10T22:59:07.586716",
+  "modifiedAt": "2025-05-10T22:59:07.586716",
+  "averageRating": 5,
+  "ratingCount": 1,
+  "totalRating": 5
+},
+{
+  "_id": {
+    "$oid": "682023424a1ae581e044537a"
+  },
+  "title": "The Center of Everything",
+  "authors": [
+    "Laura Moriarty"
+  ],
+  "description": "\"A warm, beguiling book full of hard-won wisdom.\"--Janet Maslin, The New York Times \"The Center of Everything is as realistic and familiar as a summer day in Kansas--brave and gritty, strong voiced and spare.\"--O, The Oprah Magazine Set in Kerrville, Kansas, The Center of Everything is told by Evelyn Bucknow, an endearing character with a wholly refreshing way of looking at the world. Living with her single mother in a small apartment, Evelyn Bucknow is a young girl wincing her way through adolescence. With a voice that is as charming as it is recognizable, Evelyn immerses the reader in the dramas of an entire community. The people of Kerrville, stuck at once in the middle of nowhere but also at the center of everything, are the source from which Moriarty draws on universal dilemmas of love and belief to render a story that grows in emotional intensity until it lifts the reader to heights achieved only by the finest of fiction.",
+  "price": 3.74,
+  "originalPrice": 4.99,
+  "condition": "GOOD",
+  "stock": 18,
+  "categoryIds": [
+    {
+      "$oid": "681f3d085e99961322aef273"
+    },
+    {
+      "$oid": "681f3d085e99961322aef299"
+    }
+  ],
+  "images": [
+    {
+      "url": "/data/book-img/the-center-of-everything-1.jpg",
+      "alt": "Image 1 of The Center of Everything"
+    },
+    {
+      "url": "/data/book-img/the-center-of-everything-2.jpg",
+      "alt": "Image 2 of The Center of Everything"
+    },
+    {
+      "url": "/data/book-img/the-center-of-everything-3.jpg",
+      "alt": "Image 3 of The Center of Everything"
+    }
+  ],
+  "addedAt": "2025-05-10T22:59:07.586716",
+  "modifiedAt": "2025-05-10T22:59:07.586716",
+  "averageRating": 5,
+  "ratingCount": 1,
+  "totalRating": 5
+},
+{
+  "_id": {
+    "$oid": "682023424a1ae581e044537b"
+  },
+  "title": "The Covenant",
+  "authors": [
+    "Naomi Ragen"
+  ],
+  "description": "This is the story behind the headlines we read every day, the heart-wrenching reality of modern life, where terrorists reign and average citizens find themselves at the intersection of politics and history.Living in Jerusalem, Elise Margulies always fears for the lives of her husband, cancer specialist Dr. Jonathan Margulies, and their daughter, Ilana. Then comes the day when Jon and Ilana fail to return home from her ballet recital. His bullet-ridden car is found empty on the side of the road hours later. Elise, in the last stages of a difficult pregnancy, desperately calls her grandmother Leah in America for help and unknowingly revives a decades-old oath that transcends both time and place. Over the course of five terror- and hope-filled days, ordinary people join the front lines against terrorism, and the ties that bind two generations forge a potent alliance against contemporary evil.",
+  "price": 2.65,
+  "originalPrice": 5.29,
+  "condition": "ACCEPTABLE",
+  "stock": 55,
+  "categoryIds": [
+    {
+      "$oid": "681f3d085e99961322aef273"
+    },
+    {
+      "$oid": "681f3d085e99961322aef29a"
+    }
+  ],
+  "images": [
+    {
+      "url": "/data/book-img/the-covenant-1.jpg",
+      "alt": "Image 1 of The Covenant"
+    },
+    {
+      "url": "/data/book-img/the-covenant-2.jpg",
+      "alt": "Image 2 of The Covenant"
+    }
+  ],
+  "addedAt": "2025-05-10T22:59:07.587735",
+  "modifiedAt": "2025-05-10T22:59:07.587735",
+  "averageRating": 5,
+  "ratingCount": 1,
+  "totalRating": 5
+},
+{
+  "_id": {
+    "$oid": "682023424a1ae581e044537c"
+  },
+  "title": "The Devil in Vienna",
+  "authors": [
+    "Doris Orgel"
+  ],
+  "description": "Two young girls in the Vienna of 1938 enjoy a devoted friendship which is threatened when Inge's situation as a Jew becomes uncertain and Lieselotte's father becomes a fervent Nazi",
+  "price": 5.29,
+  "originalPrice": 5.29,
+  "condition": "NEW",
+  "stock": 26,
+  "categoryIds": [
+    {
+      "$oid": "681f3d085e99961322aef28b"
+    },
+    {
+      "$oid": "681f3d085e99961322aef274"
+    }
+  ],
+  "images": [
+    {
+      "url": "/data/book-img/the-devil-in-vienna-1.jpg",
+      "alt": "Image 1 of The Devil in Vienna"
+    },
+    {
+      "url": "/data/book-img/the-devil-in-vienna-2.jpg",
+      "alt": "Image 2 of The Devil in Vienna"
+    },
+    {
+      "url": "/data/book-img/the-devil-in-vienna-3.jpg",
+      "alt": "Image 3 of The Devil in Vienna"
+    }
+  ],
+  "addedAt": "2025-05-10T22:59:07.588745",
+  "modifiedAt": "2025-05-10T22:59:07.588745",
+  "averageRating": 5,
+  "ratingCount": 1,
+  "totalRating": 5
+},
+{
+  "_id": {
+    "$oid": "682023424a1ae581e044537d"
+  },
+  "title": "The Diabetic Gourmet",
+  "authors": [
+    "Angela Bowen"
+  ],
+  "description": "Recipes adaptable to even rigorous diabetic programs feature appetizers, salads, dressings, soups, sauces, meats, fish, fowl, vegetables, breads, and desserts and indicate the amount of carbohydrates, protein, fat, and calories per serving",
+  "price": 5.29,
+  "originalPrice": 5.29,
+  "condition": "NEW",
+  "stock": 65,
+  "categoryIds": [
+    {
+      "$oid": "681f3d085e99961322aef29b"
+    },
+    {
+      "$oid": "681f3d085e99961322aef274"
+    }
+  ],
+  "images": [
+    {
+      "url": "/data/book-img/the-diabetic-gourmet-1.jpg",
+      "alt": "Image 1 of The Diabetic Gourmet"
+    },
+    {
+      "url": "/data/book-img/the-diabetic-gourmet-2.jpg",
+      "alt": "Image 2 of The Diabetic Gourmet"
+    },
+    {
+      "url": "/data/book-img/the-diabetic-gourmet-3.jpg",
+      "alt": "Image 3 of The Diabetic Gourmet"
+    }
+  ],
+  "addedAt": "2025-05-10T22:59:07.589736",
+  "modifiedAt": "2025-05-10T22:59:07.589736",
+  "averageRating": 5,
+  "ratingCount": 1,
+  "totalRating": 5
+},
+{
+  "_id": {
+    "$oid": "682023424a1ae581e044537e"
+  },
+  "title": "The Mind",
+  "authors": [
+    "Anthony Smith"
+  ],
+  "description": "A comprehensive exposition of the workings of the brain incorporates extensive, up-to-date research on the brain's anatomy, growth, physiology, and functions and discusses consciousness, the senses, and the effects of damage and aging",
+  "price": 2.65,
+  "originalPrice": 5.29,
+  "condition": "ACCEPTABLE",
+  "stock": 23,
+  "categoryIds": [
+    {
+      "$oid": "681f3d085e99961322aef29c"
+    },
+    {
+      "$oid": "681f3d085e99961322aef274"
+    }
+  ],
+  "images": [
+    {
+      "url": "/data/book-img/the-mind-1.jpg",
+      "alt": "Image 1 of The Mind"
+    },
+    {
+      "url": "/data/book-img/the-mind-2.jpg",
+      "alt": "Image 2 of The Mind"
+    }
+  ],
+  "addedAt": "2025-05-10T22:59:07.589736",
+  "modifiedAt": "2025-05-10T22:59:07.589736",
+  "averageRating": 3,
+  "ratingCount": 1,
+  "totalRating": 3
+},
+{
+  "_id": {
+    "$oid": "682023424a1ae581e044537f"
+  },
+  "title": "The Night Before the Wedding",
+  "authors": [
+    "Debra Mullins"
+  ],
+  "description": "To win the woman destined to be his bride . . .Catherine Depford is the wealthiest heiress in London, and she is all but promised to a proper English lord . . . so why is she having dreams of a Scottish warrior claiming her for his own? She can't imagine that her heated fantasies would come true . . . until she locks eyes with the stranger of her dreams in a crowded ballroom.A Scotsman will do anythingHighland chief Gabriel MacBraedon has come to London in search of Catherine, the woman an ancient curse dictates to be his bride. But he can't very well sweep the English beauty into his arms and carry her off to Scotland in the dead of night. Or can he? Nothing is impossible when a Scotsman's passion is making the rules . . .",
+  "price": 3.74,
+  "originalPrice": 4.99,
+  "condition": "GOOD",
+  "stock": 97,
+  "categoryIds": [
+    {
+      "$oid": "681f3d085e99961322aef273"
+    },
+    {
+      "$oid": "681f3d085e99961322aef27e"
+    },
+    {
+      "$oid": "681f3d085e99961322aef289"
+    },
+    {
+      "$oid": "681f3d085e99961322aef274"
+    }
+  ],
+  "images": [
+    {
+      "url": "/data/book-img/the-night-before-the-wedding-1.jpg",
+      "alt": "Image 1 of The Night Before the Wedding"
+    }
+  ],
+  "addedAt": "2025-05-10T22:59:07.589736",
+  "modifiedAt": "2025-05-10T22:59:07.589736",
+  "averageRating": 4,
+  "ratingCount": 1,
+  "totalRating": 4
+},
+{
+  "_id": {
+    "$oid": "682023424a1ae581e0445380"
+  },
+  "title": "The Thomas Berryman Number",
+  "authors": [
+    "James Patterson"
+  ],
+  "description": "You are about to begin one of the classic American novels of suspense by one of the world's bestselling authors. It begins with three terrifying murders in the South. It ends with a relentless and unforgettable manhunt in the North. In between is the riveting story of a chilling assassin, the woman he loves, and the beloved leader he is hired to kill with extreme prejudice.",
+  "price": 4.89,
+  "originalPrice": 4.89,
+  "condition": "NEW",
+  "stock": 83,
+  "categoryIds": [
+    {
+      "$oid": "681f3d085e99961322aef273"
+    },
+    {
+      "$oid": "681f3d085e99961322aef274"
+    }
+  ],
+  "images": [
+    {
+      "url": "/data/book-img/the-thomas-berryman-number-1.jpg",
+      "alt": "Image 1 of The Thomas Berryman Number"
+    },
+    {
+      "url": "/data/book-img/the-thomas-berryman-number-2.jpg",
+      "alt": "Image 2 of The Thomas Berryman Number"
+    },
+    {
+      "url": "/data/book-img/the-thomas-berryman-number-3.jpg",
+      "alt": "Image 3 of The Thomas Berryman Number"
+    }
+  ],
+  "addedAt": "2025-05-10T22:59:07.590716",
+  "modifiedAt": "2025-05-10T22:59:07.590716",
+  "averageRating": 5,
+  "ratingCount": 1,
+  "totalRating": 5
+},
+{
+  "_id": {
+    "$oid": "682023424a1ae581e0445381"
+  },
+  "title": "The Thousand",
+  "authors": [
+    "Kevin Guilfoile"
+  ],
+  "description": "\"Kevin Guilfoile's riveting new novel defies pigeonholing. Part thriller, part dystopian science fiction, The thousand takes the reader on a spine-tingling ride from Las Vegas to Chicago, from ancient Greece to modern America. With a painstakingly constructed conspiracy based on followers of Pythagoras, The Thousand is the story, above all, of a young woman's efforts to tell truth from lies as a network of powerful people tries to use her for its own gain. If you're like me, you'll stay up all night until all the pieces fall into place.\"---Sara Paretsky, author of Hardball\"Part thught-provoking mystery, part flat-out thriller, The Tousand is superb. Kevin Guilfoile's second novel is every bit as inventive---Umberto Eco meets Stan Lee---and well crafted as his first, which is saying something. Guilfoile patiently develops an array of unique characters and adroitly weaves them into a provocative, relentless labyrinth of a story. It's a rare treat---a book to savor, contemplate, and admire.\" ---Stephen White, author of The Stege\"Kevin Guilfoile is a writer of stunning talent.\"---James Rollins, author of The Doomsday KeyKevin Guilfoile is a terrific new novelist with guts, brains, wit, and imagination... Guilfoile is a bright new star in the crime fiction universe, but so much more than that.\"---C.J. Box, Edgar Award winner and author of Bellow ZeroKevin Guilfoile's rivering follow-up to Cast of Shadows (\"spellbinding\"---Chicago Tribune; \"a masterpiece of intelligent plotting\"---Slon) centers on an extraordinary young wonman's race to find her Father's killer and to free herself from the cross fire of a centuries-old civil war in which she has unknowingly become ensnared.In 530 B.C., a mysterious ship appeared off the rainy shores of Croton, in what is now Italy. After thre days the skies finally cleared and a man disembarded to address the curious and frightened crowd that had gathered along the wet sands. He called himself Pythagoras. Exactly what he said that day is unknown, but a thousand men and women abandoned their lives and families to follow him. they became a community. A school. A cult dedicated to the search for a mathematical theory of everything. Although Pythagoras would die years later, following a bloody purge, his disciples would influence Western philosophy, science, and mathematics for all time.Chicago, the present day. Canada Gold, a girl both gifted and burdened by uncanny mental abilities, is putting her skills to questionable use in the casinos and courthouses of Las Vegas when she finds herself drawn back to the city in which her father, the renowned coposer Solomon Gold, was killed while composing his magnum opus. Beautiful, brilliant, troubled, Canada has never heard of the Thousand, a clandestine group of powerful individuals safeguarding and exploiting the secret teachings of Pythagoras. But as she struggles to understand her father's unsolved murder, she finds herself caught in the violence erupting between members of the fractured ancient cult while she is relentlessly pursued by those who want to use her those who want to kill her, and the one person who wants to save her.BR>In an irresistibly ambitious novel that fuses historical fact with contemporary suspense, Kevin Guilfoile delivers an erudite, propulsively entertaining thriller that seamlessly traverses the realms of math, science, music, and philosophy. the Thousand is ringing confirmation of Guilfoile's enormous talent.",
+  "price": 2.5,
+  "originalPrice": 4.99,
+  "condition": "ACCEPTABLE",
+  "stock": 74,
+  "categoryIds": [
+    {
+      "$oid": "681f3d085e99961322aef273"
+    },
+    {
+      "$oid": "681f3d085e99961322aef29d"
+    },
+    {
+      "$oid": "681f3d085e99961322aef289"
+    }
+  ],
+  "images": [
+    {
+      "url": "/data/book-img/the-thousand-1.jpg",
+      "alt": "Image 1 of The Thousand"
+    }
+  ],
+  "addedAt": "2025-05-10T22:59:07.590716",
+  "modifiedAt": "2025-05-10T22:59:07.590716",
+  "averageRating": 5,
+  "ratingCount": 1,
+  "totalRating": 5
+},
+{
+  "_id": {
+    "$oid": "682023424a1ae581e0445382"
+  },
+  "title": "The Volcano Disaster",
+  "authors": [
+    "Peg Kehret"
+  ],
+  "description": "Working on a class project on Mount Saint Helens, Warren and Betsy are accidentally sent through time to the day of the volcano's eruption and must outrace a billowing cloud of volcanic ash. Reprint.",
+  "price": 2.65,
+  "originalPrice": 5.29,
+  "condition": "ACCEPTABLE",
+  "stock": 83,
+  "categoryIds": [
+    {
+      "$oid": "681f3d085e99961322aef27a"
+    },
+    {
+      "$oid": "681f3d085e99961322aef29e"
+    },
+    {
+      "$oid": "681f3d085e99961322aef274"
+    }
+  ],
+  "images": [
+    {
+      "url": "/data/book-img/the-volcano-disaster-1.jpg",
+      "alt": "Image 1 of The Volcano Disaster"
+    },
+    {
+      "url": "/data/book-img/the-volcano-disaster-2.jpg",
+      "alt": "Image 2 of The Volcano Disaster"
+    },
+    {
+      "url": "/data/book-img/the-volcano-disaster-3.jpg",
+      "alt": "Image 3 of The Volcano Disaster"
+    }
+  ],
+  "addedAt": "2025-05-10T22:59:07.591735",
+  "modifiedAt": "2025-05-10T22:59:07.591735",
+  "averageRating": 5,
+  "ratingCount": 1,
+  "totalRating": 5
+},
+{
+  "_id": {
+    "$oid": "682023424a1ae581e0445383"
+  },
+  "title": "Tumble Bumble",
+  "authors": [
+    "Felicia Bond"
+  ],
+  "description": "Written and illustrated by Felicia Bond, the illustrator of the bestselling If You Give... series, Tumble Bumble is a fun-filled tale of a tiny bug who goes for a walk and meets all kinds of creatures!When a tiny bug decides to go for a walk, anything can happen! He might meet a cat, a crocodile, a pig, or even a bee to dance and play with, and that means more friends for everyone.This board book with sturdy pages is perfect for preschoolers.",
+  "price": 2.65,
+  "originalPrice": 5.29,
+  "condition": "ACCEPTABLE",
+  "stock": 71,
+  "categoryIds": [
+    {
+      "$oid": "681f3d085e99961322aef27a"
+    },
+    {
+      "$oid": "681f3d085e99961322aef28c"
+    },
+    {
+      "$oid": "681f3d085e99961322aef29f"
+    }
+  ],
+  "images": [
+    {
+      "url": "/data/book-img/tumble-bumble-1.jpg",
+      "alt": "Image 1 of Tumble Bumble"
+    },
+    {
+      "url": "/data/book-img/tumble-bumble-2.jpg",
+      "alt": "Image 2 of Tumble Bumble"
+    },
+    {
+      "url": "/data/book-img/tumble-bumble-3.jpg",
+      "alt": "Image 3 of Tumble Bumble"
+    }
+  ],
+  "addedAt": "2025-05-10T22:59:07.591735",
+  "modifiedAt": "2025-05-10T22:59:07.591735",
+  "averageRating": 3,
+  "ratingCount": 1,
+  "totalRating": 3
+},
+{
+  "_id": {
+    "$oid": "682023424a1ae581e0445384"
+  },
+  "title": "Van Gogh in Arles",
+  "authors": [
+    "Ronald Pickvance"
+  ],
+  "description": "A collection of paintings and drawings produced by Vincent van Gogh while living in the South of France is accompanied by discussions of this period of his life and work",
+  "price": 9.89,
+  "originalPrice": 10.99,
+  "condition": "LIKE NEW",
+  "stock": 18,
+  "categoryIds": [
+    {
+      "$oid": "681f3d085e99961322aef2a0"
+    },
+    {
+      "$oid": "681f3d085e99961322aef274"
+    }
+  ],
+  "images": [
+    {
+      "url": "/data/book-img/van-gogh-in-arles-1.jpg",
+      "alt": "Image 1 of Van Gogh in Arles"
+    },
+    {
+      "url": "/data/book-img/van-gogh-in-arles-2.jpg",
+      "alt": "Image 2 of Van Gogh in Arles"
+    },
+    {
+      "url": "/data/book-img/van-gogh-in-arles-3.jpg",
+      "alt": "Image 3 of Van Gogh in Arles"
+    }
+  ],
+  "addedAt": "2025-05-10T22:59:07.592734",
+  "modifiedAt": "2025-05-10T22:59:07.592734",
+  "averageRating": 5,
+  "ratingCount": 1,
+  "totalRating": 5
+},
+{
+  "_id": {
+    "$oid": "682023424a1ae581e0445385"
+  },
+  "title": "Viewing Violence",
+  "authors": [
+    "Madeline Levine"
+  ],
+  "description": "Psychologist and mother Madeline Levine looks at the history of television and movie violence in the United States. She translates into everyday language the results of over four decades of research on the effects of media violence - research that up until now has been inaccessible to most parents. Using a \"developmental approach,\" Dr. Levine helps parents understand that children at different ages think about, understand, and experience the world in very different ways. An appreciation of these differences in how children \"see\" things is critical if parents are to make wise choices about what is appropriate and what is potentially harmful to their children. Using research findings, common sense, and personal experience, Dr. Levine demonstrates that violence is not generic - and neither are children: the movie that may be instructive and appropriate for an eleven-year-old may be traumatic and overwhelming for a seven-year-old. Parents frequently underestimate the impact of violent television on their children and may be surprised at what children find upsetting.Dr. Levine argues that the issue of media violence is not trivial, that our society is increasingly at risk not only for higher levels of violence but for a greater tolerance and acceptance of this violence. In spite of efforts from both sides of the political spectrum to claim media violence as a political issue, Dr. Levine insists this is a parenting and citizenship issue. She looks at how parents, government, schools, and the media itself can best approach the problem. The book concludes with a list of resources to help parents become active in media reform.",
+  "price": 4.99,
+  "originalPrice": 4.99,
+  "condition": "NEW",
+  "stock": 86,
+  "categoryIds": [
+    {
+      "$oid": "681f3d085e99961322aef287"
+    },
+    {
+      "$oid": "681f3d085e99961322aef274"
+    }
+  ],
+  "images": [
+    {
+      "url": "/data/book-img/viewing-violence-1.jpg",
+      "alt": "Image 1 of Viewing Violence"
+    }
+  ],
+  "addedAt": "2025-05-10T22:59:07.592734",
+  "modifiedAt": "2025-05-10T22:59:07.592734",
+  "averageRating": 4,
+  "ratingCount": 1,
+  "totalRating": 4
+},
+{
+  "_id": {
+    "$oid": "682023424a1ae581e0445386"
+  },
+  "title": "Warning Signs",
+  "authors": [
+    "Stephen White"
+  ],
+  "description": "The grisly slaying shatters the quiet of a residential neighborhood in the foothills of the Rockies. The battered body of Boulder County District Attorney Royal Peterson lies amid shards of broken pottery while his wife sleeps upstairs. Within hours, a homicide detective is the prime suspect in the brutal death that will send shock waves through the city - and reverberate in the professional and personal life of Alan Gregory.Alan knew Roy Peterson. Lauren, his wife, a prosecutor in the DA's office, worked under Peterson for years. And while Lauren contemplates taking on the defense of the accused cop, Alan meets with a new patient. Almost from the moment Naomi Bigg starts talking, warning bells go off in Alan's mind. A terrified mother with an explosive secret, Naomi tests the limits of doctor-patient confidentiality when her privileged exchanges convince Alan that a crime is about to be committed. But when he uncovers a shocking link to the Peterson slaying, Alan finds himself riding the slippery slope between professional judgment and personal responsibility as he struggles to protect his patient while probing the mind of a deeply troubled teenager.As violence erupts throughout the city - and a pattern of vengeance becomes chillingly clear - Alan is plunged into a desperate manhunt for a killer whose trail of rage winds all the way up to the Colorado Supreme Court. As the minutes tick down in a brilliantly conceived vendetta that targets the guilty and the innocent alike, Warning Signs races to a climax in which the lives of hundreds hang in the balance.",
+  "price": 4.49,
+  "originalPrice": 4.99,
+  "condition": "LIKE NEW",
+  "stock": 14,
+  "categoryIds": [
+    {
+      "$oid": "681f3d085e99961322aef273"
+    },
+    {
+      "$oid": "681f3d085e99961322aef280"
+    }
+  ],
+  "images": [
+    {
+      "url": "/data/book-img/warning-signs-1.jpg",
+      "alt": "Image 1 of Warning Signs"
+    },
+    {
+      "url": "/data/book-img/warning-signs-2.jpg",
+      "alt": "Image 2 of Warning Signs"
+    },
+    {
+      "url": "/data/book-img/warning-signs-3.jpg",
+      "alt": "Image 3 of Warning Signs"
+    }
+  ],
+  "addedAt": "2025-05-10T22:59:07.593735",
+  "modifiedAt": "2025-05-10T22:59:07.593735",
+  "averageRating": 4,
+  "ratingCount": 1,
+  "totalRating": 4
+},
+{
+  "_id": {
+    "$oid": "682023424a1ae581e0445387"
+  },
+  "title": "While My Sister Sleeps",
+  "authors": [
+    "Barbara Delinsky"
+  ],
+  "description": "NEW YORK TIMES BESTSELLEROnce again New York Times bestselling author Barbara Delinsky brings us a masterful family portrait, filled with thought-provoking insights into how emotions affect the decisions we make and how letting go can be the hardest thing to do and the greatest expression of love all at the same time. Molly and Robin Snow are sisters in the prime of life. So when Molly receives the news that Robin has suffered a massive heart attack, the news couldn't be more shocking. At the hospital, the Snow family receives a grim prognosis: Robin may never regain consciousness. Feelings of guilt and jealousy flare up as Robin's family struggles to cope. It's up to Molly to make the tough decisions, and she soon makes discoveries that shatter some of her most cherished beliefs about the sister she thought she knew.",
+  "price": 4.76,
+  "originalPrice": 5.29,
+  "condition": "LIKE NEW",
+  "stock": 57,
+  "categoryIds": [
+    {
+      "$oid": "681f3d085e99961322aef273"
+    },
+    {
+      "$oid": "681f3d085e99961322aef27e"
+    },
+    {
+      "$oid": "681f3d085e99961322aef274"
+    }
+  ],
+  "images": [
+    {
+      "url": "/data/book-img/while-my-sister-sleeps-1.jpg",
+      "alt": "Image 1 of While My Sister Sleeps"
+    },
+    {
+      "url": "/data/book-img/while-my-sister-sleeps-2.jpg",
+      "alt": "Image 2 of While My Sister Sleeps"
+    },
+    {
+      "url": "/data/book-img/while-my-sister-sleeps-3.jpg",
+      "alt": "Image 3 of While My Sister Sleeps"
+    }
+  ],
+  "addedAt": "2025-05-10T22:59:07.593735",
+  "modifiedAt": "2025-05-10T22:59:07.593735",
+  "averageRating": 3,
+  "ratingCount": 1,
+  "totalRating": 3
+},
+{
+  "_id": {
+    "$oid": "682023424a1ae581e0445388"
+  },
+  "title": "The Let Them Theory",
+  "authors": [
+    "Mel Robbins"
+  ],
+  "description": "In \"The Let Them Theory,\" Mel Robbins shows how to reclaim your life by focusing on what truly mattersyour happiness and goalsfree from others' influence. Through personal stories and expert insights, she teaches how to achieve lasting success and fulfillment.",
+  "price": 6.29,
+  "originalPrice": 8.39,
+  "condition": "GOOD",
+  "stock": 75,
+  "categoryIds": [
+    {
+      "$oid": "681f3d085e99961322aef2a1"
+    }
+  ],
+  "images": [
+    {
+      "url": "/data/book-img/the-let-them-theory-1.jpg",
+      "alt": "Image 1 of The Let Them Theory"
+    },
+    {
+      "url": "/data/book-img/the-let-them-theory-2.jpg",
+      "alt": "Image 2 of The Let Them Theory"
+    },
+    {
+      "url": "/data/book-img/the-let-them-theory-3.jpg",
+      "alt": "Image 3 of The Let Them Theory"
+    }
+  ],
+  "addedAt": "2025-05-10T22:59:07.593735",
+  "modifiedAt": "2025-05-10T22:59:07.593735",
+  "averageRating": 5,
+  "ratingCount": 1,
+  "totalRating": 5
+},
+{
+  "_id": {
+    "$oid": "682023424a1ae581e0445389"
+  },
+  "title": "Too good to be true ",
+  "authors": [
+    "Prajakta Koli"
+  ],
+  "description": "Too Good to Be True by Mostlysane, Avanis favourite thing to do is bury her nose in romance novelsbut, honestly, life cant be trusted to make the stories real, right? \nBut in the bookstore where she works, a man walks in, straight out of the pages of her favourite love stories. Aman is hot, successful, seems to know what shes going to say before shes said it, and just cannot get enough of her. In short, hes perfect",
+  "price": 7.5,
+  "originalPrice": 10,
+  "condition": "GOOD",
+  "stock": 15,
+  "categoryIds": [
+    {
+      "$oid": "681f3d085e99961322aef27e"
+    }
+  ],
+  "images": [
+    {
+      "url": "/data/book-img/too-good-to-be-true-1.jpg",
+      "alt": "Image 1 of Too good to be true "
+    },
+    {
+      "url": "/data/book-img/too-good-to-be-true-2.jpg",
+      "alt": "Image 2 of Too good to be true "
+    }
+  ],
+  "addedAt": "2025-05-10T22:59:07.594733",
+  "modifiedAt": "2025-05-10T22:59:07.594733",
+  "averageRating": 3,
+  "ratingCount": 1,
+  "totalRating": 3
+}]

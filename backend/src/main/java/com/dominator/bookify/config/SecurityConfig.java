@@ -39,7 +39,7 @@ public class SecurityConfig {
                                 "/api/users/resend-verification",
                                 "/api/books/**",
                                 "/api/categories",
-                                "/api/reviews"
+                                "/api/reviews/**"
 
                         ).permitAll()
                         .anyRequest().authenticated()

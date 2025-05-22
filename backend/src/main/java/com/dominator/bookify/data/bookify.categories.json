@@ -1,0 +1,490 @@
+[{
+  "_id": {
+    "$oid": "681f3d085e99961322aef271"
+  },
+  "name": "Religion",
+  "description": "Category for Religion",
+  "parentId": null,
+  "addedAt": "2025-05-10T18:45:17.223711",
+  "modifiedAt": "2025-05-10T18:45:17.223711"
+},
+{
+  "_id": {
+    "$oid": "681f3d085e99961322aef272"
+  },
+  "name": "Inspirational",
+  "description": "Category for Inspirational",
+  "parentId": null,
+  "addedAt": "2025-05-10T18:45:17.223711",
+  "modifiedAt": "2025-05-10T18:45:17.223711"
+},
+{
+  "_id": {
+    "$oid": "681f3d085e99961322aef273"
+  },
+  "name": "Fiction",
+  "description": "Category for Fiction",
+  "parentId": null,
+  "addedAt": "2025-05-10T18:45:17.224707",
+  "modifiedAt": "2025-05-10T18:45:17.224707"
+},
+{
+  "_id": {
+    "$oid": "681f3d085e99961322aef274"
+  },
+  "name": "General",
+  "description": "Category for General",
+  "parentId": null,
+  "addedAt": "2025-05-10T18:45:17.224707",
+  "modifiedAt": "2025-05-10T18:45:17.224707"
+},
+{
+  "_id": {
+    "$oid": "681f3d085e99961322aef275"
+  },
+  "name": "Mathematics",
+  "description": "Category for Mathematics",
+  "parentId": null,
+  "addedAt": "2025-05-10T18:45:17.224707",
+  "modifiedAt": "2025-05-10T18:45:17.224707"
+},
+{
+  "_id": {
+    "$oid": "681f3d085e99961322aef276"
+  },
+  "name": "Calculus",
+  "description": "Category for Calculus",
+  "parentId": null,
+  "addedAt": "2025-05-10T18:45:17.224707",
+  "modifiedAt": "2025-05-10T18:45:17.224707"
+},
+{
+  "_id": {
+    "$oid": "681f3d085e99961322aef277"
+  },
+  "name": "Short Stories",
+  "description": "Category for Short Stories",
+  "parentId": null,
+  "addedAt": "2025-05-10T18:45:17.225707",
+  "modifiedAt": "2025-05-10T18:45:17.225707"
+},
+{
+  "_id": {
+    "$oid": "681f3d085e99961322aef278"
+  },
+  "name": "Fantasy",
+  "description": "Category for Fantasy",
+  "parentId": null,
+  "addedAt": "2025-05-10T18:45:17.225707",
+  "modifiedAt": "2025-05-10T18:45:17.225707"
+},
+{
+  "_id": {
+    "$oid": "681f3d085e99961322aef279"
+  },
+  "name": "Family Life",
+  "description": "Category for Family Life",
+  "parentId": null,
+  "addedAt": "2025-05-10T18:45:17.225707",
+  "modifiedAt": "2025-05-10T18:45:17.225707"
+},
+{
+  "_id": {
+    "$oid": "681f3d085e99961322aef27a"
+  },
+  "name": "Juvenile Fiction",
+  "description": "Category for Juvenile Fiction",
+  "parentId": null,
+  "addedAt": "2025-05-10T18:45:17.225707",
+  "modifiedAt": "2025-05-10T18:45:17.225707"
+},
+{
+  "_id": {
+    "$oid": "681f3d085e99961322aef27b"
+  },
+  "name": "Animals",
+  "description": "Category for Animals",
+  "parentId": null,
+  "addedAt": "2025-05-10T18:45:17.225707",
+  "modifiedAt": "2025-05-10T18:45:17.225707"
+},
+{
+  "_id": {
+    "$oid": "681f3d085e99961322aef27c"
+  },
+  "name": "Farm Animals",
+  "description": "Category for Farm Animals",
+  "parentId": null,
+  "addedAt": "2025-05-10T18:45:17.225707",
+  "modifiedAt": "2025-05-10T18:45:17.225707"
+},
+{
+  "_id": {
+    "$oid": "681f3d085e99961322aef27d"
+  },
+  "name": "Christian Life",
+  "description": "Category for Christian Life",
+  "parentId": null,
+  "addedAt": "2025-05-10T18:45:17.226707",
+  "modifiedAt": "2025-05-10T18:45:17.226707"
+},
+{
+  "_id": {
+    "$oid": "681f3d085e99961322aef27e"
+  },
+  "name": "Romance",
+  "description": "Category for Romance",
+  "parentId": null,
+  "addedAt": "2025-05-10T18:45:17.226707",
+  "modifiedAt": "2025-05-10T18:45:17.226707"
+},
+{
+  "_id": {
+    "$oid": "681f3d085e99961322aef27f"
+  },
+  "name": "Suspense",
+  "description": "Category for Suspense",
+  "parentId": null,
+  "addedAt": "2025-05-10T18:45:17.226707",
+  "modifiedAt": "2025-05-10T18:45:17.226707"
+},
+{
+  "_id": {
+    "$oid": "681f3d085e99961322aef280"
+  },
+  "name": "Literary",
+  "description": "Category for Literary",
+  "parentId": null,
+  "addedAt": "2025-05-10T18:45:17.227713",
+  "modifiedAt": "2025-05-10T18:45:17.227713"
+},
+{
+  "_id": {
+    "$oid": "681f3d085e99961322aef281"
+  },
+  "name": "History",
+  "description": "Category for History",
+  "parentId": null,
+  "addedAt": "2025-05-10T18:45:17.227713",
+  "modifiedAt": "2025-05-10T18:45:17.227713"
+},
+{
+  "_id": {
+    "$oid": "681f3d085e99961322aef282"
+  },
+  "name": "Military",
+  "description": "Category for Military",
+  "parentId": null,
+  "addedAt": "2025-05-10T18:45:17.227713",
+  "modifiedAt": "2025-05-10T18:45:17.227713"
+},
+{
+  "_id": {
+    "$oid": "681f3d085e99961322aef283"
+  },
+  "name": "Holidays & Celebrations",
+  "description": "Category for Holidays & Celebrations",
+  "parentId": null,
+  "addedAt": "2025-05-10T18:45:17.227713",
+  "modifiedAt": "2025-05-10T18:45:17.227713"
+},
+{
+  "_id": {
+    "$oid": "681f3d085e99961322aef284"
+  },
+  "name": "Other",
+  "description": "Category for Other",
+  "parentId": null,
+  "addedAt": "2025-05-10T18:45:17.227713",
+  "modifiedAt": "2025-05-10T18:45:17.227713"
+},
+{
+  "_id": {
+    "$oid": "681f3d085e99961322aef285"
+  },
+  "name": "Non-Religious",
+  "description": "Category for Non-Religious",
+  "parentId": null,
+  "addedAt": "2025-05-10T18:45:17.227713",
+  "modifiedAt": "2025-05-10T18:45:17.227713"
+},
+{
+  "_id": {
+    "$oid": "681f3d085e99961322aef286"
+  },
+  "name": "Family & Relationships",
+  "description": "Category for Family & Relationships",
+  "parentId": null,
+  "addedAt": "2025-05-10T18:45:17.228711",
+  "modifiedAt": "2025-05-10T18:45:17.228711"
+},
+{
+  "_id": {
+    "$oid": "681f3d085e99961322aef287"
+  },
+  "name": "Social Science",
+  "description": "Category for Social Science",
+  "parentId": null,
+  "addedAt": "2025-05-10T18:45:17.228711",
+  "modifiedAt": "2025-05-10T18:45:17.228711"
+},
+{
+  "_id": {
+    "$oid": "681f3d085e99961322aef288"
+  },
+  "name": "Sociology",
+  "description": "Category for Sociology",
+  "parentId": null,
+  "addedAt": "2025-05-10T18:45:17.228711",
+  "modifiedAt": "2025-05-10T18:45:17.228711"
+},
+{
+  "_id": {
+    "$oid": "681f3d085e99961322aef289"
+  },
+  "name": "Historical",
+  "description": "Category for Historical",
+  "parentId": null,
+  "addedAt": "2025-05-10T18:45:17.228711",
+  "modifiedAt": "2025-05-10T18:45:17.228711"
+},
+{
+  "_id": {
+    "$oid": "681f3d085e99961322aef28a"
+  },
+  "name": "Thrillers",
+  "description": "Category for Thrillers",
+  "parentId": null,
+  "addedAt": "2025-05-10T18:45:17.228711",
+  "modifiedAt": "2025-05-10T18:45:17.228711"
+},
+{
+  "_id": {
+    "$oid": "681f3d085e99961322aef28b"
+  },
+  "name": "Young Adult Fiction",
+  "description": "Category for Young Adult Fiction",
+  "parentId": null,
+  "addedAt": "2025-05-10T18:45:17.229714",
+  "modifiedAt": "2025-05-10T18:45:17.229714"
+},
+{
+  "_id": {
+    "$oid": "681f3d085e99961322aef28c"
+  },
+  "name": "Social Themes",
+  "description": "Category for Social Themes",
+  "parentId": null,
+  "addedAt": "2025-05-10T18:45:17.229714",
+  "modifiedAt": "2025-05-10T18:45:17.229714"
+},
+{
+  "_id": {
+    "$oid": "681f3d085e99961322aef28d"
+  },
+  "name": "Bullying",
+  "description": "Category for Bullying",
+  "parentId": null,
+  "addedAt": "2025-05-10T18:45:17.229714",
+  "modifiedAt": "2025-05-10T18:45:17.229714"
+},
+{
+  "_id": {
+    "$oid": "681f3d085e99961322aef28e"
+  },
+  "name": "Modern",
+  "description": "Category for Modern",
+  "parentId": null,
+  "addedAt": "2025-05-10T18:45:17.229714",
+  "modifiedAt": "2025-05-10T18:45:17.229714"
+},
+{
+  "_id": {
+    "$oid": "681f3d085e99961322aef28f"
+  },
+  "name": "20th Century",
+  "description": "Category for 20th Century",
+  "parentId": null,
+  "addedAt": "2025-05-10T18:45:17.229714",
+  "modifiedAt": "2025-05-10T18:45:17.229714"
+},
+{
+  "_id": {
+    "$oid": "681f3d085e99961322aef290"
+  },
+  "name": "Science Fiction",
+  "description": "Category for Science Fiction",
+  "parentId": null,
+  "addedAt": "2025-05-10T18:45:17.230716",
+  "modifiedAt": "2025-05-10T18:45:17.230716"
+},
+{
+  "_id": {
+    "$oid": "681f3d085e99961322aef291"
+  },
+  "name": "Travel",
+  "description": "Category for Travel",
+  "parentId": null,
+  "addedAt": "2025-05-10T18:45:17.230716",
+  "modifiedAt": "2025-05-10T18:45:17.230716"
+},
+{
+  "_id": {
+    "$oid": "681f3d085e99961322aef292"
+  },
+  "name": "Asia",
+  "description": "Category for Asia",
+  "parentId": null,
+  "addedAt": "2025-05-10T18:45:17.230716",
+  "modifiedAt": "2025-05-10T18:45:17.230716"
+},
+{
+  "_id": {
+    "$oid": "681f3d085e99961322aef293"
+  },
+  "name": "Japan",
+  "description": "Category for Japan",
+  "parentId": null,
+  "addedAt": "2025-05-10T18:45:17.230716",
+  "modifiedAt": "2025-05-10T18:45:17.230716"
+},
+{
+  "_id": {
+    "$oid": "681f3d085e99961322aef294"
+  },
+  "name": "Body",
+  "description": "Category for Body",
+  "parentId": null,
+  "addedAt": "2025-05-10T18:45:17.231714",
+  "modifiedAt": "2025-05-10T18:45:17.231714"
+},
+{
+  "_id": {
+    "$oid": "681f3d085e99961322aef295"
+  },
+  "name": "Mind & Spirit",
+  "description": "Category for Mind & Spirit",
+  "parentId": null,
+  "addedAt": "2025-05-10T18:45:17.231714",
+  "modifiedAt": "2025-05-10T18:45:17.231714"
+},
+{
+  "_id": {
+    "$oid": "681f3d085e99961322aef296"
+  },
+  "name": "Parapsychology",
+  "description": "Category for Parapsychology",
+  "parentId": null,
+  "addedAt": "2025-05-10T18:45:17.231714",
+  "modifiedAt": "2025-05-10T18:45:17.231714"
+},
+{
+  "_id": {
+    "$oid": "681f3d085e99961322aef297"
+  },
+  "name": "Reference",
+  "description": "Category for Reference",
+  "parentId": null,
+  "addedAt": "2025-05-10T18:45:17.231714",
+  "modifiedAt": "2025-05-10T18:45:17.231714"
+},
+{
+  "_id": {
+    "$oid": "681f3d085e99961322aef298"
+  },
+  "name": "Parenting",
+  "description": "Category for Parenting",
+  "parentId": null,
+  "addedAt": "2025-05-10T18:45:17.232714",
+  "modifiedAt": "2025-05-10T18:45:17.232714"
+},
+{
+  "_id": {
+    "$oid": "681f3d085e99961322aef299"
+  },
+  "name": "Coming of Age",
+  "description": "Category for Coming of Age",
+  "parentId": null,
+  "addedAt": "2025-05-10T18:45:17.235715",
+  "modifiedAt": "2025-05-10T18:45:17.235715"
+},
+{
+  "_id": {
+    "$oid": "681f3d085e99961322aef29a"
+  },
+  "name": "Sagas",
+  "description": "Category for Sagas",
+  "parentId": null,
+  "addedAt": "2025-05-10T18:45:17.235715",
+  "modifiedAt": "2025-05-10T18:45:17.235715"
+},
+{
+  "_id": {
+    "$oid": "681f3d085e99961322aef29b"
+  },
+  "name": "Cooking",
+  "description": "Category for Cooking",
+  "parentId": null,
+  "addedAt": "2025-05-10T18:45:17.236714",
+  "modifiedAt": "2025-05-10T18:45:17.236714"
+},
+{
+  "_id": {
+    "$oid": "681f3d085e99961322aef29c"
+  },
+  "name": "Health & Fitness",
+  "description": "Category for Health & Fitness",
+  "parentId": null,
+  "addedAt": "2025-05-10T18:45:17.236714",
+  "modifiedAt": "2025-05-10T18:45:17.236714"
+},
+{
+  "_id": {
+    "$oid": "681f3d085e99961322aef29d"
+  },
+  "name": "Mystery & Detective",
+  "description": "Category for Mystery & Detective",
+  "parentId": null,
+  "addedAt": "2025-05-10T18:45:17.237716",
+  "modifiedAt": "2025-05-10T18:45:17.237716"
+},
+{
+  "_id": {
+    "$oid": "681f3d085e99961322aef29e"
+  },
+  "name": "Action & Adventure",
+  "description": "Category for Action & Adventure",
+  "parentId": null,
+  "addedAt": "2025-05-10T18:45:17.237716",
+  "modifiedAt": "2025-05-10T18:45:17.237716"
+},
+{
+  "_id": {
+    "$oid": "681f3d085e99961322aef29f"
+  },
+  "name": "Friendship",
+  "description": "Category for Friendship",
+  "parentId": null,
+  "addedAt": "2025-05-10T18:45:17.238714",
+  "modifiedAt": "2025-05-10T18:45:17.238714"
+},
+{
+  "_id": {
+    "$oid": "681f3d085e99961322aef2a0"
+  },
+  "name": "Art",
+  "description": "Category for Art",
+  "parentId": null,
+  "addedAt": "2025-05-10T18:45:17.238714",
+  "modifiedAt": "2025-05-10T18:45:17.238714"
+},
+{
+  "_id": {
+    "$oid": "681f3d085e99961322aef2a1"
+  },
+  "name": "Psychology",
+  "description": "Category for Psychology",
+  "parentId": null,
+  "addedAt": "2025-05-10T18:45:17.239714",
+  "modifiedAt": "2025-05-10T18:45:17.239714"
+}]

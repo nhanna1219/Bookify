@@ -1,0 +1,25 @@
+[{
+  "_id": {
+    "$oid": "68201e5b4ff90d7e8d39395c"
+  },
+  "fullName": "Nhan Nguyen",
+  "email": "nhannhan121901@gmail.com",
+  "passwordHash": "$2a$10$hVfgvvD8lq7MIolUbZ1TWuOySK/KJ437Hr5nXdVJ5wCqOgw8.mSfu",
+  "phone": "84936665674",
+  "address": {
+    "street": "212/32 14 street, 10 ward, Go Vap district",
+    "city": "Ho Chi Minh",
+    "state": "Ho Chi Minh",
+    "postalCode": "70000",
+    "country": "Vietnam"
+  },
+  "role": "ADMIN",
+  "verified": true,
+  "createdAt": {
+    "$date": "2025-05-11T03:49:47.933Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-11T04:01:21.300Z"
+  },
+  "_class": "com.dominator.bookify.model.User"
+}]

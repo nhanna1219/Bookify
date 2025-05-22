@@ -1,17 +1,9 @@
-import { useState } from "react";
 import { MessageSquare, CheckCircle } from "lucide-react";
 import { Rating, RoundedStar } from "@smastrom/react-rating";
 import {reviews} from "@data/sampleData";
 import "@smastrom/react-rating/style.css";
-
-const ratingStyles = {
-    itemShapes: RoundedStar,
-    activeFillColor: "#FACC15",
-    inactiveFillColor: "#CBD5E1",
-    activeStrokeColor: "#D97706",
-    inactiveStrokeColor: "#64748B",
-    itemStrokeWidth: 1.5,
-};
+import RatingStar from "@u_components/products/RatingStar.jsx";
+import React from "react";
 
 export default function CustomerReviewSection() {
     return (
@@ -52,12 +44,7 @@ export default function CustomerReviewSection() {
                                 <div>
                                     <h3 className="font-semibold text-gray-800">{review.name}</h3>
                                     <div className="flex items-center mt-1">
-                                        <Rating
-                                            style={{ maxWidth: 90 }}
-                                            value={review.rating}
-                                            readOnly
-                                            itemStyles={ratingStyles}
-                                        />
+                                        <RatingStar ratingValue={review.rating} />
                                         <span className="ml-2 text-sm text-gray-500">{review.date}</span>
                                     </div>
                                 </div>

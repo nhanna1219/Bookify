@@ -1,24 +1,10 @@
-// ProductCard.jsx
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import { Heart } from 'lucide-react';
 import ConditionTag from './ConditionTag.jsx';
-
-import { Rating, RoundedStar } from '@smastrom/react-rating';
-import '@smastrom/react-rating/style.css';
-
-const ratingStyles = {
-    itemShapes: RoundedStar,
-    activeFillColor: '#FACC15',
-    inactiveFillColor: '#CBD5E1',
-    activeStrokeColor: '#D97706',
-    inactiveStrokeColor: '#64748B',
-    itemStrokeWidth: 1.5
-};
+import WishlistBtn from "@u_components/products/WishlistBtn.jsx";
+import RatingStar from "@u_components/products/RatingStar.jsx";
 
 const ProductCard = ({ product, scale = 0.9 }) => {
-    const [liked, setLiked] = useState(false);
-
     const authorName = product.authors && product.authors.length > 0 ? product.authors[0] : "";
 
     const hasRating = product.ratingCount > 0;
@@ -41,13 +27,8 @@ const ProductCard = ({ product, scale = 0.9 }) => {
                     <ConditionTag type={product.condition} />
                 </div>
 
-                {/* Wishlist Button */}
-                <button
-                    onClick={() => setLiked(!liked)}
-                    className="absolute top-3 right-3 w-7 h-7 bg-white rounded-full shadow-[0_2px_4px_rgba(0,0,0,0.45)] flex items-center justify-center z-20 transition-shadow duration-300 hover:scale-110 hover:shadow-[0_4px_10px_rgba(0,0,0,0.60)]"
-                >
-                    <Heart className={`w-4 h-4 ${liked ? 'text-[#db1515] fill-[#db1515]' : 'text-black'}`} />
-                </button>
+                {/* Wishlist Button*/}
+                <WishlistBtn />
 
                 {/* Clickable Product Link */}
                 <Link to={`/book/${product.id}`} className="absolute inset-0 z-10" />
@@ -70,12 +51,7 @@ const ProductCard = ({ product, scale = 0.9 }) => {
                 {/* Price & Rating */}
                 <div className="flex items-center justify-between px-1 mt-2 relative z-0">
                     {hasRating && (
-                        <Rating
-                            style={{ maxWidth: 90 }}
-                            value={ratingValue}
-                            readOnly
-                            itemStyles={ratingStyles}
-                        />
+                        <RatingStar ratingValue={ratingValue} />
                     )}
                     <p className="text-[#1C387F] font-semibold text-sm">
                         ${product.price ? product.price.toFixed(2) : 'N/A'}

@@ -20,7 +20,7 @@ public class Review {
     private String id;
     private ObjectId bookId;
     private ObjectId  userId;
-    private double rating;
+    private int rating;
     private String subject;
     private String comment;
     private String status;  // PENDING, APPROVED, REJECTED

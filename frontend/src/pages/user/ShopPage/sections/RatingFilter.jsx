@@ -1,14 +1,5 @@
 import React from 'react'
-import {Rating, RoundedStar} from '@smastrom/react-rating'
-
-const ratingStyles = {
-    itemShapes: RoundedStar,
-    activeFillColor: '#FACC15',
-    inactiveFillColor: '#CBD5E1',
-    activeStrokeColor: '#D97706',
-    inactiveStrokeColor: '#64748B',
-    itemStrokeWidth: 1.5,
-}
+import RatingStar from "@u_components/products/RatingStar.jsx";
 
 export default function RatingFilter({minRating, setMinRating, showAll, toggleShowAll}) {
     const options = showAll ? [0, 5, 4, 3, 2, 1] : [0, 5, 4]
@@ -28,7 +19,8 @@ export default function RatingFilter({minRating, setMinRating, showAll, toggleSh
                         />
                         <span className="text-xs flex items-center">
                           {value === 0 ? 'Any' :
-                              <Rating style={{maxWidth: 90}} value={value} readOnly itemStyles={ratingStyles}/>}
+                              <RatingStar ratingValue={value} />
+                          }
                         </span>
                     </label>
                 ))}

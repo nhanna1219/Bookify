@@ -8,3 +8,7 @@ export const getBooks = async (params) => {
     const queryString = new URLSearchParams(params).toString();
     return api.get(`/books/search?${queryString}`);
 };
+
+export const getBookDetails = async (bookId) => {
+    return api.get(`/books/${bookId}`);
+}

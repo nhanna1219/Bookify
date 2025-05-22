@@ -1,0 +1,867 @@
+[{
+  "_id": {
+    "$oid": "682f7504df103bcceb44d284"
+  },
+  "bookId": {
+    "$oid": "682023424a1ae581e0445357"
+  },
+  "userId": {
+    "$oid": "68201e5b4ff90d7e8d39395c"
+  },
+  "rating": 5,
+  "subject": null,
+  "comment": null,
+  "status": "APPROVED",
+  "addedAt": "2025-05-23T01:57:38.580238",
+  "modifiedAt": "2025-05-23T01:57:38.580238"
+},
+{
+  "_id": {
+    "$oid": "682f7504df103bcceb44d285"
+  },
+  "bookId": {
+    "$oid": "682023424a1ae581e0445358"
+  },
+  "userId": {
+    "$oid": "68201e5b4ff90d7e8d39395c"
+  },
+  "rating": 3,
+  "subject": null,
+  "comment": null,
+  "status": "APPROVED",
+  "addedAt": "2025-05-23T01:57:38.580238",
+  "modifiedAt": "2025-05-23T01:57:38.580238"
+},
+{
+  "_id": {
+    "$oid": "682f7504df103bcceb44d286"
+  },
+  "bookId": {
+    "$oid": "682023424a1ae581e0445359"
+  },
+  "userId": {
+    "$oid": "68201e5b4ff90d7e8d39395c"
+  },
+  "rating": 3,
+  "subject": null,
+  "comment": null,
+  "status": "APPROVED",
+  "addedAt": "2025-05-23T01:57:38.580238",
+  "modifiedAt": "2025-05-23T01:57:38.580238"
+},
+{
+  "_id": {
+    "$oid": "682f7504df103bcceb44d287"
+  },
+  "bookId": {
+    "$oid": "682023424a1ae581e044535a"
+  },
+  "userId": {
+    "$oid": "68201e5b4ff90d7e8d39395c"
+  },
+  "rating": 5,
+  "subject": null,
+  "comment": null,
+  "status": "APPROVED",
+  "addedAt": "2025-05-23T01:57:38.580238",
+  "modifiedAt": "2025-05-23T01:57:38.580238"
+},
+{
+  "_id": {
+    "$oid": "682f7504df103bcceb44d288"
+  },
+  "bookId": {
+    "$oid": "682023424a1ae581e044535b"
+  },
+  "userId": {
+    "$oid": "68201e5b4ff90d7e8d39395c"
+  },
+  "rating": 3,
+  "subject": null,
+  "comment": null,
+  "status": "APPROVED",
+  "addedAt": "2025-05-23T01:57:38.580238",
+  "modifiedAt": "2025-05-23T01:57:38.580238"
+},
+{
+  "_id": {
+    "$oid": "682f7504df103bcceb44d289"
+  },
+  "bookId": {
+    "$oid": "682023424a1ae581e044535c"
+  },
+  "userId": {
+    "$oid": "68201e5b4ff90d7e8d39395c"
+  },
+  "rating": 4,
+  "subject": null,
+  "comment": null,
+  "status": "APPROVED",
+  "addedAt": "2025-05-23T01:57:38.580238",
+  "modifiedAt": "2025-05-23T01:57:38.580238"
+},
+{
+  "_id": {
+    "$oid": "682f7504df103bcceb44d28a"
+  },
+  "bookId": {
+    "$oid": "682023424a1ae581e044535d"
+  },
+  "userId": {
+    "$oid": "68201e5b4ff90d7e8d39395c"
+  },
+  "rating": 4,
+  "subject": null,
+  "comment": null,
+  "status": "APPROVED",
+  "addedAt": "2025-05-23T01:57:38.580238",
+  "modifiedAt": "2025-05-23T01:57:38.580238"
+},
+{
+  "_id": {
+    "$oid": "682f7504df103bcceb44d28b"
+  },
+  "bookId": {
+    "$oid": "682023424a1ae581e044535e"
+  },
+  "userId": {
+    "$oid": "68201e5b4ff90d7e8d39395c"
+  },
+  "rating": 5,
+  "subject": null,
+  "comment": null,
+  "status": "APPROVED",
+  "addedAt": "2025-05-23T01:57:38.580238",
+  "modifiedAt": "2025-05-23T01:57:38.580238"
+},
+{
+  "_id": {
+    "$oid": "682f7504df103bcceb44d28c"
+  },
+  "bookId": {
+    "$oid": "682023424a1ae581e044535f"
+  },
+  "userId": {
+    "$oid": "68201e5b4ff90d7e8d39395c"
+  },
+  "rating": 5,
+  "subject": null,
+  "comment": null,
+  "status": "APPROVED",
+  "addedAt": "2025-05-23T01:57:38.580238",
+  "modifiedAt": "2025-05-23T01:57:38.580238"
+},
+{
+  "_id": {
+    "$oid": "682f7504df103bcceb44d28d"
+  },
+  "bookId": {
+    "$oid": "682023424a1ae581e0445360"
+  },
+  "userId": {
+    "$oid": "68201e5b4ff90d7e8d39395c"
+  },
+  "rating": 4,
+  "subject": null,
+  "comment": null,
+  "status": "APPROVED",
+  "addedAt": "2025-05-23T01:57:38.580238",
+  "modifiedAt": "2025-05-23T01:57:38.580238"
+},
+{
+  "_id": {
+    "$oid": "682f7504df103bcceb44d28e"
+  },
+  "bookId": {
+    "$oid": "682023424a1ae581e0445361"
+  },
+  "userId": {
+    "$oid": "68201e5b4ff90d7e8d39395c"
+  },
+  "rating": 4,
+  "subject": null,
+  "comment": null,
+  "status": "APPROVED",
+  "addedAt": "2025-05-23T01:57:38.580238",
+  "modifiedAt": "2025-05-23T01:57:38.580238"
+},
+{
+  "_id": {
+    "$oid": "682f7504df103bcceb44d28f"
+  },
+  "bookId": {
+    "$oid": "682023424a1ae581e0445362"
+  },
+  "userId": {
+    "$oid": "68201e5b4ff90d7e8d39395c"
+  },
+  "rating": 4,
+  "subject": null,
+  "comment": null,
+  "status": "APPROVED",
+  "addedAt": "2025-05-23T01:57:38.580238",
+  "modifiedAt": "2025-05-23T01:57:38.580238"
+},
+{
+  "_id": {
+    "$oid": "682f7504df103bcceb44d290"
+  },
+  "bookId": {
+    "$oid": "682023424a1ae581e0445363"
+  },
+  "userId": {
+    "$oid": "68201e5b4ff90d7e8d39395c"
+  },
+  "rating": 4,
+  "subject": null,
+  "comment": null,
+  "status": "APPROVED",
+  "addedAt": "2025-05-23T01:57:38.580238",
+  "modifiedAt": "2025-05-23T01:57:38.580238"
+},
+{
+  "_id": {
+    "$oid": "682f7504df103bcceb44d291"
+  },
+  "bookId": {
+    "$oid": "682023424a1ae581e0445364"
+  },
+  "userId": {
+    "$oid": "68201e5b4ff90d7e8d39395c"
+  },
+  "rating": 4,
+  "subject": null,
+  "comment": null,
+  "status": "APPROVED",
+  "addedAt": "2025-05-23T01:57:38.581245",
+  "modifiedAt": "2025-05-23T01:57:38.581245"
+},
+{
+  "_id": {
+    "$oid": "682f7504df103bcceb44d292"
+  },
+  "bookId": {
+    "$oid": "682023424a1ae581e0445365"
+  },
+  "userId": {
+    "$oid": "68201e5b4ff90d7e8d39395c"
+  },
+  "rating": 4,
+  "subject": null,
+  "comment": null,
+  "status": "APPROVED",
+  "addedAt": "2025-05-23T01:57:38.581245",
+  "modifiedAt": "2025-05-23T01:57:38.581245"
+},
+{
+  "_id": {
+    "$oid": "682f7504df103bcceb44d293"
+  },
+  "bookId": {
+    "$oid": "682023424a1ae581e0445366"
+  },
+  "userId": {
+    "$oid": "68201e5b4ff90d7e8d39395c"
+  },
+  "rating": 5,
+  "subject": null,
+  "comment": null,
+  "status": "APPROVED",
+  "addedAt": "2025-05-23T01:57:38.581245",
+  "modifiedAt": "2025-05-23T01:57:38.581245"
+},
+{
+  "_id": {
+    "$oid": "682f7504df103bcceb44d294"
+  },
+  "bookId": {
+    "$oid": "682023424a1ae581e0445367"
+  },
+  "userId": {
+    "$oid": "68201e5b4ff90d7e8d39395c"
+  },
+  "rating": 4,
+  "subject": null,
+  "comment": null,
+  "status": "APPROVED",
+  "addedAt": "2025-05-23T01:57:38.581245",
+  "modifiedAt": "2025-05-23T01:57:38.581245"
+},
+{
+  "_id": {
+    "$oid": "682f7504df103bcceb44d295"
+  },
+  "bookId": {
+    "$oid": "682023424a1ae581e0445368"
+  },
+  "userId": {
+    "$oid": "68201e5b4ff90d7e8d39395c"
+  },
+  "rating": 5,
+  "subject": null,
+  "comment": null,
+  "status": "APPROVED",
+  "addedAt": "2025-05-23T01:57:38.581245",
+  "modifiedAt": "2025-05-23T01:57:38.581245"
+},
+{
+  "_id": {
+    "$oid": "682f7504df103bcceb44d296"
+  },
+  "bookId": {
+    "$oid": "682023424a1ae581e0445369"
+  },
+  "userId": {
+    "$oid": "68201e5b4ff90d7e8d39395c"
+  },
+  "rating": 4,
+  "subject": null,
+  "comment": null,
+  "status": "APPROVED",
+  "addedAt": "2025-05-23T01:57:38.581245",
+  "modifiedAt": "2025-05-23T01:57:38.581245"
+},
+{
+  "_id": {
+    "$oid": "682f7504df103bcceb44d297"
+  },
+  "bookId": {
+    "$oid": "682023424a1ae581e044536a"
+  },
+  "userId": {
+    "$oid": "68201e5b4ff90d7e8d39395c"
+  },
+  "rating": 4,
+  "subject": null,
+  "comment": null,
+  "status": "APPROVED",
+  "addedAt": "2025-05-23T01:57:38.581245",
+  "modifiedAt": "2025-05-23T01:57:38.581245"
+},
+{
+  "_id": {
+    "$oid": "682f7504df103bcceb44d298"
+  },
+  "bookId": {
+    "$oid": "682023424a1ae581e044536b"
+  },
+  "userId": {
+    "$oid": "68201e5b4ff90d7e8d39395c"
+  },
+  "rating": 4,
+  "subject": null,
+  "comment": null,
+  "status": "APPROVED",
+  "addedAt": "2025-05-23T01:57:38.581245",
+  "modifiedAt": "2025-05-23T01:57:38.581245"
+},
+{
+  "_id": {
+    "$oid": "682f7504df103bcceb44d299"
+  },
+  "bookId": {
+    "$oid": "682023424a1ae581e044536c"
+  },
+  "userId": {
+    "$oid": "68201e5b4ff90d7e8d39395c"
+  },
+  "rating": 5,
+  "subject": null,
+  "comment": null,
+  "status": "APPROVED",
+  "addedAt": "2025-05-23T01:57:38.581245",
+  "modifiedAt": "2025-05-23T01:57:38.581245"
+},
+{
+  "_id": {
+    "$oid": "682f7504df103bcceb44d29a"
+  },
+  "bookId": {
+    "$oid": "682023424a1ae581e044536d"
+  },
+  "userId": {
+    "$oid": "68201e5b4ff90d7e8d39395c"
+  },
+  "rating": 3,
+  "subject": null,
+  "comment": null,
+  "status": "APPROVED",
+  "addedAt": "2025-05-23T01:57:38.581245",
+  "modifiedAt": "2025-05-23T01:57:38.581245"
+},
+{
+  "_id": {
+    "$oid": "682f7504df103bcceb44d29b"
+  },
+  "bookId": {
+    "$oid": "682023424a1ae581e044536e"
+  },
+  "userId": {
+    "$oid": "68201e5b4ff90d7e8d39395c"
+  },
+  "rating": 3,
+  "subject": null,
+  "comment": null,
+  "status": "APPROVED",
+  "addedAt": "2025-05-23T01:57:38.581245",
+  "modifiedAt": "2025-05-23T01:57:38.581245"
+},
+{
+  "_id": {
+    "$oid": "682f7504df103bcceb44d29c"
+  },
+  "bookId": {
+    "$oid": "682023424a1ae581e044536f"
+  },
+  "userId": {
+    "$oid": "68201e5b4ff90d7e8d39395c"
+  },
+  "rating": 3,
+  "subject": null,
+  "comment": null,
+  "status": "APPROVED",
+  "addedAt": "2025-05-23T01:57:38.581245",
+  "modifiedAt": "2025-05-23T01:57:38.581245"
+},
+{
+  "_id": {
+    "$oid": "682f7504df103bcceb44d29d"
+  },
+  "bookId": {
+    "$oid": "682023424a1ae581e0445370"
+  },
+  "userId": {
+    "$oid": "68201e5b4ff90d7e8d39395c"
+  },
+  "rating": 4,
+  "subject": null,
+  "comment": null,
+  "status": "APPROVED",
+  "addedAt": "2025-05-23T01:57:38.581245",
+  "modifiedAt": "2025-05-23T01:57:38.581245"
+},
+{
+  "_id": {
+    "$oid": "682f7504df103bcceb44d29e"
+  },
+  "bookId": {
+    "$oid": "682023424a1ae581e0445371"
+  },
+  "userId": {
+    "$oid": "68201e5b4ff90d7e8d39395c"
+  },
+  "rating": 3,
+  "subject": null,
+  "comment": null,
+  "status": "APPROVED",
+  "addedAt": "2025-05-23T01:57:38.581245",
+  "modifiedAt": "2025-05-23T01:57:38.581245"
+},
+{
+  "_id": {
+    "$oid": "682f7504df103bcceb44d29f"
+  },
+  "bookId": {
+    "$oid": "682023424a1ae581e0445372"
+  },
+  "userId": {
+    "$oid": "68201e5b4ff90d7e8d39395c"
+  },
+  "rating": 3,
+  "subject": null,
+  "comment": null,
+  "status": "APPROVED",
+  "addedAt": "2025-05-23T01:57:38.581245",
+  "modifiedAt": "2025-05-23T01:57:38.581245"
+},
+{
+  "_id": {
+    "$oid": "682f7504df103bcceb44d2a0"
+  },
+  "bookId": {
+    "$oid": "682023424a1ae581e0445373"
+  },
+  "userId": {
+    "$oid": "68201e5b4ff90d7e8d39395c"
+  },
+  "rating": 5,
+  "subject": null,
+  "comment": null,
+  "status": "APPROVED",
+  "addedAt": "2025-05-23T01:57:38.581245",
+  "modifiedAt": "2025-05-23T01:57:38.581245"
+},
+{
+  "_id": {
+    "$oid": "682f7504df103bcceb44d2a1"
+  },
+  "bookId": {
+    "$oid": "682023424a1ae581e0445374"
+  },
+  "userId": {
+    "$oid": "68201e5b4ff90d7e8d39395c"
+  },
+  "rating": 4,
+  "subject": null,
+  "comment": null,
+  "status": "APPROVED",
+  "addedAt": "2025-05-23T01:57:38.581245",
+  "modifiedAt": "2025-05-23T01:57:38.581245"
+},
+{
+  "_id": {
+    "$oid": "682f7504df103bcceb44d2a2"
+  },
+  "bookId": {
+    "$oid": "682023424a1ae581e0445375"
+  },
+  "userId": {
+    "$oid": "68201e5b4ff90d7e8d39395c"
+  },
+  "rating": 4,
+  "subject": null,
+  "comment": null,
+  "status": "APPROVED",
+  "addedAt": "2025-05-23T01:57:38.581245",
+  "modifiedAt": "2025-05-23T01:57:38.581245"
+},
+{
+  "_id": {
+    "$oid": "682f7504df103bcceb44d2a3"
+  },
+  "bookId": {
+    "$oid": "682023424a1ae581e0445376"
+  },
+  "userId": {
+    "$oid": "68201e5b4ff90d7e8d39395c"
+  },
+  "rating": 3,
+  "subject": null,
+  "comment": null,
+  "status": "APPROVED",
+  "addedAt": "2025-05-23T01:57:38.581245",
+  "modifiedAt": "2025-05-23T01:57:38.581245"
+},
+{
+  "_id": {
+    "$oid": "682f7504df103bcceb44d2a4"
+  },
+  "bookId": {
+    "$oid": "682023424a1ae581e0445377"
+  },
+  "userId": {
+    "$oid": "68201e5b4ff90d7e8d39395c"
+  },
+  "rating": 4,
+  "subject": null,
+  "comment": null,
+  "status": "APPROVED",
+  "addedAt": "2025-05-23T01:57:38.581245",
+  "modifiedAt": "2025-05-23T01:57:38.581245"
+},
+{
+  "_id": {
+    "$oid": "682f7504df103bcceb44d2a5"
+  },
+  "bookId": {
+    "$oid": "682023424a1ae581e0445378"
+  },
+  "userId": {
+    "$oid": "68201e5b4ff90d7e8d39395c"
+  },
+  "rating": 3,
+  "subject": null,
+  "comment": null,
+  "status": "APPROVED",
+  "addedAt": "2025-05-23T01:57:38.581245",
+  "modifiedAt": "2025-05-23T01:57:38.581245"
+},
+{
+  "_id": {
+    "$oid": "682f7504df103bcceb44d2a6"
+  },
+  "bookId": {
+    "$oid": "682023424a1ae581e0445379"
+  },
+  "userId": {
+    "$oid": "68201e5b4ff90d7e8d39395c"
+  },
+  "rating": 5,
+  "subject": null,
+  "comment": null,
+  "status": "APPROVED",
+  "addedAt": "2025-05-23T01:57:38.581245",
+  "modifiedAt": "2025-05-23T01:57:38.581245"
+},
+{
+  "_id": {
+    "$oid": "682f7504df103bcceb44d2a7"
+  },
+  "bookId": {
+    "$oid": "682023424a1ae581e044537a"
+  },
+  "userId": {
+    "$oid": "68201e5b4ff90d7e8d39395c"
+  },
+  "rating": 5,
+  "subject": null,
+  "comment": null,
+  "status": "APPROVED",
+  "addedAt": "2025-05-23T01:57:38.581245",
+  "modifiedAt": "2025-05-23T01:57:38.581245"
+},
+{
+  "_id": {
+    "$oid": "682f7504df103bcceb44d2a8"
+  },
+  "bookId": {
+    "$oid": "682023424a1ae581e044537b"
+  },
+  "userId": {
+    "$oid": "68201e5b4ff90d7e8d39395c"
+  },
+  "rating": 5,
+  "subject": null,
+  "comment": null,
+  "status": "APPROVED",
+  "addedAt": "2025-05-23T01:57:38.581245",
+  "modifiedAt": "2025-05-23T01:57:38.581245"
+},
+{
+  "_id": {
+    "$oid": "682f7504df103bcceb44d2a9"
+  },
+  "bookId": {
+    "$oid": "682023424a1ae581e044537c"
+  },
+  "userId": {
+    "$oid": "68201e5b4ff90d7e8d39395c"
+  },
+  "rating": 5,
+  "subject": null,
+  "comment": null,
+  "status": "APPROVED",
+  "addedAt": "2025-05-23T01:57:38.581245",
+  "modifiedAt": "2025-05-23T01:57:38.581245"
+},
+{
+  "_id": {
+    "$oid": "682f7504df103bcceb44d2aa"
+  },
+  "bookId": {
+    "$oid": "682023424a1ae581e044537d"
+  },
+  "userId": {
+    "$oid": "68201e5b4ff90d7e8d39395c"
+  },
+  "rating": 5,
+  "subject": null,
+  "comment": null,
+  "status": "APPROVED",
+  "addedAt": "2025-05-23T01:57:38.581245",
+  "modifiedAt": "2025-05-23T01:57:38.581245"
+},
+{
+  "_id": {
+    "$oid": "682f7504df103bcceb44d2ab"
+  },
+  "bookId": {
+    "$oid": "682023424a1ae581e044537e"
+  },
+  "userId": {
+    "$oid": "68201e5b4ff90d7e8d39395c"
+  },
+  "rating": 3,
+  "subject": null,
+  "comment": null,
+  "status": "APPROVED",
+  "addedAt": "2025-05-23T01:57:38.581245",
+  "modifiedAt": "2025-05-23T01:57:38.581245"
+},
+{
+  "_id": {
+    "$oid": "682f7504df103bcceb44d2ac"
+  },
+  "bookId": {
+    "$oid": "682023424a1ae581e044537f"
+  },
+  "userId": {
+    "$oid": "68201e5b4ff90d7e8d39395c"
+  },
+  "rating": 4,
+  "subject": null,
+  "comment": null,
+  "status": "APPROVED",
+  "addedAt": "2025-05-23T01:57:38.581245",
+  "modifiedAt": "2025-05-23T01:57:38.581245"
+},
+{
+  "_id": {
+    "$oid": "682f7504df103bcceb44d2ad"
+  },
+  "bookId": {
+    "$oid": "682023424a1ae581e0445380"
+  },
+  "userId": {
+    "$oid": "68201e5b4ff90d7e8d39395c"
+  },
+  "rating": 5,
+  "subject": null,
+  "comment": null,
+  "status": "APPROVED",
+  "addedAt": "2025-05-23T01:57:38.581245",
+  "modifiedAt": "2025-05-23T01:57:38.581245"
+},
+{
+  "_id": {
+    "$oid": "682f7504df103bcceb44d2ae"
+  },
+  "bookId": {
+    "$oid": "682023424a1ae581e0445381"
+  },
+  "userId": {
+    "$oid": "68201e5b4ff90d7e8d39395c"
+  },
+  "rating": 5,
+  "subject": null,
+  "comment": null,
+  "status": "APPROVED",
+  "addedAt": "2025-05-23T01:57:38.581245",
+  "modifiedAt": "2025-05-23T01:57:38.581245"
+},
+{
+  "_id": {
+    "$oid": "682f7504df103bcceb44d2af"
+  },
+  "bookId": {
+    "$oid": "682023424a1ae581e0445382"
+  },
+  "userId": {
+    "$oid": "68201e5b4ff90d7e8d39395c"
+  },
+  "rating": 5,
+  "subject": null,
+  "comment": null,
+  "status": "APPROVED",
+  "addedAt": "2025-05-23T01:57:38.581245",
+  "modifiedAt": "2025-05-23T01:57:38.581245"
+},
+{
+  "_id": {
+    "$oid": "682f7504df103bcceb44d2b0"
+  },
+  "bookId": {
+    "$oid": "682023424a1ae581e0445383"
+  },
+  "userId": {
+    "$oid": "68201e5b4ff90d7e8d39395c"
+  },
+  "rating": 3,
+  "subject": null,
+  "comment": null,
+  "status": "APPROVED",
+  "addedAt": "2025-05-23T01:57:38.581245",
+  "modifiedAt": "2025-05-23T01:57:38.581245"
+},
+{
+  "_id": {
+    "$oid": "682f7504df103bcceb44d2b1"
+  },
+  "bookId": {
+    "$oid": "682023424a1ae581e0445384"
+  },
+  "userId": {
+    "$oid": "68201e5b4ff90d7e8d39395c"
+  },
+  "rating": 5,
+  "subject": null,
+  "comment": null,
+  "status": "APPROVED",
+  "addedAt": "2025-05-23T01:57:38.581245",
+  "modifiedAt": "2025-05-23T01:57:38.581245"
+},
+{
+  "_id": {
+    "$oid": "682f7504df103bcceb44d2b2"
+  },
+  "bookId": {
+    "$oid": "682023424a1ae581e0445385"
+  },
+  "userId": {
+    "$oid": "68201e5b4ff90d7e8d39395c"
+  },
+  "rating": 4,
+  "subject": null,
+  "comment": null,
+  "status": "APPROVED",
+  "addedAt": "2025-05-23T01:57:38.581245",
+  "modifiedAt": "2025-05-23T01:57:38.581245"
+},
+{
+  "_id": {
+    "$oid": "682f7504df103bcceb44d2b3"
+  },
+  "bookId": {
+    "$oid": "682023424a1ae581e0445386"
+  },
+  "userId": {
+    "$oid": "68201e5b4ff90d7e8d39395c"
+  },
+  "rating": 4,
+  "subject": null,
+  "comment": null,
+  "status": "APPROVED",
+  "addedAt": "2025-05-23T01:57:38.581245",
+  "modifiedAt": "2025-05-23T01:57:38.581245"
+},
+{
+  "_id": {
+    "$oid": "682f7504df103bcceb44d2b4"
+  },
+  "bookId": {
+    "$oid": "682023424a1ae581e0445387"
+  },
+  "userId": {
+    "$oid": "68201e5b4ff90d7e8d39395c"
+  },
+  "rating": 3,
+  "subject": null,
+  "comment": null,
+  "status": "APPROVED",
+  "addedAt": "2025-05-23T01:57:38.581245",
+  "modifiedAt": "2025-05-23T01:57:38.581245"
+},
+{
+  "_id": {
+    "$oid": "682f7504df103bcceb44d2b5"
+  },
+  "bookId": {
+    "$oid": "682023424a1ae581e0445388"
+  },
+  "userId": {
+    "$oid": "68201e5b4ff90d7e8d39395c"
+  },
+  "rating": 5,
+  "subject": null,
+  "comment": null,
+  "status": "APPROVED",
+  "addedAt": "2025-05-23T01:57:38.581245",
+  "modifiedAt": "2025-05-23T01:57:38.581245"
+},
+{
+  "_id": {
+    "$oid": "682f7504df103bcceb44d2b6"
+  },
+  "bookId": {
+    "$oid": "682023424a1ae581e0445389"
+  },
+  "userId": {
+    "$oid": "68201e5b4ff90d7e8d39395c"
+  },
+  "rating": 3,
+  "subject": null,
+  "comment": null,
+  "status": "APPROVED",
+  "addedAt": "2025-05-23T01:57:38.581245",
+  "modifiedAt": "2025-05-23T01:57:38.581245"
+}]

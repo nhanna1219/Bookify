@@ -7,6 +7,7 @@ import ScrollToTop from '@u_components/shared/ScrollToTop';
 import LoadingScreen from '@u_components/shared/LoadingScreen';
 import { lazy, Suspense } from 'react';
 import ScrollToTopButton from "@u_components/shared/ScrollToTopButton.jsx";
+import BookDetailsPage from "@u_pages/BookDetailsPage/BookDetailsPage.jsx";
 
 const HomePage = lazy(() => import('@u_pages/HomePage/HomePage.jsx'));
 const ShopPage = lazy(() => import('@u_pages/ShopPage/ShopPage.jsx'));
@@ -38,6 +39,7 @@ export default function UserRoutes() {
                         <Route path="/forgot-password" element={<ForgotPasswordPage />} />
                         <Route path="/reset-password" element={<ResetPasswordPage />} />
                         <Route path="/shop" element={<ShopPage />} />
+                        <Route path="/book/:bookId" element={<BookDetailsPage />} />
                         <Route element={<PrivateRoute />}>
                             <Route path="/account" element={<AccountPage />} />
                             <Route path="/orders" element={<OrdersPage />} />
