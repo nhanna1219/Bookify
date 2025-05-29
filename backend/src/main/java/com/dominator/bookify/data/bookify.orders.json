@@ -1,0 +1,275 @@
+[
+  {
+    "userId": "68201e5b4ff90d7e8d39395c",
+    "items": [
+      { "bookId": "682023424a1ae581e0445357", "title": "A Baby Blessing", "price": 30.0, "quantity": 1 },
+      { "bookId": "682023424a1ae581e0445358", "title": "A Royal Quest", "price": 45.0, "quantity": 2 }
+    ],
+    "totalAmount": 120.0,
+    "payment": {
+      "method": "CREDIT_CARD",
+      "transactions": [
+        {
+          "transactionId": "txn_1001",
+          "status": "COMPLETED",
+          "amount": 120.0,
+          "rawResponse": "{\"authCode\":\"A1B2C3\"}",
+          "createdAt": "2025-04-01T10:00:00Z"
+        }
+      ]
+    },
+    "status": "COMPLETED",
+    "shippingAddress": {
+      "street": "123 Main St",
+      "city": "Hanoi",
+      "state": "HN",
+      "postalCode": "100000",
+      "country": "Vietnam"
+    },
+    "createdAt": "2025-04-01T09:55:00Z",
+    "updatedAt": "2025-04-01T10:00:00Z",
+    "doneAt": "2025-04-01T10:00:00Z"
+  },
+  {
+    "userId": "68201e5b4ff90d7e8d39395c",
+    "items": [
+      { "bookId": "682023424a1ae581e044535a", "title": "A Twist in the Tale", "price": 50.0, "quantity": 1 }
+    ],
+    "totalAmount": 50.0,
+    "payment": {
+      "method": "PAYPAL",
+      "transactions": [
+        {
+          "transactionId": "txn_1002",
+          "status": "COMPLETED",
+          "amount": 50.0,
+          "rawResponse": "{\"status\":\"OK\"}",
+          "createdAt": "2025-03-20T14:30:00Z"
+        }
+      ]
+    },
+    "status": "COMPLETED",
+    "shippingAddress": {
+      "street": "456 Le Loi",
+      "city": "Ho Chi Minh City",
+      "state": "HCM",
+      "postalCode": "700000",
+      "country": "Vietnam"
+    },
+    "createdAt": "2025-03-20T14:25:00Z",
+    "updatedAt": "2025-03-20T14:30:00Z",
+    "doneAt": "2025-03-20T14:30:00Z"
+  },
+  {
+    "userId": "68201e5b4ff90d7e8d39395c",
+    "items": [
+      { "bookId": "682023424a1ae581e044535b", "title": "An Armory of Swords", "price": 55.0, "quantity": 1 },
+      { "bookId": "682023424a1ae581e044535c", "title": "Anywhere but Here", "price": 40.0, "quantity": 1 }
+    ],
+    "totalAmount": 95.0,
+    "payment": {
+      "method": "CREDIT_CARD",
+      "transactions": [
+        {
+          "transactionId": "txn_1003",
+          "status": "COMPLETED",
+          "amount": 95.0,
+          "rawResponse": "{\"approved\":true}",
+          "createdAt": "2025-02-15T09:15:00Z"
+        }
+      ]
+    },
+    "status": "COMPLETED",
+    "shippingAddress": {
+      "street": "789 Tran Hung Dao",
+      "city": "Da Nang",
+      "state": "DN",
+      "postalCode": "550000",
+      "country": "Vietnam"
+    },
+    "createdAt": "2025-02-15T09:10:00Z",
+    "updatedAt": "2025-02-15T09:15:00Z",
+    "doneAt": "2025-02-15T09:15:00Z"
+  },
+  {
+    "userId": "68201e5b4ff90d7e8d39395c",
+    "items": [
+      { "bookId": "682023424a1ae581e044535d", "title": "Barnyard Banter", "price": 60.0, "quantity": 1 }
+    ],
+    "totalAmount": 60.0,
+    "payment": {
+      "method": "BANK_TRANSFER",
+      "transactions": [
+        {
+          "transactionId": "txn_1004",
+          "status": "COMPLETED",
+          "amount": 60.0,
+          "rawResponse": "{\"txRef\":\"BTX123\"}",
+          "createdAt": "2025-01-30T16:45:00Z"
+        }
+      ]
+    },
+    "status": "COMPLETED",
+    "shippingAddress": {
+      "street": "321 Nguyen Hue",
+      "city": "Can Tho",
+      "state": "CT",
+      "postalCode": "940000",
+      "country": "Vietnam"
+    },
+    "createdAt": "2025-01-30T16:40:00Z",
+    "updatedAt": "2025-01-30T16:45:00Z",
+    "doneAt": "2025-01-30T16:45:00Z"
+  },
+  {
+    "userId": "68201e5b4ff90d7e8d39395c",
+    "items": [
+      { "bookId": "682023424a1ae581e044535e", "title": "Celebrity", "price": 48.0, "quantity": 2 }
+    ],
+    "totalAmount": 96.0,
+    "payment": {
+      "method": "CREDIT_CARD",
+      "transactions": [
+        {
+          "transactionId": "txn_1005",
+          "status": "COMPLETED",
+          "amount": 96.0,
+          "rawResponse": "{\"auth\":\"XYZ789\"}",
+          "createdAt": "2024-12-12T11:00:00Z"
+        }
+      ]
+    },
+    "status": "COMPLETED",
+    "shippingAddress": {
+      "street": "654 Le Duan",
+      "city": "Hai Phong",
+      "state": "HP",
+      "postalCode": "180000",
+      "country": "Vietnam"
+    },
+    "createdAt": "2024-12-12T10:55:00Z",
+    "updatedAt": "2024-12-12T11:00:00Z",
+    "doneAt": "2024-12-12T11:00:00Z"
+  },
+  {
+    "userId": "68201e5b4ff90d7e8d39395c",
+    "items": [
+      { "bookId": "682023424a1ae581e044535f", "title": "CURE FOR THE COMMON LIFE", "price": 42.0, "quantity": 1 },
+      { "bookId": "682023424a1ae581e0445360", "title": "Cut And Run", "price": 38.0, "quantity": 1 }
+    ],
+    "totalAmount": 80.0,
+    "payment": {
+      "method": "PAYPAL",
+      "transactions": [
+        {
+          "transactionId": "txn_1006",
+          "status": "COMPLETED",
+          "amount": 80.0,
+          "rawResponse": "{\"status\":\"COMPLETED\"}",
+          "createdAt": "2024-11-05T13:20:00Z"
+        }
+      ]
+    },
+    "status": "COMPLETED",
+    "shippingAddress": {
+      "street": "987 Phan Dinh Phung",
+      "city": "Hue",
+      "state": "HU",
+      "postalCode": "530000",
+      "country": "Vietnam"
+    },
+    "createdAt": "2024-11-05T13:15:00Z",
+    "updatedAt": "2024-11-05T13:20:00Z",
+    "doneAt": "2024-11-05T13:20:00Z"
+  },
+  {
+    "userId": "68201e5b4ff90d7e8d39395c",
+    "items": [
+      { "bookId": "682023424a1ae581e0445361", "title": "Decline and Fall", "price": 35.0, "quantity": 3 }
+    ],
+    "totalAmount": 105.0,
+    "payment": {
+      "method": "CREDIT_CARD",
+      "transactions": [
+        {
+          "transactionId": "txn_1007",
+          "status": "COMPLETED",
+          "amount": 105.0,
+          "rawResponse": "{\"approved\":true}",
+          "createdAt": "2024-10-10T09:00:00Z"
+        }
+      ]
+    },
+    "status": "COMPLETED",
+    "shippingAddress": {
+      "street": "159 Kim Ma",
+      "city": "Hue",
+      "state": "HU",
+      "postalCode": "530000",
+      "country": "Vietnam"
+    },
+    "createdAt": "2024-10-10T08:55:00Z",
+    "updatedAt": "2024-10-10T09:00:00Z",
+    "doneAt": "2024-10-10T09:00:00Z"
+  },
+  {
+    "userId": "68201e5b4ff90d7e8d39395c",
+    "items": [
+      { "bookId": "682023424a1ae581e0445362", "title": "Design Patterns", "price": 65.0, "quantity": 1 }
+    ],
+    "totalAmount": 65.0,
+    "payment": {
+      "method": "BANK_TRANSFER",
+      "transactions": [
+        {
+          "transactionId": "txn_1008",
+          "status": "COMPLETED",
+          "amount": 65.0,
+          "rawResponse": "{\"txRef\":\"BTX456\"}",
+          "createdAt": "2024-09-01T15:30:00Z"
+        }
+      ]
+    },
+    "status": "COMPLETED",
+    "shippingAddress": {
+      "street": "753 Dien Bien Phu",
+      "city": "Bien Hoa",
+      "state": "BD",
+      "postalCode": "760000",
+      "country": "Vietnam"
+    },
+    "createdAt": "2024-09-01T15:25:00Z",
+    "updatedAt": "2024-09-01T15:30:00Z",
+    "doneAt": "2024-09-01T15:30:00Z"
+  },
+  {
+    "userId": "68201e5b4ff90d7e8d39395c",
+    "items": [
+      { "bookId": "682023424a1ae581e0445363", "title": "Test-Driven Development", "price": 28.0, "quantity": 2 }
+    ],
+    "totalAmount": 56.0,
+    "payment": {
+      "method": "CREDIT_CARD",
+      "transactions": [
+        {
+          "transactionId": "txn_1009",
+          "status": "COMPLETED",
+          "amount": 56.0,
+          "rawResponse": "{\"auth\":\"TDD123\"}",
+          "createdAt": "2024-08-18T12:00:00Z"
+        }
+      ]
+    },
+    "status": "COMPLETED",
+    "shippingAddress": {
+      "street": "246 Pasteur",
+      "city": "Vung Tau",
+      "state": "VT",
+      "postalCode": "790000",
+      "country": "Vietnam"
+    },
+    "createdAt": "2024-08-18T11:55:00Z",
+    "updatedAt": "2024-08-18T12:00:00Z",
+    "doneAt": "2024-08-18T12:00:00Z"
+  }
+]

@@ -39,7 +39,11 @@ public class SecurityConfig {
                                 "/api/users/resend-verification",
                                 "/api/books/**",
                                 "/api/categories",
-                                "/api/reviews/**"
+                                "/api/reviews/**",
+                                "/api/admin/books/**",
+                                "/api/admin/users/**",
+                                "/api/admin/orders/**",
+                                "/api/admin/categories/**"
 
                         ).permitAll()
                         .anyRequest().authenticated()
@@ -51,5 +55,6 @@ public class SecurityConfig {
 
         return http.build();
     }
+
 
 }
