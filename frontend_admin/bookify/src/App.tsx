@@ -485,28 +485,28 @@ const App: React.FC = () => {
                                     <Route path=":id/edit" element={<BookEdit/>}/>
                                 </Route>
 
-                                <Route path="/stores">
-                                    <Route index element={<StoreList/>}/>
-                                    <Route path="new" element={<StoreCreate/>}/>
-                                    <Route path=":id/edit" element={<StoreEdit/>}/>
-                                </Route>
+                                {/*<Route path="/stores">*/}
+                                {/*    <Route index element={<StoreList/>}/>*/}
+                                {/*    <Route path="new" element={<StoreCreate/>}/>*/}
+                                {/*    <Route path=":id/edit" element={<StoreEdit/>}/>*/}
+                                {/*</Route>*/}
 
                                 <Route path="/categories" element={<CategoryList/>}/>
 
-                                <Route path="/couriers">
-                                    <Route
-                                        path=""
-                                        element={
-                                            <CourierList>
-                                                <Outlet/>
-                                            </CourierList>
-                                        }
-                                    >
-                                        <Route path="new" element={<CourierCreate/>}/>
-                                    </Route>
+                                {/*<Route path="/couriers">*/}
+                                {/*    <Route*/}
+                                {/*        path=""*/}
+                                {/*        element={*/}
+                                {/*            <CourierList>*/}
+                                {/*                <Outlet/>*/}
+                                {/*            </CourierList>*/}
+                                {/*        }*/}
+                                {/*    >*/}
+                                {/*        <Route path="new" element={<CourierCreate/>}/>*/}
+                                {/*    </Route>*/}
 
-                                    <Route path=":id/edit" element={<CourierEdit/>}/>
-                                </Route>
+                                {/*    <Route path=":id/edit" element={<CourierEdit/>}/>*/}
+                                {/*</Route>*/}
                             </Route>
 
                             <Route
@@ -578,47 +578,3 @@ const App: React.FC = () => {
 
 export default App;
 
-//
-// // src/App.tsx
-// import React from "react";
-// import { Refine } from '@refinedev/core';
-// import routerProvider from '@refinedev/react-router';
-// import { notificationProvider, Layout, ErrorComponent } from '@refinedev/antd';
-// import { BrowserRouter, Routes, Route, Outlet } from 'react-router';
-// import simpleRestDataProvider from '@refinedev/simple-rest';
-// import { CategoryList, CategoryCreate, CategoryEdit, CategoryShow } from './pages/categories';
-//
-// const App: React.FC = () => (
-//     <BrowserRouter>
-//       <Refine
-//           routerProvider={routerProvider}
-//           dataProvider={simpleRestDataProvider('/api')}
-//           notificationProvider={notificationProvider}
-//           Layout={Layout}
-//           catchAll={<ErrorComponent />}
-//           resources={[
-//             {
-//               name: 'categories',
-//               list: CategoryList,
-//               create: CategoryCreate,
-//               edit: CategoryEdit,
-//               show: CategoryShow,
-//             },
-//             // ...other resources
-//           ]}
-//       >
-//         <Routes>
-//           <Route element={<Layout><Outlet /></Layout>}>
-//             <Route path="/categories" element={<CategoryList />} />
-//             <Route path="/categories/create" element={<CategoryCreate />} />
-//             <Route path="/categories/edit/:id" element={<CategoryEdit />} />
-//             <Route path="/categories/show/:id" element={<CategoryShow />} />
-//             {/* ...other routes */}
-//           </Route>
-//         </Routes>
-//       </Refine>
-//     </BrowserRouter>
-// );
-//
-// export default App;
-//
