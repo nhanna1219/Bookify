@@ -43,16 +43,6 @@ createRoot(document.getElementById('root')).render(
                                 border: '1px solid #fecaca',
                             },
                         },
-                        // Custom styling for warning
-                        custom: {
-                            icon: '⚠️',
-                            duration: 4000,
-                            style: {
-                                background: '#fffbea',
-                                color: '#92400e',
-                                border: '1px solid #fde68a',
-                            },
-                        },
                         // Custom styling for info
                         blank: {
                             icon: 'ℹ️',

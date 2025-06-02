@@ -26,7 +26,7 @@ export default function ShopPage() {
     const [searchParams, setSearchParams] = useSearchParams();
     const isFirst = useRef(true);
     const gridRef = useRef(null)
-
+    const searchRef = useRef(null);
 
     const [state, setState] = useState(() => {
         const pageNumber = safeInteger(searchParams.get("page"), 1, Infinity, 1);
@@ -86,10 +86,11 @@ export default function ShopPage() {
         size: state.page.size,
     }), [state]);
 
-    const [debouncedParams] = useDebounce(queryParams, 300);
+    const [debouncedParams] = useDebounce(queryParams, 400);
     const { categories, books, isLoading, isError } = useShopData(debouncedParams);
 
     useEffect(() => {
+        if (searchRef.current) searchRef.current.focus();
         if (!books) return;
         const {number, size, totalPages, totalElements} = books;
         updateState("page", {
@@ -217,6 +218,7 @@ export default function ShopPage() {
                         itemsPerPage={state.page.size}
                         onSearchChange={(text) => updateState("searchText", text)}
                         value={state.searchText}
+                        searchRef={searchRef}
                     />
                 ), [state.page.totalElements, state.page.number, state.page.size, state.searchText])}
 
@@ -270,22 +272,22 @@ export default function ShopPage() {
                                     totalPages={state.page.totalPages}
                                     currentPage={state.page.number + 1}
                                     onPageChange={page => {
-                                        updatePageNumber(page - 1)
+                                        gridRef.current?.scrollIntoView({ behavior: 'smooth' })
                                         setTimeout(() => {
-                                            gridRef.current?.scrollIntoView({ behavior: 'smooth' })
-                                        }, 250);
+                                            updatePageNumber(page - 1)
+                                        }, 200);
                                     }}
                                     onPrev={() => {
-                                        updatePageNumber(Math.max(state.page.number - 1, 0))
+                                        gridRef.current?.scrollIntoView({ behavior: 'smooth' })
                                         setTimeout(() => {
-                                            gridRef.current?.scrollIntoView({ behavior: 'smooth' })
-                                        }, 250);
+                                            updatePageNumber(Math.max(state.page.number - 1, 0))
+                                        }, 200);
                                     }}
                                     onNext={() => {
-                                        updatePageNumber(Math.min(state.page.number + 1, state.page.totalPages - 1))
+                                        gridRef.current?.scrollIntoView({ behavior: 'smooth' })
                                         setTimeout(() => {
-                                            gridRef.current?.scrollIntoView({ behavior: 'smooth' })
-                                        }, 250);
+                                            updatePageNumber(Math.min(state.page.number + 1, state.page.totalPages - 1))
+                                        }, 200);
                                     }}
                                     pageIndex={genPageIndex}
                                 />

@@ -102,3 +102,18 @@ export const resetPasswordSchema = yup.object({
         .oneOf([yup.ref('newPassword'), null], 'Passwords must match')
         .required('Please confirm your password'),
 });
+
+export const checkoutSchema = yup.object().shape({
+    firstName: yup.string().required("First name is required"),
+    lastName: yup.string().required("Last name is required"),
+    phoneNumber: yup
+        .string()
+        .required("Phone number is required")
+        .matches(/^\+?[1-9]\d{7,14}$/, "Invalid phone number format"),
+    email: yup.string().email("Invalid email").required("Email is required"),
+    country: yup.string().required("Country is required"),
+    state: yup.string().required("State/Province is required"),
+    city: yup.string().required("City/Town is required"),
+    postalCode: yup.string().required("Postal/Zip Code is required"),
+    street: yup.string().required("Street Address is required"),
+});

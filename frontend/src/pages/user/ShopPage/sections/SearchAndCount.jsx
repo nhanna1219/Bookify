@@ -1,7 +1,7 @@
 import React from 'react'
 import {Search} from 'lucide-react'
 
-export default function SearchAndCount({total, currentPage, itemsPerPage, onSearchChange, value}) {
+export default function SearchAndCount({total, currentPage, itemsPerPage, onSearchChange, value, searchRef}) {
     const start = total > 0 ? (currentPage - 1) * itemsPerPage + 1 : 0
     const end = Math.min(currentPage * itemsPerPage, total)
     return (
@@ -13,6 +13,7 @@ export default function SearchAndCount({total, currentPage, itemsPerPage, onSear
             <div className="flex items-center gap-2 ml-auto">
                 <div className="relative w-55">
                     <input
+                        ref={searchRef}
                         type="text"
                         value={value}
                         onChange={e => onSearchChange(e.target.value)}

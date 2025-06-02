@@ -11,6 +11,7 @@ export default function BookDetailsPage() {
     const { bookId } = useParams();
     const [state, setState] = useState({
         bookId,
+        rating: 0,
         pageIndex: 0,
         pageSize: 5
     });
@@ -40,7 +41,14 @@ export default function BookDetailsPage() {
             ) : (
                 <>
                     {bookDetailsComp}
-                    <BookReviews bookReview={bookReviews} ratingDistribution={ratingDistribution} setState={setState} />
+                    <BookReviews
+                        averageRating={bookDetails?.averageRating}
+                        ratingCount={bookDetails?.ratingCount}
+                        bookReview={bookReviews}
+                        ratingDistribution={ratingDistribution}
+                        state={state}
+                        setState={setState}
+                    />
                 </>
             )}
         </>

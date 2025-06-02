@@ -7,7 +7,7 @@ export default function ShopFeatureSection() {
                 <div className="flex flex-col items-center gap-2">
                     <Truck className="w-6 h-6 text-[#1C387F]" />
                     <p className="text-[#1C387F] font-bold">Free shipping</p>
-                    <p className="text-sm text-gray-500">Free shipping for orders above $250</p>
+                    <p className="text-sm text-gray-500">Free shipping for orders above $30</p>
                 </div>
                 <div className="flex flex-col items-center gap-2">
                     <CreditCard className="w-6 h-6 text-[#1C387F]" />

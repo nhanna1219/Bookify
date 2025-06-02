@@ -6,7 +6,7 @@ import FormInput from '../shared/FormInput.jsx';
 import { Link, useLocation } from 'react-router-dom';
 import GoogleLoginButton from './GoogleLoginButton.jsx';
 import { useEffect } from 'react';
-import { showSuccess, showError, showWarning } from '@utils/toast.js';
+import {showSuccess, showError, showInfo} from '@utils/toast.js';
 
 export default function LoginForm() {
     const { loading, submit } = useLogin();
@@ -36,7 +36,7 @@ export default function LoginForm() {
         } else if (verified === '0' && error) {
             showError(decodeURIComponent(error));
         } else if (location.state?.from) {
-            showWarning('Please log in to continue');
+            showInfo('Please log in to continue');
         }
 
         window.history.replaceState({}, document.title, location.pathname);

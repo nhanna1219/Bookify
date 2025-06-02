@@ -21,7 +21,7 @@ export default function FormInput({ label, error, required, type = 'text', place
                     {...rest}
                     className={`w-full border border-gray-300 text-sm rounded px-3 py-2
                     placeholder-gray-400
-                    focus:outline-none focus:ring-1 focus:ring-black focus:border-black
+                    focus:outline-none focus:ring-1 focus:ring-black focus:border-black bg-white
                     ${error ? 'border-red-500 focus:ring-red-500' : ''}`}
                 />
                 {type === 'password' && (

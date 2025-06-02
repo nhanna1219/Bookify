@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import shippingBox from "@assets/box.png";
 
 const announcements = [
-    "Get Free Shipping on Orders above $250",
+    "Get Free Shipping on Orders above $30",
     "Flexible Payment Methods Available",
     "24/7 Support for All Customers",
 ];
