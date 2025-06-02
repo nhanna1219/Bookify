@@ -8,3 +8,6 @@ export const payWithMomo = (data) =>
 
 export const getOrderById = (id) =>
     api.get(`/orders/${id}`);
+
+export const notifyMomoPaymentStatus = (data) =>
+    api.post("/payments/momo/notify", data)

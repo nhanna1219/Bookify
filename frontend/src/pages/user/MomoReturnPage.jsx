@@ -1,34 +1,55 @@
-import {useEffect} from "react";
-import {useNavigate, useLocation} from "react-router-dom";
-import {showError} from "@utils/toast.js";
-import {getOrderById} from "@u_services/orderService.js";
+import { useEffect } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
+import { showError } from "@utils/toast.js";
+import {getOrderById, notifyMomoPaymentStatus} from "@u_services/orderService.js";
 
 export default function MomoReturnPage() {
     const navigate = useNavigate();
-    const {search} = useLocation();
+    const { search } = useLocation();
 
     useEffect(() => {
         const params = new URLSearchParams(search);
-        const momoOrderId = params.get("orderId"); // "Bookify-<orderId>"
+        const momoOrderId = params.get("orderId");
         if (!momoOrderId) {
             showError("This path is not valid!");
-            navigate("/cart", {replace: true});
+            navigate("/cart", { replace: true });
             return;
         }
         const ourOrderId = momoOrderId.replace(/^Bookify-/, "");
 
-        getOrderById(ourOrderId)
+        const payload = {
+            partnerCode: params.get("partnerCode"),
+            accessKey: params.get("accessKey"),
+            requestId: params.get("requestId"),
+            amount: params.get("amount"),
+            orderId: params.get("orderId"),
+            orderInfo: params.get("orderInfo"),
+            orderType: params.get("orderType"),
+            transId: params.get("transId"),
+            resultCode: params.get("resultCode"),
+            message: params.get("message"),
+            responseTime: params.get("responseTime"),
+            extraData: params.get("extraData"),
+            payType: params.get("payType"),
+            signature: params.get("signature"),
+        };
+
+        notifyMomoPaymentStatus(payload)
+            .then(() => {
+                return getOrderById(ourOrderId);
+            })
             .then(res => {
                 const order = res.data;
                 const shippingInformation = order?.shippingInformation;
-
-                const flatShippingAddress = shippingInformation ? {
-                    ...(() => {
-                        const { address, ...rest } = shippingInformation;
-                        return rest;
-                    })(),
-                    ...shippingInformation.address
-                } : {};
+                const flatShippingAddress = shippingInformation
+                    ? {
+                        ...(() => {
+                            const { address, ...rest } = shippingInformation;
+                            return rest;
+                        })(),
+                        ...shippingInformation.address
+                    }
+                    : {};
                 navigate("/order-confirmation", {
                     replace: true,
                     state: {
@@ -39,10 +60,9 @@ export default function MomoReturnPage() {
                 });
             })
             .catch(() => {
-                showError("Unable to create order at this moment, please try again later.");
-                navigate("/cart", {replace: true});
+                showError("Unable to process payment at this moment. Please try again later.");
+                navigate("/cart", { replace: true });
             });
-
     }, [search, navigate]);
 
     return (
