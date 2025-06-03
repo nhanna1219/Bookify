@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import {Link, useNavigate} from 'react-router-dom';
 import ConditionTag from './ConditionTag.jsx';
 import WishlistBtn from "@u_components/products/WishlistBtn.jsx";
@@ -6,12 +6,17 @@ import RatingStar from "@u_components/products/RatingStar.jsx";
 import {useCartActions} from "@u_hooks/useCartActions.js";
 import {calcCartTotals} from "@utils/calCartTotals.js";
 import {showError} from "@utils/toast.js";
+import {CheckoutContext} from "@contexts/CheckoutContext.jsx";
 
 const ProductCard = ({
                          product, scale = 0.9, onRemoveBook, showCheckbox = false, checked = false, onToggle = () => {
     }
                      }) => {
     const navigate = useNavigate();
+    const {
+        setSelectedItems
+    } = useContext(CheckoutContext);
+
     const authorName = product.authors?.[0] || "";
     const hasRating = product.ratingCount > 0;
     const ratingValue = hasRating ? product.averageRating : 0;
@@ -41,17 +46,9 @@ const ProductCard = ({
     };
 
     const handleBuyNow = async () => {
-        // Add to cart
         await handleAddToCart();
-        const selectedItems = JSON.parse(localStorage.getItem("cart_selected") || '{}');
-        const updateSelected = {
-            ...selectedItems,
-            [product.id]: true
-        };
-        localStorage.setItem("cart_selected", JSON.stringify(updateSelected));
 
-        // Go to Buy Now
-        const items = [{
+        const cartItem = {
             bookId: product.id,
             title: product.title,
             author: authorName,
@@ -60,19 +57,9 @@ const ProductCard = ({
             image: imageUrl,
             condition: product.condition,
             stock: product.stock,
-        }];
-        const totals = calcCartTotals(items);
-
-        if (sessionStorage.getItem('orderFlowCompleted') === 'true') {
-            sessionStorage.removeItem('orderFlowCompleted');
-        }
-
-        navigate("/checkout", {
-            state: {
-                items,
-                ...totals,
-            }
-        });
+        };
+        setSelectedItems([cartItem]);
+        navigate("/checkout");
     };
 
     return (

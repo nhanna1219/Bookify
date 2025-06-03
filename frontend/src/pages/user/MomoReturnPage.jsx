@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { showError } from "@utils/toast.js";
-import {getOrderById, notifyMomoPaymentStatus} from "@u_services/orderService.js";
+import { getOrderById, notifyMomoPaymentStatus } from "@u_services/orderService.js";
 
 export default function MomoReturnPage() {
     const navigate = useNavigate();
@@ -35,28 +35,16 @@ export default function MomoReturnPage() {
         };
 
         notifyMomoPaymentStatus(payload)
-            .then(() => {
-                return getOrderById(ourOrderId);
-            })
+            .then(() => getOrderById(ourOrderId))
             .then(res => {
                 const order = res.data;
-                const shippingInformation = order?.shippingInformation;
-                const flatShippingAddress = shippingInformation
-                    ? {
-                        ...(() => {
-                            const { address, ...rest } = shippingInformation;
-                            return rest;
-                        })(),
-                        ...shippingInformation.address
-                    }
-                    : {};
+
                 navigate("/order-confirmation", {
                     replace: true,
                     state: {
                         orderDetails: order,
                         paymentMethod: "momo",
-                        shippingAddress: flatShippingAddress
-                    }
+                    },
                 });
             })
             .catch(() => {

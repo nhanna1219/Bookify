@@ -1,15 +1,16 @@
-import { useState, useEffect, useContext, useMemo, useCallback } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
-import { useQueryClient } from '@tanstack/react-query';
-import { HandCoins, CheckCircle2 } from 'lucide-react';
+import {useState, useEffect, useContext, useMemo, useCallback} from 'react'
+import {useNavigate} from 'react-router-dom'
+import {useQueryClient} from '@tanstack/react-query'
+import {HandCoins, CheckCircle2} from 'lucide-react'
 
-import CheckoutProgress from '@u_components/checkout/CheckoutProgress.jsx';
-import OrderSummary from '@u_components/checkout/OrderSummary.jsx';
-import { showError, showPromise } from '@utils/toast.js';
-import { payWithCOD, payWithMomo } from '@u_services/orderService.js';
-import { AuthContext } from '@contexts/AuthContext.jsx';
+import CheckoutProgress from '@u_components/checkout/CheckoutProgress.jsx'
+import OrderSummary from '@u_components/checkout/OrderSummary.jsx'
+import {showError, showPromise} from '@utils/toast.js'
+import {payWithCOD, payWithMomo} from '@u_services/orderService.js'
+import {AuthContext} from '@contexts/AuthContext.jsx'
+import {CheckoutContext} from '@contexts/CheckoutContext.jsx'
 
-import { MomoBrandLogo, VNPayBrandLogo } from '@u_components/checkout/PaymentLogos.jsx';
+import {MomoBrandLogo, VNPayBrandLogo} from '@u_components/checkout/PaymentLogos.jsx'
 
 const paymentMethods = [
     {
@@ -17,14 +18,14 @@ const paymentMethods = [
         name: 'Cash on Delivery (COD)',
         description: 'Pay with cash when your order is delivered.',
         icon: HandCoins,
-        disabled: false
+        disabled: false,
     },
     {
         id: 'momo',
         name: 'Momo E-Wallet',
         description: 'Pay securely using your Momo account.',
         icon: MomoBrandLogo,
-        disabled: false
+        disabled: false,
     },
     {
         id: 'vnpay',
@@ -32,113 +33,108 @@ const paymentMethods = [
         description: 'Pay with Card, Bank Transfer, or VNPay QR.',
         icon: VNPayBrandLogo,
         disabled: true,
-        tooltip: 'VNPAY is not supported at the moment.'
-    }
-];
+        tooltip: 'VNPAY is not supported at the moment.',
+    },
+]
 
-const transformAddress = ({ firstName, lastName, email, phoneNumber, street, city, state, postalCode, country }) => ({
+const transformAddress = ({
+                              firstName,
+                              lastName,
+                              email,
+                              phoneNumber,
+                              street,
+                              city,
+                              state,
+                              postalCode,
+                              country,
+                          }) => ({
     firstName,
     lastName,
     email,
     phoneNumber,
-    address: { street, city, state, postalCode, country }
-});
+    address: {street, city, state, postalCode, country},
+})
 
 export default function PaymentPage() {
-    const { state: locationState } = useLocation();
-    const navigate = useNavigate();
-    const { auth } = useContext(AuthContext);
-    const queryClient = useQueryClient();
-
-    const cartKey = useMemo(() => ['cart', auth?.user?.id || 'guest'], [auth]);
-    const invalidateCart = useCallback(() => {
-        queryClient.invalidateQueries({ queryKey: cartKey });
-    }, [queryClient, cartKey]);
-
+    const {auth} = useContext(AuthContext)
     const {
-        items: cartItems = [],
-        itemsCount = 0,
-        subtotal = 0,
-        shipping = 0,
-        taxes = 0,
-        discount = 0,
-        total = 0,
-        shippingAddress: rawAddress = {}
-    } = locationState || {};
+        selectedItems,
+        totals: {itemsCount, subtotal, shipping, taxes, discount, total},
+        shippingAddress,
+        orderCompleted,
+        setOrderCompleted,
+        setSelectedItems,
+    } = useContext(CheckoutContext)
+    const navigate = useNavigate()
+    const queryClient = useQueryClient()
 
-    const [selectedMethod, setSelectedMethod] = useState('cod');
-    const [loading, setLoading] = useState(false);
+    const cartKey = useMemo(() => ['cart', auth?.user?.id || 'guest'], [auth])
+    const invalidateCart = useCallback(() => {
+        queryClient.invalidateQueries({queryKey: cartKey})
+    }, [queryClient, cartKey])
+
+    const [selectedMethod, setSelectedMethod] = useState('cod')
+    const [loading, setLoading] = useState(false)
 
     useEffect(() => {
-        if (sessionStorage.getItem('orderFlowCompleted') === 'true') {
-            navigate('/cart', { replace: true });
-        } else if (!cartItems.length) {
-            showError('Your session is invalid or cart is empty. Please start from your cart.');
-            navigate('/cart', { replace: true });
+        if (orderCompleted || selectedItems.length === 0) {
+            navigate('/cart', {replace: true})
         }
-    }, [cartItems.length, navigate]);
-
-    const clearCheckoutStorage = () => {
-        sessionStorage.removeItem('checkoutForm');
-        sessionStorage.removeItem('checkoutUsingSaved');
-        localStorage.removeItem('cart_selected');
-    };
+    }, [orderCompleted, selectedItems.length, navigate])
 
     const handlePayment = useCallback(async () => {
         if (!selectedMethod) {
-            showError('Please select a payment method.');
-            return;
+            showError('Please select a payment method.')
+            return
         }
 
-        setLoading(true);
+        setLoading(true)
         const payload = {
-            items: cartItems.map(({ bookId, quantity }) => ({ bookId, quantity })),
-            paymentInfo: { method: selectedMethod },
-            shippingInformation: transformAddress(rawAddress)
-        };
+            items: selectedItems.map(({bookId, quantity}) => ({bookId, quantity})),
+            paymentInfo: {method: selectedMethod},
+            shippingInformation: transformAddress(shippingAddress || {}),
+        }
 
         try {
             if (selectedMethod === 'cod') {
-                const { data } = await showPromise(payWithCOD(payload), {
+                const {data} = await showPromise(payWithCOD(payload), {
                     loading: 'Processing...',
                     success: 'Order created successfully.',
-                    error: 'Failed to place order. Please try again.'
-                }, { throwOnError: true });
+                    error: 'Failed to place order. Please try again.',
+                }, {throwOnError: true})
 
-                invalidateCart();
-                clearCheckoutStorage();
-                sessionStorage.setItem('orderFlowCompleted', 'true');
+                invalidateCart()
                 navigate('/order-confirmation', {
                     replace: true,
-                    state: { orderDetails: data, paymentMethod: selectedMethod, shippingAddress: rawAddress }
-                });
+                    state: {orderDetails: data, paymentMethod: selectedMethod},
+                })
             } else if (selectedMethod === 'momo') {
-                const { data } = await showPromise(payWithMomo(payload), {
+                const {data} = await showPromise(payWithMomo(payload), {
                     loading: 'Processing...',
                     success: 'Redirecting to MoMo...',
-                    error: 'Failed to initiate MoMo payment. Please try again.'
-                }, { throwOnError: true });
+                    error: 'Failed to initiate MoMo payment. Please try again.',
+                }, {throwOnError: true})
 
-                invalidateCart();
-                clearCheckoutStorage();
-                sessionStorage.setItem('orderFlowCompleted', 'true');
-                window.location.href = data.payUrl;
+                invalidateCart()
+
+                sessionStorage.setItem('checkout_shippingAddress', JSON.stringify(shippingAddress))
+                window.location.href = data.payUrl
             } else {
-                showError('Invalid payment method!');
-                navigate('/cart', { replace: true });
+                showError('Invalid payment method!')
+                navigate('/cart', {replace: true})
             }
         } catch (err) {
-            console.error(err);
-            showError(err?.response?.data?.error || 'Payment failed. Try again.');
+            console.error(err)
+            showError(err?.response?.data?.error || 'Payment failed. Try again.')
         } finally {
-            setLoading(false);
+            setLoading(false)
         }
-    }, [selectedMethod, cartItems, rawAddress, invalidateCart, navigate]);
+    }, [selectedMethod, selectedItems, shippingAddress, invalidateCart, navigate, setSelectedItems, setOrderCompleted])
 
     return (
         <div className="bg-slate-50 min-h-screen">
             <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-                <CheckoutProgress step="payment" />
+                <CheckoutProgress step="payment"/>
                 <h1 className="text-3xl font-bold text-[#1C387F] mt-8 mb-6 text-center sm:text-left">
                     Payment Options
                 </h1>
@@ -148,8 +144,8 @@ export default function PaymentPage() {
                             Choose your payment method
                         </h2>
                         <div className="space-y-4">
-                            {paymentMethods.map(({ id, name, description, icon: Icon, disabled, tooltip }) => {
-                                const isSelected = selectedMethod === id;
+                            {paymentMethods.map(({id, name, description, icon: Icon, disabled, tooltip}) => {
+                                const isSelected = selectedMethod === id
                                 return (
                                     <div
                                         key={id}
@@ -157,9 +153,9 @@ export default function PaymentPage() {
                                         aria-checked={isSelected}
                                         tabIndex={loading || disabled ? -1 : 0}
                                         onClick={() => !loading && !disabled && setSelectedMethod(id)}
-                                        onKeyPress={(e) => {
+                                        onKeyPress={e => {
                                             if (!loading && !disabled && (e.key === 'Enter' || e.key === ' ')) {
-                                                setSelectedMethod(id);
+                                                setSelectedMethod(id)
                                             }
                                         }}
                                         title={disabled ? tooltip : undefined}
@@ -172,7 +168,7 @@ export default function PaymentPage() {
                     `}
                                     >
                                         <div className="flex items-center">
-                                            <Icon className="w-auto h-10 sm:h-12 max-w-[100px] mr-4 shrink-0" />
+                                            <Icon className="w-auto h-10 sm:h-12 max-w-[100px] mr-4 shrink-0"/>
                                             <div>
                                                 <h3 className={`text-md sm:text-lg font-semibold ${isSelected ? 'text-[#1C387F]' : 'text-gray-800'}`}>
                                                     {name}
@@ -182,13 +178,13 @@ export default function PaymentPage() {
                                         </div>
                                         <div className="flex items-center ml-2">
                                             {isSelected ? (
-                                                <CheckCircle2 className="w-6 h-6 text-[#1C387F]" />
+                                                <CheckCircle2 className="w-6 h-6 text-[#1C387F]"/>
                                             ) : (
-                                                <div className="w-5 h-5 border-2 border-gray-300 rounded-full" />
+                                                <div className="w-5 h-5 border-2 border-gray-300 rounded-full"/>
                                             )}
                                         </div>
                                     </div>
-                                );
+                                )
                             })}
                         </div>
                         <div className="mt-8 pt-6 border-t border-gray-200 text-right">
@@ -222,5 +218,5 @@ export default function PaymentPage() {
                 </div>
             </div>
         </div>
-    );
+    )
 }

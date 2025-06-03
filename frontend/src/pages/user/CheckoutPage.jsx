@@ -7,27 +7,32 @@ import FormInput from "@u_components/shared/FormInput.jsx"
 import PhoneInput from "react-phone-input-2"
 import "react-phone-input-2/lib/style.css"
 import OrderSummary from "@u_components/checkout/OrderSummary.jsx"
-import {useLocation, useNavigate, useNavigationType} from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 import CheckoutProgress from "@u_components/checkout/CheckoutProgress.jsx"
 import { useAddressData } from "@u_hooks/useAddressData.js"
 import { AuthContext } from "@contexts/AuthContext.jsx"
+import { CheckoutContext } from "@contexts/CheckoutContext.jsx"
 
 export default function CheckoutPage() {
     const { auth } = useContext(AuthContext)
-    const { state } = useLocation()
+    const {
+        selectedItems,
+        totals,
+        shippingAddress,
+        usingSaved,
+        setShippingAddress,
+        setUsingSaved,
+        setOrderCompleted,
+    } = useContext(CheckoutContext)
     const navigate = useNavigate()
-    const navigationType = useNavigationType()
 
     useEffect(() => {
-        if (sessionStorage.getItem('orderFlowCompleted') === 'true' || !state || !state.items || state.items.length === 0) {
-            navigate('/cart', { replace: true });
+        if (!selectedItems || selectedItems.length === 0) {
+            navigate("/cart", { replace: true })
         }
-    }, [state, navigate]);
+    }, [selectedItems, navigate])
 
-    const { itemsCount = 0, subtotal = 0, shipping = 0, taxes = 0, discount = 0, total = 0 } = state || {}
-
-    const savedForm = sessionStorage.getItem("checkoutForm")
-    const savedUsing = sessionStorage.getItem("checkoutUsingSaved") === "true"
+    const { itemsCount, subtotal, shipping, taxes, discount, total } = totals
 
     const {
         register,
@@ -39,30 +44,14 @@ export default function CheckoutPage() {
         formState: { errors },
     } = useForm({
         resolver: yupResolver(checkoutSchema),
-        defaultValues: {},
+        defaultValues: shippingAddress || {},
     })
-
-    const allValues = watch()
-    useEffect(() => {
-        const serialized = JSON.stringify(allValues)
-        const prev = sessionStorage.getItem("checkoutForm")
-        if (prev !== serialized) {
-            sessionStorage.setItem("checkoutForm", serialized)
-        }
-    }, [allValues])
 
     const selectedCountry = watch("country")
     const selectedState = watch("state")
 
     const [userAddress, setUserAddress] = useState(null)
-    const [usingSaved, setUsingSaved] = useState(false)
     const [editingLoc, setEditingLoc] = useState(false)
-
-    useEffect(() => {
-        if (navigationType === "POP") {
-            navigate("/cart", { replace: true });
-        }
-    }, [navigationType, navigate]);
 
     useEffect(() => {
         if (auth?.user?.address) {
@@ -82,13 +71,10 @@ export default function CheckoutPage() {
     }, [auth])
 
     useEffect(() => {
-        if (savedForm) {
-            reset(JSON.parse(savedForm))
-        }
-        if (savedUsing && userAddress) {
+        if (usingSaved && userAddress) {
             populateSaved()
         }
-    }, [reset, userAddress, savedUsing])
+    }, [usingSaved, userAddress])
 
     useEffect(() => {
         if (
@@ -126,7 +112,6 @@ export default function CheckoutPage() {
     const populateSaved = () => {
         if (!userAddress) return
         setUsingSaved(true)
-        sessionStorage.setItem("checkoutUsingSaved", "true")
         setEditingLoc(false)
         setValue("firstName", userAddress.firstName)
         setValue("lastName", userAddress.lastName)
@@ -141,7 +126,6 @@ export default function CheckoutPage() {
 
     const enableEdit = () => {
         setUsingSaved(false)
-        sessionStorage.setItem("checkoutUsingSaved", "false")
         setEditingLoc(true)
         setValue("country", userAddress.country)
         setValue("state", userAddress.state)
@@ -149,98 +133,13 @@ export default function CheckoutPage() {
     }
 
     const onSubmit = (data) => {
-        sessionStorage.setItem("checkoutForm", JSON.stringify(data))
-        sessionStorage.setItem("checkoutUsingSaved", usingSaved.toString())
-        navigate("/payment", {
-            state: {
-                ...state,
-                shippingAddress: data,
-            },
-        })
-    }
-
-    function LocationField({ label, name, list, isLoading, isError, watchingDependencies }) {
-        const savedVal = userAddress?.[name]
-        const disabledRead = usingSaved && !editingLoc
-        const needFetchError = isError && !(usingSaved && !editingLoc)
-
-        return (
-            <div>
-                <label className="block text-sm font-medium text-gray-900 mb-1">
-                    {label} <span className="text-red-600">*</span>
-                </label>
-                {disabledRead ? (
-                    <div className="relative">
-                        <FormInput
-                            value={savedVal}
-                            disabled
-                            className="bg-gray-100 cursor-not-allowed"
-                        />
-                        <button
-                            type="button"
-                            onClick={enableEdit}
-                            className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-gray-700"
-                        >
-                            <Edit2 size={16} />
-                        </button>
-                    </div>
-                ) : (
-                    <Controller
-                        name={name}
-                        control={control}
-                        render={({ field }) => (
-                            <select
-                                {...field}
-                                id={name}
-                                disabled={
-                                    watchingDependencies.some((dep) => !dep) || isLoading || isError
-                                }
-                                className={`w-full text-sm px-3 py-2 border rounded focus:outline-none focus:ring-1 focus:ring-black focus:border-black cursor-pointer
-                  ${
-                                    errors[name]
-                                        ? "border-red-500 focus:ring-red-500"
-                                        : "border-gray-300"
-                                } ${
-                                    watchingDependencies.some((dep) => !dep) || isLoading || isError
-                                        ? "bg-gray-100 cursor-not-allowed"
-                                        : "bg-white"
-                                }`}
-                            >
-                                {isLoading ? (
-                                    <option>Loading {label.toLowerCase()}…</option>
-                                ) : needFetchError ? (
-                                    <option>Error loading {label.toLowerCase()}</option>
-                                ) : (
-                                    <>
-                                        <option value="">
-                                            Select {label.replace(" / ", " / ").split(" ")[0]}
-                                        </option>
-                                        {list.map((item) => (
-                                            <option key={item} value={item}>
-                                                {item}
-                                            </option>
-                                        ))}
-                                        {usingSaved &&
-                                            !editingLoc &&
-                                            savedVal &&
-                                            !list.includes(savedVal) && (
-                                                <option value={savedVal}>{savedVal}</option>
-                                            )}
-                                    </>
-                                )}
-                            </select>
-                        )}
-                    />
-                )}
-                {errors[name] && (
-                    <p className="text-sm text-red-500 mt-1">{errors[name]?.message}</p>
-                )}
-            </div>
-        )
+        setShippingAddress(data)
+        setOrderCompleted(false)
+        navigate("/payment")
     }
 
     return (
-        <div className={"bg-slate-50"}>
+        <div className="bg-slate-50">
             <div className="max-w-screen-xl mx-auto px-4 py-16">
                 <CheckoutProgress />
                 <h1 className="text-3xl font-bold text-[#1C387F] mb-4">Checkout</h1>
@@ -306,7 +205,9 @@ export default function CheckoutPage() {
                                 )}
                             />
                             {errors.phoneNumber && (
-                                <p className="text-sm text-red-500 mt-1">{errors.phoneNumber.message}</p>
+                                <p className="text-sm text-red-500 mt-1">
+                                    {errors.phoneNumber.message}
+                                </p>
                             )}
                         </div>
                         <div className="grid gap-6 md:grid-cols-2">
@@ -317,6 +218,14 @@ export default function CheckoutPage() {
                                 isLoading={isLoadingCountries}
                                 isError={isErrorCountries}
                                 watchingDependencies={[true]}
+                                control={control}
+                                setValue={setValue}
+                                errors={errors}
+                                userAddress={userAddress}
+                                usingSaved={usingSaved}
+                                editingLoc={editingLoc}
+                                enableEdit={enableEdit}
+                                setUsingSaved={setUsingSaved}
                             />
                             <LocationField
                                 label="State / Province"
@@ -325,6 +234,14 @@ export default function CheckoutPage() {
                                 isLoading={isLoadingStates}
                                 isError={isErrorStates}
                                 watchingDependencies={[selectedCountry]}
+                                control={control}
+                                setValue={setValue}
+                                errors={errors}
+                                userAddress={userAddress}
+                                usingSaved={usingSaved}
+                                editingLoc={editingLoc}
+                                enableEdit={enableEdit}
+                                setUsingSaved={setUsingSaved}
                             />
                         </div>
                         <div className="grid gap-6 md:grid-cols-2">
@@ -335,6 +252,14 @@ export default function CheckoutPage() {
                                 isLoading={isLoadingCities}
                                 isError={isErrorCities}
                                 watchingDependencies={[selectedState]}
+                                control={control}
+                                setValue={setValue}
+                                errors={errors}
+                                userAddress={userAddress}
+                                usingSaved={usingSaved}
+                                editingLoc={editingLoc}
+                                enableEdit={enableEdit}
+                                setUsingSaved={setUsingSaved}
                             />
                             <FormInput
                                 label="Postal / Zip Code"
@@ -380,6 +305,109 @@ export default function CheckoutPage() {
                     </aside>
                 </form>
             </div>
+        </div>
+    )
+}
+
+function LocationField({
+                           label,
+                           name,
+                           list,
+                           isLoading,
+                           isError,
+                           watchingDependencies,
+                           control,
+                           setValue,
+                           errors,
+                           userAddress,
+                           usingSaved,
+                           editingLoc,
+                           enableEdit,
+                           setUsingSaved,
+                       }) {
+    const [isEditing, setIsEditing] = useState(editingLoc)
+
+    const savedVal = userAddress?.[name] || ""
+    const disabledRead = usingSaved && !isEditing
+    const needFetchError = isError && !(usingSaved && !isEditing)
+
+    const onEnableEdit = () => {
+        setUsingSaved(false)
+        setIsEditing(true)
+        setValue("country", userAddress.country)
+        setValue("state", userAddress.state)
+        setValue("city", userAddress.city)
+    }
+
+    return (
+        <div>
+            <label className="block text-sm font-medium text-gray-900 mb-1">
+                {label} <span className="text-red-600">*</span>
+            </label>
+            {disabledRead ? (
+                <div className="relative">
+                    <FormInput
+                        value={savedVal}
+                        disabled
+                        className="bg-gray-100 cursor-not-allowed!"
+                    />
+                    <button
+                        type="button"
+                        onClick={onEnableEdit}
+                        className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-gray-700"
+                    >
+                        <Edit2 size={16} />
+                    </button>
+                </div>
+            ) : (
+                <Controller
+                    name={name}
+                    control={control}
+                    render={({ field }) => (
+                        <select
+                            {...field}
+                            id={name}
+                            disabled={
+                                watchingDependencies.some((dep) => !dep) || isLoading || isError
+                            }
+                            className={`w-full text-sm px-3 py-2 border rounded focus:outline-none focus:ring-1 focus:ring-black focus:border-black cursor-pointer
+                ${
+                                errors[name] ? "border-red-500 focus:ring-red-500" : "border-gray-300"
+                            } ${
+                                watchingDependencies.some((dep) => !dep) || isLoading || isError
+                                    ? "bg-gray-100 cursor-not-allowed!"
+                                    : "bg-white"
+                            }`}
+                        >
+                            {isLoading ? (
+                                <option>Loading {label.toLowerCase()}…</option>
+                            ) : needFetchError ? (
+                                <option>Error loading {label.toLowerCase()}</option>
+                            ) : (
+                                <>
+                                    <option value="">
+                                        Select {label.replace(" / ", " / ").split(" ")[0]}
+                                    </option>
+                                    {list.map((item) => (
+                                        <option key={item} value={item}>
+                                            {item}
+                                        </option>
+                                    ))}
+                                    {usingSaved &&
+                                        !isEditing &&
+                                        savedVal &&
+                                        !list.includes(savedVal) && (
+                                            <option value={savedVal}>{savedVal}</option>
+                                        )}
+                                </>
+                            )}
+                        </select>
+                    )}
+                />
+            )}
+            {errors[name] && (
+                <p className="text-sm text-red-500 mt-1">{errors[name]?.message}</p>
+            )}
         </div>
     )
 }

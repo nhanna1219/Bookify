@@ -1,4 +1,4 @@
-import {useRef, useState} from "react"
+import {useContext, useRef, useState} from "react"
 import {Minus, Plus, ChevronLeft, ChevronRight} from "lucide-react"
 import WishlistBtn from "@u_components/products/WishlistBtn.jsx";
 import RatingStar from "@u_components/products/RatingStar.jsx";
@@ -7,6 +7,7 @@ import {useCartActions} from "@u_hooks/useCartActions.js";
 import {showError} from "@utils/toast.js";
 import {calcCartTotals} from "@utils/calCartTotals.js";
 import {useNavigate} from "react-router-dom";
+import {CheckoutContext} from "@contexts/CheckoutContext.jsx";
 
 export default function BookDetails({bookDetails}) {
     const {
@@ -25,6 +26,9 @@ export default function BookDetails({bookDetails}) {
 
     const { addToCart } = useCartActions();
     const navigate = useNavigate();
+    const {
+        setSelectedItems
+    } = useContext(CheckoutContext);
 
     const [quantity, setQuantity] = useState(1)
     const [isImageExpanded, setIsImageExpanded] = useState(false);
@@ -62,15 +66,9 @@ export default function BookDetails({bookDetails}) {
     const handleBuyNow = async () => {
         // Add to cart
         await handleAddToCart();
-        const selectedItems = JSON.parse(localStorage.getItem("cart_selected") || '{}');
-        const updateSelected = {
-            ...selectedItems,
-            [id]: true
-        };
-        localStorage.setItem("cart_selected", JSON.stringify(updateSelected));
 
         // Go to Buy Now
-        const items = [{
+        const item = {
             bookId: id,
             title,
             author: authorName,
@@ -79,18 +77,9 @@ export default function BookDetails({bookDetails}) {
             image: images?.[0].url,
             condition,
             stock,
-        }];
-        const totals = calcCartTotals(items);
-
-        if (sessionStorage.getItem('orderFlowCompleted') === 'true') {
-            sessionStorage.removeItem('orderFlowCompleted');
-        }
-        navigate("/checkout", {
-            state: {
-                items,
-                ...totals,
-            }
-        });
+        };
+        setSelectedItems([item]);
+        navigate("/checkout");
     };
 
     const handlePrevImage = () => {
