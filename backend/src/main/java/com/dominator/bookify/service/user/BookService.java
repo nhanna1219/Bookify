@@ -2,18 +2,19 @@ package com.dominator.bookify.service.user;
 
 import com.dominator.bookify.dto.BookSearchDTO;
 import com.dominator.bookify.dto.BookSummaryDTO;
+import com.dominator.bookify.dto.WishlistRequestDTO;
 import com.dominator.bookify.model.Book;
 import com.dominator.bookify.model.Category;
 import com.dominator.bookify.repository.BookRepository;
 import com.dominator.bookify.repository.CategoryRepository;
 import lombok.AllArgsConstructor;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
+import org.springframework.data.domain.*;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @AllArgsConstructor
 @Service
@@ -34,6 +35,58 @@ public class BookService {
             return book;
         }).orElse(null);
     }
+
+    public int getStock(String bookId) {
+        Book book = getBookById(bookId);
+        return book.getStock();
+    }
+
+    public void decreaseStock(String bookId, int quantity) {
+        Book book = getBookById(bookId);
+        if (book.getStock() < quantity) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Insufficient stock for book: " + book.getTitle());
+        }
+        book.setStock(book.getStock() - quantity);
+        bookRepository.save(book);
+    }
+
+    public Page<BookSummaryDTO> getBooksByIds(WishlistRequestDTO dto) {
+        List<Book> books = bookRepository.findAllById(dto.getIds());
+
+        String searchLower = dto.getSearchTxt().toLowerCase().trim();
+        List<Book> filtered = books.stream()
+                .filter(book ->
+                        book.getTitle().toLowerCase().contains(searchLower) ||
+                                (book.getAuthors() != null && book.getAuthors().stream()
+                                        .anyMatch(author -> author.toLowerCase().contains(searchLower)))
+                )
+                .toList();
+
+        List<BookSummaryDTO> summaries = filtered.stream()
+                .map(book -> new BookSummaryDTO(
+                        book.getId(),
+                        book.getTitle(),
+                        book.getAuthors(),
+                        book.getPrice(),
+                        book.getStock(),
+                        book.getCondition(),
+                        book.getAverageRating(),
+                        book.getRatingCount(),
+                        book.getTotalRating(),
+                        book.getImages()
+                ))
+                .collect(Collectors.toList());
+
+        int start = Math.min(dto.getPageIndex() * dto.getPageSize(), summaries.size());
+        int end = Math.min(start + dto.getPageSize(), summaries.size());
+
+        return new PageImpl<>(
+                summaries.subList(start, end),
+                PageRequest.of(dto.getPageIndex(), dto.getPageSize()),
+                summaries.size()
+        );
+    }
+
 
     public Page<BookSummaryDTO> getBooks(BookSearchDTO searchDTO) {
         Pageable pageable = PageRequest.of(searchDTO.getPage(), searchDTO.getSize(), getSort(searchDTO.getSortBy()));

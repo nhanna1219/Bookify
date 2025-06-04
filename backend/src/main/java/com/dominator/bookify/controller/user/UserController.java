@@ -6,10 +6,12 @@ import com.dominator.bookify.dto.UserLoginRequestDTO;
 import com.dominator.bookify.dto.UserRegisterRequestDTO;
 import com.dominator.bookify.model.VerificationToken;
 import com.dominator.bookify.service.user.UserService;
+import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
@@ -31,6 +33,11 @@ public class UserController {
         } catch (RuntimeException e) {
             return ResponseEntity.status(401).body(Map.of("error", e.getMessage()));
         }
+    }
+
+    @PostMapping("/logout")
+    public void logout() {
+        SecurityContextHolder.clearContext();
     }
 
     @PostMapping("/register")

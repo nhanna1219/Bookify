@@ -103,7 +103,6 @@ export default function PaymentPage() {
                     error: 'Failed to place order. Please try again.',
                 }, {throwOnError: true})
 
-                invalidateCart()
                 navigate('/order-confirmation', {
                     replace: true,
                     state: {orderDetails: data, paymentMethod: selectedMethod},
@@ -115,8 +114,6 @@ export default function PaymentPage() {
                     error: 'Failed to initiate MoMo payment. Please try again.',
                 }, {throwOnError: true})
 
-                invalidateCart()
-
                 sessionStorage.setItem('checkout_shippingAddress', JSON.stringify(shippingAddress))
                 window.location.href = data.payUrl
             } else {
@@ -125,8 +122,8 @@ export default function PaymentPage() {
             }
         } catch (err) {
             console.error(err)
-            showError(err?.response?.data?.error || 'Payment failed. Try again.')
         } finally {
+            invalidateCart()
             setLoading(false)
         }
     }, [selectedMethod, selectedItems, shippingAddress, invalidateCart, navigate, setSelectedItems, setOrderCompleted])

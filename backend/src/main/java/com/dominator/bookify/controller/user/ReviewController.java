@@ -2,9 +2,11 @@ package com.dominator.bookify.controller.user;
 
 import com.dominator.bookify.dto.BookReviewsDTO;
 import com.dominator.bookify.dto.ReviewRatingDTO;
+import com.dominator.bookify.dto.ReviewResponseDTO;
 import com.dominator.bookify.model.Review;
 import com.dominator.bookify.service.user.ReviewService;
 import lombok.AllArgsConstructor;
+import org.springframework.data.domain.Page;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,7 +25,7 @@ public class ReviewController {
     @GetMapping
     public ResponseEntity<?> getReviewsByBookId(BookReviewsDTO dto) {
         try {
-            List<Review> reviews = reviewService.getApprovedReviews(dto);
+            Page<ReviewResponseDTO> reviews = reviewService.getApprovedReviews(dto);
 
             return ResponseEntity.ok(reviews);
         } catch (Exception e) {

@@ -60,6 +60,9 @@ public class OAuthController {
         UserResponseDTO dto = new UserResponseDTO();
         dto.setId(user.getId());
         dto.setFullName(user.getFullName());
+        dto.setFirstName(user.getFirstName());
+        dto.setLastName(user.getLastName());
+        dto.setFavorites(user.getFavorites());
         dto.setEmail(user.getEmail());
         dto.setPhone(user.getPhone());
         dto.setVerified(user.isVerified());

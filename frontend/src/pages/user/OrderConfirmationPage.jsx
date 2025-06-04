@@ -1,7 +1,7 @@
 import {useContext, useEffect} from 'react';
 import {useLocation, useNavigate, Link} from 'react-router-dom';
 import CheckoutProgress from '@u_components/checkout/CheckoutProgress.jsx';
-import {CheckCircle, Package, CreditCard, ShoppingBag} from 'lucide-react';
+import {CheckCircle, Package, CreditCard, ShoppingBag, MapPin} from 'lucide-react';
 import {CheckoutContext} from '@contexts/CheckoutContext.jsx';
 
 const formatDate = (dateString) => {
@@ -59,6 +59,7 @@ export default function OrderConfirmationPage() {
             setShippingAddress(null);
         }
     }, [
+        flatShippingAddress,
         orderDetails,
         navigate,
     ]);
@@ -118,8 +119,8 @@ export default function OrderConfirmationPage() {
                     <div className="grid lg:grid-cols-7 gap-x-8 gap-y-10">
                         <div className="lg:col-span-4">
                             <h2 className="text-xl font-semibold text-gray-800 mb-6 flex items-center justify-between">
-                <span className="flex items-center">
-                  <Package size={24} className="mr-3 text-[#1C387F]"/> Order
+                <span className="flex items-center text-[#1C387F]">
+                  <Package size={24} className="mr-3 "/> Order
                   Summary
                 </span>
                                 <span
@@ -179,8 +180,8 @@ export default function OrderConfirmationPage() {
 
                         <div className="lg:col-span-3 space-y-8">
                             <div>
-                                <h2 className="text-xl font-semibold text-gray-800 mb-5 flex items-center">
-                                    <CreditCard size={24} className="mr-3 text-[#1C387F]"/> Shipping
+                                <h2 className="text-xl font-semibold text-[#1C387F] mb-5 flex items-center">
+                                    <MapPin size={24} className="mr-3"/> Shipping
                                     Address
                                 </h2>
                                 <div
@@ -209,8 +210,8 @@ export default function OrderConfirmationPage() {
                             </div>
 
                             <div>
-                                <h2 className="text-xl font-semibold text-gray-800 mb-5 flex items-center">
-                                    <CreditCard size={24} className="mr-3 text-[#1C387F]"/> Payment
+                                <h2 className="text-xl font-semibold text-[#1C387F] mb-5 flex items-center">
+                                    <CreditCard size={24} className="mr-3"/> Payment
                                     Information
                                 </h2>
                                 <div

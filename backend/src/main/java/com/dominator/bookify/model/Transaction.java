@@ -1,4 +1,22 @@
 package com.dominator.bookify.model;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import org.springframework.data.annotation.CreatedDate;
+
+import java.time.Instant;
+
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
 public class Transaction {
+    private String transactionId;
+    private TransactionStatus status;
+    private double amount;
+    private String rawResponse;
+    @CreatedDate
+    private Instant createdAt;
 }

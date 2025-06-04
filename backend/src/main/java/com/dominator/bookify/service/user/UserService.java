@@ -48,6 +48,7 @@ public class UserService {
                 user.getFullName(),
                 user.getEmail(),
                 user.getPhone(),
+                user.getFavorites(),
                 user.isVerified(),
                 user.getAddress()
         );
@@ -61,7 +62,7 @@ public class UserService {
             throw new RuntimeException("Email already registered.");
         }
 
-        // Map address (even if some fields are null)
+        // Map address
         Address address = new Address(
                 req.getStreetAddress(),
                 req.getCity(),
@@ -72,6 +73,8 @@ public class UserService {
 
         User user = new User();
         user.setEmail(req.getEmail());
+        user.setFirstName(req.getFirstName());
+        user.setLastName(req.getLastName());
         user.setFullName(req.getFullName());
         user.setPhone(req.getPhone());
         user.setPasswordHash(passwordEncoder.encode(req.getPassword()));

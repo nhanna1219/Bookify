@@ -39,13 +39,14 @@ public class SecurityConfig {
                                 "/api/users/resend-verification",
                                 "/api/books/**",
                                 "/api/categories",
-                                "/api/reviews/**"
-
+                                "/api/reviews/**",
+                                "/api/guest-cart/**",
+                                "/api/payments/**"
                         ).permitAll()
                         .anyRequest().authenticated()
                 )
                 .sessionManagement(session -> session
-                        .sessionCreationPolicy(SessionCreationPolicy.IF_REQUIRED)
+                        .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 )
                 .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class);
 

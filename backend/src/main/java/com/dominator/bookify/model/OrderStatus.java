@@ -1,8 +1,11 @@
 package com.dominator.bookify.model;
 
-public enum Status {
-    NEW,
+public enum OrderStatus {
+    PENDING,
     PROCESSING,
-    COMPLETED,
-    CANCELLED
+    SHIPPED,
+    DELIVERED,
+    CANCELLED,
+    REFUNDED,
+    COMPLETED
 }

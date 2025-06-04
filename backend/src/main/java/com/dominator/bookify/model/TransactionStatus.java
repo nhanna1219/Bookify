@@ -1,4 +1,8 @@
 package com.dominator.bookify.model;
 
-public class TransactionStatus {
+public enum TransactionStatus {
+    PENDING,
+    SUCCESSFUL,
+    FAILED,
+    REFUNDED
 }

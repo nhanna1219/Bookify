@@ -2,11 +2,15 @@ package com.dominator.bookify.service.user;
 
 import com.dominator.bookify.dto.BookReviewsDTO;
 import com.dominator.bookify.dto.ReviewRatingDTO;
+import com.dominator.bookify.dto.ReviewResponseDTO;
 import com.dominator.bookify.model.Review;
+import com.dominator.bookify.model.User;
 import com.dominator.bookify.repository.ReviewRepository;
+import com.dominator.bookify.repository.UserRepository;
 import lombok.AllArgsConstructor;
 import org.bson.Document;
 import org.bson.types.ObjectId;
+import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
@@ -21,25 +25,30 @@ import java.util.Map;
 @Service
 public class ReviewService {
     private final ReviewRepository reviewRepository;
+    private final UserRepository userRepository;
 
-    public List<Review> getApprovedReviews(BookReviewsDTO dto) {
-        Pageable pageable = PageRequest.of(
-                dto.getPageIndex(),
-                dto.getPageSize(),
-                Sort.by(Sort.Direction.DESC, dto.getSortBy())
-        );
-
+    public Page<ReviewResponseDTO> getApprovedReviews(BookReviewsDTO dto) {
+        Pageable pageable = PageRequest.of(dto.getPageIndex(), dto.getPageSize(), Sort.by(Sort.Direction.DESC, dto.getSortBy()));
         ObjectId bookObjectId = new ObjectId(dto.getBookId());
 
-        if (dto.getRating() == 0) {
-            return reviewRepository.findByBookIdAndStatus(bookObjectId, "APPROVED", pageable);
-        }
-        return reviewRepository.findByBookIdAndStatusAndRating(
-                bookObjectId,
-                "APPROVED",
-                dto.getRating(),
-                pageable
-        );
+        Page<Review> reviewPage = dto.getRating() == 0
+                ? reviewRepository.findByBookIdAndStatus(bookObjectId, "APPROVED", pageable)
+                : reviewRepository.findByBookIdAndStatusAndRating(bookObjectId, "APPROVED", dto.getRating(), pageable);
+
+        return reviewPage.map(review -> {
+            String userName = userRepository.findById(review.getUserId().toString())
+                    .map(User::getFullName)
+                    .orElse("Unknown User");
+
+            return new ReviewResponseDTO(
+                    review.getId(),
+                    review.getRating(),
+                    review.getSubject(),
+                    review.getComment(),
+                    review.getAddedAt(),
+                    userName
+            );
+        });
     }
 
     public List<ReviewRatingDTO> getRatingDistribution(String bookId) {
