@@ -21,7 +21,7 @@ public class Transaction {
 //    @Id
 //    private String id;
     private String transactionId;
-    private Status status;
+    private TransactionStatus status;
     private double amount;
     private String rawResponse;
     @CreatedDate

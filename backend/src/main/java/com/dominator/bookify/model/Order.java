@@ -7,7 +7,6 @@ import lombok.Setter;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.LastModifiedDate;
-import org.springframework.data.annotation.Transient;
 import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -27,7 +26,7 @@ public class Order {
     private List<OrderItem> items;
     private double totalAmount;
     private Payment payment;
-    private Status status;
+    private OrderStatus status;
     private Address shippingAddress;
     @CreatedDate
     private Instant addedAt;

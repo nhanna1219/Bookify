@@ -26,11 +26,6 @@ export interface ISalesChart {
 //   text: "Pending" | "Ready" | "On The Way" | "Delivered" | "Cancelled";
 // }
 
-
-
-
-
-
 export interface IIdentity {
   id: number;
   name: string;
@@ -114,7 +109,6 @@ export interface IProduct {
   stock: number;
 }
 
-
 export interface IBook {
   id: string;
   title: string;
@@ -134,14 +128,11 @@ export interface IBook {
   totalRating: number;
 }
 
-
-
 export interface ICategory {
   id: string;
   /** matches `Category.name` on the server */
   name: string;
 }
-
 
 export interface IOrderFilterVariables {
   q?: string;
@@ -238,10 +229,18 @@ export interface IUser {
   updatedAt: string;
 }
 
+export type OrderStatusType =
+  | "PENDING"
+  | "PROCESSING"
+  | "SHIPPED"
+  | "DELIVERED"
+  | "COMPLETED"
+  | "CANCELLED"
+  | "REFUNDED";
 
-export type Status = "NEW" | "PROCESSING" | "COMPLETED" | "CANCELLED";
+export type TransactionStatus = "PENDING" | "SUCCESSFUL" | "FAILED";
 
-export interface IOrderItem{
+export interface IOrderItem {
   bookId: string;
   title: string;
   price: number;
@@ -250,7 +249,7 @@ export interface IOrderItem{
 
 export interface ITransaction {
   transactionId: string;
-  status: Status;
+  status: TransactionStatus;
   amount: number;
   rawResponse: string;
   createdAt: string; // ISO timestamp
@@ -267,7 +266,7 @@ export interface IOrder {
   items: IOrderItem[];
   totalAmount: number;
   payment: IPayment;
-  status: Status;
+  status: OrderStatusType;
   shippingAddress: IAddress;
   addedAt: string; // ISO timestamp
   updatedAt: string; // ISO timestamp

@@ -1,19 +1,14 @@
 package com.dominator.bookify.service.admin;
 
-import com.dominator.bookify.dto.AdminUserDTO;
 import com.dominator.bookify.dto.OrderPatchDTO;
 import com.dominator.bookify.dto.QuantitySoldDTO;
 import com.dominator.bookify.dto.TopSellerDTO;
 import com.dominator.bookify.model.Order;
-import com.dominator.bookify.model.Status;
+import com.dominator.bookify.model.OrderStatus;
 import com.dominator.bookify.model.TimeFrame;
-import com.dominator.bookify.model.User;
 import com.dominator.bookify.repository.OrderRepository;
-import com.dominator.bookify.repository.UserRepository;
-import com.fasterxml.jackson.databind.util.BeanUtil;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.BeanUtils;
-import org.springframework.context.annotation.Bean;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.aggregation.*;
@@ -22,10 +17,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
-import java.sql.Time;
 import java.time.Instant;
 import java.util.List;
-import java.util.stream.Collectors;
 
 import static org.springframework.data.mongodb.core.aggregation.Aggregation.*;
 
@@ -135,8 +128,8 @@ public class OrderServiceImpl implements OrderService {
         Order existing = orderRepository.findById(id).orElseThrow(() ->
                 new ResponseStatusException(HttpStatus.NOT_FOUND, "Order not found"));
 
-        if (dto.getStatus() != null) {
-            existing.setStatus(dto.getStatus());
+        if (dto.getOrderStatus() != null) {
+            existing.setStatus(dto.getOrderStatus());
         }
         if (dto.getShippingAddress() != null) {
             existing.setShippingAddress(dto.getShippingAddress());
@@ -167,7 +160,7 @@ public class OrderServiceImpl implements OrderService {
         if (order.getStatus().equals("COMPLETED") || order.getStatus().equals("CANCELLED")) {
             return false;
         }
-        order.setStatus(Status.valueOf("COMPLETED"));
+        order.setStatus(OrderStatus.valueOf("COMPLETED"));
         order.setModifiedAt(Instant.now());
         orderRepository.save(order);
         return true;
@@ -182,7 +175,7 @@ public class OrderServiceImpl implements OrderService {
         if (order.getStatus().equals("COMPLETED") || order.getStatus().equals("CANCELLED")) {
             return false;
         }
-        order.setStatus(Status.valueOf("CANCELLED"));
+        order.setStatus(OrderStatus.valueOf("CANCELLED"));
         order.setModifiedAt(Instant.now());
         orderRepository.save(order);
         return true;
@@ -190,7 +183,7 @@ public class OrderServiceImpl implements OrderService {
 
 
     private MatchOperation buildMatch(TimeFrame timeFrame){
-        Criteria criteria = Criteria.where("status").is("COMPLETED");
+        Criteria criteria = Criteria.where("orderstatus").is("COMPLETED");
         Instant start = timeFrame.getStartInstant();
         if (start != null) {
             criteria = criteria.and("doneAt").gte(start);

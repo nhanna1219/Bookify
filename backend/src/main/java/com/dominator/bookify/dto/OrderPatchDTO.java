@@ -4,7 +4,7 @@ package com.dominator.bookify.dto;
 import com.dominator.bookify.model.Address;
 import com.dominator.bookify.model.OrderItem;
 import com.dominator.bookify.model.Payment;
-import com.dominator.bookify.model.Status;
+import com.dominator.bookify.model.OrderStatus;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -16,7 +16,7 @@ import java.util.List;
 @Setter
 @NoArgsConstructor
 public class OrderPatchDTO {
-    private Status status;
+    private OrderStatus orderStatus;
     private Address shippingAddress;
     private Payment payment;
     private List<OrderItem> items;

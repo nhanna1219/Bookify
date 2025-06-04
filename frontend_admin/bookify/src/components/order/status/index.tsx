@@ -1,15 +1,19 @@
 import React from "react";
 import {
+  CarOutlined,
   CheckCircleOutlined,
   ClockCircleOutlined,
   CloseCircleOutlined,
+  DollarCircleOutlined,
+  SmileOutlined,
   SyncOutlined,
 } from "@ant-design/icons";
 import { useTranslate } from "@refinedev/core";
 import { Tag } from "antd";
+import { OrderStatusType } from "../../../interfaces";
 
 type OrderStatusProps = {
-  status: "NEW" | "PROCESSING" | "COMPLETED" | "CANCELLED";
+  status: OrderStatusType;
 };
 
 export const OrderStatus: React.FC<OrderStatusProps> = ({ status }) => {
@@ -19,21 +23,33 @@ export const OrderStatus: React.FC<OrderStatusProps> = ({ status }) => {
   let icon: React.ReactNode;
 
   switch (status) {
-    case "NEW":
-      color = "default";
+    case "PENDING":
+      color = "orange";
       icon = <ClockCircleOutlined />;
       break;
     case "PROCESSING":
       color = "blue";
       icon = <SyncOutlined spin />;
       break;
-    case "COMPLETED":
+    case "SHIPPED":
+      color = "cyan";
+      icon = <CarOutlined />;
+      break;
+    case "DELIVERED":
       color = "green";
+      icon = <SmileOutlined />;
+      break;
+    case "COMPLETED":
+      color = "geekblue";
       icon = <CheckCircleOutlined />;
       break;
     case "CANCELLED":
       color = "red";
       icon = <CloseCircleOutlined />;
+      break;
+    case "REFUNDED":
+      color = "purple";
+      icon = <DollarCircleOutlined />;
       break;
     default:
       color = "default";
@@ -41,8 +57,8 @@ export const OrderStatus: React.FC<OrderStatusProps> = ({ status }) => {
   }
 
   return (
-      <Tag color={color} icon={icon}>
-        {t(`enum.orderStatuses.${status}`, status)}
-      </Tag>
+    <Tag color={color} icon={icon}>
+      {t(`enum.orderStatuses.${status}`, status)}
+    </Tag>
   );
 };
