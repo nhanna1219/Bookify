@@ -59,6 +59,7 @@ public class OAuthController {
     private UserResponseDTO convertToUserDTO(User user) {
         UserResponseDTO dto = new UserResponseDTO();
         dto.setId(user.getId());
+        dto.setProfileAvatar(user.getProfileAvatar());
         dto.setFullName(user.getFullName());
         dto.setFirstName(user.getFirstName());
         dto.setLastName(user.getLastName());
@@ -66,9 +67,8 @@ public class OAuthController {
         dto.setEmail(user.getEmail());
         dto.setPhone(user.getPhone());
         dto.setVerified(user.isVerified());
+        dto.setStatus(user.getStatus());
         dto.setAddress(user.getAddress());
         return dto;
     }
-
-
 }

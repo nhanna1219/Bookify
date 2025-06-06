@@ -19,9 +19,10 @@ import java.util.List;
 @AllArgsConstructor
 @Document(collection = "users")
 public class User {
-
     @Id
     private String id;
+
+    private String profileAvatar;
 
     private String firstName;
 
@@ -43,6 +44,8 @@ public class User {
     private boolean verified = false;
 
     private List<String> favorites; // Book IDs
+
+    private UserStatus status = UserStatus.ACTIVE;
 
     @CreatedDate
     private LocalDateTime createdAt;

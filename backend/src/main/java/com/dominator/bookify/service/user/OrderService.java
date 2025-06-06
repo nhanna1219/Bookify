@@ -7,16 +7,17 @@ import com.dominator.bookify.model.*;
 import com.dominator.bookify.repository.OrderRepository;
 import com.dominator.bookify.security.AuthenticatedUser;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.server.ResponseStatusException;
 
-import javax.crypto.Mac;
-import javax.crypto.spec.SecretKeySpec;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
-import java.nio.charset.StandardCharsets;
 import java.time.Instant;
 import java.util.*;
 import java.util.stream.Collectors;
@@ -38,6 +39,49 @@ public class OrderService {
     public Order findById(String orderId) {
         return orderRepository.findById(orderId)
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Order not found"));
+    }
+
+    public Page<Order> searchOrders(AuthenticatedUser authUser,
+                                    String searchTerm,
+                                    String status,
+                                    int page) {
+        String userId = authUser.getUser().getId();
+        Pageable pageable = PageRequest.of(page, 10, Sort.by(Sort.Direction.DESC, "modifiedAt"));
+
+        boolean hasSearch = (searchTerm != null && !searchTerm.trim().isEmpty());
+        boolean hasStatus = (status != null && !status.trim().isEmpty());
+
+        if (!hasSearch && !hasStatus) {
+            return orderRepository.findByUserId(userId, pageable);
+        }
+
+        if (!hasSearch) {
+            return orderRepository.findByUserIdAndOrderStatus(userId, OrderStatus.valueOf(status.trim()), pageable);
+        }
+
+        return orderRepository.searchOrders(userId, status, searchTerm.trim(), pageable);
+    }
+
+    public Map<String, Long> getOrderCountsByStatus(AuthenticatedUser authUser) {
+        String userId = authUser.getUser().getId();
+
+        // Count orders by each individual status
+        Map<String, Long> statusCounts = new LinkedHashMap<>();
+        for (OrderStatus status : OrderStatus.values()) {
+            long count = orderRepository.countByUserIdAndOrderStatus(userId, status);
+            statusCounts.put(status.name(), count);
+        }
+
+        // Count “in‐progress” orders
+        List<OrderStatus> finalStatuses = List.of(
+                OrderStatus.COMPLETED,
+                OrderStatus.CANCELLED,
+                OrderStatus.REFUNDED
+        );
+        long inProgress = orderRepository.countByUserIdAndOrderStatusNotIn(userId, finalStatuses);
+        statusCounts.put("totalInProgress", inProgress);
+
+        return statusCounts;
     }
 
     @Transactional

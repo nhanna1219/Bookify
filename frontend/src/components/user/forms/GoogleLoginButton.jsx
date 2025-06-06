@@ -23,7 +23,6 @@ export default function GoogleLoginButton() {
 
         if (res) {
             const auth = res.data;
-            localStorage.setItem('auth', JSON.stringify(auth));
             login(auth);
             navigate('/');
         }
