@@ -19,11 +19,11 @@ public class Review {
     @Id
     private String id;
     private ObjectId bookId;
-    private ObjectId  userId;
+    private ObjectId userId;
     private int rating;
     private String subject;
     private String comment;
-    private String status;  // PENDING, APPROVED, REJECTED
+    private ReviewStatus status; // PENDING, APPROVED, REJECTED
 
     @CreatedDate
     private String addedAt;
