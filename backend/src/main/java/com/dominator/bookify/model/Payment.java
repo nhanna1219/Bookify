@@ -1,5 +1,6 @@
 package com.dominator.bookify.model;
 
+<<<<<<< HEAD
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -17,3 +18,7 @@ public class Payment {
     private String method;
     private List<Transaction> transactions;
 }
+=======
+public class Payment {
+}
+>>>>>>> origin/main

@@ -11,7 +11,7 @@ export default function HeaderBreadcrumb({title, crumbs}) {
                 <div className="text-sm text-gray-600 text-center">
                     {crumbs.map((c, i) => (
                         <React.Fragment key={c.name}>
-                            <Link to={c.path} className="hover:underline">
+                            <Link to={c.path} className="hover:underline mx-1.5">
                                 {c.name}
                             </Link>
                             {i < crumbs.length - 1 && ' / '}

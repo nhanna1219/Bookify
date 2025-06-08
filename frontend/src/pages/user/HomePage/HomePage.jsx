@@ -31,7 +31,7 @@ export default function HomePage() {
             <HeroSection />
             <ShopFeatureSection />
             <img
-                src="/second-banner.jpg"
+                src="/second-banner.jpeg"
                 alt="Promotional Banner"
                 className="w-full object-cover"
             />

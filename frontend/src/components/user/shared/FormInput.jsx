@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Eye, EyeOff } from 'lucide-react';
 
-export default function FormInput({ label, error, required, type = 'text', placeholder, ...rest }) {
+export default function FormInput({ label, error, required, type = 'text', placeholder, value, ...rest }) {
     const [show, setShow] = useState(false);
     const id = rest.name;
     const inputType = type === 'password' && show ? 'text' : type;
@@ -18,10 +18,11 @@ export default function FormInput({ label, error, required, type = 'text', place
                     id={id}
                     type={inputType}
                     placeholder={placeholder}
+                    value={value}
                     {...rest}
                     className={`w-full border border-gray-300 text-sm rounded px-3 py-2
                     placeholder-gray-400
-                    focus:outline-none focus:ring-1 focus:ring-black focus:border-black
+                    focus:outline-none focus:ring-1 focus:ring-black focus:border-black bg-white
                     ${error ? 'border-red-500 focus:ring-red-500' : ''}`}
                 />
                 {type === 'password' && (

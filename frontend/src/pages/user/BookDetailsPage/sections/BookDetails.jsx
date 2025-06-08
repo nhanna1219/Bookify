@@ -1,11 +1,17 @@
-import {useRef, useState} from "react"
+import {useContext, useRef, useState} from "react"
 import {Minus, Plus, ChevronLeft, ChevronRight} from "lucide-react"
 import WishlistBtn from "@u_components/products/WishlistBtn.jsx";
 import RatingStar from "@u_components/products/RatingStar.jsx";
 import ConditionTag from "@u_components/products/ConditionTag.jsx";
+import {useCartActions} from "@u_hooks/useCartActions.js";
+import {showError} from "@utils/toast.js";
+import {calcCartTotals} from "@utils/calCartTotals.js";
+import {useNavigate} from "react-router-dom";
+import {CheckoutContext} from "@contexts/CheckoutContext.jsx";
 
 export default function BookDetails({bookDetails}) {
     const {
+        id,
         title,
         authors,
         stock,
@@ -18,10 +24,16 @@ export default function BookDetails({bookDetails}) {
         description,
     } = bookDetails || {}
 
+    const { addToCart } = useCartActions();
+    const navigate = useNavigate();
+    const {
+        setSelectedItems
+    } = useContext(CheckoutContext);
+
     const [quantity, setQuantity] = useState(1)
     const [isImageExpanded, setIsImageExpanded] = useState(false);
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
-    const mainImage = images?.[currentImageIndex] || { url: "/data/book-placeholder.jpg", alt: title };
+    const mainImage = images?.[currentImageIndex] || { url: "/book-placeholder.jpg", alt: title };
     const descRef = useRef(null);
 
     // Format Details
@@ -29,6 +41,46 @@ export default function BookDetails({bookDetails}) {
     const genres = categoryNames.join(", ") || "";
     const hasRating = ratingCount > 0;
     let isOOS = stock < 1;
+
+    const firstAuthor = authorName.split(',')?.[0].toString().trim();
+
+    const handleAddToCart = async () => {
+        if (stock === 0) {
+            showError(`"${title}" is out of stock!`);
+            return;
+        }
+
+        const cartItem = {
+            bookId: id,
+            title,
+            author: firstAuthor,
+            price,
+            quantity,
+            image: images?.[0].url,
+            condition,
+            stock,
+        };
+        await addToCart(cartItem);
+    };
+
+    const handleBuyNow = async () => {
+        // Add to cart
+        await handleAddToCart();
+
+        // Go to Buy Now
+        const item = {
+            bookId: id,
+            title,
+            author: authorName,
+            price,
+            quantity: 1,
+            image: images?.[0].url,
+            condition,
+            stock,
+        };
+        setSelectedItems([item]);
+        navigate("/checkout");
+    };
 
     const handlePrevImage = () => {
         setCurrentImageIndex((prev) => (prev > 0 ? prev - 1 : images.length - 1));
@@ -69,7 +121,7 @@ export default function BookDetails({bookDetails}) {
                             onClick={() => setIsImageExpanded(true)}
                             className="object-contain max-h-[450px] h-[300px] p-10 cursor-zoom-in"
                         />
-                        <WishlistBtn />
+                        <WishlistBtn bookId={id}/>
 
                         {/* Next button */}
                         {images.length > 1 && (
@@ -132,7 +184,7 @@ export default function BookDetails({bookDetails}) {
                         {description.length
                             ? (
                                 <>
-                                    {description.slice(0, Math.floor(description.length / 2)) + "..."}
+                                    {description.slice(0, Math.floor(description.length > 400 ? description.length / 4 : description.length / 2)) + "..."}
                                     <button
                                         type="button"
                                         className="text-blue-600 hover:underline ml-1 font-medium"
@@ -159,7 +211,7 @@ export default function BookDetails({bookDetails}) {
                                 >
                                     <Minus className="w-4 h-4"/>
                                 </button>
-                                <span className="px-4 py-2 min-w-[40px] text-sm text-center">{quantity}</span>
+                                <span id={"book-qty"} className="px-4 py-2 min-w-[40px] text-sm text-center">{quantity}</span>
                                 <button
                                     disabled={quantity >= stock}
                                     onClick={incrementQuantity}
@@ -171,7 +223,8 @@ export default function BookDetails({bookDetails}) {
                             </div>
                             <div className={"relative group"}>
                                 <button
-                                    className="bg-[#1C387F] text-white text-sm rounded-[10px] font-semibold border border-[#1C387F] shadow-[0_2px_4px_rgba(0,0,0,0.45)] transition-all duration-300 ease-in-out transform hover:bg-[#162d66] hover:scale-105 hover:shadow-[0_4px_10px_rgba(0,0,0,0.50)] w-[150px] h-[40px] disabled:opacity-80 disabled:!cursor-not-allowed"
+                                    onClick={handleBuyNow}
+                                    className="bg-[#1C387F] text-white text-sm rounded-[10px] font-semibold border border-[#1C387F] shadow-[0_2px_4px_rgba(0,0,0,0.45)] transition-all duration-300 ease-in-out transform hover:bg-[#162d66] hover:scale-105 hover:shadow-[0_4px_10px_rgba(0,0,0,0.50)] w-[150px] h-[40px] disabled:opacity-70 disabled:!cursor-not-allowed"
                                     disabled={isOOS}
                                 >
                                     BUY NOW
@@ -185,7 +238,8 @@ export default function BookDetails({bookDetails}) {
                         </div>
                         <div className={"relative group w-full max-w-[319px]"}>
                             <button
-                                className="rounded-[10px] font-semibold border border-[#1C387F] text-[#1C387F] bg-white shadow-[0_1px_2px_rgba(0,0,0,0.45)] transition-all duration-300 ease-in-out transform hover:bg-[#082b49] hover:border-[#082b49] hover:text-white hover:scale-105 hover:shadow-[0_2px_5px_rgba(0,0,0,0.50)] text-sm py-[10px] w-full max-w-[319px] disabled:opacity-80 disabled:!cursor-not-allowed"
+                                onClick={handleAddToCart}
+                                className="rounded-[10px] font-semibold border border-[#1C387F] text-[#1C387F] bg-white shadow-[0_1px_2px_rgba(0,0,0,0.45)] transition-all duration-300 ease-in-out transform hover:bg-[#082b49] hover:border-[#082b49] hover:text-white hover:scale-105 hover:shadow-[0_2px_5px_rgba(0,0,0,0.50)] text-sm py-[10px] w-full max-w-[319px] disabled:opacity-70 disabled:!cursor-not-allowed"
                                 disabled={isOOS}
                             >
                                 ADD TO CART

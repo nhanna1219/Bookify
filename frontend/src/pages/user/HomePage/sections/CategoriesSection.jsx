@@ -90,7 +90,7 @@ const CategorySlider = ({ categories }) => {
                     {categories.map((category, idx) => (
                         <Link
                             key={category.id}
-                            to={`/shop?genres=${encodeURIComponent(category.name)}`}
+                            to={`/shop?genres=${encodeURIComponent(category.id)}`}
                             className="keen-slider__slide px-1 py-2"
                         >
                             <div

@@ -8,6 +8,12 @@ import LoadingScreen from '@u_components/shared/LoadingScreen';
 import { lazy, Suspense } from 'react';
 import ScrollToTopButton from "@u_components/shared/ScrollToTopButton.jsx";
 import BookDetailsPage from "@u_pages/BookDetailsPage/BookDetailsPage.jsx";
+import WishlistPage from "@u_pages/WishlistPage.jsx";
+import CartPage from "@u_pages/CartPage.jsx";
+import CheckoutPage from "@u_pages/CheckoutPage.jsx";
+import PaymentPage from "@u_pages/PaymentPage.jsx";
+import OrderConfirmationPage from "@u_pages/OrderConfirmationPage.jsx";
+import MomoReturnPage from "@u_pages/MomoReturnPage.jsx";
 
 const HomePage = lazy(() => import('@u_pages/HomePage/HomePage.jsx'));
 const ShopPage = lazy(() => import('@u_pages/ShopPage/ShopPage.jsx'));
@@ -40,10 +46,16 @@ export default function UserRoutes() {
                         <Route path="/reset-password" element={<ResetPasswordPage />} />
                         <Route path="/shop" element={<ShopPage />} />
                         <Route path="/book/:bookId" element={<BookDetailsPage />} />
+                        <Route path="/wishlist" element={<WishlistPage />} />
+                        <Route path="/cart" element={<CartPage />} />
                         <Route element={<PrivateRoute />}>
                             <Route path="/account" element={<AccountPage />} />
                             <Route path="/orders" element={<OrdersPage />} />
                             <Route path="/change-password" element={<ChangePasswordPage />} />
+                            <Route path="/checkout" element={<CheckoutPage />}/>
+                            <Route path="/payment" element={<PaymentPage />}/>
+                            <Route path="/order-confirmation" element={<OrderConfirmationPage />} />
+                            <Route path="/momo-return" element={<MomoReturnPage />} />
                         </Route>
                     </Route>
                 </Routes>

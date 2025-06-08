@@ -1,5 +1,9 @@
 import { createContext, useState, useEffect } from "react";
 import { jwtDecode } from "jwt-decode";
+import {mergeWishlist} from "@u_services/wishlistService.js";
+import {deleteGuestCart, getGuestCart, mergeCart} from "@u_services/cartService.js";
+import {useQueryClient} from "@tanstack/react-query";
+import {logoutUser} from "@u_services/authService.js";
 
 export const AuthContext = createContext();
 
@@ -9,13 +13,46 @@ export const AuthProvider = ({ children }) => {
         return stored ? JSON.parse(stored) : null;
     });
 
-    const logout = () => {
+    const logout = async () => {
+        await logoutUser();
         localStorage.removeItem("auth");
+        localStorage.removeItem("cart_selected");
         setAuth(null);
     };
 
-    const login = (authData) => {
+    const login = async (authData) => {
         localStorage.setItem("auth", JSON.stringify(authData));
+
+        // Wishlist
+        const localFav = JSON.parse(localStorage.getItem("wishlist") || "[]");
+        if (localFav.length) {
+            const mergedFav = await mergeWishlist(localFav);
+            const favorites = mergedFav?.data.wishlist;
+
+            authData.user = {
+                ...authData.user,
+                favorites
+            };
+
+            localStorage.removeItem("wishlist");
+        }
+
+        // Cart
+        const guestId = localStorage.getItem("guestId");
+        if (guestId) {
+            const res = await getGuestCart(guestId);
+            const guestItems = res.data.items || [];
+
+            if (guestItems.length) {
+                await mergeCart(guestId, guestItems);
+            } else {
+                await deleteGuestCart(guestId);
+            }
+
+            localStorage.removeItem("guestId");
+        }
+
+        // Auth
         setAuth(authData);
         setupAutoLogout(authData.token);
     };
@@ -44,7 +81,7 @@ export const AuthProvider = ({ children }) => {
     }, []);
 
     return (
-        <AuthContext.Provider value={{ auth, login, logout }}>
+        <AuthContext.Provider value={{ auth, setAuth, login, logout }}>
             {children}
         </AuthContext.Provider>
     );
