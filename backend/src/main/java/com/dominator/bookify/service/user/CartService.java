@@ -137,23 +137,22 @@ public class CartService {
             String bookId = item.getBookId();
             Integer qtyToRemove = removeQuantities.get(bookId);
 
-            if (qtyToRemove == null || qtyToRemove <= 0) {
-                continue;
+            if (qtyToRemove != null && qtyToRemove > 0) {
+                int existingQty = item.getQuantity();
+                if (qtyToRemove >= existingQty) {
+                    continue;
+                } else {
+                    item.setQuantity(existingQty - qtyToRemove);
+                }
             }
 
-            int existingQty = item.getQuantity();
-            if (qtyToRemove >= existingQty) {
-                continue;
-            }
-
-            // reduce by qtyToRemove
-            item.setQuantity(existingQty - qtyToRemove);
             updatedItems.add(item);
         }
 
         cart.setItems(updatedItems);
         saveCart(cart);
     }
+
 
     public void clearCart(String userId, String guestId) {
         Cart cart = getOrCreate(userId, guestId);

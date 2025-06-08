@@ -44,15 +44,18 @@ const transformAddress = ({
                               phoneNumber,
                               street,
                               city,
+                              cityId,
                               state,
+                              stateId,
                               postalCode,
                               country,
+                              countryId
                           }) => ({
     firstName,
     lastName,
     email,
     phoneNumber,
-    address: {street, city, state, postalCode, country},
+    address: {street, city, cityId, state, stateId, postalCode, country, countryId},
 })
 
 export default function PaymentPage() {

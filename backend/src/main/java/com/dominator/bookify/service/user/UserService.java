@@ -9,8 +9,8 @@ import com.dominator.bookify.repository.UserRepository;
 import com.dominator.bookify.repository.VerificationTokenRepository;
 import com.dominator.bookify.security.AuthenticatedUser;
 import com.dominator.bookify.security.JwtUtil;
+import com.dominator.bookify.service.AddressService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
@@ -41,6 +41,8 @@ public class UserService {
 
     private final VerificationTokenRepository verificationTokenRepo;
 
+    private final AddressService addressService;
+
     public LoginResponseDTO updateProfile(AuthenticatedUser authenticatedUser, UserUpdateRequestDTO req) {
         User user = authenticatedUser.getUser();
         user.setFirstName(req.getFirstName());
@@ -52,6 +54,7 @@ public class UserService {
         userRepository.save(user);
 
         String token = jwtUtil.generateToken(user.getEmail());
+
         return new LoginResponseDTO(token, convertToUserDTO(user));
     }
 
@@ -94,6 +97,7 @@ public class UserService {
         }
 
         String token = jwtUtil.generateToken(user.getEmail());
+
         return new LoginResponseDTO(token, convertToUserDTO(user));
     }
 
@@ -102,13 +106,19 @@ public class UserService {
             throw new RuntimeException("Email already registered.");
         }
 
+        int countryId = addressService.getCountryIdByName(req.getCountry());
+        int stateId = addressService.getStateIdByName(req.getState(), countryId);
+        int cityId = addressService.getCityIdByName(req.getCity(),stateId,countryId);
         // Map address
         Address address = new Address(
                 req.getStreetAddress(),
                 req.getCity(),
+                cityId,
                 req.getState(),
+                stateId,
                 req.getPostalCode(),
-                req.getCountry()
+                req.getCountry(),
+                countryId
         );
 
         User user = new User();
@@ -230,7 +240,10 @@ public class UserService {
         dto.setPhone(user.getPhone());
         dto.setVerified(user.isVerified());
         dto.setStatus(user.getStatus());
+
         dto.setAddress(user.getAddress());
+
         return dto;
     }
+
 }

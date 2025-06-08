@@ -1,59 +1,76 @@
-import { useState } from "react";
-import { Dialog, Transition } from "@headlessui/react";
-import { Fragment } from "react";
-import { X, Star } from "lucide-react";
-import RatingStar from "@u_components/products/RatingStar.jsx";
+import {useState, Fragment, useEffect} from "react"
+import {Dialog, Transition} from "@headlessui/react"
+import {X, Star} from "lucide-react"
+import RatingStar from "@u_components/products/RatingStar.jsx"
 
-export function ReviewModal({ isOpen, order, onClose, onSubmit }) {
+function DelayedRating({ratingValue, onChange}) {
+    const [ready, setReady] = useState(false);
+    useEffect(() => {
+        const id = setTimeout(() => setReady(true), 0);
+        return () => clearTimeout(id);
+    }, []);
+    if (!ready) return null;
+    return <RatingStar ratingValue={ratingValue} onChange={onChange}/>;
+}
+
+export function ReviewModal({isOpen, order, onClose, onSubmit}) {
     const [formData, setFormData] = useState({
-        rating: 0,
-        subject: "",
-        comment: "",
-        bookId: "",
-    });
-    const [loading, setLoading] = useState(false);
-    const [errors, setErrors] = useState({});
+        reviews:
+            order?.items?.map((item) => ({
+                bookId: item.bookId,
+                rating: 5, // Default
+                subject: "",
+                comment: "",
+            })) || [],
+    })
+    const [loading, setLoading] = useState(false)
+    const [errors, setErrors] = useState({})
 
     const handleSubmit = async (e) => {
-        e.preventDefault();
-
-        // Validation
-        const newErrors = {};
-        if (formData.rating === 0) newErrors.rating = "Please select a rating";
-        if (!formData.subject.trim()) newErrors.subject = "Subject is required";
-        if (!formData.comment.trim()) newErrors.comment = "Comment is required";
-        if (!formData.bookId) newErrors.bookId = "Please select a book to review";
-
-        if (Object.keys(newErrors).length > 0) {
-            setErrors(newErrors);
-            return;
-        }
-
-        setLoading(true);
+        e.preventDefault()
+        setLoading(true)
+        setErrors({})
         try {
             await onSubmit({
-                ...formData,
                 orderId: order.id,
-                userId: order.userId,
-            });
-
+                reviews: formData.reviews.map((r) => ({
+                    bookId: r.bookId,
+                    rating: r.rating,
+                    subject: r.subject,
+                    comment: r.comment,
+                })),
+            })
             // Reset form
-            setFormData({ rating: 0, subject: "", comment: "", bookId: "" });
-            setErrors({});
-        } catch (err) {
-            setErrors({ submit: "Failed to submit review. Please try again." });
+            setFormData({
+                reviews: order.items.map((item) => ({
+                    bookId: item.bookId,
+                    rating: 5,
+                    subject: "",
+                    comment: "",
+                })),
+            })
+        } catch {
+            setErrors({submit: "Failed to submit reviews. Please try again."})
         } finally {
-            setLoading(false);
+            setLoading(false)
         }
-    };
+    }
 
     const handleClose = () => {
-        setFormData({ rating: 0, subject: "", comment: "", bookId: "" });
-        setErrors({});
-        onClose();
-    };
+        setFormData({
+            reviews:
+                order?.items?.map((item) => ({
+                    bookId: item.bookId,
+                    rating: 5,
+                    subject: "",
+                    comment: "",
+                })) || [],
+        })
+        setErrors({})
+        onClose()
+    }
 
-    if (!order) return null;
+    if (!order) return null
 
     return (
         <Transition appear show={isOpen} as={Fragment}>
@@ -67,11 +84,11 @@ export function ReviewModal({ isOpen, order, onClose, onSubmit }) {
                     leaveFrom="opacity-100"
                     leaveTo="opacity-0"
                 >
-                    <div className="fixed inset-0 bg-black/30 bg-opacity-25" />
+                    <div className="fixed inset-0 bg-black/40 backdrop-blur-sm"/>
                 </Transition.Child>
 
                 <div className="fixed inset-0 overflow-y-auto">
-                    <div className="flex min-h-full items-center justify-center p-4 text-center">
+                    <div className="flex min-h-full items-center justify-center p-4">
                         <Transition.Child
                             as={Fragment}
                             enter="ease-out duration-300"
@@ -81,152 +98,203 @@ export function ReviewModal({ isOpen, order, onClose, onSubmit }) {
                             leaveFrom="opacity-100 scale-100"
                             leaveTo="opacity-0 scale-95"
                         >
-                            <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
-                                <div className="flex items-center justify-between mb-4">
-                                    <Dialog.Title className="text-lg font-semibold text-gray-900 flex items-center">
-                                        <Star className="mr-2 text-[#1C387F]" size={20} />
-                                        Write a Review
-                                    </Dialog.Title>
-                                    <button
-                                        onClick={handleClose}
-                                        className="text-gray-400 hover:text-gray-600 transition-colors"
-                                    >
-                                        <X size={20} />
-                                    </button>
+                            <Dialog.Panel
+                                className="w-full max-w-4xl transform overflow-hidden rounded-3xl bg-white shadow-2xl transition-all">
+                                {/* Header */}
+                                <div className="bg-gradient-to-r from-[#1C387F] to-[#2A4A8F] px-8 py-6 text-white">
+                                    <div className="flex items-center justify-between">
+                                        <Dialog.Title className="text-xl font-bold flex items-center">
+                                            <div className="p-2 bg-white/20 rounded-xl mr-3">
+                                                <Star size={20}/>
+                                            </div>
+                                            Write a Review
+                                        </Dialog.Title>
+                                        <button
+                                            onClick={handleClose}
+                                            className="p-2 hover:bg-white/20 rounded-xl transition-colors"
+                                        >
+                                            <X size={24}/>
+                                        </button>
+                                    </div>
+                                    <p className="mt-1 text-sm text-blue-100">
+                                        Share your experience and help other readers discover
+                                        great books
+                                    </p>
                                 </div>
 
-                                <form onSubmit={handleSubmit} className="space-y-4">
-                                    {/* Book Selection */}
-                                    <div>
-                                        <label className="block text-sm font-medium text-gray-700 mb-2">
-                                            Select Book to Review
-                                        </label>
-                                        <select
-                                            value={formData.bookId}
-                                            onChange={(e) =>
-                                                setFormData((prev) => ({
-                                                    ...prev,
-                                                    bookId: e.target.value,
-                                                }))
-                                            }
-                                            className={`w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-[#1C387F] focus:border-[#1C387F] ${
-                                                errors.bookId ? "border-red-500" : "border-gray-300"
-                                            }`}
-                                        >
-                                            <option value="">Choose a book...</option>
-                                            {order.items.map((item) => (
-                                                <option key={item.bookId} value={item.bookId}>
-                                                    {item.title}
-                                                </option>
-                                            ))}
-                                        </select>
-                                        {errors.bookId && (
-                                            <p className="text-red-500 text-sm mt-1">
-                                                {errors.bookId}
-                                            </p>
+                                <div className="p-8">
+                                    <form onSubmit={handleSubmit} className="space-y-8">
+                                        {/* Individual Book Reviews */}
+                                        {formData.reviews.map((review, index) => {
+                                            const item = order.items[index]
+                                            return (
+                                                <div
+                                                    key={item.bookId}
+                                                    className="bg-white border-2 border-gray-200 rounded-2xl p-6 shadow-sm"
+                                                >
+                                                    {/* Book Header */}
+                                                    <div className="flex items-start space-x-6 mb-8">
+                                                        <img
+                                                            src={
+                                                                item.imageUrl ||
+                                                                "/placeholder.svg?height=80&width=60"
+                                                            }
+                                                            alt={item.title}
+                                                            className="w-16 h-20 object-cover rounded-lg border-2 border-gray-200 shadow-sm flex-shrink-0"
+                                                        />
+                                                        <div>
+                                                            <h3 className="text-xl font-bold text-gray-900 mb-2">
+                                                                {item.title}
+                                                            </h3>
+                                                            <p className="text-sm text-gray-600 mb-4">
+                                                                Quantity: {item.quantity}
+                                                            </p>
+                                                        </div>
+                                                        {/* Rating Section */}
+                                                        <div className="flex items-center ml-auto space-x-4">
+                                                            <DelayedRating
+                                                                ratingValue={review.rating}
+                                                                onChange={(value) => {
+                                                                    const newReviews = [...formData.reviews]
+                                                                    newReviews[index] = {
+                                                                        ...newReviews[index],
+                                                                        rating: value
+                                                                    }
+                                                                    setFormData((prev) => ({
+                                                                        ...prev,
+                                                                        reviews: newReviews
+                                                                    }))
+                                                                }}
+                                                            />
+                                                            <div className="flex items-center space-x-2">
+                                                                {review.rating > 0 && (
+                                                                    <span
+                                                                        className="text-sm font-medium text-gray-700 bg-gray-100 px-2 py-1 rounded-full">
+                                                                        {review.rating === 5 && "Excellent! 🌟"}
+                                                                        {review.rating === 4 && "Very Good! 👍"}
+                                                                        {review.rating === 3 && "Good 👌"}
+                                                                        {review.rating === 2 && "Fair 😐"}
+                                                                        {review.rating === 1 && "Poor 👎"}
+                                                                    </span>
+                                                                )}
+                                                            </div>
+                                                        </div>
+
+
+                                                    </div>
+
+                                                    {/* Review Form */}
+                                                    <div className="space-y-6">
+                                                        {/* Review Title */}
+                                                        <div>
+                                                            <label
+                                                                className="block text-sm font-semibold text-gray-900 mb-2">
+                                                                Review Title
+                                                            </label>
+                                                            <input
+                                                                type="text"
+                                                                value={review.subject}
+                                                                onChange={(e) => {
+                                                                    const newReviews = [
+                                                                        ...formData.reviews,
+                                                                    ]
+                                                                    newReviews[index] = {
+                                                                        ...newReviews[index],
+                                                                        subject: e.target.value,
+                                                                    }
+                                                                    setFormData((prev) => ({
+                                                                        ...prev,
+                                                                        reviews: newReviews,
+                                                                    }))
+                                                                }}
+                                                                placeholder="Give your review a catchy title"
+                                                                className="
+                                                                  w-full px-4 py-3 border border-gray-300 rounded-lg
+                                                                  placeholder:text-sm placeholder:text-gray-400
+                                                                  focus:ring-2 focus:ring-[#1C387F] focus:border-[#1C387F]
+                                                                  transition-colors
+                                                                "
+                                                            />
+                                                        </div>
+
+                                                        {/* Review Content */}
+                                                        <div>
+                                                            <label
+                                                                className="block text-sm font-semibold text-gray-900 mb-2">
+                                                                Your Review
+                                                            </label>
+                                                            <textarea
+                                                                value={review.comment}
+                                                                onChange={(e) => {
+                                                                    const newReviews = [
+                                                                        ...formData.reviews,
+                                                                    ]
+                                                                    newReviews[index] = {
+                                                                        ...newReviews[index],
+                                                                        comment: e.target.value,
+                                                                    }
+                                                                    setFormData((prev) => ({
+                                                                        ...prev,
+                                                                        reviews: newReviews,
+                                                                    }))
+                                                                }}
+                                                                placeholder="What did you think about this book? Share your thoughts, favorite parts, or what others should know..."
+                                                                rows={4}
+                                                                className="
+                                                                  w-full px-4 py-3 border border-gray-300 rounded-lg
+                                                                  placeholder:text-sm placeholder:text-gray-400
+                                                                  focus:ring-2 focus:ring-[#1C387F] focus:border-[#1C387F]
+                                                                  resize-none transition-colors
+                                                                "
+                                                            />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            )
+                                        })}
+
+                                        {/* Submit Error */}
+                                        {errors.submit && (
+                                            <div className="p-4 bg-red-50 border border-red-200 rounded-xl">
+                                                <p className="text-red-700 font-medium">
+                                                    {errors.submit}
+                                                </p>
+                                            </div>
                                         )}
-                                    </div>
 
-                                    {/* Rating */}
-                                    <div>
-                                        <label className="block text-sm font-medium text-gray-700 mb-2">
-                                            Rating
-                                        </label>
-                                        <RatingStar
-                                            value={formData.rating}
-                                            onChange={(value) =>
-                                                setFormData((prev) => ({
-                                                    ...prev,
-                                                    rating: value,
-                                                }))
-                                            }
-                                        />
-                                        {errors.rating && (
-                                            <p className="text-red-500 text-sm mt-1">
-                                                {errors.rating}
-                                            </p>
-                                        )}
-                                    </div>
-
-                                    {/* Subject */}
-                                    <div>
-                                        <label className="block text-sm font-medium text-gray-700 mb-2">
-                                            Subject
-                                        </label>
-                                        <input
-                                            type="text"
-                                            value={formData.subject}
-                                            onChange={(e) =>
-                                                setFormData((prev) => ({
-                                                    ...prev,
-                                                    subject: e.target.value,
-                                                }))
-                                            }
-                                            placeholder="Brief summary of your review"
-                                            className={`w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-[#1C387F] focus:border-[#1C387F] ${
-                                                errors.subject ? "border-red-500" : "border-gray-300"
-                                            }`}
-                                        />
-                                        {errors.subject && (
-                                            <p className="text-red-500 text-sm mt-1">
-                                                {errors.subject}
-                                            </p>
-                                        )}
-                                    </div>
-
-                                    {/* Comment */}
-                                    <div>
-                                        <label className="block text-sm font-medium text-gray-700 mb-2">
-                                            Comment
-                                        </label>
-                                        <textarea
-                                            value={formData.comment}
-                                            onChange={(e) =>
-                                                setFormData((prev) => ({
-                                                    ...prev,
-                                                    comment: e.target.value,
-                                                }))
-                                            }
-                                            placeholder="Share your thoughts about this book..."
-                                            rows={4}
-                                            className={`w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-[#1C387F] focus:border-[#1C387F] resize-none ${
-                                                errors.comment ? "border-red-500" : "border-gray-300"
-                                            }`}
-                                        />
-                                        {errors.comment && (
-                                            <p className="text-red-500 text-sm mt-1">
-                                                {errors.comment}
-                                            </p>
-                                        )}
-                                    </div>
-
-                                    {errors.submit && (
-                                        <p className="text-red-500 text-sm">{errors.submit}</p>
-                                    )}
-
-                                    {/* Actions */}
-                                    <div className="flex space-x-3 pt-4">
-                                        <button
-                                            type="button"
-                                            onClick={handleClose}
-                                            className="flex-1 px-4 py-2 text-gray-700 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors"
-                                        >
-                                            Cancel
-                                        </button>
-                                        <button
-                                            type="submit"
-                                            disabled={loading}
-                                            className="flex-1 px-4 py-2 bg-[#1C387F] text-white rounded-lg hover:bg-[#153066] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-                                        >
-                                            {loading ? "Submitting..." : "Submit Review"}
-                                        </button>
-                                    </div>
-                                </form>
+                                        {/* Action Buttons */}
+                                        <div className="flex space-x-4 pt-4">
+                                            <button
+                                                type="button"
+                                                onClick={handleClose}
+                                                className="flex-1 px-6 py-3 text-gray-700 bg-gray-100 hover:bg-gray-200 rounded-lg transition-all duration-200 font-medium"
+                                            >
+                                                Cancel
+                                            </button>
+                                            <button
+                                                type="submit"
+                                                disabled={loading}
+                                                className="flex-1 px-6 py-3 bg-gradient-to-r from-[#1C387F] to-[#2A4A8F] hover:from-[#153066] hover:to-[#1F3A75] text-white rounded-lg transition-all duration-200 font-medium shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+                                            >
+                                                {loading ? (
+                                                    <span className="flex items-center justify-center">
+                                                    <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"/>
+                                                    Submitting Reviews...
+                                                  </span>
+                                                ) : (
+                                                    `Submit ${formData.reviews.length} Review${
+                                                        formData.reviews.length !== 1 ? "s" : ""
+                                                    }`
+                                                )}
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
                             </Dialog.Panel>
                         </Transition.Child>
                     </div>
                 </div>
             </Dialog>
         </Transition>
-    );
+    )
 }

@@ -34,35 +34,29 @@ export const registerSchema = yup.object().shape({
         .string()
         .trim()
         .notRequired()
-        .test('valid-city', 'City name contains invalid characters', (value) => {
-            return !value || /^[\p{L}\p{M}0-9\s.'-]{1,100}$/u.test(value);
-        }),
+        .matches(/^\d+$/, 'Invalid city selection'),
 
     state: yup
         .string()
         .trim()
         .notRequired()
-        .test('valid-state', 'State name contains invalid characters', (value) => {
-            return !value || /^[\p{L}\p{M}0-9\s.'-]{1,100}$/u.test(value);
-        }),
+        .matches(/^\d+$/, 'Invalid state selection'),
 
     postalCode: yup
         .string()
         .trim()
         .notRequired()
-        .test('valid-postal', 'Invalid postal code format', (value) => {
-            return !value || /^[A-Za-z0-9\s\-]{3,10}$/.test(value);
-        }),
+        .test(
+            'valid-postal',
+            'Invalid postal code format',
+            (value) => !value || /^[A-Za-z0-9\s\-]{3,10}$/.test(value)
+        ),
 
     country: yup
         .string()
         .trim()
         .notRequired()
-        .test('valid-country', 'Country name contains invalid characters', (value) => {
-            return !value || /^[\p{L}\p{M}\s.'-]{2,100}$/u.test(value);
-        }),
-
-
+        .matches(/^\d+$/, 'Invalid country selection'),
 });
 
 export const loginSchema = yup.object({
@@ -135,35 +129,20 @@ export const addressSchema = yup
             .string()
             .trim()
             .notRequired()
-            .test(
-                "valid-country",
-                "Country name contains invalid characters",
-                (value) => {
-                    return !value || /^[\p{L}\p{M}\s.'-]{2,100}$/u.test(value)
-                }
-            ),
+            .matches(/^\d+$/, "Invalid country"),
+
         state: yup
             .string()
             .trim()
             .notRequired()
-            .test(
-                "valid-state",
-                "State name contains invalid characters",
-                (value) => {
-                    return !value || /^[\p{L}\p{M}0-9\s.'-]{1,100}$/u.test(value)
-                }
-            ),
+            .matches(/^\d+$/, "Invalid state"),
+
         city: yup
             .string()
             .trim()
             .notRequired()
-            .test(
-                "valid-city",
-                "City name contains invalid characters",
-                (value) => {
-                    return !value || /^[\p{L}\p{M}0-9\s.'-]{1,100}$/u.test(value)
-                }
-            ),
+            .matches(/^\d+$/, "Invalid city"),
+
         postalCode: yup
             .string()
             .trim()
@@ -175,12 +154,14 @@ export const addressSchema = yup
                     return !value || /^[A-Za-z0-9\s\-]{3,10}$/.test(value)
                 }
             ),
+
         street: yup
             .string()
             .trim()
             .notRequired()
             .max(255, "Street address must be 255 characters or fewer"),
     })
+
     .test(
         "address-complete",
         "All address fields are required if any address field is filled",

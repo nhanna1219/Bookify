@@ -19,11 +19,12 @@ public class Review {
     @Id
     private String id;
     private ObjectId bookId;
-    private ObjectId  userId;
+    private ObjectId orderId;
+    private ObjectId userId;
     private int rating;
     private String subject;
     private String comment;
-    private ReviewStatus status;
+    private ReviewStatus status = ReviewStatus.PENDING;
 
     @CreatedDate
     private String addedAt;

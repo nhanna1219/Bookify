@@ -8,6 +8,7 @@ import com.dominator.bookify.model.Category;
 import com.dominator.bookify.repository.BookRepository;
 import com.dominator.bookify.repository.CategoryRepository;
 import lombok.AllArgsConstructor;
+import org.bson.types.ObjectId;
 import org.springframework.data.domain.*;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
@@ -24,17 +25,23 @@ public class BookService {
 
     public Book getBookById(String id) {
         return bookRepository.findById(id).map(book -> {
-            List<String> categoryIds = book.getCategoryIds();
+            List<ObjectId> categoryIds = book.getCategoryIds();
             if (categoryIds != null && !categoryIds.isEmpty()) {
-                List<String> names = categoryRepository.findAllById(categoryIds)
+                List<String> categoryIdStrings = categoryIds.stream()
+                        .map(ObjectId::toHexString)
+                        .toList();
+
+                List<String> names = categoryRepository.findAllById(categoryIdStrings)
                         .stream()
                         .map(Category::getName)
                         .toList();
+
                 book.setCategoryNames(names);
             }
             return book;
         }).orElse(null);
     }
+
 
     public int getStock(String bookId) {
         Book book = getBookById(bookId);

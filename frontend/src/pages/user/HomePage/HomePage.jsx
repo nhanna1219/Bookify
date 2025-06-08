@@ -9,7 +9,7 @@ import LoadingScreen from "@u_components/shared/LoadingScreen.jsx";
 import ErrorScreen from "@u_components/shared/ErrorScreen.jsx";
 
 export default function HomePage() {
-    const { categories, bestBooks, isLoading, isError } = useHomeData();
+    const { categories, bestBooks, bestReviews, isLoading, isError } = useHomeData();
     if (isLoading) {
         return (
             <LoadingScreen />
@@ -38,7 +38,7 @@ export default function HomePage() {
             <FeatureBookSection books={featureBooks} />
             <div className="w-32 h-[2px] bg-[#1C387F] mx-auto my-12 rounded-full opacity-40" />
             <BestSellerSection books={bestSellerBooks} />
-            <CustomerReviewSection />
+            <CustomerReviewSection reviews={bestReviews}/>
             <CategoriesSection categories={categories} />
         </div>
     );

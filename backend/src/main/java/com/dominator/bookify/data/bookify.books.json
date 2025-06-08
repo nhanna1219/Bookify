@@ -10,7 +10,7 @@
   "price": 4.76,
   "originalPrice": 5.29,
   "condition": "LIKE NEW",
-  "stock": 8,
+  "stock": 21,
   "categoryIds": [
     {
       "$oid": "681f3d085e99961322aef271"
@@ -37,11 +37,11 @@
       "alt": "Image 4 of A Baby Blessing"
     }
   ],
-  "averageRating": 5,
-  "ratingCount": 1,
-  "totalRating": 5,
+  "averageRating": 4.43,
+  "ratingCount": 7,
+  "totalRating": 31,
   "addedAt": "2025-05-10T22:59:07.573741",
-  "modifiedAt": "6/5/25, 2:42 AM",
+  "modifiedAt": "6/9/25, 5:15 AM",
   "_class": "com.dominator.bookify.model.Book"
 },
 {
@@ -56,7 +56,7 @@
   "price": 5.64,
   "originalPrice": 5.64,
   "condition": "NEW",
-  "stock": 11,
+  "stock": 21,
   "categoryIds": [
     {
       "$oid": "681f3d085e99961322aef273"
@@ -79,11 +79,11 @@
       "alt": "Image 3 of A Royal Quest"
     }
   ],
-  "averageRating": 3,
-  "ratingCount": 1,
-  "totalRating": 3,
+  "averageRating": 4.33,
+  "ratingCount": 6,
+  "totalRating": 26,
   "addedAt": "2025-05-10T22:59:07.574739",
-  "modifiedAt": "6/5/25, 2:44 AM",
+  "modifiedAt": "6/9/25, 5:07 AM",
   "_class": "com.dominator.bookify.model.Book"
 },
 {
@@ -98,7 +98,7 @@
   "price": 4.99,
   "originalPrice": 4.99,
   "condition": "NEW",
-  "stock": 25,
+  "stock": 39,
   "categoryIds": [
     {
       "$oid": "681f3d085e99961322aef275"
@@ -121,11 +121,11 @@
       "alt": "Image 3 of A Tour of the Calculus"
     }
   ],
-  "averageRating": 3,
-  "ratingCount": 1,
-  "totalRating": 3,
+  "averageRating": 4.6,
+  "ratingCount": 5,
+  "totalRating": 23,
   "addedAt": "2025-05-10T22:59:07.574739",
-  "modifiedAt": "6/5/25, 2:52 AM",
+  "modifiedAt": "6/9/25, 5:07 AM",
   "_class": "com.dominator.bookify.model.Book"
 },
 {
@@ -140,7 +140,7 @@
   "price": 2.65,
   "originalPrice": 5.29,
   "condition": "ACCEPTABLE",
-  "stock": 17,
+  "stock": 34,
   "categoryIds": [
     {
       "$oid": "681f3d085e99961322aef273"
@@ -163,11 +163,11 @@
       "alt": "Image 3 of A Twist in the Tale"
     }
   ],
-  "averageRating": 5,
-  "ratingCount": 1,
-  "totalRating": 5,
+  "averageRating": 4.5,
+  "ratingCount": 2,
+  "totalRating": 9,
   "addedAt": "2025-05-10T22:59:07.575716",
-  "modifiedAt": "6/5/25, 1:26 AM",
+  "modifiedAt": "6/9/25, 3:58 AM",
   "_class": "com.dominator.bookify.model.Book"
 },
 {
@@ -182,7 +182,7 @@
   "price": 3.67,
   "originalPrice": 4.89,
   "condition": "GOOD",
-  "stock": 93,
+  "stock": 108,
   "categoryIds": [
     {
       "$oid": "681f3d085e99961322aef273"
@@ -208,11 +208,11 @@
       "alt": "Image 3 of An Armory of Swords"
     }
   ],
-  "averageRating": 3,
-  "ratingCount": 1,
-  "totalRating": 3,
+  "averageRating": 3.75,
+  "ratingCount": 4,
+  "totalRating": 15,
   "addedAt": "2025-05-10T22:59:07.575716",
-  "modifiedAt": "6/4/25, 11:58 PM",
+  "modifiedAt": "6/9/25, 4:38 AM",
   "_class": "com.dominator.bookify.model.Book"
 },
 {
@@ -227,7 +227,7 @@
   "price": 3.74,
   "originalPrice": 4.99,
   "condition": "GOOD",
-  "stock": 35,
+  "stock": 51,
   "categoryIds": [
     {
       "$oid": "681f3d085e99961322aef273"
@@ -250,11 +250,11 @@
       "alt": "Image 3 of Anywhere but Here"
     }
   ],
-  "averageRating": 4,
-  "ratingCount": 1,
-  "totalRating": 4,
+  "averageRating": 4.67,
+  "ratingCount": 3,
+  "totalRating": 14,
   "addedAt": "2025-05-10T22:59:07.575716",
-  "modifiedAt": "6/5/25, 2:07 AM",
+  "modifiedAt": "6/9/25, 4:19 AM",
   "_class": "com.dominator.bookify.model.Book"
 },
 {
@@ -269,7 +269,7 @@
   "price": 4.76,
   "originalPrice": 5.29,
   "condition": "LIKE NEW",
-  "stock": 19,
+  "stock": 36,
   "categoryIds": [
     {
       "$oid": "681f3d085e99961322aef27a"
@@ -295,11 +295,11 @@
       "alt": "Image 3 of Barnyard Banter"
     }
   ],
-  "averageRating": 4,
-  "ratingCount": 1,
-  "totalRating": 4,
+  "averageRating": 4.5,
+  "ratingCount": 2,
+  "totalRating": 9,
   "addedAt": "2025-05-10T22:59:07.576740",
-  "modifiedAt": "6/5/25, 2:52 AM",
+  "modifiedAt": "6/9/25, 4:28 AM",
   "_class": "com.dominator.bookify.model.Book"
 },
 {
@@ -314,7 +314,7 @@
   "price": 5,
   "originalPrice": 5.56,
   "condition": "LIKE NEW",
-  "stock": 14,
+  "stock": 29,
   "categoryIds": [
     {
       "$oid": "681f3d085e99961322aef273"
@@ -341,7 +341,7 @@
   "ratingCount": 1,
   "totalRating": 5,
   "addedAt": "2025-05-10T22:59:07.576740",
-  "modifiedAt": "6/5/25, 2:31 AM",
+  "modifiedAt": "6/8/25, 7:28 PM",
   "_class": "com.dominator.bookify.model.Book"
 },
 {
@@ -356,7 +356,7 @@
   "price": 2.65,
   "originalPrice": 5.29,
   "condition": "ACCEPTABLE",
-  "stock": 10,
+  "stock": 24,
   "categoryIds": [
     {
       "$oid": "681f3d085e99961322aef271"
@@ -382,11 +382,11 @@
       "alt": "Image 3 of CURE FOR THE COMMON LIFE"
     }
   ],
-  "averageRating": 5,
-  "ratingCount": 1,
-  "totalRating": 5,
+  "averageRating": 4.5,
+  "ratingCount": 2,
+  "totalRating": 9,
   "addedAt": "2025-05-10T22:59:07.577734",
-  "modifiedAt": "6/5/25, 12:06 AM",
+  "modifiedAt": "6/9/25, 3:58 AM",
   "_class": "com.dominator.bookify.model.Book"
 },
 {
@@ -401,7 +401,7 @@
   "price": 3.74,
   "originalPrice": 4.99,
   "condition": "GOOD",
-  "stock": 69,
+  "stock": 86,
   "categoryIds": [
     {
       "$oid": "681f3d085e99961322aef273"
@@ -419,11 +419,11 @@
       "alt": "Image 1 of Cut And Run"
     }
   ],
-  "averageRating": 4,
-  "ratingCount": 1,
-  "totalRating": 4,
+  "averageRating": 4.5,
+  "ratingCount": 2,
+  "totalRating": 9,
   "addedAt": "2025-05-10T22:59:07.577734",
-  "modifiedAt": "6/4/25, 11:47 PM",
+  "modifiedAt": "6/9/25, 4:19 AM",
   "_class": "com.dominator.bookify.model.Book"
 },
 {
@@ -438,7 +438,7 @@
   "price": 4.76,
   "originalPrice": 5.29,
   "condition": "LIKE NEW",
-  "stock": 89,
+  "stock": 105,
   "categoryIds": [
     {
       "$oid": "681f3d085e99961322aef273"
@@ -458,10 +458,10 @@
     }
   ],
   "averageRating": 4,
-  "ratingCount": 1,
-  "totalRating": 4,
+  "ratingCount": 3,
+  "totalRating": 12,
   "addedAt": "2025-05-10T22:59:07.577734",
-  "modifiedAt": "6/4/25, 11:22 PM",
+  "modifiedAt": "6/9/25, 4:46 AM",
   "_class": "com.dominator.bookify.model.Book"
 },
 {
@@ -476,7 +476,7 @@
   "price": 9.89,
   "originalPrice": 10.99,
   "condition": "LIKE NEW",
-  "stock": 47,
+  "stock": 63,
   "categoryIds": [
     {
       "$oid": "681f3d085e99961322aef281"
@@ -502,11 +502,11 @@
       "alt": "Image 3 of Dictionary of Napoleonic Wars"
     }
   ],
-  "averageRating": 4,
-  "ratingCount": 1,
-  "totalRating": 4,
+  "averageRating": 4.67,
+  "ratingCount": 3,
+  "totalRating": 14,
   "addedAt": "2025-05-10T22:59:07.578734",
-  "modifiedAt": "6/4/25, 11:28 PM",
+  "modifiedAt": "6/9/25, 4:46 AM",
   "_class": "com.dominator.bookify.model.Book"
 },
 {
@@ -521,7 +521,7 @@
   "price": 4.76,
   "originalPrice": 5.29,
   "condition": "LIKE NEW",
-  "stock": 35,
+  "stock": 53,
   "categoryIds": [
     {
       "$oid": "681f3d085e99961322aef27a"
@@ -546,11 +546,12 @@
       "alt": "Image 2 of Donald Duk"
     }
   ],
+  "averageRating": 4.5,
+  "ratingCount": 2,
+  "totalRating": 9,
   "addedAt": "2025-05-10T22:59:07.578734",
-  "modifiedAt": "2025-05-10T22:59:07.578734",
-  "averageRating": 4,
-  "ratingCount": 1,
-  "totalRating": 4
+  "modifiedAt": "6/9/25, 4:28 AM",
+  "_class": "com.dominator.bookify.model.Book"
 },
 {
   "_id": {
@@ -564,7 +565,7 @@
   "price": 2.5,
   "originalPrice": 4.99,
   "condition": "ACCEPTABLE",
-  "stock": 23,
+  "stock": 42,
   "categoryIds": [
     {
       "$oid": "681f3d085e99961322aef286"
@@ -587,11 +588,12 @@
       "alt": "Image 3 of Ending the Homework Hassle"
     }
   ],
-  "addedAt": "2025-05-10T22:59:07.578734",
-  "modifiedAt": "2025-05-10T22:59:07.578734",
   "averageRating": 4,
   "ratingCount": 1,
-  "totalRating": 4
+  "totalRating": 4,
+  "addedAt": "2025-05-10T22:59:07.578734",
+  "modifiedAt": "6/5/25, 11:41 AM",
+  "_class": "com.dominator.bookify.model.Book"
 },
 {
   "_id": {
@@ -605,7 +607,7 @@
   "price": 5.29,
   "originalPrice": 5.29,
   "condition": "NEW",
-  "stock": 88,
+  "stock": 106,
   "categoryIds": [
     {
       "$oid": "681f3d085e99961322aef287"
@@ -623,11 +625,12 @@
       "alt": "Image 1 of Generation React"
     }
   ],
-  "addedAt": "2025-05-10T22:59:07.579736",
-  "modifiedAt": "2025-05-10T22:59:07.579736",
   "averageRating": 4,
-  "ratingCount": 1,
-  "totalRating": 4
+  "ratingCount": 2,
+  "totalRating": 8,
+  "addedAt": "2025-05-10T22:59:07.579736",
+  "modifiedAt": "6/9/25, 5:08 AM",
+  "_class": "com.dominator.bookify.model.Book"
 },
 {
   "_id": {
@@ -641,7 +644,7 @@
   "price": 2.65,
   "originalPrice": 5.29,
   "condition": "ACCEPTABLE",
-  "stock": 56,
+  "stock": 76,
   "categoryIds": [
     {
       "$oid": "681f3d085e99961322aef273"
@@ -688,7 +691,7 @@
   "price": 2.65,
   "originalPrice": 5.29,
   "condition": "ACCEPTABLE",
-  "stock": 41,
+  "stock": 61,
   "categoryIds": [
     {
       "$oid": "681f3d085e99961322aef273"
@@ -728,7 +731,7 @@
   "price": 4.49,
   "originalPrice": 4.99,
   "condition": "LIKE NEW",
-  "stock": 77,
+  "stock": 97,
   "categoryIds": [
     {
       "$oid": "681f3d085e99961322aef28b"
@@ -773,7 +776,7 @@
   "price": 5.29,
   "originalPrice": 5.29,
   "condition": "NEW",
-  "stock": 16,
+  "stock": 36,
   "categoryIds": [
     {
       "$oid": "681f3d085e99961322aef273"
@@ -814,7 +817,7 @@
   "price": 7.69,
   "originalPrice": 7.69,
   "condition": "NEW",
-  "stock": 52,
+  "stock": 71,
   "categoryIds": [
     {
       "$oid": "681f3d085e99961322aef281"
@@ -840,11 +843,12 @@
       "alt": "Image 3 of Icons of the Century"
     }
   ],
-  "addedAt": "2025-05-10T22:59:07.580743",
-  "modifiedAt": "2025-05-10T22:59:07.580743",
   "averageRating": 4,
   "ratingCount": 1,
-  "totalRating": 4
+  "totalRating": 4,
+  "addedAt": "2025-05-10T22:59:07.580743",
+  "modifiedAt": "6/5/25, 11:41 AM",
+  "_class": "com.dominator.bookify.model.Book"
 },
 {
   "_id": {
@@ -858,7 +862,7 @@
   "price": 14.62,
   "originalPrice": 14.62,
   "condition": "NEW",
-  "stock": 11,
+  "stock": 31,
   "categoryIds": [
     {
       "$oid": "681f3d085e99961322aef273"
@@ -902,7 +906,7 @@
   "price": 3.97,
   "originalPrice": 5.29,
   "condition": "GOOD",
-  "stock": 52,
+  "stock": 70,
   "categoryIds": [
     {
       "$oid": "681f3d085e99961322aef291"
@@ -932,7 +936,7 @@
   "ratingCount": 1,
   "totalRating": 5,
   "addedAt": "2025-05-10T22:59:07.581739",
-  "modifiedAt": "6/5/25, 2:39 AM",
+  "modifiedAt": "6/5/25, 11:56 AM",
   "_class": "com.dominator.bookify.model.Book"
 },
 {
@@ -947,7 +951,7 @@
   "price": 2.65,
   "originalPrice": 5.29,
   "condition": "ACCEPTABLE",
-  "stock": 50,
+  "stock": 70,
   "categoryIds": [
     {
       "$oid": "681f3d085e99961322aef28b"
@@ -983,7 +987,7 @@
   "price": 2.65,
   "originalPrice": 5.29,
   "condition": "ACCEPTABLE",
-  "stock": 31,
+  "stock": 51,
   "categoryIds": [
     {
       "$oid": "681f3d085e99961322aef294"
@@ -1023,7 +1027,7 @@
   "price": 5.41,
   "originalPrice": 5.41,
   "condition": "NEW",
-  "stock": 94,
+  "stock": 114,
   "categoryIds": [
     {
       "$oid": "681f3d085e99961322aef281"
@@ -1060,7 +1064,7 @@
   "price": 2.6,
   "originalPrice": 5.19,
   "condition": "ACCEPTABLE",
-  "stock": 52,
+  "stock": 69,
   "categoryIds": [
     {
       "$oid": "681f3d085e99961322aef273"
@@ -1086,11 +1090,12 @@
       "alt": "Image 3 of Mind Prey"
     }
   ],
-  "addedAt": "2025-05-10T22:59:07.583734",
-  "modifiedAt": "2025-05-10T22:59:07.583734",
   "averageRating": 4,
   "ratingCount": 1,
-  "totalRating": 4
+  "totalRating": 4,
+  "addedAt": "2025-05-10T22:59:07.583734",
+  "modifiedAt": "6/9/25, 4:54 AM",
+  "_class": "com.dominator.bookify.model.Book"
 },
 {
   "_id": {
@@ -1104,7 +1109,7 @@
   "price": 4.81,
   "originalPrice": 5.35,
   "condition": "LIKE NEW",
-  "stock": 21,
+  "stock": 37,
   "categoryIds": [
     {
       "$oid": "681f3d085e99961322aef273"
@@ -1131,7 +1136,7 @@
   "ratingCount": 1,
   "totalRating": 3,
   "addedAt": "2025-05-10T22:59:07.583734",
-  "modifiedAt": "6/4/25, 10:54 PM",
+  "modifiedAt": "6/5/25, 11:56 AM",
   "_class": "com.dominator.bookify.model.Book"
 },
 {
@@ -1146,7 +1151,7 @@
   "price": 2.65,
   "originalPrice": 5.29,
   "condition": "ACCEPTABLE",
-  "stock": 37,
+  "stock": 55,
   "categoryIds": [
     {
       "$oid": "681f3d085e99961322aef273"
@@ -1169,11 +1174,12 @@
       "alt": "Image 3 of Picturing Will"
     }
   ],
-  "addedAt": "2025-05-10T22:59:07.583734",
-  "modifiedAt": "2025-05-10T22:59:07.583734",
   "averageRating": 3,
   "ratingCount": 1,
-  "totalRating": 3
+  "totalRating": 3,
+  "addedAt": "2025-05-10T22:59:07.583734",
+  "modifiedAt": "6/5/25, 11:56 AM",
+  "_class": "com.dominator.bookify.model.Book"
 },
 {
   "_id": {
@@ -1187,7 +1193,7 @@
   "price": 4.76,
   "originalPrice": 5.29,
   "condition": "LIKE NEW",
-  "stock": 38,
+  "stock": 54,
   "categoryIds": [
     {
       "$oid": "681f3d085e99961322aef286"
@@ -1214,10 +1220,10 @@
     }
   ],
   "averageRating": 5,
-  "ratingCount": 1,
-  "totalRating": 5,
+  "ratingCount": 2,
+  "totalRating": 10,
   "addedAt": "2025-05-10T22:59:07.584716",
-  "modifiedAt": "6/3/25, 11:25 PM",
+  "modifiedAt": "6/9/25, 5:05 AM",
   "_class": "com.dominator.bookify.model.Book"
 },
 {
@@ -1232,7 +1238,7 @@
   "price": 4.49,
   "originalPrice": 4.99,
   "condition": "LIKE NEW",
-  "stock": 34,
+  "stock": 51,
   "categoryIds": [
     {
       "$oid": "681f3d085e99961322aef273"
@@ -1258,11 +1264,12 @@
       "alt": "Image 3 of Scarlet And Gold"
     }
   ],
-  "addedAt": "2025-05-10T22:59:07.584716",
-  "modifiedAt": "2025-05-10T22:59:07.584716",
   "averageRating": 4,
   "ratingCount": 1,
-  "totalRating": 4
+  "totalRating": 4,
+  "addedAt": "2025-05-10T22:59:07.584716",
+  "modifiedAt": "6/9/25, 5:05 AM",
+  "_class": "com.dominator.bookify.model.Book"
 },
 {
   "_id": {
@@ -1276,7 +1283,7 @@
   "price": 5.29,
   "originalPrice": 5.29,
   "condition": "NEW",
-  "stock": 25,
+  "stock": 43,
   "categoryIds": [
     {
       "$oid": "681f3d085e99961322aef273"
@@ -1301,11 +1308,12 @@
       "alt": "Image 2 of Someday My Prince"
     }
   ],
-  "addedAt": "2025-05-10T22:59:07.584716",
-  "modifiedAt": "2025-05-10T22:59:07.584716",
   "averageRating": 4,
   "ratingCount": 1,
-  "totalRating": 4
+  "totalRating": 4,
+  "addedAt": "2025-05-10T22:59:07.584716",
+  "modifiedAt": "6/5/25, 11:56 AM",
+  "_class": "com.dominator.bookify.model.Book"
 },
 {
   "_id": {
@@ -1319,7 +1327,7 @@
   "price": 4.49,
   "originalPrice": 4.99,
   "condition": "LIKE NEW",
-  "stock": 53,
+  "stock": 73,
   "categoryIds": [
     {
       "$oid": "681f3d085e99961322aef273"
@@ -1356,7 +1364,7 @@
   "price": 2.5,
   "originalPrice": 4.99,
   "condition": "ACCEPTABLE",
-  "stock": 66,
+  "stock": 86,
   "categoryIds": [
     {
       "$oid": "681f3d085e99961322aef273"
@@ -1393,7 +1401,7 @@
   "price": 4.76,
   "originalPrice": 5.29,
   "condition": "LIKE NEW",
-  "stock": 21,
+  "stock": 39,
   "categoryIds": [
     {
       "$oid": "681f3d085e99961322aef273"
@@ -1419,11 +1427,12 @@
       "alt": "Image 3 of The Black Knave"
     }
   ],
-  "addedAt": "2025-05-10T22:59:07.585716",
-  "modifiedAt": "2025-05-10T22:59:07.585716",
   "averageRating": 3,
   "ratingCount": 1,
-  "totalRating": 3
+  "totalRating": 3,
+  "addedAt": "2025-05-10T22:59:07.585716",
+  "modifiedAt": "6/5/25, 11:56 AM",
+  "_class": "com.dominator.bookify.model.Book"
 },
 {
   "_id": {
@@ -1437,7 +1446,7 @@
   "price": 3.74,
   "originalPrice": 4.99,
   "condition": "GOOD",
-  "stock": 69,
+  "stock": 85,
   "categoryIds": [
     {
       "$oid": "681f3d085e99961322aef273"
@@ -1456,11 +1465,12 @@
       "alt": "Image 2 of The Breaker"
     }
   ],
-  "addedAt": "2025-05-10T22:59:07.586716",
-  "modifiedAt": "2025-05-10T22:59:07.586716",
   "averageRating": 5,
-  "ratingCount": 1,
-  "totalRating": 5
+  "ratingCount": 2,
+  "totalRating": 10,
+  "addedAt": "2025-05-10T22:59:07.586716",
+  "modifiedAt": "6/9/25, 5:05 AM",
+  "_class": "com.dominator.bookify.model.Book"
 },
 {
   "_id": {
@@ -1474,7 +1484,7 @@
   "price": 3.74,
   "originalPrice": 4.99,
   "condition": "GOOD",
-  "stock": 18,
+  "stock": 35,
   "categoryIds": [
     {
       "$oid": "681f3d085e99961322aef273"
@@ -1497,11 +1507,12 @@
       "alt": "Image 3 of The Center of Everything"
     }
   ],
-  "addedAt": "2025-05-10T22:59:07.586716",
-  "modifiedAt": "2025-05-10T22:59:07.586716",
   "averageRating": 5,
   "ratingCount": 1,
-  "totalRating": 5
+  "totalRating": 5,
+  "addedAt": "2025-05-10T22:59:07.586716",
+  "modifiedAt": "6/9/25, 5:05 AM",
+  "_class": "com.dominator.bookify.model.Book"
 },
 {
   "_id": {
@@ -1515,7 +1526,7 @@
   "price": 2.65,
   "originalPrice": 5.29,
   "condition": "ACCEPTABLE",
-  "stock": 53,
+  "stock": 70,
   "categoryIds": [
     {
       "$oid": "681f3d085e99961322aef273"
@@ -1538,7 +1549,7 @@
   "ratingCount": 1,
   "totalRating": 5,
   "addedAt": "2025-05-10T22:59:07.587735",
-  "modifiedAt": "6/5/25, 12:33 AM",
+  "modifiedAt": "6/8/25, 7:28 PM",
   "_class": "com.dominator.bookify.model.Book"
 },
 {
@@ -1553,7 +1564,7 @@
   "price": 5.29,
   "originalPrice": 5.29,
   "condition": "NEW",
-  "stock": 21,
+  "stock": 37,
   "categoryIds": [
     {
       "$oid": "681f3d085e99961322aef28b"
@@ -1576,11 +1587,11 @@
       "alt": "Image 3 of The Devil in Vienna"
     }
   ],
-  "averageRating": 5,
-  "ratingCount": 1,
-  "totalRating": 5,
+  "averageRating": 4.33,
+  "ratingCount": 3,
+  "totalRating": 13,
   "addedAt": "2025-05-10T22:59:07.588745",
-  "modifiedAt": "6/5/25, 2:34 AM",
+  "modifiedAt": "6/9/25, 4:38 AM",
   "_class": "com.dominator.bookify.model.Book"
 },
 {
@@ -1595,7 +1606,7 @@
   "price": 5.29,
   "originalPrice": 5.29,
   "condition": "NEW",
-  "stock": 64,
+  "stock": 80,
   "categoryIds": [
     {
       "$oid": "681f3d085e99961322aef29b"
@@ -1618,11 +1629,11 @@
       "alt": "Image 3 of The Diabetic Gourmet"
     }
   ],
-  "averageRating": 5,
-  "ratingCount": 1,
-  "totalRating": 5,
+  "averageRating": 4.5,
+  "ratingCount": 2,
+  "totalRating": 9,
   "addedAt": "2025-05-10T22:59:07.589736",
-  "modifiedAt": "6/3/25, 2:22 AM",
+  "modifiedAt": "6/9/25, 4:12 AM",
   "_class": "com.dominator.bookify.model.Book"
 },
 {
@@ -1637,7 +1648,7 @@
   "price": 2.65,
   "originalPrice": 5.29,
   "condition": "ACCEPTABLE",
-  "stock": 23,
+  "stock": 42,
   "categoryIds": [
     {
       "$oid": "681f3d085e99961322aef29c"
@@ -1656,11 +1667,12 @@
       "alt": "Image 2 of The Mind"
     }
   ],
+  "averageRating": 3.5,
+  "ratingCount": 2,
+  "totalRating": 7,
   "addedAt": "2025-05-10T22:59:07.589736",
-  "modifiedAt": "2025-05-10T22:59:07.589736",
-  "averageRating": 3,
-  "ratingCount": 1,
-  "totalRating": 3
+  "modifiedAt": "6/9/25, 4:38 AM",
+  "_class": "com.dominator.bookify.model.Book"
 },
 {
   "_id": {
@@ -1674,7 +1686,7 @@
   "price": 3.74,
   "originalPrice": 4.99,
   "condition": "GOOD",
-  "stock": 97,
+  "stock": 112,
   "categoryIds": [
     {
       "$oid": "681f3d085e99961322aef273"
@@ -1695,11 +1707,12 @@
       "alt": "Image 1 of The Night Before the Wedding"
     }
   ],
+  "averageRating": 4.5,
+  "ratingCount": 2,
+  "totalRating": 9,
   "addedAt": "2025-05-10T22:59:07.589736",
-  "modifiedAt": "2025-05-10T22:59:07.589736",
-  "averageRating": 4,
-  "ratingCount": 1,
-  "totalRating": 4
+  "modifiedAt": "6/9/25, 4:38 AM",
+  "_class": "com.dominator.bookify.model.Book"
 },
 {
   "_id": {
@@ -1713,7 +1726,7 @@
   "price": 4.89,
   "originalPrice": 4.89,
   "condition": "NEW",
-  "stock": 83,
+  "stock": 102,
   "categoryIds": [
     {
       "$oid": "681f3d085e99961322aef273"
@@ -1736,11 +1749,12 @@
       "alt": "Image 3 of The Thomas Berryman Number"
     }
   ],
-  "addedAt": "2025-05-10T22:59:07.590716",
-  "modifiedAt": "2025-05-10T22:59:07.590716",
   "averageRating": 5,
-  "ratingCount": 1,
-  "totalRating": 5
+  "ratingCount": 2,
+  "totalRating": 10,
+  "addedAt": "2025-05-10T22:59:07.590716",
+  "modifiedAt": "6/9/25, 4:47 AM",
+  "_class": "com.dominator.bookify.model.Book"
 },
 {
   "_id": {
@@ -1754,7 +1768,7 @@
   "price": 2.5,
   "originalPrice": 4.99,
   "condition": "ACCEPTABLE",
-  "stock": 74,
+  "stock": 92,
   "categoryIds": [
     {
       "$oid": "681f3d085e99961322aef273"
@@ -1772,11 +1786,12 @@
       "alt": "Image 1 of The Thousand"
     }
   ],
+  "averageRating": 4.5,
+  "ratingCount": 2,
+  "totalRating": 9,
   "addedAt": "2025-05-10T22:59:07.590716",
-  "modifiedAt": "2025-05-10T22:59:07.590716",
-  "averageRating": 5,
-  "ratingCount": 1,
-  "totalRating": 5
+  "modifiedAt": "6/9/25, 5:08 AM",
+  "_class": "com.dominator.bookify.model.Book"
 },
 {
   "_id": {
@@ -1790,7 +1805,7 @@
   "price": 2.65,
   "originalPrice": 5.29,
   "condition": "ACCEPTABLE",
-  "stock": 82,
+  "stock": 100,
   "categoryIds": [
     {
       "$oid": "681f3d085e99961322aef27a"
@@ -1817,10 +1832,10 @@
     }
   ],
   "averageRating": 5,
-  "ratingCount": 1,
-  "totalRating": 5,
+  "ratingCount": 2,
+  "totalRating": 10,
   "addedAt": "2025-05-10T22:59:07.591735",
-  "modifiedAt": "6/4/25, 11:36 PM",
+  "modifiedAt": "6/8/25, 9:16 PM",
   "_class": "com.dominator.bookify.model.Book"
 },
 {
@@ -1835,7 +1850,7 @@
   "price": 2.65,
   "originalPrice": 5.29,
   "condition": "ACCEPTABLE",
-  "stock": 71,
+  "stock": 90,
   "categoryIds": [
     {
       "$oid": "681f3d085e99961322aef27a"
@@ -1861,11 +1876,12 @@
       "alt": "Image 3 of Tumble Bumble"
     }
   ],
+  "averageRating": 4,
+  "ratingCount": 2,
+  "totalRating": 8,
   "addedAt": "2025-05-10T22:59:07.591735",
-  "modifiedAt": "2025-05-10T22:59:07.591735",
-  "averageRating": 3,
-  "ratingCount": 1,
-  "totalRating": 3
+  "modifiedAt": "6/9/25, 4:38 AM",
+  "_class": "com.dominator.bookify.model.Book"
 },
 {
   "_id": {
@@ -1879,7 +1895,7 @@
   "price": 9.89,
   "originalPrice": 10.99,
   "condition": "LIKE NEW",
-  "stock": 18,
+  "stock": 37,
   "categoryIds": [
     {
       "$oid": "681f3d085e99961322aef2a0"
@@ -1902,11 +1918,12 @@
       "alt": "Image 3 of Van Gogh in Arles"
     }
   ],
+  "averageRating": 4.5,
+  "ratingCount": 2,
+  "totalRating": 9,
   "addedAt": "2025-05-10T22:59:07.592734",
-  "modifiedAt": "2025-05-10T22:59:07.592734",
-  "averageRating": 5,
-  "ratingCount": 1,
-  "totalRating": 5
+  "modifiedAt": "6/9/25, 5:08 AM",
+  "_class": "com.dominator.bookify.model.Book"
 },
 {
   "_id": {
@@ -1920,7 +1937,7 @@
   "price": 4.99,
   "originalPrice": 4.99,
   "condition": "NEW",
-  "stock": 82,
+  "stock": 101,
   "categoryIds": [
     {
       "$oid": "681f3d085e99961322aef287"
@@ -1935,11 +1952,11 @@
       "alt": "Image 1 of Viewing Violence"
     }
   ],
-  "averageRating": 4,
-  "ratingCount": 1,
-  "totalRating": 4,
+  "averageRating": 3.5,
+  "ratingCount": 2,
+  "totalRating": 7,
   "addedAt": "2025-05-10T22:59:07.592734",
-  "modifiedAt": "6/2/25, 7:21 PM",
+  "modifiedAt": "6/9/25, 4:37 AM",
   "_class": "com.dominator.bookify.model.Book"
 },
 {
@@ -1954,7 +1971,7 @@
   "price": 4.49,
   "originalPrice": 4.99,
   "condition": "LIKE NEW",
-  "stock": 10,
+  "stock": 26,
   "categoryIds": [
     {
       "$oid": "681f3d085e99961322aef273"
@@ -1978,10 +1995,10 @@
     }
   ],
   "averageRating": 4,
-  "ratingCount": 1,
-  "totalRating": 4,
+  "ratingCount": 2,
+  "totalRating": 8,
   "addedAt": "2025-05-10T22:59:07.593735",
-  "modifiedAt": "6/2/25, 7:21 PM",
+  "modifiedAt": "6/9/25, 4:37 AM",
   "_class": "com.dominator.bookify.model.Book"
 },
 {
@@ -1996,7 +2013,7 @@
   "price": 4.76,
   "originalPrice": 5.29,
   "condition": "LIKE NEW",
-  "stock": 56,
+  "stock": 75,
   "categoryIds": [
     {
       "$oid": "681f3d085e99961322aef273"
@@ -2022,11 +2039,11 @@
       "alt": "Image 3 of While My Sister Sleeps"
     }
   ],
-  "averageRating": 3,
-  "ratingCount": 1,
-  "totalRating": 3,
+  "averageRating": 3.5,
+  "ratingCount": 2,
+  "totalRating": 7,
   "addedAt": "2025-05-10T22:59:07.593735",
-  "modifiedAt": "6/3/25, 1:33 AM",
+  "modifiedAt": "6/9/25, 4:37 AM",
   "_class": "com.dominator.bookify.model.Book"
 },
 {
@@ -2041,7 +2058,7 @@
   "price": 6.29,
   "originalPrice": 8.39,
   "condition": "GOOD",
-  "stock": 75,
+  "stock": 93,
   "categoryIds": [
     {
       "$oid": "681f3d085e99961322aef2a1"
@@ -2061,11 +2078,12 @@
       "alt": "Image 3 of The Let Them Theory"
     }
   ],
-  "addedAt": "2025-05-10T22:59:07.593735",
-  "modifiedAt": "2025-05-10T22:59:07.593735",
   "averageRating": 5,
   "ratingCount": 1,
-  "totalRating": 5
+  "totalRating": 5,
+  "addedAt": "2025-05-10T22:59:07.593735",
+  "modifiedAt": "6/5/25, 11:56 AM",
+  "_class": "com.dominator.bookify.model.Book"
 },
 {
   "_id": {
@@ -2079,7 +2097,7 @@
   "price": 7.5,
   "originalPrice": 10,
   "condition": "GOOD",
-  "stock": 15,
+  "stock": 34,
   "categoryIds": [
     {
       "$oid": "681f3d085e99961322aef27e"
@@ -2095,9 +2113,10 @@
       "alt": "Image 2 of Too good to be true "
     }
   ],
+  "averageRating": 3.5,
+  "ratingCount": 2,
+  "totalRating": 7,
   "addedAt": "2025-05-10T22:59:07.594733",
-  "modifiedAt": "2025-05-10T22:59:07.594733",
-  "averageRating": 3,
-  "ratingCount": 1,
-  "totalRating": 3
+  "modifiedAt": "6/9/25, 5:08 AM",
+  "_class": "com.dominator.bookify.model.Book"
 }]
