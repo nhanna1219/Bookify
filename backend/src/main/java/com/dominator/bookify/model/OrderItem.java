@@ -1,6 +1,5 @@
 package com.dominator.bookify.model;
 
-<<<<<<< HEAD
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -18,18 +17,9 @@ import java.util.List;
 @Getter
 @Setter
 public class OrderItem {
-//    @Id
-//    private String id;
-//    private String orderId;
     private String bookId;
     private String title;
     private double price;
+    private String imageUrl;
     private int quantity;
-
-
-
 }
-=======
-public class OrderItem {
-}
->>>>>>> origin/main

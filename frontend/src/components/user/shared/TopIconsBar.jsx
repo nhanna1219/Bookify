@@ -5,6 +5,7 @@ import { useContext, useEffect, useState } from "react";
 import { showSuccess } from "@utils/toast.js";
 import { useCartData } from "@u_hooks/useCartData";
 import {useQueryClient} from "@tanstack/react-query";
+import {UserAvatar} from "@u_components/profile/UserAvatar.jsx";
 
 export default function TopIconsBar({ color }) {
     const { auth, logout } = useContext(AuthContext);
@@ -90,19 +91,22 @@ export default function TopIconsBar({ color }) {
                 </Link>
             ) : (
                 <div className="relative group">
-                    <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-700 font-bold text-base shadow ring-2 ring-white transition-all duration-150 cursor-pointer">
-                        {getInitial()}
-                    </div>
+                    <UserAvatar
+                        profileAvatar={auth?.user?.profileAvatar}
+                        name={getInitial()}
+                        onClick={() => {navigate('/me')}}
+                        className="hover:scale-105"
+                    />
 
                     <div className="absolute right-0 mt-2 w-56 bg-white shadow-xl rounded-xl z-30 text-sm text-gray-800 overflow-hidden border opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-150">
-                        <Link to="/account" className="block px-5 py-3 hover:bg-gray-100 transition">
+                        <Link to="/me" className="block px-5 py-3 hover:bg-gray-100 transition">
                             My Account
                         </Link>
-                        <Link to="/orders" className="block px-5 py-3 hover:bg-gray-100 transition">
-                            Order History
-                        </Link>
-                        <Link to="/change-password" className="block px-5 py-3 hover:bg-gray-100 transition">
+                        <Link to="/me/security" state={{ tab: "security" }} className="block px-5 py-3 hover:bg-gray-100 transition">
                             Change Password
+                        </Link>
+                        <Link to="/me/orders" state={{ tab: "order" }} className="block px-5 py-3 hover:bg-gray-100 transition">
+                            Order History
                         </Link>
                         <button
                             onClick={() => {

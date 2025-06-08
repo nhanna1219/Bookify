@@ -17,6 +17,7 @@ public class BookSummaryDTO {
     private String title;
     private List<String> authors;
     private double price;
+    private int stock;
     private String condition;
     private double averageRating;
     private int ratingCount;

@@ -1,11 +1,14 @@
-import { useEffect } from "react";
+import {useContext, useEffect} from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { showError } from "@utils/toast.js";
 import { getOrderById, notifyMomoPaymentStatus } from "@u_services/orderService.js";
+import {CheckoutContext} from "@contexts/CheckoutContext.jsx";
 
 export default function MomoReturnPage() {
     const navigate = useNavigate();
     const { search } = useLocation();
+
+    const { setSelectedItems, setUsingSaved, setShippingAddress, setOrderCompleted } = useContext(CheckoutContext);
 
     useEffect(() => {
         const params = new URLSearchParams(search);
@@ -19,7 +22,6 @@ export default function MomoReturnPage() {
 
         const payload = {
             partnerCode: params.get("partnerCode"),
-            accessKey: params.get("accessKey"),
             requestId: params.get("requestId"),
             amount: params.get("amount"),
             orderId: params.get("orderId"),
@@ -30,7 +32,6 @@ export default function MomoReturnPage() {
             message: params.get("message"),
             responseTime: params.get("responseTime"),
             extraData: params.get("extraData"),
-            payType: params.get("payType"),
             signature: params.get("signature"),
         };
 
@@ -49,6 +50,11 @@ export default function MomoReturnPage() {
             })
             .catch(() => {
                 showError("Unable to process payment at this moment. Please try again later.");
+                setUsingSaved(false);
+                setSelectedItems([]);
+                setShippingAddress(null);
+                setOrderCompleted(true);
+
                 navigate("/cart", { replace: true });
             });
     }, [search, navigate]);

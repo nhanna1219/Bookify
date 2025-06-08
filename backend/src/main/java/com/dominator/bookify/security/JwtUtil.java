@@ -2,16 +2,23 @@ package com.dominator.bookify.security;
 
 import io.jsonwebtoken.*;
 import io.jsonwebtoken.security.Keys;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
+import java.nio.charset.StandardCharsets;
 import java.security.Key;
 import java.util.Date;
 
 @Component
 public class JwtUtil {
 
-    private final Key key = Keys.secretKeyFor(SignatureAlgorithm.HS256);
-    private final long EXPIRATION_TIME = 1000L * 60 * 60 * 24 * 7; // 7 days
+    private final Key key;
+    private final long EXPIRATION_TIME;
+
+    public JwtUtil(@Value("${jwt.secret}") String secret) {
+        this.key = Keys.hmacShaKeyFor(secret.getBytes(StandardCharsets.UTF_8));
+        this.EXPIRATION_TIME = 1000L * 60 * 60 * 24 * 7; // 7 days
+    }
 
     public String generateToken(String email) {
         return Jwts.builder()

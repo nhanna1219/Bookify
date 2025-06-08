@@ -1,6 +1,8 @@
 package com.dominator.bookify.model;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.Id;
@@ -13,11 +15,14 @@ import java.util.List;
 
 @Getter
 @Setter
+@NoArgsConstructor
+@AllArgsConstructor
 @Document(collection = "users")
 public class User {
-
     @Id
     private String id;
+
+    private String profileAvatar;
 
     private String firstName;
 
@@ -40,27 +45,11 @@ public class User {
 
     private List<String> favorites; // Book IDs
 
+    private UserStatus status = UserStatus.ACTIVE;
+
     @CreatedDate
     private LocalDateTime createdAt;
 
     @LastModifiedDate
     private LocalDateTime updatedAt;
-
-    public User() {}
-
-    public User(String id, String fullName, String email, String passwordHash, String phone,
-                Address address, String role, boolean verified, List<String> favorites,
-                LocalDateTime createdAt, LocalDateTime updatedAt) {
-        this.id = id;
-        this.fullName = fullName;
-        this.email = email;
-        this.passwordHash = passwordHash;
-        this.phone = phone;
-        this.address = address;
-        this.role = role != null ? role : "CUSTOMER";
-        this.verified = verified;
-        this.favorites = favorites;
-        this.createdAt = createdAt;
-        this.updatedAt = updatedAt;
-    }
 }

@@ -43,13 +43,14 @@ public class SecurityConfig {
                                 "/api/admin/books/**",
                                 "/api/admin/users/**",
                                 "/api/admin/orders/**",
-                                "/api/admin/categories/**"
-
+                                "/api/admin/categories/**",
+                                "/api/guest-cart/**",
+                                "/api/payments/**"
                         ).permitAll()
                         .anyRequest().authenticated()
                 )
                 .sessionManagement(session -> session
-                        .sessionCreationPolicy(SessionCreationPolicy.IF_REQUIRED)
+                        .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 )
                 .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class);
 

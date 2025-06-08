@@ -14,15 +14,16 @@ import CheckoutPage from "@u_pages/CheckoutPage.jsx";
 import PaymentPage from "@u_pages/PaymentPage.jsx";
 import OrderConfirmationPage from "@u_pages/OrderConfirmationPage.jsx";
 import MomoReturnPage from "@u_pages/MomoReturnPage.jsx";
+import PersonalTab from "@u_pages/AccountManagementPage/SubTab/PersonalTab.jsx";
+import SecurityTab from "@u_pages/AccountManagementPage/SubTab/SecurityTab.jsx";
+import OrdersTab from "@u_pages/AccountManagementPage/SubTab/OrdersTab.jsx";
 
 const HomePage = lazy(() => import('@u_pages/HomePage/HomePage.jsx'));
 const ShopPage = lazy(() => import('@u_pages/ShopPage/ShopPage.jsx'));
 const ResendVerificationPage = lazy(() => import('@u_pages/ResendVerificationPage'));
 const ForgotPasswordPage = lazy(() => import('@u_pages/ForgotPasswordPage'));
 const ResetPasswordPage = lazy(() => import('@u_pages/ResetPasswordPage.jsx'));
-const AccountPage = lazy(() => import('@u_pages/AccountPage.jsx'));
-const OrdersPage = lazy(() => import('@u_pages/OrdersPage.jsx'));
-const ChangePasswordPage = lazy(() => import('@u_pages/ChangePasswordPage.jsx'));
+const AccountPage = lazy(() => import('@u_pages/AccountManagementPage/AccountPage.jsx'));
 const LoginPage = lazy(() => import('@u_pages/LoginPage'));
 const RegisterPage = lazy(() => import('@u_pages/RegisterPage.jsx'));
 
@@ -49,9 +50,11 @@ export default function UserRoutes() {
                         <Route path="/wishlist" element={<WishlistPage />} />
                         <Route path="/cart" element={<CartPage />} />
                         <Route element={<PrivateRoute />}>
-                            <Route path="/account" element={<AccountPage />} />
-                            <Route path="/orders" element={<OrdersPage />} />
-                            <Route path="/change-password" element={<ChangePasswordPage />} />
+                            <Route path="/me" element={<AccountPage />}>
+                                <Route index element={<PersonalTab />} />
+                                <Route path="security" element={<SecurityTab />} />
+                                <Route path="orders" element={<OrdersTab />} />
+                            </Route>
                             <Route path="/checkout" element={<CheckoutPage />}/>
                             <Route path="/payment" element={<PaymentPage />}/>
                             <Route path="/order-confirmation" element={<OrderConfirmationPage />} />

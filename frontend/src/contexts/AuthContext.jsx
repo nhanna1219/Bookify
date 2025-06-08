@@ -2,7 +2,6 @@ import { createContext, useState, useEffect } from "react";
 import { jwtDecode } from "jwt-decode";
 import {mergeWishlist} from "@u_services/wishlistService.js";
 import {deleteGuestCart, getGuestCart, mergeCart} from "@u_services/cartService.js";
-import {useQueryClient} from "@tanstack/react-query";
 import {logoutUser} from "@u_services/authService.js";
 
 export const AuthContext = createContext();

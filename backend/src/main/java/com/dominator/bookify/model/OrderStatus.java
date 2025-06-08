@@ -1,20 +1,11 @@
 package com.dominator.bookify.model;
 
-<<<<<<< HEAD
 public enum OrderStatus {
     PENDING,
     PROCESSING,
     SHIPPED,
     DELIVERED,
-    COMPLETED,
     CANCELLED,
-    REFUNDED
+    REFUNDED,
+    COMPLETED
 }
-=======
-public enum Status {
-    NEW,
-    PROCESSING,
-    COMPLETED,
-    CANCELLED
-}
->>>>>>> origin/main

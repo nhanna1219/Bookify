@@ -26,8 +26,8 @@ public class Order {
     private List<OrderItem> items;
     private double totalAmount;
     private Payment payment;
-    private OrderStatus status;
-    private Address shippingAddress;
+    private OrderStatus orderStatus;
+    private ShippingInformation shippingInformation;
     @CreatedDate
     private Instant addedAt;
     @LastModifiedDate

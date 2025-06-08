@@ -1,6 +1,5 @@
 package com.dominator.bookify.model;
 
-<<<<<<< HEAD
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -14,24 +13,17 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import java.time.Instant;
 import java.util.List;
 
+import java.time.Instant;
+
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
 public class Transaction {
-//    @Id
-//    private String id;
     private String transactionId;
     private TransactionStatus status;
     private double amount;
     private String rawResponse;
     @CreatedDate
     private Instant createdAt;
-
-
-
 }
-=======
-public class Transaction {
-}
->>>>>>> origin/main
