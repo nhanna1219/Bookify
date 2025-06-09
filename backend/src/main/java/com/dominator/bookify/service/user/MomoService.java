@@ -56,7 +56,7 @@ public class MomoService {
                 "partnerCode=" + config.getPartnerCode(),
                 "redirectUrl=" + config.getReturnUrl(),
                 "requestId=" + momoOrderId,
-                "requestType=" + "payWithATM"
+                "requestType=" + "payWithMethod"
         );
 
         String signature = hmacSha256(rawSignature, config.getSecretKey());
@@ -71,7 +71,7 @@ public class MomoService {
         payload.put("redirectUrl", config.getReturnUrl());
         payload.put("ipnUrl", config.getNotifyUrl());
         payload.put("extraData", extraData);
-        payload.put("requestType", "payWithATM");
+        payload.put("requestType", "payWithMethod");
         payload.put("signature", signature);
         payload.put("lang", "en");
 
