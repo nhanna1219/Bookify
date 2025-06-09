@@ -15,6 +15,11 @@ public interface OrderService {
     Order updateOrder(String id, Order order);
     Order createOrder(Order order);
     Order patchOrder(String id, OrderPatchDTO dto);
-    boolean completeOrder(String id);
-    boolean cancelOrder(String id);
+    boolean setCompleteOrder(String id);
+    boolean setCancelOrder(String id);
+    boolean setProcessOrder(String id);
+    boolean setShipOrder(String id);
+    boolean setDeliveredOrder(String id);
+    boolean setPendingRefundOrder(String id);
+    boolean setRefundedOrder(String id);
 }

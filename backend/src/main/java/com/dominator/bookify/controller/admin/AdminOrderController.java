@@ -42,31 +42,8 @@ public class AdminOrderController {
         }
     }
 
-    @GetMapping("/set-completed/{id}")
-    public ResponseEntity<?> setOrderCompleted(
-            @PathVariable String id
-    ) {
-        try {
-            return ResponseEntity.ok().body(orderService.completeOrder(id));
-        } catch (ResponseStatusException e) {
-            return ResponseEntity
-                    .status(e.getStatusCode())
-                    .body(Map.of("error", e.getReason()));
-        }
-    }
 
-    @GetMapping("/set-cancelled/{id}")
-    public ResponseEntity<?> setOrderCancelled(
-            @PathVariable String id
-    ) {
-        try {
-            return ResponseEntity.ok().body(orderService.cancelOrder(id));
-        } catch (ResponseStatusException e) {
-            return ResponseEntity
-                    .status(e.getStatusCode())
-                    .body(Map.of("error", e.getReason()));
-        }
-    }
+
 
     @GetMapping("/quantity-sold")
     public ResponseEntity<?> getQuantitySoldByBook(
@@ -119,6 +96,97 @@ public class AdminOrderController {
                    .status(e.getStatusCode())
                    .body(Map.of("error", e.getReason()));
         }
+    }
+
+    @PostMapping("/{id}/set-cancel")
+    public ResponseEntity<?> cancelOrder(
+            @PathVariable String id
+    ) {
+       try{
+           return ResponseEntity.ok().body(orderService.setCancelOrder(id));
+       } catch (ResponseStatusException e ){
+           return ResponseEntity
+                  .status(e.getStatusCode())
+                  .body(Map.of("error", e.getReason()));
+       }
+    }
+
+    @PostMapping("/{id}/set-complete")
+    public ResponseEntity<?> completeOrder(
+            @PathVariable String id
+    ) {
+       try{
+           return ResponseEntity.ok().body(orderService.setCompleteOrder(id));
+       } catch (ResponseStatusException e ){
+           return ResponseEntity
+                  .status(e.getStatusCode())
+                  .body(Map.of("error", e.getReason()));
+       }
+    }
+
+    @PostMapping("/{id}/set-process")
+    public ResponseEntity<?> processOrder(
+            @PathVariable String id
+    ) {
+       try{
+           return ResponseEntity.ok().body(orderService.setProcessOrder(id));
+       } catch (ResponseStatusException e ){
+           return ResponseEntity
+                  .status(e.getStatusCode())
+                  .body(Map.of("error", e.getReason()));
+       }
+    }
+
+    @PostMapping("/{id}/set-ship")
+    public ResponseEntity<?> setShipOrder(
+            @PathVariable String id
+    ) {
+       try{
+           return ResponseEntity.ok().body(orderService.setShipOrder(id));
+       } catch (ResponseStatusException e ){
+           return ResponseEntity
+                  .status(e.getStatusCode())
+                  .body(Map.of("error", e.getReason()));
+       }
+    }
+
+    @PostMapping("/{id}/set-delivered")
+    public ResponseEntity<?> setDeliveredOrder(
+            @PathVariable String id
+    ) {
+       try{
+           return ResponseEntity.ok().body(orderService.setDeliveredOrder(id));
+       } catch (ResponseStatusException e ){
+           return ResponseEntity
+                  .status(e.getStatusCode())
+                  .body(Map.of("error", e.getReason()));
+       }
+    }
+
+    @PostMapping("/{id}/set-pending-refund")
+    public ResponseEntity<?> setPendingRefundOrder(
+            @PathVariable String id
+    ) {
+       try{
+           return ResponseEntity.ok().body(orderService.setPendingRefundOrder(id));
+       } catch (ResponseStatusException e ){
+           return ResponseEntity
+                  .status(e.getStatusCode())
+                  .body(Map.of("error", e.getReason()));
+       }
+    }
+
+    @PostMapping("/{id}/set-refund")
+    public ResponseEntity<?> setRefundedOrder(
+            @PathVariable String id
+    ) {
+       try{
+           return ResponseEntity.ok().body(orderService.setRefundedOrder(id));
+       } catch (ResponseStatusException e ){
+           return ResponseEntity
+                  .status(e.getStatusCode())
+                  .body(Map.of("error", e.getReason()));
+       }
     }
 
     @PatchMapping("/{id}")

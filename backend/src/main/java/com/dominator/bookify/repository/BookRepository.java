@@ -14,4 +14,7 @@ import java.util.List;
 @Repository
 public interface BookRepository extends MongoRepository<Book, String>, BookRepositoryCustom {
     List<BookSummaryDTO> findByOrderByAverageRatingDesc(Pageable pageable);
+    List<Book> findByTitleContainingIgnoreCase(String title);
+
+    String title(String title);
 }

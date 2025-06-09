@@ -80,19 +80,19 @@ export interface ICourier {
   vehicle: IVehicle;
 }
 
-export interface IOrder {
-  id: number;
-  user: IUser;
-  createdAt: string;
-  products: IProduct[];
-  status: IOrderStatus;
-  adress: IAddress;
-  store: IStore;
-  courier: ICourier;
-  events: IEvent[];
-  orderNumber: number;
-  amount: number;
-}
+// export interface IOrder {
+//   id: number;
+//   user: IUser;
+//   createdAt: string;
+//   products: IProduct[];
+//   status: IOrderStatus;
+//   adress: IAddress;
+//   store: IStore;
+//   courier: ICourier;
+//   events: IEvent[];
+//   orderNumber: number;
+//   amount: number;
+// }
 
 export interface IProduct {
   id: number;
@@ -206,7 +206,7 @@ export interface IImage {
 export interface IAddress {
   street: string;
   city: string;
-  state: string;
+  state?: string;
   postalCode: string;
   country: string;
 }
@@ -215,6 +215,7 @@ export interface IUser {
   id: string;
   firstName: string;
   lastName: string;
+  profileAvatar: string;
   fullName: string;
   email: string;
   phone: string;
@@ -266,9 +267,17 @@ export interface IOrder {
   items: IOrderItem[];
   totalAmount: number;
   payment: IPayment;
-  status: OrderStatusType;
-  shippingAddress: IAddress;
+  orderStatus: OrderStatusType;
+  shippingInformation: IShippingInformation;
   addedAt: string; // ISO timestamp
   updatedAt: string; // ISO timestamp
   doneAt?: string; // ISO timestamp
+}
+
+export interface IShippingInformation {
+  firstName: string;
+  lastName: string;
+  email: string;
+  phoneNumber: string;
+  address: IAddress;
 }

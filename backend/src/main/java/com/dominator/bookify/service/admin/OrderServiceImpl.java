@@ -35,7 +35,7 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
-    public Order getOrderById(String id){
+    public Order getOrderById(String id) {
         return orderRepository.findById(id).orElseThrow(() ->
                 new ResponseStatusException(HttpStatus.NOT_FOUND, "Order not found"));
     }
@@ -124,20 +124,20 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
-    public Order patchOrder(String id, OrderPatchDTO dto){
+    public Order patchOrder(String id, OrderPatchDTO dto) {
         Order existing = orderRepository.findById(id).orElseThrow(() ->
                 new ResponseStatusException(HttpStatus.NOT_FOUND, "Order not found"));
 
         if (dto.getOrderStatus() != null) {
-            existing.setStatus(dto.getOrderStatus());
+            existing.setOrderStatus(dto.getOrderStatus());
         }
-        if (dto.getShippingAddress() != null) {
-            existing.setShippingAddress(dto.getShippingAddress());
+        if (dto.getShippingInformation() != null) {
+            existing.setShippingInformation(dto.getShippingInformation());
         }
         if (dto.getPayment() != null) {
             existing.setPayment(dto.getPayment());
         }
-        if (dto.getItems() !=null) {
+        if (dto.getItems() != null) {
             existing.setItems(dto.getItems());
             double total = existing.getItems().stream()
                     .mapToDouble(i -> i.getPrice() * i.getQuantity())
@@ -153,14 +153,14 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
-    public boolean completeOrder(String orderId) {
+    public boolean setCompleteOrder(String orderId) {
         Order order = orderRepository.findById(orderId).orElseThrow(() ->
                 new ResponseStatusException(HttpStatus.NOT_FOUND, "Order not found"));
 
-        if (order.getStatus().equals("COMPLETED") || order.getStatus().equals("CANCELLED")) {
+        if (!order.getOrderStatus().equals(OrderStatus.DELIVERED)) {
             return false;
         }
-        order.setStatus(OrderStatus.valueOf("COMPLETED"));
+        order.setOrderStatus(OrderStatus.valueOf("COMPLETED"));
         order.setModifiedAt(Instant.now());
         orderRepository.save(order);
         return true;
@@ -168,21 +168,94 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
-    public boolean cancelOrder(String orderId) {
+    public boolean setCancelOrder(String orderId) {
         Order order = orderRepository.findById(orderId).orElseThrow(() ->
                 new ResponseStatusException(HttpStatus.NOT_FOUND, "Order not found"));
 
-        if (order.getStatus().equals("COMPLETED") || order.getStatus().equals("CANCELLED")) {
+
+        if (order.getOrderStatus().equals(OrderStatus.PENDING) || order.getOrderStatus().equals(OrderStatus.PROCESSING)) {
+
+            order.setOrderStatus(OrderStatus.valueOf("CANCELLED"));
+            order.setModifiedAt(Instant.now());
+            orderRepository.save(order);
+            return true;
+        }
+        return false;
+
+    }
+
+    @Override
+    public boolean setProcessOrder(String orderId) {
+        Order order = orderRepository.findById(orderId).orElseThrow(() ->
+                new ResponseStatusException(HttpStatus.NOT_FOUND, "Order not found"));
+
+        if (!order.getOrderStatus().equals(OrderStatus.PENDING)) {
             return false;
         }
-        order.setStatus(OrderStatus.valueOf("CANCELLED"));
+        order.setOrderStatus(OrderStatus.valueOf("PROCESSING"));
+        order.setModifiedAt(Instant.now());
+        orderRepository.save(order);
+        return true;
+    }
+
+    @Override
+    public boolean setShipOrder(String orderId) {
+        Order order = orderRepository.findById(orderId).orElseThrow(() ->
+                new ResponseStatusException(HttpStatus.NOT_FOUND, "Order not found"));
+
+        if (!order.getOrderStatus().equals(OrderStatus.PROCESSING)) {
+            return false;
+        }
+        order.setOrderStatus(OrderStatus.valueOf("SHIPPED"));
+        order.setModifiedAt(Instant.now());
+        orderRepository.save(order);
+        return true;
+    }
+
+    @Override
+    public boolean setDeliveredOrder(String orderId) {
+        Order order = orderRepository.findById(orderId).orElseThrow(() ->
+                new ResponseStatusException(HttpStatus.NOT_FOUND, "Order not found"));
+
+        if (!order.getOrderStatus().equals(OrderStatus.SHIPPED)) {
+            return false;
+        }
+        order.setOrderStatus(OrderStatus.valueOf("DELIVERED"));
+        order.setModifiedAt(Instant.now());
+        orderRepository.save(order);
+        return true;
+    }
+
+    @Override
+    public boolean setPendingRefundOrder(String orderId) {
+        Order order = orderRepository.findById(orderId).orElseThrow(() ->
+                new ResponseStatusException(HttpStatus.NOT_FOUND, "Order not found"));
+
+        if (!order.getOrderStatus().equals(OrderStatus.DELIVERED)) {
+            return false;
+        }
+        order.setOrderStatus(OrderStatus.valueOf("PENDING_REFUND"));
+        order.setModifiedAt(Instant.now());
+        orderRepository.save(order);
+        return true;
+    }
+
+    @Override
+    public boolean setRefundedOrder(String orderId) {
+        Order order = orderRepository.findById(orderId).orElseThrow(() ->
+                new ResponseStatusException(HttpStatus.NOT_FOUND, "Order not found"));
+
+        if (!order.getOrderStatus().equals(OrderStatus.PENDING_REFUND)) {
+            return false;
+        }
+        order.setOrderStatus(OrderStatus.valueOf("REFUNDED"));
         order.setModifiedAt(Instant.now());
         orderRepository.save(order);
         return true;
     }
 
 
-    private MatchOperation buildMatch(TimeFrame timeFrame){
+    private MatchOperation buildMatch(TimeFrame timeFrame) {
         Criteria criteria = Criteria.where("orderstatus").is("COMPLETED");
         Instant start = timeFrame.getStartInstant();
         if (start != null) {

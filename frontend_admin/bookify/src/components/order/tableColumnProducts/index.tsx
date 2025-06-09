@@ -23,62 +23,62 @@ export const OrderTableColumnItems: React.FC<Props> = ({ order }) => {
   const hiddenItems = uniqueItems.slice(VISIBLE_ITEM_COUNT);
 
   return (
-      <Flex gap={12}>
-        {visibleItems.map((item) => (
-            <Popover
-                key={item.bookId}
-                content={<Typography.Text>{item.title}</Typography.Text>}
+    <Flex gap={12}>
+      {visibleItems.map((item) => (
+        <Popover
+          key={item.bookId}
+          content={<Typography.Text>{item.title}</Typography.Text>}
+        >
+          <Badge
+            count={item.count > 1 ? item.count : 0}
+            style={{ color: "#fff" }}
+          >
+            <Avatar
+              shape="square"
+              style={{ backgroundColor: token.colorPrimaryBg }}
             >
-              <Badge
-                  count={item.count > 1 ? item.count : 0}
-                  style={{ color: "#fff" }}
-              >
-                <Avatar
-                    shape="square"
-                    style={{ backgroundColor: token.colorPrimaryBg }}
-                >
-                  {item.title.charAt(0).toUpperCase()}
-                </Avatar>
-              </Badge>
-            </Popover>
-        ))}
+              {item.title}
+            </Avatar>
+          </Badge>
+        </Popover>
+      ))}
 
-        {hiddenItems.length > 0 && (
-            <Popover
-                title={t("orders.fields.items", "Items")}
-                content={
-                  <Flex gap={8}>
-                    {hiddenItems.map((item) => (
-                        <Popover
-                            key={item.bookId}
-                            content={<Typography.Text>{item.title}</Typography.Text>}
-                        >
-                          <Badge
-                              count={item.count > 1 ? item.count : 0}
-                              style={{ color: "#fff" }}
-                          >
-                            <Avatar
-                                shape="square"
-                                style={{ backgroundColor: token.colorPrimaryBg }}
-                            >
-                              {item.title.charAt(0).toUpperCase()}
-                            </Avatar>
-                          </Badge>
-                        </Popover>
-                    ))}
-                  </Flex>
-                }
-            >
-              <Avatar
-                  shape="square"
-                  style={{ backgroundColor: token.colorPrimaryBg }}
-              >
-                <Typography.Text style={{ color: token.colorPrimary }}>
-                  +{hiddenItems.length}
-                </Typography.Text>
-              </Avatar>
-            </Popover>
-        )}
-      </Flex>
+      {hiddenItems.length > 0 && (
+        <Popover
+          title={t("orders.fields.items", "Items")}
+          content={
+            <Flex gap={8}>
+              {hiddenItems.map((item) => (
+                <Popover
+                  key={item.bookId}
+                  content={<Typography.Text>{item.title}</Typography.Text>}
+                >
+                  <Badge
+                    count={item.count > 1 ? item.count : 0}
+                    style={{ color: "#fff" }}
+                  >
+                    <Avatar
+                      shape="square"
+                      style={{ backgroundColor: token.colorPrimaryBg }}
+                    >
+                      {item.title.charAt(0).toUpperCase()}
+                    </Avatar>
+                  </Badge>
+                </Popover>
+              ))}
+            </Flex>
+          }
+        >
+          <Avatar
+            shape="square"
+            style={{ backgroundColor: token.colorPrimaryBg }}
+          >
+            <Typography.Text style={{ color: token.colorPrimary }}>
+              +{hiddenItems.length}
+            </Typography.Text>
+          </Avatar>
+        </Popover>
+      )}
+    </Flex>
   );
 };

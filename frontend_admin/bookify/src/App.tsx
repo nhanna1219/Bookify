@@ -27,7 +27,7 @@ import { authProvider } from "./authProvider";
 import "dayjs/locale/de";
 
 import { DashboardPage } from "./pages/dashboard";
-import { OrderList, OrderShow } from "./pages/orders";
+import { OrderCreate, OrderList, OrderShow } from "./pages/orders";
 import { AuthPage } from "./pages/auth";
 import { CustomerShow, CustomerList } from "./pages/customers";
 import { CourierList, CourierCreate, CourierEdit } from "./pages/couriers";
@@ -293,8 +293,8 @@ const App: React.FC = () => {
   // We use this hook to skip the login page and demonstrate the application more quickly.
   const { loading } = useAutoLoginForDemo();
 
-  const API_URL = "https://api.finefoods.refine.dev";
-  // const API_URL = "http://localhost:8080/api/admin";
+  // const API_URL = "https://api.finefoods.refine.dev";
+  const API_URL = "http://localhost:8080/api/admin";
   const dataProvider = jsonServerDataProvider(API_URL);
 
   const { t, i18n } = useTranslation();
@@ -383,25 +383,25 @@ const App: React.FC = () => {
               //     icon: <TagsOutlined />,
               //   },
               // },
-              {
-                name: "stores",
-                list: "/stores",
-                create: "/stores/new",
-                edit: "/stores/:id/edit",
-                meta: {
-                  icon: <ShopOutlined />,
-                },
-              },
-              {
-                name: "couriers",
-                list: "/couriers",
-                create: "/couriers/new",
-                edit: "/couriers/:id/edit",
-                show: "/couriers/:id",
-                meta: {
-                  icon: <BikeWhiteIcon />,
-                },
-              },
+              // {
+              //   name: "stores",
+              //   list: "/stores",
+              //   create: "/stores/new",
+              //   edit: "/stores/:id/edit",
+              //   meta: {
+              //     icon: <ShopOutlined />,
+              //   },
+              // },
+              // {
+              //   name: "couriers",
+              //   list: "/couriers",
+              //   create: "/couriers/new",
+              //   edit: "/couriers/:id/edit",
+              //   show: "/couriers/:id",
+              //   meta: {
+              //     icon: <BikeWhiteIcon />,
+              //   },
+              // },
             ]}
           >
             <Routes>
@@ -435,6 +435,7 @@ const App: React.FC = () => {
                 <Route path="/orders">
                   <Route index element={<OrderList />} />
                   <Route path=":id" element={<OrderShow />} />
+                  <Route path="new" element={<OrderCreate />} />
                 </Route>
 
                 <Route
@@ -485,28 +486,28 @@ const App: React.FC = () => {
                   <Route path=":id/edit" element={<BookEdit />} />
                 </Route>
 
-                <Route path="/stores">
-                  <Route index element={<StoreList />} />
-                  <Route path="new" element={<StoreCreate />} />
-                  <Route path=":id/edit" element={<StoreEdit />} />
-                </Route>
+                {/*<Route path="/stores">*/}
+                {/*  <Route index element={<StoreList />} />*/}
+                {/*  <Route path="new" element={<StoreCreate />} />*/}
+                {/*  <Route path=":id/edit" element={<StoreEdit />} />*/}
+                {/*</Route>*/}
 
                 <Route path="/categories" element={<CategoryList />} />
 
-                <Route path="/couriers">
-                  <Route
-                    path=""
-                    element={
-                      <CourierList>
-                        <Outlet />
-                      </CourierList>
-                    }
-                  >
-                    <Route path="new" element={<CourierCreate />} />
-                  </Route>
+                {/*<Route path="/couriers">*/}
+                {/*  <Route*/}
+                {/*    path=""*/}
+                {/*    element={*/}
+                {/*      <CourierList>*/}
+                {/*        <Outlet />*/}
+                {/*      </CourierList>*/}
+                {/*    }*/}
+                {/*  >*/}
+                {/*    <Route path="new" element={<CourierCreate />} />*/}
+                {/*  </Route>*/}
 
-                  <Route path=":id/edit" element={<CourierEdit />} />
-                </Route>
+                {/*  <Route path=":id/edit" element={<CourierEdit />} />*/}
+                {/*</Route>*/}
               </Route>
 
               <Route

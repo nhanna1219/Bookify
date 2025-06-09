@@ -47,9 +47,9 @@ export const OrderList: React.FC = () => {
     maxItemCount: 1000,
     mapData: (order) => ({
       id: order.id,
-      status: order.status,
+      orderStatus: order.orderStatus,
       totalAmount: order.totalAmount,
-      createdAt: order.createdAt,
+      createdAt: order.addedAt,
       doneAt: order.doneAt ?? "",
     }),
   });
@@ -134,9 +134,9 @@ export const OrderList: React.FC = () => {
 
         {/* Status */}
         <Table.Column
-          key="status"
-          dataIndex="status"
-          title={t("orders.fields.status", "Status")}
+          key="orderStatus"
+          dataIndex="orderStatus"
+          title={t("orders.fields.orderStatus", "Status")}
           render={(status: string) => (
             // pass the raw string status to your component
             <OrderStatus status={status} />
@@ -159,11 +159,6 @@ export const OrderList: React.FC = () => {
                   "Filter status"
                 )}
               >
-                {/*{["NEW", "PROCESSING", "COMPLETED", "CANCELLED"].map((s) => (*/}
-                {/*    <Select.Option key={s} value={s}>*/}
-                {/*      {s}*/}
-                {/*    </Select.Option>*/}
-                {/*))}*/}
                 <Select.Option value="PENDING">
                   {t("enum.orderStatuses.PENDING", "PENDING")}
                 </Select.Option>
@@ -200,14 +195,6 @@ export const OrderList: React.FC = () => {
             <OrderTableColumnItems order={record} />
           )}
         />
-
-        {/* Products */}
-        {/*<Table.Column<IOrder>*/}
-        {/*    key="items"*/}
-        {/*    dataIndex="items"*/}
-        {/*    title={t("orders.fields.items", "Items")}*/}
-        {/*    render={(_, record) => <OrderTableColumnProducts order={record} />}*/}
-        {/*/>*/}
 
         {/* Total Amount */}
         <Table.Column

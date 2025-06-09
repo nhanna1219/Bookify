@@ -23,9 +23,11 @@ public class AdminBookController {
     private final AdminBookService adminBookService;
 
     @GetMapping
-    public ResponseEntity<?> getAllBooks() {
+    public ResponseEntity<?> getAllBooks(
+            @RequestParam(value = "title_like", required = false) String titleLike
+    ) {
         try {
-            List<AdminBookDTO> books = adminBookService.getAllBooks();
+            List<AdminBookDTO> books = adminBookService.getAllBooks(titleLike);
             return ResponseEntity.ok(books);
         } catch (Exception e) {
             return ResponseEntity.status(400).body(Map.of("error", e.getMessage()));

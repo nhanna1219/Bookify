@@ -24,8 +24,13 @@ public class AdminBookServiceImpl implements AdminBookService {
     private final CategoryRepository categoryRepository;
 
     @Override
-    public List<AdminBookDTO> getAllBooks() {
-        List<Book> books = bookRepository.findAll();
+    public List<AdminBookDTO> getAllBooks(String titleLike) {
+        List<Book> books;
+        if (titleLike != null && !titleLike.isBlank()) {
+            books = bookRepository.findByTitleContainingIgnoreCase(titleLike);
+        } else {
+            books = bookRepository.findAll();
+        }
 
         return books.stream().map(book -> {
             AdminBookDTO dto = new AdminBookDTO();

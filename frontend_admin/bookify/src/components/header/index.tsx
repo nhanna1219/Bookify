@@ -100,8 +100,8 @@ export const Header: React.FC = () => {
             `${item.store.title} / #${item.orderNumber}`,
             item?.products?.[0].images?.[0]?.url ||
               "/images/default-order-img.png",
-            `/orders/show/${item.id}`,
-          ),
+            `/orders/show/${item.id}`
+          )
         );
         if (orderOptionGroup.length > 0) {
           setOptions((prevOptions) => [
@@ -125,7 +125,7 @@ export const Header: React.FC = () => {
       enabled: false,
       onSuccess: (data) => {
         const storeOptionGroup = data.data.map((item) =>
-          renderItem(item.title, "", `/stores/edit/${item.id}`),
+          renderItem(item.title, "", `/stores/edit/${item.id}`)
         );
         if (storeOptionGroup.length > 0) {
           setOptions((prevOptions) => [
@@ -152,8 +152,8 @@ export const Header: React.FC = () => {
           renderItem(
             `${item.name} ${item.surname}`,
             item.avatar[0].url,
-            `/couriers/show/${item.id}`,
-          ),
+            `/couriers/show/${item.id}`
+          )
         );
         if (courierOptionGroup.length > 0) {
           setOptions((prevOptions) => [
@@ -170,9 +170,9 @@ export const Header: React.FC = () => {
 
   useEffect(() => {
     setOptions([]);
-    refetchOrders();
-    refetchCouriers();
-    refetchStores();
+    // refetchOrders();
+    // refetchCouriers();
+    // refetchStores();
   }, [value]);
 
   const menuItems: MenuProps["items"] = [...(i18n.languages || [])]
