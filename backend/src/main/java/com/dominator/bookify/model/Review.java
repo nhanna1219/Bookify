@@ -23,7 +23,7 @@ public class Review {
     private int rating;
     private String subject;
     private String comment;
-    private ReviewStatus status; // PENDING, APPROVED, REJECTED
+    private ReviewStatus status;
 
     @CreatedDate
     private String addedAt;

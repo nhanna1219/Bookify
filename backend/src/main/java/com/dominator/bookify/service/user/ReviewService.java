@@ -8,7 +8,6 @@ import com.dominator.bookify.model.User;
 import com.dominator.bookify.repository.ReviewRepository;
 import com.dominator.bookify.repository.UserRepository;
 import lombok.AllArgsConstructor;
-import org.bson.Document;
 import org.bson.types.ObjectId;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -28,7 +27,8 @@ public class ReviewService {
     private final UserRepository userRepository;
 
     public Page<ReviewResponseDTO> getApprovedReviews(BookReviewsDTO dto) {
-        Pageable pageable = PageRequest.of(dto.getPageIndex(), dto.getPageSize(), Sort.by(Sort.Direction.DESC, dto.getSortBy()));
+        Pageable pageable = PageRequest.of(dto.getPageIndex(), dto.getPageSize(),
+                Sort.by(Sort.Direction.DESC, dto.getSortBy()));
         ObjectId bookObjectId = new ObjectId(dto.getBookId());
 
         Page<Review> reviewPage = dto.getRating() == 0
@@ -46,8 +46,7 @@ public class ReviewService {
                     review.getSubject(),
                     review.getComment(),
                     review.getAddedAt(),
-                    userName
-            );
+                    userName);
         });
     }
 
@@ -56,7 +55,8 @@ public class ReviewService {
         List<Map<String, Object>> results = reviewRepository.getRatingDistribution(objectId);
 
         Map<Integer, Long> counts = new LinkedHashMap<>();
-        for (int i = 1; i <= 5; i++) counts.put(i, 0L);
+        for (int i = 1; i <= 5; i++)
+            counts.put(i, 0L);
 
         for (Map<String, Object> row : results) {
             int stars = ((Number) row.get("_id")).intValue();
