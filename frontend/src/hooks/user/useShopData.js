@@ -8,13 +8,11 @@ export const useShopData = (queryParams) => {
             {
                 queryKey: ['categories'],
                 queryFn: () => getCategories().then(r => r.data),
-                staleTime: 1000 * 60 * 30,      // 30 minutes
-                cacheTime: 1000 * 60 * 60,     // 1 hour
+                staleTime: 1000 * 60 * 30
             },
             {
                 queryKey: ['shopData', queryParams],
                 queryFn: () => getBooks(queryParams).then(r => r.data),
-                keepPreviousData: true,
             },
         ]
     })

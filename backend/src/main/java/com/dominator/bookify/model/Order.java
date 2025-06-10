@@ -28,6 +28,8 @@ public class Order {
     private Payment payment;
     private OrderStatus orderStatus;
     private ShippingInformation shippingInformation;
+    private boolean isReviewed;
+    private String note;
     @CreatedDate
     private Instant addedAt;
     @LastModifiedDate

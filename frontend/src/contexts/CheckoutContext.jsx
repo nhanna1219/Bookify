@@ -60,8 +60,12 @@ export function CheckoutProvider({ children }) {
     }, []);
 
     useEffect(() => {
-        localStorage.setItem('cart_selected', JSON.stringify(selectedItems))
-    }, [selectedItems])
+        const normalized = Array.isArray(selectedItems)
+            ? selectedItems
+            : Object.values(selectedItems || {});
+        localStorage.setItem('cart_selected', JSON.stringify(normalized));
+    }, [selectedItems]);
+
 
     return (
         <CheckoutContext.Provider

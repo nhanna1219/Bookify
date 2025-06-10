@@ -864,4 +864,844 @@
   "status": "APPROVED",
   "addedAt": "2025-05-23T01:57:38.581245",
   "modifiedAt": "2025-05-23T01:57:38.581245"
+},
+{
+  "_id": {
+    "$oid": "6845f5c1f6159c1e348dcc76"
+  },
+  "bookId": {
+    "$oid": "682023424a1ae581e0445358"
+  },
+  "orderId": {
+    "$oid": "6845f478f6159c1e348dcc75"
+  },
+  "userId": {
+    "$oid": "6845ef85f6159c1e348dcc64"
+  },
+  "rating": 5,
+  "subject": "Wonderful Book – Even Better Service!",
+  "comment": "The book arrived in perfect condition, and it was exactly as described. What truly stood out, though, was the incredible customer service—quick response, friendly attitude, and they made sure everything went smoothly from order to delivery. One of the best shopping experiences I’ve had online!",
+  "status": "APPROVED",
+  "addedAt": "6/9/25, 3:42 AM",
+  "modifiedAt": "6/9/25, 3:42 AM",
+  "_class": "com.dominator.bookify.model.Review"
+},
+{
+  "_id": {
+    "$oid": "6845f5c1f6159c1e348dcc77"
+  },
+  "bookId": {
+    "$oid": "682023424a1ae581e0445359"
+  },
+  "orderId": {
+    "$oid": "6845f478f6159c1e348dcc75"
+  },
+  "userId": {
+    "$oid": "6845ef85f6159c1e348dcc64"
+  },
+  "rating": 5,
+  "subject": "Great Read, Amazing Support",
+  "comment": "Loved the depth and clarity of this book, but I was even more impressed with the support team. They answered my questions instantly and made sure my order arrived earlier than expected. Five stars for service!",
+  "status": "APPROVED",
+  "addedAt": "6/9/25, 3:42 AM",
+  "modifiedAt": "6/9/25, 3:42 AM",
+  "_class": "com.dominator.bookify.model.Review"
+},
+{
+  "_id": {
+    "$oid": "6845f715f6159c1e348dcc78"
+  },
+  "bookId": {
+    "$oid": "682023424a1ae581e0445357"
+  },
+  "orderId": {
+    "$oid": "6845f462f6159c1e348dcc74"
+  },
+  "userId": {
+    "$oid": "6845ef85f6159c1e348dcc64"
+  },
+  "rating": 4,
+  "subject": "Heartwarming Book & Impressive Service!",
+  "comment": "I bought this as a gift for new parents, and the book itself is absolutely beautiful—gentle, poetic, and filled with lovely illustrations. What truly made the experience stand out was the customer service: fast shipping, secure packaging, and a super friendly support team that followed up to make sure everything was perfect. Highly recommend both the book and the store!",
+  "status": "APPROVED",
+  "addedAt": "6/9/25, 3:48 AM",
+  "modifiedAt": "6/9/25, 3:48 AM",
+  "_class": "com.dominator.bookify.model.Review"
+},
+{
+  "_id": {
+    "$oid": "6845f95ef6159c1e348dcc7c"
+  },
+  "bookId": {
+    "$oid": "682023424a1ae581e0445357"
+  },
+  "orderId": {
+    "$oid": "6845f75cf6159c1e348dcc7b"
+  },
+  "userId": {
+    "$oid": "6845f24ef6159c1e348dcc6a"
+  },
+  "rating": 5,
+  "subject": "Smooth Delivery for a Perfect Gift",
+  "comment": "This truly beautiful book arrived quickly and in perfect condition, making it an ideal gift. The excellent shipping experience from Bookify ensured it was ready to delight.",
+  "status": "APPROVED",
+  "addedAt": "6/9/25, 3:58 AM",
+  "modifiedAt": "6/9/25, 3:58 AM",
+  "_class": "com.dominator.bookify.model.Review"
+},
+{
+  "_id": {
+    "$oid": "6845f95ef6159c1e348dcc7d"
+  },
+  "bookId": {
+    "$oid": "682023424a1ae581e044535a"
+  },
+  "orderId": {
+    "$oid": "6845f75cf6159c1e348dcc7b"
+  },
+  "userId": {
+    "$oid": "6845f24ef6159c1e348dcc6a"
+  },
+  "rating": 4,
+  "subject": "Fast Delivery, Great Condition",
+  "comment": "Archer's clever stories arrived swiftly and just as described. The shipping was prompt, and the book's condition was excellent, enhancing the reading experience.",
+  "status": "APPROVED",
+  "addedAt": "6/9/25, 3:58 AM",
+  "modifiedAt": "6/9/25, 3:58 AM",
+  "_class": "com.dominator.bookify.model.Review"
+},
+{
+  "_id": {
+    "$oid": "6845f95ef6159c1e348dcc7e"
+  },
+  "bookId": {
+    "$oid": "682023424a1ae581e044535b"
+  },
+  "orderId": {
+    "$oid": "6845f75cf6159c1e348dcc7b"
+  },
+  "userId": {
+    "$oid": "6845f24ef6159c1e348dcc6a"
+  },
+  "rating": 4,
+  "subject": "Fantastic Service, Epic Delivery",
+  "comment": "Getting this great fantasy collection was a breeze. Bookify's customer service was top-notch, and the shipping was remarkably fast, getting me into this captivating universe without delay.",
+  "status": "APPROVED",
+  "addedAt": "6/9/25, 3:58 AM",
+  "modifiedAt": "6/9/25, 3:58 AM",
+  "_class": "com.dominator.bookify.model.Review"
+},
+{
+  "_id": {
+    "$oid": "6845f95ef6159c1e348dcc7f"
+  },
+  "bookId": {
+    "$oid": "682023424a1ae581e044535c"
+  },
+  "orderId": {
+    "$oid": "6845f75cf6159c1e348dcc7b"
+  },
+  "userId": {
+    "$oid": "6845f24ef6159c1e348dcc6a"
+  },
+  "rating": 5,
+  "subject": "Timely Arrival, Seamless Process",
+  "comment": "The book arrived quickly and smoothly. The overall purchasing experience, from ordering to delivery, was excellent, allowing me to dive into this powerful story without any hassle.",
+  "status": "APPROVED",
+  "addedAt": "6/9/25, 3:58 AM",
+  "modifiedAt": "6/9/25, 3:58 AM",
+  "_class": "com.dominator.bookify.model.Review"
+},
+{
+  "_id": {
+    "$oid": "6845f95ef6159c1e348dcc80"
+  },
+  "bookId": {
+    "$oid": "682023424a1ae581e044535f"
+  },
+  "orderId": {
+    "$oid": "6845f75cf6159c1e348dcc7b"
+  },
+  "userId": {
+    "$oid": "6845f24ef6159c1e348dcc6a"
+  },
+  "rating": 4,
+  "subject": "Inspiring Read, Flawless Shipping",
+  "comment": "This motivating book was delivered efficiently and in great shape. The seamless shipping experience from Bookify meant I could start finding my purpose right away.",
+  "status": "APPROVED",
+  "addedAt": "6/9/25, 3:58 AM",
+  "modifiedAt": "6/9/25, 3:58 AM",
+  "_class": "com.dominator.bookify.model.Review"
+},
+{
+  "_id": {
+    "$oid": "6845fcc3f6159c1e348dcc82"
+  },
+  "bookId": {
+    "$oid": "682023424a1ae581e044537d"
+  },
+  "orderId": {
+    "$oid": "6845fb99f6159c1e348dcc81"
+  },
+  "userId": {
+    "$oid": "6845f24ef6159c1e348dcc6a"
+  },
+  "rating": 4,
+  "subject": "Healthy & Delicious",
+  "comment": "A fantastic cookbook with practical, tasty recipes perfect for diabetic-friendly meals. Highly recommend!",
+  "status": "APPROVED",
+  "addedAt": "6/9/25, 4:12 AM",
+  "modifiedAt": "6/9/25, 4:12 AM",
+  "_class": "com.dominator.bookify.model.Review"
+},
+{
+  "_id": {
+    "$oid": "6845fcc3f6159c1e348dcc83"
+  },
+  "bookId": {
+    "$oid": "682023424a1ae581e044537c"
+  },
+  "orderId": {
+    "$oid": "6845fb99f6159c1e348dcc81"
+  },
+  "userId": {
+    "$oid": "6845f24ef6159c1e348dcc6a"
+  },
+  "rating": 4,
+  "subject": "Powerful & Moving",
+  "comment": "A truly heartbreaking story of friendship amidst historical turmoil. A must-read for its emotional depth.",
+  "status": "APPROVED",
+  "addedAt": "6/9/25, 4:12 AM",
+  "modifiedAt": "6/9/25, 4:12 AM",
+  "_class": "com.dominator.bookify.model.Review"
+},
+{
+  "_id": {
+    "$oid": "6845fe58f6159c1e348dcc87"
+  },
+  "bookId": {
+    "$oid": "682023424a1ae581e0445357"
+  },
+  "orderId": {
+    "$oid": "6845fd28f6159c1e348dcc86"
+  },
+  "userId": {
+    "$oid": "6845f2a2f6159c1e348dcc6c"
+  },
+  "rating": 5,
+  "subject": "Just lovely.",
+  "comment": "Such a sweet and heartfelt book. Perfect for new parents or as a baby gift. Really touched my heart.",
+  "status": "APPROVED",
+  "addedAt": "6/9/25, 4:19 AM",
+  "modifiedAt": "6/9/25, 4:19 AM",
+  "_class": "com.dominator.bookify.model.Review"
+},
+{
+  "_id": {
+    "$oid": "6845fe58f6159c1e348dcc88"
+  },
+  "bookId": {
+    "$oid": "682023424a1ae581e0445358"
+  },
+  "orderId": {
+    "$oid": "6845fd28f6159c1e348dcc86"
+  },
+  "userId": {
+    "$oid": "6845f2a2f6159c1e348dcc6c"
+  },
+  "rating": 5,
+  "subject": "A fun historical ride.",
+  "comment": "Really enjoyed this historical fiction! Lots of intrigue and interesting characters. Kept me hooked till the end.",
+  "status": "APPROVED",
+  "addedAt": "6/9/25, 4:19 AM",
+  "modifiedAt": "6/9/25, 4:19 AM",
+  "_class": "com.dominator.bookify.model.Review"
+},
+{
+  "_id": {
+    "$oid": "6845fe58f6159c1e348dcc89"
+  },
+  "bookId": {
+    "$oid": "682023424a1ae581e044535b"
+  },
+  "orderId": {
+    "$oid": "6845fd28f6159c1e348dcc86"
+  },
+  "userId": {
+    "$oid": "6845f2a2f6159c1e348dcc6c"
+  },
+  "rating": 5,
+  "subject": "Cool fantasy concept.",
+  "comment": "Love the idea of these magical swords. It's a solid collection with some really creative stories. Great for fantasy fans.",
+  "status": "APPROVED",
+  "addedAt": "6/9/25, 4:19 AM",
+  "modifiedAt": "6/9/25, 4:19 AM",
+  "_class": "com.dominator.bookify.model.Review"
+},
+{
+  "_id": {
+    "$oid": "6845fe58f6159c1e348dcc8a"
+  },
+  "bookId": {
+    "$oid": "682023424a1ae581e044535c"
+  },
+  "orderId": {
+    "$oid": "6845fd28f6159c1e348dcc86"
+  },
+  "userId": {
+    "$oid": "6845f2a2f6159c1e348dcc6c"
+  },
+  "rating": 5,
+  "subject": "Hits you right in the feels.",
+  "comment": "Wow, this one's a powerful read about family. It's raw and honest, and you really feel for the characters. Definitely recommend.",
+  "status": "APPROVED",
+  "addedAt": "6/9/25, 4:19 AM",
+  "modifiedAt": "6/9/25, 4:19 AM",
+  "_class": "com.dominator.bookify.model.Review"
+},
+{
+  "_id": {
+    "$oid": "6845fe58f6159c1e348dcc8b"
+  },
+  "bookId": {
+    "$oid": "682023424a1ae581e0445360"
+  },
+  "orderId": {
+    "$oid": "6845fd28f6159c1e348dcc86"
+  },
+  "userId": {
+    "$oid": "6845f2a2f6159c1e348dcc6c"
+  },
+  "rating": 5,
+  "subject": "Page-turner suspense!",
+  "comment": "This book was super gripping from start to finish. Lots of twists and turns, couldn't put it down. A solid thriller!",
+  "status": "APPROVED",
+  "addedAt": "6/9/25, 4:19 AM",
+  "modifiedAt": "6/9/25, 4:19 AM",
+  "_class": "com.dominator.bookify.model.Review"
+},
+{
+  "_id": {
+    "$oid": "68460096f6159c1e348dcc8d"
+  },
+  "bookId": {
+    "$oid": "682023424a1ae581e0445361"
+  },
+  "orderId": {
+    "$oid": "6845fe87f6159c1e348dcc8c"
+  },
+  "userId": {
+    "$oid": "6845f2a2f6159c1e348dcc6c"
+  },
+  "rating": 4,
+  "subject": "Laugh-out-loud satire!",
+  "comment": "This book is just brilliant. It's so witty and funny, making fun of all sorts of posh British stuff. A true classic that still holds up.",
+  "status": "APPROVED",
+  "addedAt": "6/9/25, 4:28 AM",
+  "modifiedAt": "6/9/25, 4:28 AM",
+  "_class": "com.dominator.bookify.model.Review"
+},
+{
+  "_id": {
+    "$oid": "68460096f6159c1e348dcc8e"
+  },
+  "bookId": {
+    "$oid": "682023424a1ae581e044535d"
+  },
+  "orderId": {
+    "$oid": "6845fe87f6159c1e348dcc8c"
+  },
+  "userId": {
+    "$oid": "6845f2a2f6159c1e348dcc6c"
+  },
+  "rating": 5,
+  "subject": "So cute for little ones!",
+  "comment": "My kids absolutely adore this book. The animal sounds are a blast, and the illustrations are super charming. Definitely a favorite for story time.",
+  "status": "APPROVED",
+  "addedAt": "6/9/25, 4:28 AM",
+  "modifiedAt": "6/9/25, 4:28 AM",
+  "_class": "com.dominator.bookify.model.Review"
+},
+{
+  "_id": {
+    "$oid": "68460096f6159c1e348dcc8f"
+  },
+  "bookId": {
+    "$oid": "682023424a1ae581e0445362"
+  },
+  "orderId": {
+    "$oid": "6845fe87f6159c1e348dcc8c"
+  },
+  "userId": {
+    "$oid": "6845f2a2f6159c1e348dcc6c"
+  },
+  "rating": 5,
+  "subject": "Incredibly comprehensive!",
+  "comment": "If you're into history, especially the Napoleonic era, this dictionary is a goldmine. Packed with details, very well-organized, and super useful for quick lookups.",
+  "status": "APPROVED",
+  "addedAt": "6/9/25, 4:28 AM",
+  "modifiedAt": "6/9/25, 4:28 AM",
+  "_class": "com.dominator.bookify.model.Review"
+},
+{
+  "_id": {
+    "$oid": "68460096f6159c1e348dcc90"
+  },
+  "bookId": {
+    "$oid": "682023424a1ae581e0445363"
+  },
+  "orderId": {
+    "$oid": "6845fe87f6159c1e348dcc8c"
+  },
+  "userId": {
+    "$oid": "6845f2a2f6159c1e348dcc6c"
+  },
+  "rating": 5,
+  "subject": "Unique and insightful.",
+  "comment": "This was a really special read. The way it blends dreams and history is fascinating, and Donald is such a relatable character. A truly thought-provoking story.",
+  "status": "APPROVED",
+  "addedAt": "6/9/25, 4:28 AM",
+  "modifiedAt": "6/9/25, 4:28 AM",
+  "_class": "com.dominator.bookify.model.Review"
+},
+{
+  "_id": {
+    "$oid": "6846027ef6159c1e348dcc95"
+  },
+  "bookId": {
+    "$oid": "682023424a1ae581e0445385"
+  },
+  "orderId": {
+    "$oid": "684601e2f6159c1e348dcc94"
+  },
+  "userId": {
+    "$oid": "6845f327f6159c1e348dcc6e"
+  },
+  "rating": 3,
+  "subject": "Informative but a bit dry.",
+  "comment": "It has some really good points about media violence, and the research is solid. But honestly, it felt a little too academic and less engaging than I hoped. Still, worth a read for parents.",
+  "status": "APPROVED",
+  "addedAt": "6/9/25, 4:37 AM",
+  "modifiedAt": "6/9/25, 4:37 AM",
+  "_class": "com.dominator.bookify.model.Review"
+},
+{
+  "_id": {
+    "$oid": "6846027ef6159c1e348dcc96"
+  },
+  "bookId": {
+    "$oid": "682023424a1ae581e0445386"
+  },
+  "orderId": {
+    "$oid": "684601e2f6159c1e348dcc94"
+  },
+  "userId": {
+    "$oid": "6845f327f6159c1e348dcc6e"
+  },
+  "rating": 4,
+  "subject": "Good premise, slightly slow.",
+  "comment": "The mystery here was intriguing, and I liked the main character. It just took a while to really get going, and some parts dragged a bit. Decent thriller if you're patient.",
+  "status": "APPROVED",
+  "addedAt": "6/9/25, 4:37 AM",
+  "modifiedAt": "6/9/25, 4:37 AM",
+  "_class": "com.dominator.bookify.model.Review"
+},
+{
+  "_id": {
+    "$oid": "6846027ef6159c1e348dcc97"
+  },
+  "bookId": {
+    "$oid": "682023424a1ae581e0445387"
+  },
+  "orderId": {
+    "$oid": "684601e2f6159c1e348dcc94"
+  },
+  "userId": {
+    "$oid": "6845f327f6159c1e348dcc6e"
+  },
+  "rating": 4,
+  "subject": "Emotional, but a predictable ending.",
+  "comment": "This book definitely pulled at the heartstrings and explored family dynamics well. The emotional journey was good, but I saw the big twist coming pretty early on, which took some of the impact away.",
+  "status": "APPROVED",
+  "addedAt": "6/9/25, 4:37 AM",
+  "modifiedAt": "6/9/25, 4:37 AM",
+  "_class": "com.dominator.bookify.model.Review"
+},
+{
+  "_id": {
+    "$oid": "684602e2f6159c1e348dcc98"
+  },
+  "bookId": {
+    "$oid": "682023424a1ae581e044535b"
+  },
+  "orderId": {
+    "$oid": "68460132f6159c1e348dcc93"
+  },
+  "userId": {
+    "$oid": "6845f327f6159c1e348dcc6e"
+  },
+  "rating": 3,
+  "subject": "Good, but a bit uneven.",
+  "comment": "The concept of magic swords is awesome, and some of these stories really shine. A few felt a bit weaker than others, though. Still worth it for fantasy fans.",
+  "status": "APPROVED",
+  "addedAt": "6/9/25, 4:38 AM",
+  "modifiedAt": "6/9/25, 4:38 AM",
+  "_class": "com.dominator.bookify.model.Review"
+},
+{
+  "_id": {
+    "$oid": "684602e2f6159c1e348dcc99"
+  },
+  "bookId": {
+    "$oid": "682023424a1ae581e044537c"
+  },
+  "orderId": {
+    "$oid": "68460132f6159c1e348dcc93"
+  },
+  "userId": {
+    "$oid": "6845f327f6159c1e348dcc6e"
+  },
+  "rating": 4,
+  "subject": "Powerful, yet hard to read.",
+  "comment": "This is a really important and emotional story about friendship during a dark time. It's well-written, but the subject matter is understandably tough.",
+  "status": "APPROVED",
+  "addedAt": "6/9/25, 4:38 AM",
+  "modifiedAt": "6/9/25, 4:38 AM",
+  "_class": "com.dominator.bookify.model.Review"
+},
+{
+  "_id": {
+    "$oid": "684602e2f6159c1e348dcc9a"
+  },
+  "bookId": {
+    "$oid": "682023424a1ae581e044537f"
+  },
+  "orderId": {
+    "$oid": "68460132f6159c1e348dcc93"
+  },
+  "userId": {
+    "$oid": "6845f327f6159c1e348dcc6e"
+  },
+  "rating": 5,
+  "subject": "Cute idea, fairly typical.",
+  "comment": "It was a sweet romance with a fun premise, but it followed a lot of the usual tropes. Good if you want something light and predictable.",
+  "status": "APPROVED",
+  "addedAt": "6/9/25, 4:38 AM",
+  "modifiedAt": "6/9/25, 4:38 AM",
+  "_class": "com.dominator.bookify.model.Review"
+},
+{
+  "_id": {
+    "$oid": "684602e2f6159c1e348dcc9b"
+  },
+  "bookId": {
+    "$oid": "682023424a1ae581e044537e"
+  },
+  "orderId": {
+    "$oid": "68460132f6159c1e348dcc93"
+  },
+  "userId": {
+    "$oid": "6845f327f6159c1e348dcc6e"
+  },
+  "rating": 4,
+  "subject": "Informative, a bit dense.",
+  "comment": "Explores the brain and consciousness in a lot of detail. Very educational, but I found myself needing to reread sections to fully grasp them.",
+  "status": "APPROVED",
+  "addedAt": "6/9/25, 4:38 AM",
+  "modifiedAt": "6/9/25, 4:38 AM",
+  "_class": "com.dominator.bookify.model.Review"
+},
+{
+  "_id": {
+    "$oid": "684602e2f6159c1e348dcc9c"
+  },
+  "bookId": {
+    "$oid": "682023424a1ae581e0445383"
+  },
+  "orderId": {
+    "$oid": "68460132f6159c1e348dcc93"
+  },
+  "userId": {
+    "$oid": "6845f327f6159c1e348dcc6e"
+  },
+  "rating": 5,
+  "subject": "Simple fun for toddlers.",
+  "comment": "My little one enjoys the repetitive sounds and seeing the animals. It's a very simple book, great for very young kids, but older preschoolers might want more.",
+  "status": "APPROVED",
+  "addedAt": "6/9/25, 4:38 AM",
+  "modifiedAt": "6/9/25, 4:38 AM",
+  "_class": "com.dominator.bookify.model.Review"
+},
+{
+  "_id": {
+    "$oid": "684604c0f6159c1e348dcca1"
+  },
+  "bookId": {
+    "$oid": "682023424a1ae581e0445357"
+  },
+  "orderId": {
+    "$oid": "68460334f6159c1e348dcc9f"
+  },
+  "userId": {
+    "$oid": "6845f366f6159c1e348dcc70"
+  },
+  "rating": 5,
+  "subject": "Absolutely beautiful!",
+  "comment": "This book is just so heartwarming. The illustrations are gorgeous, and the message about welcoming a new baby is truly touching. Perfect for parents.",
+  "status": "APPROVED",
+  "addedAt": "6/9/25, 4:46 AM",
+  "modifiedAt": "6/9/25, 4:46 AM",
+  "_class": "com.dominator.bookify.model.Review"
+},
+{
+  "_id": {
+    "$oid": "684604c0f6159c1e348dcca2"
+  },
+  "bookId": {
+    "$oid": "682023424a1ae581e0445358"
+  },
+  "orderId": {
+    "$oid": "68460334f6159c1e348dcc9f"
+  },
+  "userId": {
+    "$oid": "6845f366f6159c1e348dcc70"
+  },
+  "rating": 4,
+  "subject": "Gripping historical adventure.",
+  "comment": " really enjoyed this one! The historical setting feels very real, and the characters get caught up in some intense royal drama. A great read if you like historical fiction.",
+  "status": "APPROVED",
+  "addedAt": "6/9/25, 4:46 AM",
+  "modifiedAt": "6/9/25, 4:46 AM",
+  "_class": "com.dominator.bookify.model.Review"
+},
+{
+  "_id": {
+    "$oid": "684604c0f6159c1e348dcca3"
+  },
+  "bookId": {
+    "$oid": "682023424a1ae581e0445359"
+  },
+  "orderId": {
+    "$oid": "68460334f6159c1e348dcc9f"
+  },
+  "userId": {
+    "$oid": "6845f366f6159c1e348dcc70"
+  },
+  "rating": 5,
+  "subject": "Surprisingly fascinating!",
+  "comment": "Don't let the title fool you – this isn't just for math whizzes. It makes calculus feel genuinely exciting and helps you understand how it explains the world. Very well written.",
+  "status": "APPROVED",
+  "addedAt": "6/9/25, 4:46 AM",
+  "modifiedAt": "6/9/25, 4:46 AM",
+  "_class": "com.dominator.bookify.model.Review"
+},
+{
+  "_id": {
+    "$oid": "684604c0f6159c1e348dcca4"
+  },
+  "bookId": {
+    "$oid": "682023424a1ae581e0445361"
+  },
+  "orderId": {
+    "$oid": "68460334f6159c1e348dcc9f"
+  },
+  "userId": {
+    "$oid": "6845f366f6159c1e348dcc70"
+  },
+  "rating": 4,
+  "subject": "Hilariously cynical.",
+  "comment": "What a funny and sharp book! It's a brilliant satire of British society and had me laughing out loud quite a few times. A classic for a reason.",
+  "status": "APPROVED",
+  "addedAt": "6/9/25, 4:46 AM",
+  "modifiedAt": "6/9/25, 4:46 AM",
+  "_class": "com.dominator.bookify.model.Review"
+},
+{
+  "_id": {
+    "$oid": "684604c0f6159c1e348dcca5"
+  },
+  "bookId": {
+    "$oid": "682023424a1ae581e0445362"
+  },
+  "orderId": {
+    "$oid": "68460334f6159c1e348dcc9f"
+  },
+  "userId": {
+    "$oid": "6845f366f6159c1e348dcc70"
+  },
+  "rating": 5,
+  "subject": "A must-have for history buffs.",
+  "comment": "If you're interested in the Napoleonic Wars, this dictionary is incredibly useful. It's packed with information and makes a great reference.",
+  "status": "APPROVED",
+  "addedAt": "6/9/25, 4:46 AM",
+  "modifiedAt": "6/9/25, 4:46 AM",
+  "_class": "com.dominator.bookify.model.Review"
+},
+{
+  "_id": {
+    "$oid": "684604e7f6159c1e348dcca6"
+  },
+  "bookId": {
+    "$oid": "682023424a1ae581e0445380"
+  },
+  "orderId": {
+    "$oid": "684603b8f6159c1e348dcca0"
+  },
+  "userId": {
+    "$oid": "6845f366f6159c1e348dcc70"
+  },
+  "rating": 5,
+  "subject": "Classic suspense from Patterson.",
+  "comment": "This was a gripping thriller from start to finish. The story of the assassin and the manhunt was just riveting. Couldn't put it down!",
+  "status": "APPROVED",
+  "addedAt": "6/9/25, 4:47 AM",
+  "modifiedAt": "6/9/25, 4:47 AM",
+  "_class": "com.dominator.bookify.model.Review"
+},
+{
+  "_id": {
+    "$oid": "684609b6f6159c1e348dccaf"
+  },
+  "bookId": {
+    "$oid": "682023424a1ae581e0445358"
+  },
+  "orderId": {
+    "$oid": "684605d6f6159c1e348dccaa"
+  },
+  "userId": {
+    "$oid": "6845f3caf6159c1e348dcc72"
+  },
+  "rating": 5,
+  "subject": "Engrossing historical read!",
+  "comment": "Really enjoyed getting lost in this historical adventure. The characters are great, and the intrigue kept me turning pages. Solid read!",
+  "status": "APPROVED",
+  "addedAt": "6/9/25, 5:07 AM",
+  "modifiedAt": "6/9/25, 5:07 AM",
+  "_class": "com.dominator.bookify.model.Review"
+},
+{
+  "_id": {
+    "$oid": "684609b6f6159c1e348dccb0"
+  },
+  "bookId": {
+    "$oid": "682023424a1ae581e0445359"
+  },
+  "orderId": {
+    "$oid": "684605d6f6159c1e348dccaa"
+  },
+  "userId": {
+    "$oid": "6845f3caf6159c1e348dcc72"
+  },
+  "rating": 5,
+  "subject": "Calculus, made interesting!",
+  "comment": "As someone who struggles with math, I was surprised how much I liked this. It makes calculus understandable and even fascinating. Recommended for curious minds.",
+  "status": "APPROVED",
+  "addedAt": "6/9/25, 5:07 AM",
+  "modifiedAt": "6/9/25, 5:07 AM",
+  "_class": "com.dominator.bookify.model.Review"
+},
+{
+  "_id": {
+    "$oid": "684609e7f6159c1e348dccb1"
+  },
+  "bookId": {
+    "$oid": "682023424a1ae581e0445381"
+  },
+  "orderId": {
+    "$oid": "68460530f6159c1e348dcca9"
+  },
+  "userId": {
+    "$oid": "6845f3caf6159c1e348dcc72"
+  },
+  "rating": 4,
+  "subject": "Mind-bending thriller.",
+  "comment": "What a wild ride! This book is incredibly inventive and kept me guessing the whole way through. So many layers to unpack, definitely a good mystery.",
+  "status": "APPROVED",
+  "addedAt": "6/9/25, 5:08 AM",
+  "modifiedAt": "6/9/25, 5:08 AM",
+  "_class": "com.dominator.bookify.model.Review"
+},
+{
+  "_id": {
+    "$oid": "684609e7f6159c1e348dccb2"
+  },
+  "bookId": {
+    "$oid": "682023424a1ae581e0445384"
+  },
+  "orderId": {
+    "$oid": "68460530f6159c1e348dcca9"
+  },
+  "userId": {
+    "$oid": "6845f3caf6159c1e348dcc72"
+  },
+  "rating": 4,
+  "subject": "Beautiful insights into Van Gogh.",
+  "comment": "If you love art, this book is a must-read. It gives a wonderful look into Van Gogh's time in Arles with beautiful art and great commentary.",
+  "status": "APPROVED",
+  "addedAt": "6/9/25, 5:08 AM",
+  "modifiedAt": "6/9/25, 5:08 AM",
+  "_class": "com.dominator.bookify.model.Review"
+},
+{
+  "_id": {
+    "$oid": "684609e7f6159c1e348dccb3"
+  },
+  "bookId": {
+    "$oid": "682023424a1ae581e0445389"
+  },
+  "orderId": {
+    "$oid": "68460530f6159c1e348dcca9"
+  },
+  "userId": {
+    "$oid": "6845f3caf6159c1e348dcc72"
+  },
+  "rating": 4,
+  "subject": "Cute and charming romance.",
+  "comment": "A very sweet and lighthearted romance novel. It's a quick, enjoyable read if you're looking for something feel-good and a bit whimsical.",
+  "status": "APPROVED",
+  "addedAt": "6/9/25, 5:08 AM",
+  "modifiedAt": "6/9/25, 5:08 AM",
+  "_class": "com.dominator.bookify.model.Review"
+},
+{
+  "_id": {
+    "$oid": "684609e7f6159c1e348dccb4"
+  },
+  "bookId": {
+    "$oid": "682023424a1ae581e0445365"
+  },
+  "orderId": {
+    "$oid": "68460530f6159c1e348dcca9"
+  },
+  "userId": {
+    "$oid": "6845f3caf6159c1e348dcc72"
+  },
+  "rating": 4,
+  "subject": "Inspiring for young activists.",
+  "comment": "This book offers some great tips for young people who want to make a difference. It's practical and empowering, really encouraging action.",
+  "status": "APPROVED",
+  "addedAt": "6/9/25, 5:08 AM",
+  "modifiedAt": "6/9/25, 5:08 AM",
+  "_class": "com.dominator.bookify.model.Review"
+},
+{
+  "_id": {
+    "$oid": "68460b87f6159c1e348dccb6"
+  },
+  "bookId": {
+    "$oid": "682023424a1ae581e0445357"
+  },
+  "orderId": {
+    "$oid": "68460b09f6159c1e348dccb5"
+  },
+  "userId": {
+    "$oid": "6845f3caf6159c1e348dcc72"
+  },
+  "rating": 2,
+  "subject": "Just okay, not for everyone.",
+  "comment": "Honestly, I found this book a bit bland. The old illustrations felt outdated, and the text was a bit preachy. Didn't really connect with it as a blessing for a new baby.",
+  "status": "APPROVED",
+  "addedAt": "6/9/25, 5:15 AM",
+  "modifiedAt": "6/9/25, 5:15 AM",
+  "_class": "com.dominator.bookify.model.Review"
 }]

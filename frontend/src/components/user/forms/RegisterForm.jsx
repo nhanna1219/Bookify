@@ -1,17 +1,17 @@
-import { useEffect } from "react";
-import { useForm, Controller } from "react-hook-form";
-import { yupResolver } from "@hookform/resolvers/yup";
-import { registerSchema } from "@utils/validate.js";
-import { useRegister } from "@u_hooks/useRegister.js";
+import {useEffect, useMemo} from "react";
+import {useForm, Controller} from "react-hook-form";
+import {yupResolver} from "@hookform/resolvers/yup";
+import {registerSchema} from "@utils/validate.js";
+import {useRegister} from "@u_hooks/useRegister.js";
 import FormInput from "../shared/FormInput.jsx";
-import { Link } from "react-router-dom";
+import {Link} from "react-router-dom";
 import GoogleLoginButton from "./GoogleLoginButton.jsx";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
-import { useAddressData } from "@u_hooks/useAddressData.js";
+import {useAddressData} from "@u_hooks/useAddressData.js";
 
 export default function RegisterForm() {
-    const { loading, submit } = useRegister();
+    const {loading, submit} = useRegister();
 
     const {
         register,
@@ -19,7 +19,7 @@ export default function RegisterForm() {
         control,
         watch,
         setValue,
-        formState: { errors },
+        formState: {errors},
     } = useForm({
         resolver: yupResolver(registerSchema),
     });
@@ -27,6 +27,7 @@ export default function RegisterForm() {
     const selectedCountry = watch("country");
     const selectedState = watch("state");
 
+    // reset dependent fields
     useEffect(() => {
         setValue("state", "");
         setValue("city", "");
@@ -40,16 +41,39 @@ export default function RegisterForm() {
         countries,
         isLoadingCountries,
         isErrorCountries,
+
         statesList,
         isLoadingStates,
         isErrorStates,
+
         citiesList,
         isLoadingCities,
         isErrorCities,
     } = useAddressData(selectedCountry, selectedState);
 
+    const countryMap = useMemo(() => new Map(countries.map(c => [c.value, c.label])), [countries]);
+    const stateMap = useMemo(() => new Map(statesList.map(s => [s.value, s.label])), [statesList]);
+    const cityMap = useMemo(() => new Map(citiesList.map(c => [c.value, c.label])), [citiesList]);
+
+    const onFormSubmit = (data) => {
+        const countryId = Number.isInteger(+data.country) ? +data.country : null;
+        const stateId = Number.isInteger(+data.state) ? +data.state : null;
+        const cityId = Number.isInteger(+data.city) ? +data.city : null;
+
+        const countryLabel = countryMap.get(countryId) || "";
+        const stateLabel = stateMap.get(stateId) || "";
+        const cityLabel = cityMap.get(cityId) || "";
+
+        submit({
+            ...data,
+            country: countryLabel,
+            state: stateLabel,
+            city: cityLabel,
+        });
+    };
+
     return (
-        <form onSubmit={handleSubmit(submit)} className="space-y-6">
+        <form onSubmit={handleSubmit(onFormSubmit)} className="space-y-6">
             <div className="grid gap-6 md:grid-cols-2">
                 <FormInput
                     label="First Name"
@@ -89,10 +113,10 @@ export default function RegisterForm() {
                 <Controller
                     name="phoneNumber"
                     control={control}
-                    render={({ field }) => (
+                    render={({field}) => (
                         <PhoneInput
                             {...field}
-                            country={"vn"}
+                            country="vn"
                             inputProps={{
                                 name: "phoneNumber",
                                 required: true,
@@ -102,7 +126,7 @@ export default function RegisterForm() {
                             inputClass={`w-full text-sm px-3 py-2 border rounded bg-white focus:outline-none 
                 focus:ring-1 focus:ring-black focus:border-black
                 ${errors.phoneNumber ? "border-red-500 focus:ring-red-500" : "border-gray-300"}`}
-                            inputStyle={{ width: "100%", color: "#111827" }}
+                            inputStyle={{width: "100%", color: "#111827"}}
                         />
                     )}
                 />
@@ -114,7 +138,7 @@ export default function RegisterForm() {
             </div>
 
             <div className="grid gap-6 md:grid-cols-2">
-                {/* Country Select */}
+                {/* Country */}
                 <div>
                     <label
                         htmlFor="country"
@@ -125,18 +149,14 @@ export default function RegisterForm() {
                     <Controller
                         name="country"
                         control={control}
-                        render={({ field }) => (
+                        render={({field}) => (
                             <select
                                 {...field}
                                 id="country"
                                 disabled={isLoadingCountries || isErrorCountries}
-                                className={`w-full text-sm px-3 py-2 border rounded focus:outline-none focus:ring-1 focus:ring-black focus:border-black cursor-pointer ${
-                                    errors.country ? "border-red-500 focus:ring-red-500" : "border-gray-300"
-                                } ${
-                                    isLoadingCountries || isErrorCountries
-                                        ? "bg-gray-100 cursor-not-allowed"
-                                        : "bg-white"
-                                }`}
+                                className={`w-full text-sm px-3 py-2 border rounded focus:outline-none focus:ring-1 focus:ring-black focus:border-black cursor-pointer disabled:cursor-not-allowed
+                                  ${errors.country ? "border-red-500 focus:ring-red-500" : "border-gray-300"} 
+                                  ${isLoadingCountries || isErrorCountries ? "bg-gray-100" : "bg-white"}`}
                             >
                                 {isLoadingCountries ? (
                                     <option>Loading countries…</option>
@@ -146,8 +166,8 @@ export default function RegisterForm() {
                                     <>
                                         <option value="">Select Country</option>
                                         {countries.map((c) => (
-                                            <option key={c} value={c}>
-                                                {c}
+                                            <option key={c.value} value={c.value}>
+                                                {c.label}
                                             </option>
                                         ))}
                                     </>
@@ -156,11 +176,13 @@ export default function RegisterForm() {
                         )}
                     />
                     {errors.country && (
-                        <p className="text-sm text-red-500 mt-1">{errors.country?.message}</p>
+                        <p className="text-sm text-red-500 mt-1">
+                            {errors.country.message}
+                        </p>
                     )}
                 </div>
 
-                {/* State Select */}
+                {/* State */}
                 <div>
                     <label
                         htmlFor="state"
@@ -171,18 +193,14 @@ export default function RegisterForm() {
                     <Controller
                         name="state"
                         control={control}
-                        render={({ field }) => (
+                        render={({field}) => (
                             <select
                                 {...field}
                                 id="state"
                                 disabled={!selectedCountry || isLoadingStates || isErrorStates}
-                                className={`w-full text-sm px-3 py-2 border rounded focus:outline-none focus:ring-1 focus:ring-black focus:border-black cursor-pointer ${
-                                    errors.state ? "border-red-500 focus:ring-red-500" : "border-gray-300"
-                                } ${
-                                    !selectedCountry || isLoadingStates || isErrorStates
-                                        ? "bg-gray-100 cursor-not-allowed!"
-                                        : "bg-white"
-                                }`}
+                                className={`w-full text-sm px-3 py-2 border rounded focus:outline-none focus:ring-1 focus:ring-black focus:border-black cursor-pointer disabled:cursor-not-allowed
+                                  ${errors.state ? "border-red-500 focus:ring-red-500" : "border-gray-300"} 
+                                  ${!selectedCountry || isLoadingStates || isErrorStates ? "bg-gray-100" : "bg-white"}`}
                             >
                                 {isLoadingStates ? (
                                     <option>Loading states…</option>
@@ -192,8 +210,8 @@ export default function RegisterForm() {
                                     <>
                                         <option value="">Select State</option>
                                         {statesList.map((s) => (
-                                            <option key={s} value={s}>
-                                                {s}
+                                            <option key={s.value} value={s.value}>
+                                                {s.label}
                                             </option>
                                         ))}
                                     </>
@@ -202,13 +220,15 @@ export default function RegisterForm() {
                         )}
                     />
                     {errors.state && (
-                        <p className="text-sm text-red-500 mt-1">{errors.state?.message}</p>
+                        <p className="text-sm text-red-500 mt-1">
+                            {errors.state.message}
+                        </p>
                     )}
                 </div>
             </div>
 
             <div className="grid gap-6 md:grid-cols-2">
-                {/* City Select */}
+                {/* City */}
                 <div>
                     <label
                         htmlFor="city"
@@ -219,18 +239,14 @@ export default function RegisterForm() {
                     <Controller
                         name="city"
                         control={control}
-                        render={({ field }) => (
+                        render={({field}) => (
                             <select
                                 {...field}
                                 id="city"
                                 disabled={!selectedState || isLoadingCities || isErrorCities}
-                                className={`w-full text-sm px-3 py-2 border rounded focus:outline-none focus:ring-1 focus:ring-black focus:border-black cursor-pointer ${
-                                    errors.city ? "border-red-500 focus:ring-red-500" : "border-gray-300"
-                                } ${
-                                    !selectedState || isLoadingCities || isErrorCities
-                                        ? "bg-gray-100 cursor-not-allowed!"
-                                        : "bg-white"
-                                }`}
+                                className={`w-full text-sm px-3 py-2 border rounded focus:outline-none focus:ring-1 focus:ring-black focus:border-black cursor-pointer disabled:cursor-not-allowed
+                                  ${errors.city ? "border-red-500 focus:ring-red-500" : "border-gray-300"} 
+                                  ${!selectedState || isLoadingCities || isErrorCities ? "bg-gray-100" : "bg-white"}`}
                             >
                                 {isLoadingCities ? (
                                     <option>Loading cities…</option>
@@ -240,8 +256,8 @@ export default function RegisterForm() {
                                     <>
                                         <option value="">Select City</option>
                                         {citiesList.map((c) => (
-                                            <option key={c} value={c}>
-                                                {c}
+                                            <option key={c.value} value={c.value}>
+                                                {c.label}
                                             </option>
                                         ))}
                                     </>
@@ -250,7 +266,9 @@ export default function RegisterForm() {
                         )}
                     />
                     {errors.city && (
-                        <p className="text-sm text-red-500 mt-1">{errors.city?.message}</p>
+                        <p className="text-sm text-red-500 mt-1">
+                            {errors.city.message}
+                        </p>
                     )}
                 </div>
 
@@ -298,52 +316,41 @@ export default function RegisterForm() {
                     type="checkbox"
                     id="agreeToTerms"
                     {...register("agreeToTerms")}
-                    className="mt-0.5 accent-black w-4 h-4"
+                    className="mt-0.5 accent-black w-4 h-4 cursor-pointer"
                 />
-                <label htmlFor="agreeToTerms" className="text-xs text-gray-700 leading">
+                <label htmlFor="agreeToTerms" className="text-xs text-gray-700">
                     I confirm that I have read and agree to the&nbsp;
-                    <a
-                        href="#"
-                        className="text-black underline hover:text-gray-700 transition"
-                    >
+                    <a href="#" className="text-black underline hover:text-gray-700">
                         Terms of Service
                     </a>
                     &nbsp;and&nbsp;
-                    <a
-                        href="#"
-                        className="text-black underline hover:text-gray-700 transition"
-                    >
+                    <a href="#" className="text-black underline hover:text-gray-700">
                         Privacy Policy
                     </a>
                     .
                 </label>
             </div>
             {errors.agreeToTerms && (
-                <p className="text-xs text-red-500 mt-1">
-                    {errors.agreeToTerms.message}
-                </p>
+                <p className="text-xs text-red-500 mt-1">{errors.agreeToTerms.message}</p>
             )}
 
             <button
                 type="submit"
                 disabled={loading}
                 className="w-1/4 mx-auto block bg-black text-white text-sm font-semibold py-3 px-4 rounded-md mt-10
-          shadow-[0_4px_14px_0_rgba(0,0,0,0.25)]
-          hover:shadow-[0_6px_20px_rgba(0,0,0,0.35)]
-          transition-all duration-200 ease-in-out
-          cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
+                  shadow-[0_4px_14px_0_rgba(0,0,0,0.25)]
+                  hover:shadow-[0_6px_20px_rgba(0,0,0,0.35)]
+                  transition-all duration-200 ease-in-out
+                  disabled:opacity-50 disabled:cursor-not-allowed!"
             >
                 {loading ? "Please wait…" : "Sign Up"}
             </button>
 
-            <GoogleLoginButton />
+            <GoogleLoginButton/>
 
             <p className="text-center text-sm">
                 Already have an account?{" "}
-                <Link
-                    to="/login"
-                    className="text-black underline hover:text-gray-700 transition"
-                >
+                <Link to="/login" className="text-black underline hover:text-gray-700">
                     Log in
                 </Link>
             </p>

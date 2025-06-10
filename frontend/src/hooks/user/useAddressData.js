@@ -6,54 +6,39 @@ import {
 } from "@u_services/addressService.js";
 
 export function useAddressData(selectedCountry, selectedState) {
-    // Country
-    const {
-        data: countries = [],
-        isLoading: isLoadingCountries,
-        isError: isErrorCountries,
-    } = useQuery({
+    const countriesQuery = useQuery({
         queryKey: ["countries"],
         queryFn: fetchCountries,
-        staleTime: 1000 * 60 * 5,
-        cacheTime: 1000 * 60 * 10,
+        staleTime: 5 * 60_000,
     });
 
-    // State
-    const {
-        data: statesList = [],
-        isLoading: isLoadingStates,
-        isError: isErrorStates,
-    } = useQuery({
+    const statesQuery = useQuery({
         queryKey: ["states", selectedCountry],
         queryFn: () => fetchStates(selectedCountry),
-        enabled: !!selectedCountry,
-        staleTime: 1000 * 60 * 5,
-        cacheTime: 1000 * 60 * 10,
+        enabled: Boolean(selectedCountry),
+        staleTime: 5 * 60_000,
     });
 
-    // City
-    const {
-        data: citiesList = [],
-        isLoading: isLoadingCities,
-        isError: isErrorCities,
-    } = useQuery({
+    const citiesQuery = useQuery({
         queryKey: ["cities", selectedCountry, selectedState],
-        queryFn: () =>
-            fetchCities({ country: selectedCountry, state: selectedState }),
-        enabled: !!selectedCountry && !!selectedState,
-        staleTime: 1000 * 60 * 5,
-        cacheTime: 1000 * 60 * 10,
+        queryFn: () => fetchCities({ countryId: selectedCountry, stateId: selectedState }),
+        enabled: Boolean(selectedCountry && selectedState),
+        staleTime: 5 * 60_000,
     });
 
     return {
-        countries,
-        isLoadingCountries,
-        isErrorCountries,
-        statesList,
-        isLoadingStates,
-        isErrorStates,
-        citiesList,
-        isLoadingCities,
-        isErrorCities,
+        countries: countriesQuery.data ?? [],
+        statesList: statesQuery.data ?? [],
+        citiesList: citiesQuery.data ?? [],
+
+        isLoadingCountries: countriesQuery.isLoading,
+        isErrorCountries: countriesQuery.isError,
+
+        isLoadingStates: statesQuery.isLoading,
+        isErrorStates: statesQuery.isError,
+
+        isLoadingCities: citiesQuery.isLoading,
+        isErrorCities: citiesQuery.isError,
+
     };
 }

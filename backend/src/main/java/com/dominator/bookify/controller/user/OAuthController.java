@@ -2,9 +2,11 @@ package com.dominator.bookify.controller.user;
 
 import com.dominator.bookify.dto.LoginResponseDTO;
 import com.dominator.bookify.dto.UserResponseDTO;
+import com.dominator.bookify.model.Address;
 import com.dominator.bookify.model.User;
 import com.dominator.bookify.repository.UserRepository;
 import com.dominator.bookify.security.JwtUtil;
+import com.dominator.bookify.service.AddressService;
 import com.google.api.client.json.webtoken.JsonWebSignature;
 import com.google.auth.oauth2.TokenVerifier;
 import com.google.api.client.json.webtoken.JsonWebToken;
@@ -23,6 +25,7 @@ public class OAuthController {
     private final UserRepository userRepository;
     private final JwtUtil jwtUtil;
     private final TokenVerifier tokenVerifier;
+    private final AddressService addressService;
 
     public record CredentialRequest(String credential) {}
 
@@ -53,12 +56,14 @@ public class OAuthController {
         });
 
         String token = jwtUtil.generateToken(email);
+
         return new LoginResponseDTO(token, convertToUserDTO(user));
     }
 
     private UserResponseDTO convertToUserDTO(User user) {
         UserResponseDTO dto = new UserResponseDTO();
         dto.setId(user.getId());
+        dto.setProfileAvatar(user.getProfileAvatar());
         dto.setFullName(user.getFullName());
         dto.setFirstName(user.getFirstName());
         dto.setLastName(user.getLastName());
@@ -66,9 +71,8 @@ public class OAuthController {
         dto.setEmail(user.getEmail());
         dto.setPhone(user.getPhone());
         dto.setVerified(user.isVerified());
+        dto.setStatus(user.getStatus());
         dto.setAddress(user.getAddress());
         return dto;
     }
-
-
 }

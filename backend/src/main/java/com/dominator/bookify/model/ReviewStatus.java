@@ -1,5 +1,7 @@
 package com.dominator.bookify.model;
 
 public enum ReviewStatus {
-    PENDING, APPROVED, REJECTED
+    PENDING,
+    APPROVED,
+    REJECTED,
 }

@@ -1,0 +1,11 @@
+[{
+  "_id": {
+    "$oid": "6845ea856ee1d342db30dffe"
+  },
+  "title": "About Us - Bookify: Your Gateway to Literary Adventures",
+  "slug": "about-us",
+  "content": "Welcome to Bookify, your go-to online bookstore and a thriving community for book lovers. Our journey began in 2025 with a vision to create an accessible platform where everyone can discover their next great read and connect through stories. We believe books inspire, educate, and connect individuals across all backgrounds.\n\nWe offer a thoughtfully curated selection of titles, from timeless classics to contemporary bestsellers and hidden gems, spanning a vast array of genres. Our collection is always expanding to satisfy every interest.\n\nUnderstanding diverse preferences and budgets, we provide books in various conditions—brand-new, 'like new,' and 'good' pre-loved copies. This approach makes reading affordable and promotes sustainability by giving books a second life. Each book is meticulously described for clarity.\n\nOur passionate team is dedicated to providing an exceptional shopping experience. We continuously update our inventory with new arrivals and aim to foster a vibrant community where readers can share reviews and explore recommendations.\n\nThank you for choosing Bookify. Dive into our world of stories, find inspiration, and embark on countless adventures. Happy reading, and welcome to the Bookify family!",
+  "lastModified": {
+    "$date": "2025-06-08T19:00:00.000Z"
+  }
+}]

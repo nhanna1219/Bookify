@@ -1,18 +1,17 @@
 package com.dominator.bookify.controller.user;
 
-import com.dominator.bookify.dto.LoginResponseDTO;
-import com.dominator.bookify.dto.ResetPasswordRequestDTO;
-import com.dominator.bookify.dto.UserLoginRequestDTO;
-import com.dominator.bookify.dto.UserRegisterRequestDTO;
+import com.dominator.bookify.dto.*;
 import com.dominator.bookify.model.VerificationToken;
+import com.dominator.bookify.security.AuthenticatedUser;
 import com.dominator.bookify.service.user.UserService;
-import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
 import java.net.URLEncoder;
@@ -24,6 +23,41 @@ import java.util.Map;
 @RequestMapping("/api/users")
 public class UserController {
     private final UserService userService;
+
+    @PostMapping("/update")
+    public ResponseEntity<?> updateProfile(@AuthenticationPrincipal AuthenticatedUser authUser, @RequestBody @Valid UserUpdateRequestDTO userUpdateRequestDTO) {
+        try {
+            LoginResponseDTO user = userService.updateProfile(authUser,userUpdateRequestDTO);
+            return ResponseEntity.ok(user);
+        } catch (Exception e) {
+            return ResponseEntity.status(404).body(Map.of("error", e.getMessage()));
+        }
+    }
+
+    @PostMapping("/upload-avatar")
+    public ResponseEntity<?> uploadAvatar(
+            @AuthenticationPrincipal AuthenticatedUser authUser,
+            @RequestParam("avatar") MultipartFile file
+    ) {
+        try {
+            userService.uploadAvatar(authUser, file);
+            return ResponseEntity.ok(Map.of("message", "Avatar uploaded successfully."));
+        } catch (IOException e) {
+            return ResponseEntity.status(500).body(Map.of("error", "Failed to save avatar"));
+        } catch (Exception e) {
+            return ResponseEntity.status(400).body(Map.of("error", e.getMessage()));
+        }
+    }
+
+    @PostMapping("/deactivate")
+    public ResponseEntity<?> deactivateUser(@AuthenticationPrincipal AuthenticatedUser authenticatedUser) {
+        try {
+            userService.deactiveUser(authenticatedUser);
+            return ResponseEntity.ok().build();
+        } catch (Exception e) {
+            return ResponseEntity.status(404).body(Map.of("error", e.getMessage()));
+        }
+    }
 
     @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody @Valid UserLoginRequestDTO req) {
@@ -87,6 +121,18 @@ public class UserController {
             String email = body.get("email");
             userService.handleForgotPassword(email);
             return ResponseEntity.ok(Map.of("message", "Password reset link sent."));
+        } catch (Exception e) {
+            return ResponseEntity.status(404).body(Map.of("error", e.getMessage()));
+        }
+    }
+
+    @PostMapping("/change-password")
+    public ResponseEntity<?> changePassword(@AuthenticationPrincipal AuthenticatedUser authUser, @RequestBody Map<String, String> body) {
+        try {
+            String newPassword = body.get("newPassword");
+            String oldPassword = body.get("oldPassword");
+            userService.changePassword(authUser, oldPassword, newPassword);
+            return ResponseEntity.ok(Map.of("message", "Password change successful."));
         } catch (Exception e) {
             return ResponseEntity.status(404).body(Map.of("error", e.getMessage()));
         }

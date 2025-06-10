@@ -38,8 +38,6 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
         String token = authHeader.substring(7);
         String email = jwtUtil.extractEmail(token);
 
-        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-
         if (email != null && jwtUtil.validateToken(token)) {
             User user = userRepository
                     .findByEmail(email)

@@ -34,35 +34,29 @@ export const registerSchema = yup.object().shape({
         .string()
         .trim()
         .notRequired()
-        .test('valid-city', 'City name contains invalid characters', (value) => {
-            return !value || /^[\p{L}\p{M}0-9\s.'-]{1,100}$/u.test(value);
-        }),
+        .matches(/^\d+$/, 'Invalid city selection'),
 
     state: yup
         .string()
         .trim()
         .notRequired()
-        .test('valid-state', 'State name contains invalid characters', (value) => {
-            return !value || /^[\p{L}\p{M}0-9\s.'-]{1,100}$/u.test(value);
-        }),
+        .matches(/^\d+$/, 'Invalid state selection'),
 
     postalCode: yup
         .string()
         .trim()
         .notRequired()
-        .test('valid-postal', 'Invalid postal code format', (value) => {
-            return !value || /^[A-Za-z0-9\s\-]{3,10}$/.test(value);
-        }),
+        .test(
+            'valid-postal',
+            'Invalid postal code format',
+            (value) => !value || /^[A-Za-z0-9\s\-]{3,10}$/.test(value)
+        ),
 
     country: yup
         .string()
         .trim()
         .notRequired()
-        .test('valid-country', 'Country name contains invalid characters', (value) => {
-            return !value || /^[\p{L}\p{M}\s.'-]{2,100}$/u.test(value);
-        }),
-
-
+        .matches(/^\d+$/, 'Invalid country selection'),
 });
 
 export const loginSchema = yup.object({
@@ -117,3 +111,92 @@ export const checkoutSchema = yup.object().shape({
     postalCode: yup.string().required("Postal/Zip Code is required"),
     street: yup.string().required("Street Address is required"),
 });
+
+
+export const profileSchema = yup.object({
+    firstName: yup.string().required("First name is required"),
+    lastName: yup.string().required("Last name is required"),
+    email: yup.string().email("Invalid email").required("Email is required"),
+    phone: yup
+        .string()
+        .required("Phone number is required")
+        .matches(/^\+?[1-9]\d{7,14}$/, "Invalid phone number format"),
+})
+
+export const addressSchema = yup
+    .object({
+        country: yup
+            .string()
+            .trim()
+            .notRequired()
+            .matches(/^\d+$/, "Invalid country"),
+
+        state: yup
+            .string()
+            .trim()
+            .notRequired()
+            .matches(/^\d+$/, "Invalid state"),
+
+        city: yup
+            .string()
+            .trim()
+            .notRequired()
+            .matches(/^\d+$/, "Invalid city"),
+
+        postalCode: yup
+            .string()
+            .trim()
+            .notRequired()
+            .test(
+                "valid-postal",
+                "Invalid postal code format",
+                (value) => {
+                    return !value || /^[A-Za-z0-9\s\-]{3,10}$/.test(value)
+                }
+            ),
+
+        street: yup
+            .string()
+            .trim()
+            .notRequired()
+            .max(255, "Street address must be 255 characters or fewer"),
+    })
+
+    .test(
+        "address-complete",
+        "All address fields are required if any address field is filled",
+        (value) => {
+            const {country, state, city, postalCode, street} = value
+            const anyFilled =
+                !!country || !!state || !!city || !!postalCode || !!street
+            if (!anyFilled) return true
+            return (
+                !!country &&
+                !!state &&
+                !!city &&
+                !!postalCode &&
+                !!street
+            )
+        }
+    )
+
+export const changePasswordSchema = yup.object({
+    currentPassword: yup
+        .string()
+        .required("Current password is required"),
+
+    newPassword: yup
+        .string()
+        .required("New password is required")
+        .min(8, "Must be at least 8 characters")
+        .matches(/[A-Z]/, "Must include an uppercase letter")
+        .matches(/[a-z]/, "Must include a lowercase letter")
+        .matches(/[0-9]/, "Must include a number")
+        .matches(/[^A-Za-z0-9]/, "Must include a special character"),
+
+    confirmPassword: yup
+        .string()
+        .oneOf([yup.ref("newPassword"), null], "Passwords must match")
+        .required("Please confirm your password"),
+});
+

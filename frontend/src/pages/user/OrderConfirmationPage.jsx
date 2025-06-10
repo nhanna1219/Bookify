@@ -262,7 +262,7 @@ export default function OrderConfirmationPage() {
                                 <ShoppingBag size={20}/> Continue Shopping
                             </Link>
                             <Link
-                                to="/my-orders"
+                                to="/me/orders"
                                 replace
                                 className="w-full sm:w-auto border-2 border-[#1C387F] text-[#1C387F] px-10 py-3 rounded-lg font-semibold hover:bg-[#EBF0FF] hover:text-blue-800 transition-all duration-300 ease-in-out focus:outline-none focus:ring-4 focus:ring-blue-300/50 text-base shadow-md hover:shadow-lg"
                             >

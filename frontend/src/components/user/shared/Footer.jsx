@@ -40,7 +40,7 @@ export default function Footer() {
                 {/* Customer Services */}
                 <div className="space-y-2 content-center">
                     <h3 className="font-semibold mb-2">Customer Services</h3>
-                    <Link to="/account" className="block hover:underline">My Account</Link>
+                    <Link to="/me" className="block hover:underline">My Account</Link>
                     <Link to="/orders" className="block hover:underline">Track your order</Link>
                     <Link to="/faq" className="block hover:underline">FAQ</Link>
                 </div>

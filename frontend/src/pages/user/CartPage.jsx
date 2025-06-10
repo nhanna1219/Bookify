@@ -65,7 +65,7 @@ export default function CartPage() {
                 {
                     loading: 'Updating quantity...',
                     success: 'Quantity updated',
-                    error: err => err?.response?.data?.message || 'Failed to update quantity',
+                    error: err => err?.response?.data?.error || 'Failed to update quantity',
                 }
             ).then(() => {
                 invalidate()

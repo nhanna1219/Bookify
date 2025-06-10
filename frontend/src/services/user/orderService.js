@@ -11,3 +11,14 @@ export const getOrderById = (id) =>
 
 export const notifyMomoPaymentStatus = (data) =>
     api.post("/payments/momo/notify", data)
+
+export const getOrderByUser = (params) => {
+    const queryString = new URLSearchParams(params).toString();
+    return api.get(`/orders?${queryString}`)
+}
+
+export const getOrderStats = () =>
+    api.get('/orders/stats')
+
+export const cancelOrder = (data) =>
+    api.post(`/orders/cancel-order`, data);
