@@ -11,14 +11,14 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.dominator.bookify.model.Review;
 import com.dominator.bookify.model.ReviewStatus;
-import com.dominator.bookify.service.admin.ReviewService;
+import com.dominator.bookify.service.admin.AdminReviewService;
 
 @RestController
-@RequestMapping("/api/reviews")
-public class ReviewController {
+@RequestMapping("/api/admin/reviews")
+public class AdminReviewController {
 
     @Autowired
-    private ReviewService reviewService;
+    private AdminReviewService reviewService;
 
     @GetMapping
     public List<Review> getAllReviews() {

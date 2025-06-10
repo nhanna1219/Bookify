@@ -25,7 +25,7 @@ public interface ReviewRepository extends MongoRepository<Review, String> {
     })
     List<Map<String, Object>> getRatingDistribution(ObjectId bookId);
 
-    List<Review> findReviewByItsStatusByAdmin(ReviewStatus status);
+    List<Review> findReviewByStatus(ReviewStatus status);
 
     @Query("{ 'rating': ?0, 'status': ?1 }")
     List<Review> findTopByRatingAndStatusGroupedByUser(int rating, ReviewStatus status, Pageable pageable);

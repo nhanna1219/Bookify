@@ -10,7 +10,7 @@ import com.dominator.bookify.model.ReviewStatus;
 import com.dominator.bookify.repository.ReviewRepository;
 
 @Service
-public class ReviewService {
+public class AdminReviewService {
 
     @Autowired
     private ReviewRepository reviewRepo;
@@ -20,7 +20,7 @@ public class ReviewService {
     }
 
     public List<Review> getReviewsByStatus(ReviewStatus status) {
-        return reviewRepo.findReviewByItsStatusByAdmin(status);
+        return reviewRepo.findReviewByStatus(status);
     }
 
     public Review approveReview(String id) {
