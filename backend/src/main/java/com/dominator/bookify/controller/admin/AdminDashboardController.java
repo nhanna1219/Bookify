@@ -1,6 +1,7 @@
 package com.dominator.bookify.controller.admin;
 
 import com.dominator.bookify.dto.BestSellerDTO;
+import com.dominator.bookify.dto.TopCategoryQuantityDTO;
 import com.dominator.bookify.service.admin.AdminDashboardService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,6 +14,11 @@ import java.util.List;
 public class AdminDashboardController {
 
     private final AdminDashboardService dashboardService;
+
+    @GetMapping("/api/admin/dashboard/top-by-category")
+    public List<TopCategoryQuantityDTO> getTopQuantityPerCategory() {
+        return dashboardService.getTop10BooksPerCategory();
+    }
 
     @GetMapping("/api/admin/dashboard/top-books")
     public List<BestSellerDTO> getTopBooks() {

@@ -41,7 +41,8 @@ public class ReviewService {
 
         Page<Review> reviewPage = dto.getRating() == 0
                 ? reviewRepository.findByBookIdAndStatus(bookObjectId, ReviewStatus.APPROVED, pageable)
-                : reviewRepository.findByBookIdAndStatusAndRating(bookObjectId, ReviewStatus.APPROVED, dto.getRating(), pageable);
+                : reviewRepository.findByBookIdAndStatusAndRating(bookObjectId, ReviewStatus.APPROVED, dto.getRating(),
+                        pageable);
 
         return reviewPage.map(review -> {
             String userName = userRepository.findById(review.getUserId().toString())
@@ -59,14 +60,16 @@ public class ReviewService {
     }
 
     public List<ReviewResponseDTO> getSixBestReviews() {
-        List<Review> topReviews = reviewRepository.findTopByRatingAndStatusGroupedByUser(5, ReviewStatus.APPROVED, PageRequest.of(0, 20, Sort.by(Sort.Direction.DESC, "addedAt")));
+        List<Review> topReviews = reviewRepository.findTopByRatingAndStatusGroupedByUser(5, ReviewStatus.APPROVED,
+                PageRequest.of(0, 20, Sort.by(Sort.Direction.DESC, "addedAt")));
         Map<String, Review> uniqueUsers = new LinkedHashMap<>();
 
         for (Review r : topReviews) {
             String userId = r.getUserId().toString();
             if (!uniqueUsers.containsKey(userId)) {
                 uniqueUsers.put(userId, r);
-                if (uniqueUsers.size() == 6) break;
+                if (uniqueUsers.size() == 6)
+                    break;
             }
         }
 
@@ -81,11 +84,9 @@ public class ReviewService {
                     review.getSubject(),
                     review.getComment(),
                     review.getAddedAt(),
-                    userName
-            );
+                    userName);
         }).collect(Collectors.toList());
     }
-
 
     public List<ReviewRatingDTO> getRatingDistribution(String bookId) {
         ObjectId objectId = new ObjectId(bookId);

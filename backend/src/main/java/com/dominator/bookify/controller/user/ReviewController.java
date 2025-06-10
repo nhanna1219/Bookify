@@ -43,11 +43,10 @@ public class ReviewController {
         }
     }
 
-
     @GetMapping("/distribution")
     public ResponseEntity<?> getRatingDistribution(@RequestParam String bookId) {
         try {
-            List<ReviewRatingDTO> dist= reviewService.getRatingDistribution(bookId);
+            List<ReviewRatingDTO> dist = reviewService.getRatingDistribution(bookId);
             return ResponseEntity.ok(dist);
         } catch (Exception e) {
             return ResponseEntity.status(400).body(Map.of("error", e.getMessage()));
@@ -55,7 +54,8 @@ public class ReviewController {
     }
 
     @PostMapping("/submit-review")
-    public ResponseEntity<?> submitReview(@AuthenticationPrincipal AuthenticatedUser authUser, @RequestBody CreateReviewsRequestDTO dto) {
+    public ResponseEntity<?> submitReview(@AuthenticationPrincipal AuthenticatedUser authUser,
+            @RequestBody CreateReviewsRequestDTO dto) {
         try {
             reviewService.createReview(authUser, dto);
             return ResponseEntity.ok(Map.of("message", "Reviews submitted successfully"));
