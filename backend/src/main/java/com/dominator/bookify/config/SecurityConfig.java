@@ -46,13 +46,12 @@ public class SecurityConfig {
                                 "/api/payments/**",
                                 "/api/addresses/**",
                                 "/api/blogposts/**",
-                                "/api/pages/**"
-                        ).permitAll()
-                        .anyRequest().authenticated()
-                )
+                                "/api/pages/**",
+                                "/api/admin/**")
+                        .permitAll()
+                        .anyRequest().authenticated())
                 .sessionManagement(session -> session
-                        .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
-                )
+                        .sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class);
 
         return http.build();

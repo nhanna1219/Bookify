@@ -1,6 +1,7 @@
 package com.dominator.bookify.model;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.AllArgsConstructor;
 import org.bson.types.ObjectId;
@@ -10,6 +11,7 @@ import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @AllArgsConstructor
+@NoArgsConstructor
 @Getter
 @Setter
 @Document(collection = "reviews")
@@ -22,13 +24,9 @@ public class Review {
     private int rating;
     private String subject;
     private String comment;
-    private ReviewStatus status;
+    private ReviewStatus status = ReviewStatus.PENDING;
     @CreatedDate
     private String addedAt;
     @LastModifiedDate
     private String modifiedAt;
-
-    public Review() {
-        this.status = ReviewStatus.PENDING;
-    }
 }
