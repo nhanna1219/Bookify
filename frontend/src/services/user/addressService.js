@@ -1,23 +1,22 @@
 import api from "../api.js";
 
 export const fetchCountries = async () => {
-    const res = await api.get("https://countriesnow.space/api/v0.1/countries/iso");
-    return (res.data.data || []).map(item => item.name).sort();
+    const res = await api.get("/addresses/countries");
+    return res.data;
 };
 
-export const fetchStates = async (country) => {
-    if (!country) return [];
-    const res = await api.post("https://countriesnow.space/api/v0.1/countries/states", {
-        country
+export const fetchStates = async (countryId) => {
+    if (!countryId) return [];
+    const res = await api.get("/addresses/states", {
+        params: { countryId },
     });
-    return (res.data.data?.states || []).map(s => s.name).sort();
+    return res.data;
 };
 
-export const fetchCities = async ({ country, state }) => {
-    if (!country || !state) return [];
-    const res = await api.post("https://countriesnow.space/api/v0.1/countries/state/cities", {
-        country,
-        state
+export const fetchCities = async ({ countryId, stateId }) => {
+    if (!countryId || !stateId) return [];
+    const res = await api.get("/addresses/cities", {
+        params: { countryId, stateId },
     });
-    return res.data.data?.sort() || [];
+    return res.data;
 };

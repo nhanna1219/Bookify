@@ -1,4 +1,3 @@
-// src/pages/user/AccountManagementPage/AccountPage.jsx
 import { useMemo, useState, useEffect } from "react";
 import { useLocation, useNavigate, Outlet } from "react-router-dom";
 import { User, Shield, Package, ChevronRight } from "lucide-react";
@@ -147,13 +146,14 @@ export default function AccountPage() {
                                                         isActive ? "scale-110" : "group-hover:scale-105"
                                                     }`}
                                                 />
-                                                {tab.badge && (
+                                                {tab.badge > 0 && (
                                                     <span
                                                         className="absolute -top-2 -right-2 bg-red-500 text-white text-[9px] rounded-full h-4 w-4 flex items-center justify-center font-bold"
                                                     >
                                                         {tab.badge}
                                                     </span>
                                                 )}
+
                                             </div>
                                             <div className="flex flex-col items-start">
                                                 <span className="font-semibold">{tab.label}</span>

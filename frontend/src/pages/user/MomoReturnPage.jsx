@@ -31,6 +31,7 @@ export default function MomoReturnPage() {
             resultCode: params.get("resultCode"),
             message: params.get("message"),
             responseTime: params.get("responseTime"),
+            payType: params.get("payType"),
             extraData: params.get("extraData"),
             signature: params.get("signature"),
         };

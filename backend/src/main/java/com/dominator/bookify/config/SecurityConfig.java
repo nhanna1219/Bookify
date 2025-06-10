@@ -44,8 +44,14 @@ public class SecurityConfig {
                                 "/api/admin/users/**",
                                 "/api/admin/orders/**",
                                 "/api/admin/categories/**",
+                                "/api/reviews",
+                                "/api/reviews/distribution",
+                                "/api/reviews/best-six",
                                 "/api/guest-cart/**",
-                                "/api/payments/**"
+                                "/api/payments/**",
+                                "/api/addresses/**",
+                                "/api/blogposts/**",
+                                "/api/pages/**"
                         ).permitAll()
                         .anyRequest().authenticated()
                 )

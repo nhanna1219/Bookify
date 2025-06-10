@@ -1,5 +1,6 @@
 package com.dominator.bookify.controller.user;
 
+import com.dominator.bookify.dto.CancelOrderRequestDTO;
 import com.dominator.bookify.dto.CreateOrderResponse;
 import com.dominator.bookify.dto.OrderCreationRequestDTO;
 import com.dominator.bookify.model.Order;
@@ -43,11 +44,27 @@ public class OrderController {
     }
 
     @GetMapping("/stats")
-    public ResponseEntity<Map<String, Long>> getOrderStats(
+    public ResponseEntity<?> getOrderStats(
             @AuthenticationPrincipal AuthenticatedUser authUser
     ) {
-        Map<String, Long> countsByStatus = orderService.getOrderCountsByStatus(authUser);
-        return ResponseEntity.ok(countsByStatus);
+        try {
+            Map<String, Long> countsByStatus = orderService.getOrderCountsByStatus(authUser);
+            return ResponseEntity.ok(countsByStatus);
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body("Failed to fetch order stats: " + e.getMessage());
+        }
+    }
+
+    @PostMapping("/cancel-order")
+    public ResponseEntity<?> cancelOrder(@AuthenticationPrincipal AuthenticatedUser authUser, @Valid @RequestBody CancelOrderRequestDTO dto) {
+        try {
+            orderService.cancelOrder(authUser, dto);
+            return ResponseEntity.ok("Order cancelled successfully.");
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body("Failed to fetch order stats: " + e.getMessage());
+        }
     }
 
     @GetMapping("/{orderId}")

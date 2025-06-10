@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
+import org.bson.types.ObjectId;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.LastModifiedDate;
@@ -27,7 +28,7 @@ public class Book {
     private double originalPrice;
     private String condition;
     private int stock;
-    private List<String> categoryIds;
+    private List<ObjectId> categoryIds;
     private List<Image> images;
 
     @Transient
@@ -43,6 +44,4 @@ public class Book {
 
     @LastModifiedDate
     private String modifiedAt;
-
-
 }

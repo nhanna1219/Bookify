@@ -1,9 +1,10 @@
 import {useQueries} from '@tanstack/react-query'
 import {getBestBooks} from '@u_services/bookService'
 import {getCategories} from '@u_services/categoryService'
+import {getTopReviews} from "@u_services/reviewService.js";
 
 export const useHomeData = () => {
-    const [categoriesQ, bestBooksQ] = useQueries({
+    const [categoriesQ, bestBooksQ, bestReviewsQ] = useQueries({
         queries: [
             {
                 queryKey: ['categories'],
@@ -15,13 +16,18 @@ export const useHomeData = () => {
                 queryKey: ['bestBooks'],
                 queryFn: () => getBestBooks().then(r => r.data),
             },
+            {
+                queryKey: ['bestReviews'],
+                queryFn: () => getTopReviews().then(r => r.data)
+            }
         ]
     })
 
     return {
         categories: categoriesQ.data,
         bestBooks: bestBooksQ.data,
-        isLoading: categoriesQ.isLoading || bestBooksQ.isLoading,
-        isError: categoriesQ.isError || bestBooksQ.isError,
+        bestReviews: bestReviewsQ.data,
+        isLoading: categoriesQ.isLoading || bestBooksQ.isLoading || bestReviewsQ.isLoading,
+        isError: categoriesQ.isError || bestBooksQ.isError || bestReviewsQ.isError,
     }
 }

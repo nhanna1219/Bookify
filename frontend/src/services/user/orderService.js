@@ -19,3 +19,6 @@ export const getOrderByUser = (params) => {
 
 export const getOrderStats = () =>
     api.get('/orders/stats')
+
+export const cancelOrder = (data) =>
+    api.post(`/orders/cancel-order`, data);

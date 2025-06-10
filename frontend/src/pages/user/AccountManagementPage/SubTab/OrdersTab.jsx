@@ -8,6 +8,10 @@ import { CancelOrderModal } from "@u_components/modal/CancelOrderModal.jsx";
 import PrecomputePagination from "@u_components/shared/PrecomputePagination.jsx";
 import { useDebounce } from "use-debounce";
 import { useOrders } from "@u_hooks/useOrders.js";
+import {showPromise} from "@utils/toast.js";
+import {cancelOrder} from "@u_services/orderService.js";
+import {submitReview} from "@u_services/reviewService.js";
+import {useQueryClient} from "@tanstack/react-query";
 
 const ORDER_STATUSES = [
     { value: "", label: "All Orders", count: 0 },
@@ -17,12 +21,14 @@ const ORDER_STATUSES = [
     { value: "DELIVERED", label: "Delivered", count: 0 },
     { value: "COMPLETED", label: "Completed", count: 0 },
     { value: "CANCELLED", label: "Cancelled", count: 0 },
+    { value: "PENDING_REFUND", label: "Pending Refund", count: 0 },
     { value: "REFUNDED", label: "Refunded", count: 0 },
 ];
 
 export default function OrdersTab() {
     const scrollRef = useRef(null);
     const { statsData } = useOutletContext();
+    const qc = useQueryClient();
 
     const [searchTerm, setSearchTerm] = useState("");
     const [selectedStatus, setSelectedStatus] = useState("");
@@ -66,13 +72,41 @@ export default function OrdersTab() {
     };
 
     const handleReviewSubmit = async (reviewData) => {
-        await new Promise((resolve) => setTimeout(resolve, 1000));
-        setReviewModal({ isOpen: false, order: null });
+        try {
+            await showPromise(
+                submitReview(reviewData),
+                {
+                    loading: 'Submitting...',
+                    success: 'Awesome! Your review is in, and we\'ll check it out before it goes live.',
+                    error: 'Failed to submit review for this order, please try again later.',
+                }
+            );
+            qc.invalidateQueries({queryKey: ["orders", pageIndex, selectedStatus, debouncedSearchTerm]})
+            setReviewModal({ isOpen: false, order: null });
+        } catch(e) {
+            console.error(e);
+        }
     };
 
     const handleOrderCancel = async (orderId, reason) => {
-        await new Promise((resolve) => setTimeout(resolve, 1000));
-        setCancelModal({ isOpen: false, order: null });
+        try {
+            await showPromise(
+                cancelOrder({
+                    orderId,
+                    reason
+                }),
+                {
+                    loading: 'Cancelling...',
+                    success: 'Order has been cancelled.',
+                    error: 'Failed to cancel this order, please try again later.',
+                }
+            );
+            qc.invalidateQueries({queryKey: ["orders", pageIndex, selectedStatus, debouncedSearchTerm]})
+            qc.invalidateQueries({queryKey: ["orderStats"]})
+            setCancelModal({ isOpen: false, order: null });
+        } catch(e) {
+            console.error(e);
+        }
     };
 
     const handleSetState = (updater) => {
@@ -129,7 +163,7 @@ export default function OrdersTab() {
                 onStatusChange={handleStatusFilter}
             />
 
-            {/* Error Message (below search/filter so input stays) */}
+            {/* Error Message */}
             {ordersError && (
                 <div className="bg-red-50 border border-red-200 rounded-lg p-4 flex items-center">
                     <AlertTriangle className="text-red-600 mr-3" size={20} />
@@ -137,7 +171,7 @@ export default function OrdersTab() {
                 </div>
             )}
 
-            {/* Orders List or Empty State */}
+            {/* Orders List */}
             {!ordersError && (
                 <div className="space-y-4">
                     {orders.length === 0 && !ordersLoading && (
@@ -179,6 +213,7 @@ export default function OrdersTab() {
 
             {/* Modals */}
             <ReviewModal
+                key={reviewModal.order?.id}
                 isOpen={reviewModal.isOpen}
                 order={reviewModal.order}
                 onClose={() => setReviewModal({ isOpen: false, order: null })}
@@ -186,6 +221,7 @@ export default function OrdersTab() {
             />
 
             <CancelOrderModal
+                key={cancelModal.order?.id}
                 isOpen={cancelModal.isOpen}
                 order={cancelModal.order}
                 onClose={() => setCancelModal({ isOpen: false, order: null })}

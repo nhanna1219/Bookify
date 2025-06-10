@@ -1,5 +1,6 @@
 package com.dominator.bookify.service.user;
 
+import com.dominator.bookify.dto.CancelOrderRequestDTO;
 import com.dominator.bookify.dto.CreateOrderResponse;
 import com.dominator.bookify.dto.OrderCreationRequestDTO;
 import com.dominator.bookify.dto.OrderItemRequestDTO;
@@ -20,6 +21,7 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.time.Instant;
 import java.util.*;
+import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.stream.Collectors;
 
 @Service
@@ -82,6 +84,48 @@ public class OrderService {
         statusCounts.put("totalInProgress", inProgress);
 
         return statusCounts;
+    }
+
+    @Transactional
+    public void cancelOrder(AuthenticatedUser authUser, CancelOrderRequestDTO dto) {
+        User user = authUser.getUser();
+
+        Order order = orderRepository.findById(dto.getOrderId())
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Order not found"));
+
+        if (!order.getUserId().equals(user.getId())) {
+            throw new ResponseStatusException(HttpStatus.FORBIDDEN, "You are not allowed to cancel this order");
+        }
+
+        if (order.getOrderStatus() != OrderStatus.PENDING && order.getOrderStatus() != OrderStatus.PROCESSING) {
+            throw new ResponseStatusException(HttpStatus.CONFLICT, "This order already has status that cannot be cancelled");
+        }
+
+        Payment payment = order.getPayment();
+        boolean alreadyPaid = payment.getTransactions().stream()
+                .anyMatch(tx -> tx.getStatus() == TransactionStatus.SUCCESSFUL);
+
+        if (alreadyPaid) {
+            initiateRefund(order, payment);
+            order.setOrderStatus(OrderStatus.PENDING_REFUND);
+        } else {
+            order.setOrderStatus(OrderStatus.CANCELLED);
+        }
+
+        order.setNote(dto.getReason());
+        order.setModifiedAt(Instant.now());
+        orderRepository.save(order);
+    }
+
+    public void initiateRefund(Order order, Payment payment) {
+        Transaction refundTransaction = new Transaction();
+        refundTransaction.setTransactionId(UUID.randomUUID().toString());
+        refundTransaction.setStatus(TransactionStatus.PENDING_REFUND);
+        refundTransaction.setAmount(order.getTotalAmount());
+        refundTransaction.setRawResponse("Refund initiated for order: " + order.getId());
+        refundTransaction.setCreatedAt(Instant.now());
+
+        payment.getTransactions().add(refundTransaction);
     }
 
     @Transactional

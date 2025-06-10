@@ -8,3 +8,9 @@ export const getBookReviews = (queryParams) => {
 export const getRatingDistribution = (bookId) => {
     return api.get(`/reviews/distribution?bookId=${bookId}`);
 }
+
+export const submitReview = (data) =>
+    api.post(`/reviews/submit-review`, data)
+
+export const getTopReviews = () =>
+    api.get(`/reviews/best-six`)

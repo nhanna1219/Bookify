@@ -27,6 +27,7 @@ export default function ShopPage() {
     const isFirst = useRef(true);
     const gridRef = useRef(null)
     const searchRef = useRef(null);
+    const previousSearch = useRef("")
 
     const [state, setState] = useState(() => {
         const pageNumber = safeInteger(searchParams.get("page"), 1, Infinity, 1);
@@ -100,6 +101,18 @@ export default function ShopPage() {
             totalElements
         });
     }, [books]);
+
+    useEffect(() => {
+        const currentSearch = searchParams.get("search") || ""
+        if (previousSearch.current !== currentSearch) {
+            previousSearch.current = currentSearch
+            setState(prev => ({
+                ...prev,
+                searchText: currentSearch,
+                page: { ...prev.page, number: 0 }
+            }))
+        }
+    }, [searchParams])
 
     useEffect(() => {
         if (isFirst.current) {
