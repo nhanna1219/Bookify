@@ -20,7 +20,7 @@ public class ReviewService {
     }
 
     public List<Review> getReviewsByStatus(ReviewStatus status) {
-        return reviewRepo.findByStatus(status);
+        return reviewRepo.findReviewByItsStatusByAdmin(status);
     }
 
     public Review approveReview(String id) {
