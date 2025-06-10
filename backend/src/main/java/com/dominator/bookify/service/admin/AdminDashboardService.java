@@ -29,7 +29,7 @@ public class AdminDashboardService {
         private final MongoTemplate mongoTemplate;
 
         @Autowired
-        public List<BestSellerDTO> getTop5BestSellingBooks() {
+        public List<BestSellerDTO> getTop10BestSellingBooks() {
 
                 // 1) $unwind items
                 AggregationOperation unwindItems = Aggregation.unwind("items");
@@ -40,7 +40,7 @@ public class AdminDashboardService {
 
                 // 3) $sort & $limit
                 AggregationOperation sort = Aggregation.sort(Sort.Direction.DESC, "totalSold");
-                AggregationOperation limit = Aggregation.limit(5);
+                AggregationOperation limit = Aggregation.limit(10);
 
                 /* 4) $lookup (pipeline) – vì bookId (String) cần ép sang ObjectId để so sánh */
                 Document lookupStage = new Document("$lookup",

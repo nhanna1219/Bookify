@@ -22,6 +22,6 @@ public class AdminDashboardController {
 
     @GetMapping("/api/admin/dashboard/top-books")
     public List<BestSellerDTO> getTopBooks() {
-        return dashboardService.getTop5BestSellingBooks();
+        return dashboardService.getTop10BestSellingBooks();
     }
 }
