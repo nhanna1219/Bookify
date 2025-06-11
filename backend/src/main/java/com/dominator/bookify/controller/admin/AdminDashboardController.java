@@ -1,6 +1,7 @@
 package com.dominator.bookify.controller.admin;
 
 import com.dominator.bookify.dto.BestSellerDTO;
+import com.dominator.bookify.dto.LoyalCustomerDTO;
 import com.dominator.bookify.dto.TopCategoryQuantityDTO;
 import com.dominator.bookify.service.admin.AdminDashboardService;
 import lombok.RequiredArgsConstructor;
@@ -24,4 +25,7 @@ public class AdminDashboardController {
     public List<BestSellerDTO> getTopBooks() {
         return dashboardService.getTop10BestSellingBooks();
     }
+
+    @GetMapping("api/admin/dashboard/loyal-customers")
+    public List<LoyalCustomerDTO>getTopLoyalCustomers() {return dashboardService.getTop10LoyalCustomers();}
 }
