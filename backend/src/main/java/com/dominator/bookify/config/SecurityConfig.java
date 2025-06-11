@@ -53,13 +53,13 @@ public class SecurityConfig {
                                 "/api/blogposts/**",
                                 "/api/pages/**",
                                 "/api/admin/media/**",
+                                "/api/admin/**",
                                 "/api/admin/uploads/**"
                         ).permitAll()
                         .anyRequest().authenticated()
                 )
                 .sessionManagement(session -> session
-                        .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
-                )
+                        .sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class);
 
         return http.build();

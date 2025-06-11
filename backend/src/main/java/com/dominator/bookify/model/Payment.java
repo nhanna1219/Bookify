@@ -10,6 +10,9 @@ import java.time.Instant;
 
 import java.util.List;
 
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document(collection = "payment")
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter

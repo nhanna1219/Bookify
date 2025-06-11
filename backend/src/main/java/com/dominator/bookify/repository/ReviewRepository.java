@@ -20,10 +20,12 @@ public interface ReviewRepository extends MongoRepository<Review, String> {
     Page<Review> findByBookIdAndStatusAndRating(ObjectId bookId, ReviewStatus status, int rating, Pageable pageable);
 
     @Aggregation(pipeline = {
-            "{ $match: { bookId: ?0, status: 'APPROVED' } }",
-            "{ $group: { _id: '$rating' , count: { $sum: 1 } } }"
+            "{ : { bookId: ?0, status: 'APPROVED' } }",
+            "{ : { _id: '' , count: { : 1 } } }"
     })
     List<Map<String, Object>> getRatingDistribution(ObjectId bookId);
+
+    List<Review> findReviewByStatus(ReviewStatus status);
 
     @Query("{ 'rating': ?0, 'status': ?1 }")
     List<Review> findTopByRatingAndStatusGroupedByUser(int rating, ReviewStatus status, Pageable pageable);

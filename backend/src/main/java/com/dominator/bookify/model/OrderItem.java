@@ -1,5 +1,7 @@
 package com.dominator.bookify.model;
 
+import org.springframework.data.mongodb.core.mapping.Document;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -12,6 +14,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.List;
 
+@Document(collection = "orderItem")
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter

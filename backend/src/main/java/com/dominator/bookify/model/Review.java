@@ -1,9 +1,9 @@
 package com.dominator.bookify.model;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.Id;
@@ -25,7 +25,6 @@ public class Review {
     private String subject;
     private String comment;
     private ReviewStatus status = ReviewStatus.PENDING;
-
     @CreatedDate
     private String addedAt;
     @LastModifiedDate
