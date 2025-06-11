@@ -1,9 +1,7 @@
 package com.dominator.bookify.service.admin;
 
-import com.dominator.bookify.dto.BestSellerDTO;
-import com.dominator.bookify.dto.TopAvgOrderValueUserDTO;
-import com.dominator.bookify.dto.TopCategoryQuantityDTO;
-import com.dominator.bookify.dto.LoyalCustomerDTO;
+import com.dominator.bookify.dto.*;
+import com.dominator.bookify.repository.BooksInStockRepository;
 import lombok.RequiredArgsConstructor;
 import org.bson.Document;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,12 +12,14 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
 public class AdminDashboardServiceImplement implements AdminDashboardService {
         @Autowired
         private final MongoTemplate mongoTemplate;
+        private final BooksInStockRepository booksInStock;
         @Override
         public List<BestSellerDTO> getTop10BestSellingBooks() {
 
@@ -282,5 +282,17 @@ public class AdminDashboardServiceImplement implements AdminDashboardService {
                         mongoTemplate.aggregate(pipeline, "orders", TopAvgOrderValueUserDTO.class);
 
                 return results.getUniqueMappedResult();   // có thể trả null nếu không có đơn nào
+        }
+        public List<BookInLowStockDTO> getBookWithLowStock() {
+                return booksInStock.findBooksWithLowStock()
+                        .stream()
+                        .map(book -> {
+                                BookInLowStockDTO bookWithLowStockDTO = new BookInLowStockDTO();
+                                bookWithLowStockDTO.setTitle(book.getTitle());
+                                bookWithLowStockDTO.setId(book.getId());
+                                bookWithLowStockDTO.setStock(book.getStock());
+                                return bookWithLowStockDTO;
+                        })
+                        .collect(Collectors.toList());
         }
 }

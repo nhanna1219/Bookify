@@ -1,9 +1,6 @@
 package com.dominator.bookify.controller.admin;
 
-import com.dominator.bookify.dto.BestSellerDTO;
-import com.dominator.bookify.dto.LoyalCustomerDTO;
-import com.dominator.bookify.dto.TopAvgOrderValueUserDTO;
-import com.dominator.bookify.dto.TopCategoryQuantityDTO;
+import com.dominator.bookify.dto.*;
 import com.dominator.bookify.service.admin.AdminDashboardServiceImplement;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -35,4 +32,7 @@ public class AdminDashboardControllerImplement implements AdminDashboardControll
     @GetMapping("api/admin/dashboard/top-user-by-order")
     @Override
     public TopAvgOrderValueUserDTO getTopAvgOrderValueUser() {return dashboardService.findUserWithHighestAvgOrderValue();}
+    @GetMapping("api/admin/dashboard/book-in-low-stock")
+    @Override
+    public List<BookInLowStockDTO> getTopBooksInLowStock(){return dashboardService.getBookWithLowStock();}
 }
