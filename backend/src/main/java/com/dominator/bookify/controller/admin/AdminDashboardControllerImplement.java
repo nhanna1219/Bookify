@@ -1,7 +1,7 @@
 package com.dominator.bookify.controller.admin;
 
 import com.dominator.bookify.dto.*;
-import com.dominator.bookify.service.admin.AdminDashboardServiceImplement;
+import com.dominator.bookify.service.admin.AdminDashboardService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -12,7 +12,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class AdminDashboardControllerImplement implements AdminDashboardController {
 
-    private final AdminDashboardServiceImplement dashboardService;
+    private final AdminDashboardService dashboardService;
 
     @GetMapping("/api/admin/dashboard/top-by-category")
     @Override
@@ -28,11 +28,19 @@ public class AdminDashboardControllerImplement implements AdminDashboardControll
 
     @GetMapping("api/admin/dashboard/loyal-customers")
     @Override
-    public List<LoyalCustomerDTO>getTopLoyalCustomers() {return dashboardService.getTop10LoyalCustomers();}
-    @GetMapping("api/admin/dashboard/top-user-by-order")
+    public List<LoyalCustomerDTO> getTopLoyalCustomers() {
+        return dashboardService.getTop10LoyalCustomers();
+    }
+
+    @GetMapping("api/admin/dashboard/top-user-by-avg-order-value")
     @Override
-    public TopAvgOrderValueUserDTO getTopAvgOrderValueUser() {return dashboardService.findUserWithHighestAvgOrderValue();}
+    public TopAvgOrderValueUserDTO getTopAvgOrderValueUser() {
+        return dashboardService.findUserWithHighestAvgOrderValue();
+    }
+
     @GetMapping("api/admin/dashboard/book-in-low-stock")
     @Override
-    public List<BookInLowStockDTO> getTopBooksInLowStock(){return dashboardService.getBookWithLowStock();}
+    public List<BookInLowStockDTO> getTopBooksInLowStock() {
+        return dashboardService.getBookWithLowStock();
+    }
 }
