@@ -24,6 +24,7 @@ import {
   PaginationTotal,
 } from "../../components";
 import type { IOrder } from "../../interfaces";
+import { ImportCsvOrdersButton } from "../../components/importCsv";
 
 export const OrderList: React.FC = () => {
   const t = useTranslate();
@@ -56,9 +57,18 @@ export const OrderList: React.FC = () => {
 
   return (
     <List
-      headerProps={{
-        extra: <ExportButton onClick={triggerExport} loading={isLoading} />,
-      }}
+      // headerProps={{
+      //   extra: <ExportButton onClick={triggerExport} loading={isLoading} />,
+      // }}
+      headerButtons={() => (
+        <>
+          {/* Import CSV Orders */}
+          <ImportCsvOrdersButton />
+
+          {/* Export Button */}
+          <ExportButton onClick={triggerExport} loading={isLoading} />
+        </>
+      )}
     >
       <Table
         {...tableProps}

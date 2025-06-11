@@ -5,7 +5,11 @@ import { type PropsWithChildren, useState } from "react";
 import { AppstoreOutlined, UnorderedListOutlined } from "@ant-design/icons";
 import { Segmented } from "antd";
 import { useLocation } from "react-router";
-import {BookListTable} from "../../components/book";
+import { BookListTable } from "../../components/book";
+import {
+  ImportBookCsvButton,
+  ImageUploadButton,
+} from "../../components/importCsv";
 
 type View = "table" | "card";
 
@@ -16,7 +20,7 @@ export const BookList = ({ children }: PropsWithChildren) => {
   const { createUrl } = useNavigation();
 
   const [view, setView] = useState<View>(
-    (localStorage.getItem("book-view") as View) || "table",
+    (localStorage.getItem("book-view") as View) || "table"
   );
 
   const handleViewChange = (value: View) => {
@@ -32,6 +36,9 @@ export const BookList = ({ children }: PropsWithChildren) => {
   return (
     <List
       breadcrumb={false}
+      // headerProps={{
+      //   extra: ,
+      // }}
       headerButtons={(props) => [
         <Segmented<View>
           key="view"
@@ -71,6 +78,8 @@ export const BookList = ({ children }: PropsWithChildren) => {
         >
           {t("books.actions.add")}
         </CreateButton>,
+        <ImportBookCsvButton />,
+        <ImageUploadButton />,
       ]}
     >
       {view === "table" && <BookListTable />}

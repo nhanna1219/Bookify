@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.bson.types.ObjectId;
 
 import java.util.List;
 
@@ -21,7 +22,7 @@ public class AdminBookDTO {
     private double originalPrice;
     private String condition;
     private int stock;
-    private List<String> categoryIds;
+    private List<ObjectId> categoryIds;
     private List<String> categoryNames;
     private List<Image> images;
     private double averageRating;

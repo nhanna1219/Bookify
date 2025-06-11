@@ -15,4 +15,13 @@ public class WebConfig implements WebMvcConfigurer {
                 .allowedHeaders("*")
                 .allowCredentials(true);
     }
+    @Override
+    public void addResourceHandlers(ResourceHandlerRegistry registry) {
+        // Serve files under uploads/ when requested at /api/admin/uploads/**
+        registry.addResourceHandler("/api/admin/uploads/**")
+                .addResourceLocations("file:uploads/")
+                .setCachePeriod(3600);
+
+        // (if you still have other static mappings, keep them here)
+    }
 }

@@ -51,7 +51,9 @@ public class SecurityConfig {
                                 "/api/payments/**",
                                 "/api/addresses/**",
                                 "/api/blogposts/**",
-                                "/api/pages/**"
+                                "/api/pages/**",
+                                "/api/admin/media/**",
+                                "/api/admin/uploads/**"
                         ).permitAll()
                         .anyRequest().authenticated()
                 )

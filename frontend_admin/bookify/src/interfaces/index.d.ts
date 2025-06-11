@@ -181,7 +181,7 @@ export interface IImage {
   thumbnailUrl?: string;
   /** name or alt text for the image */
   name?: string;
-  altText?: string;
+  alt?: string;
 }
 
 // base

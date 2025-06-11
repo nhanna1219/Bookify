@@ -5,9 +5,11 @@ import com.dominator.bookify.dto.BookCreateDTO;
 import com.dominator.bookify.dto.BookUpdateDTO;
 import com.dominator.bookify.model.Book;
 import com.dominator.bookify.model.Category;
+import com.dominator.bookify.model.Image;
 import com.dominator.bookify.repository.BookRepository;
 import com.dominator.bookify.repository.CategoryRepository;
 import lombok.AllArgsConstructor;
+import org.bson.types.ObjectId;
 import org.springframework.beans.BeanUtils;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
@@ -57,7 +59,13 @@ public class AdminBookServiceImpl implements AdminBookService {
     public AdminBookDTO createBook(BookCreateDTO dto) {
         // map dto -> book
         Book book = new Book();
-        BeanUtils.copyProperties(dto, book);
+        BeanUtils.copyProperties(dto, book, "images", "categoryIds");
+        book.setCategoryIds(dto.getCategoryIds());
+
+        book.setImages(dto.getImages().stream()
+                .map(i -> new Image(i.getUrl(), i.getAlt()))
+                .collect(Collectors.toList())
+        );
         // Initialize rating fields
         book.setAverageRating(0);
         book.setRatingCount(0);
@@ -108,11 +116,15 @@ public class AdminBookServiceImpl implements AdminBookService {
         return dto;
         }
 
-    private List<String> fetchCategoryNames(List<String> categoryIds) {
+    private List<String> fetchCategoryNames(List<ObjectId> categoryIds) {
         if(categoryIds == null || categoryIds.isEmpty()) {
             return List.of();
         }
-        List<Category> categories = categoryRepository.findAllById(categoryIds);
+        List<String> stringIds = categoryIds.stream()
+                .map(ObjectId::toHexString)
+                .collect(Collectors.toList());
+
+        List<Category> categories = categoryRepository.findAllById(stringIds);
         return categories.stream().map(Category::getName).collect(Collectors.toList());
     }
 

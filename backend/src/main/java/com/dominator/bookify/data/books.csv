@@ -1,0 +1,3 @@
+title,authors,description,price,originalPrice,condition,stock,categoryIds,images
+"A Baby Blessing","Welleran Poltarnees","A sweet blessing for a newborn.","4.76","5.29","NEW","10","681f3d085e99961322aef271;681f3d085e99961322aef272","/uploads/a-baby-1.png;/uploads/a-baby-2.png"
+"An Armory of Swords","John Doe;Jane Roe","Epic tales of chivalry and steel.","3.67","4.50","USED","5","681f3d085e99961322aef273","/uploads/armory-1.png"
