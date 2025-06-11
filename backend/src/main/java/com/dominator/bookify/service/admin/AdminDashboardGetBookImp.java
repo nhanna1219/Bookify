@@ -37,7 +37,6 @@ public class AdminDashboardGetBookImp implements AdminDashboardGetBookInterface 
 
         @Override
         public List<BestSellerDTO> getTop10BestSellingBooks() {
-                // anh cam cau truy van do ~~, anh search la chuyen
                 // 1) $unwind items
                 AggregationOperation unwindItems = Aggregation.unwind("items");
 
