@@ -201,7 +201,7 @@ public class OrderService {
         transaction.setCreatedAt(Instant.now());
 
         Payment payment = new Payment();
-        payment.setMethod(method);
+        payment.setMethod(PaymentMethod.valueOf(method)); // ✅ Chuyển String -> Enum
         payment.setTransactions(List.of(transaction));
         return payment;
     }
