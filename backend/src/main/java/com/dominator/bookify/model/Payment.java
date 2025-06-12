@@ -18,6 +18,8 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Getter
 @Setter
 public class Payment {
-    private String method;
+//    private String method;
     private List<Transaction> transactions;
+
+    private PaymentMethod method;
 }

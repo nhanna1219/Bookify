@@ -18,4 +18,6 @@ public class OrderPatchDTO {
     private Payment payment;
     private List<OrderItem> items;
     private Instant doneAt;
+    private String cancelReason;
+    private String note;
 }

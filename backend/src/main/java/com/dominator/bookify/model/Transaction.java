@@ -28,4 +28,8 @@ public class Transaction {
     private String rawResponse;
     @CreatedDate
     private Instant createdAt;
+
+    private PaymentMethod method;
+    private String description;
+    private String orderId;
 }

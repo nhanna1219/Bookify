@@ -1,108 +1,1181 @@
-  {
-    "items": [
-    ],
-    "payment": {
-      "transactions": [
-        {
-          "status": "PENDING",
-        }
-      ]
-    },
-    "status": "PENDING",
-    },
+[{
+  "_id": {
+    "$oid": "6845f462f6159c1e348dcc74"
   },
-  {
-    "items": [
-    ],
-    "payment": {
-      "transactions": [
-        {
-          "status": "SUCCESSFUL",
+  "userId": "6845ef85f6159c1e348dcc64",
+  "items": [
+    {
+      "bookId": "682023424a1ae581e0445357",
+      "title": "A Baby Blessing",
+      "price": 4.76,
+      "imageUrl": "/data/book-img/a-baby-blessing-1.jpg",
+      "quantity": 1
+    }
+  ],
+  "totalAmount": 20.14,
+  "payment": {
+    "method": "cod",
+    "transactions": [
+      {
+        "transactionId": "f8cc4757-428c-476c-8e48-8bd4de42b0af",
+        "status": "PENDING",
+        "amount": 20.14,
+        "rawResponse": "Pending payment: 20.14",
+        "createdAt": {
+          "$date": "2025-06-08T20:36:50.384Z"
         }
-      ]
-    },
-    },
+      },
+      {
+        "transactionId": "a1b2c3d4-e5f6-7890-abcd-1234567890ef",
+        "status": "SUCCESSFUL",
+        "amount": 20.14,
+        "rawResponse": "COD payment collected successfully.",
+        "createdAt": {
+          "$date": "2025-06-09T03:45:49.000Z"
+        }
+      }
+    ]
   },
-  {
-    "items": [
-    ],
-    "payment": {
-      "transactions": [
-        {
-          "status": "SUCCESSFUL",
-        }
-      ]
-    },
-    },
+  "orderStatus": "COMPLETED",
+  "shippingInformation": {
+    "firstName": "John",
+    "lastName": "Somehow",
+    "email": "jonnn.how@gmail.com",
+    "phoneNumber": "12312332123",
+    "address": {
+      "street": "170 Bleecker St",
+      "city": "Adams Center",
+      "cityId": 0,
+      "state": "New York",
+      "stateId": 0,
+      "postalCode": "10001",
+      "country": "United States",
+      "countryId": 0
+    }
   },
-  {
-    "items": [
-    ],
-    "payment": {
-      "transactions": [
-        {
-          "status": "SUCCESSFUL",
-        }
-      ]
-    },
-    },
+  "isReviewed": true,
+  "addedAt": {
+    "$date": "2025-06-08T20:36:50.388Z"
   },
-  {
-    "items": [
-    ],
-    "payment": {
-      "transactions": [
-        {
-          "status": "SUCCESSFUL",
-        }
-      ]
-    },
-    },
+  "modifiedAt": {
+    "$date": "2025-06-08T20:48:21.151Z"
   },
-  {
-    "items": [
-    ],
-    "payment": {
-      "transactions": [
-        {
-          "status": "SUCCESSFUL",
-        }
-      ]
-    },
-    },
+  "_class": "com.dominator.bookify.model.Order"
+},
+{
+  "_id": {
+    "$oid": "6845f478f6159c1e348dcc75"
   },
-  {
-    "items": [
-    ],
-    "payment": {
-      "transactions": [
-        {
-          "status": "SUCCESSFUL",
+  "userId": "6845ef85f6159c1e348dcc64",
+  "items": [
+    {
+      "bookId": "682023424a1ae581e0445358",
+      "title": "A Royal Quest",
+      "price": 5.64,
+      "imageUrl": "/data/book-img/a-royal-quest-1.jpg",
+      "quantity": 1
+    },
+    {
+      "bookId": "682023424a1ae581e0445359",
+      "title": "A Tour of the Calculus",
+      "price": 4.99,
+      "imageUrl": "/data/book-img/a-tour-of-the-calculus-1.jpg",
+      "quantity": 1
+    }
+  ],
+  "totalAmount": 26.48,
+  "payment": {
+    "method": "momo",
+    "transactions": [
+      {
+        "transactionId": "c63135ec-d205-49fa-8ccf-dfca9934a4fe",
+        "status": "PENDING",
+        "amount": 26.48,
+        "rawResponse": "Pending payment: 26.48",
+        "createdAt": {
+          "$date": "2025-06-08T20:37:12.153Z"
         }
-      ]
-    },
-    },
+      },
+      {
+        "transactionId": "4505161560",
+        "status": "SUCCESSFUL",
+        "amount": 26.48,
+        "rawResponse": "MomoNotifyRequest[partnerCode=MOMO, requestId=Bookify-6845f478f6159c1e348dcc75, orderId=Bookify-6845f478f6159c1e348dcc75, amount=690731, orderInfo=Bookify Purchase - Order #6845f478f6159c1e348dcc75, orderType=, transId=4505161560, resultCode=7002, message=Transaction is being processed by the provider of the payment instrument selected., responseTime=1749415049208, extraData=eyJvcmRlcklkIjoiNjg0NWY0NzhmNjE1OWMxZTM0OGRjYzc1In0=, signature=184af0003c4401b3b6ba3fa3584b5fa1dccb2ca2837bbd23afba5543fcb7856a]",
+        "createdAt": {
+          "$date": "2025-06-08T20:38:06.595Z"
+        }
+      }
+    ]
   },
-  {
-    "items": [
-    ],
-    "payment": {
-      "transactions": [
-        {
-          "status": "SUCCESSFUL",
-        }
-      ]
-    },
-    },
+  "orderStatus": "COMPLETED",
+  "shippingInformation": {
+    "firstName": "John",
+    "lastName": "Somehow",
+    "email": "jonnn.how@gmail.com",
+    "phoneNumber": "12312332123",
+    "address": {
+      "street": "170 Bleecker St",
+      "city": "Adams Center",
+      "cityId": 0,
+      "state": "New York",
+      "stateId": 0,
+      "postalCode": "10001",
+      "country": "United States",
+      "countryId": 0
+    }
   },
-  {
-    "items": [
-    ],
-    "payment": {
-      "transactions": [
-        {
-          "status": "SUCCESSFUL",
-        }
-      ]
+  "isReviewed": true,
+  "addedAt": {
+    "$date": "2025-06-08T20:37:12.153Z"
+  },
+  "modifiedAt": {
+    "$date": "2025-06-08T20:42:41.104Z"
+  },
+  "_class": "com.dominator.bookify.model.Order"
+},
+{
+  "_id": {
+    "$oid": "6845f75cf6159c1e348dcc7b"
+  },
+  "userId": "6845f24ef6159c1e348dcc6a",
+  "items": [
+    {
+      "bookId": "682023424a1ae581e0445357",
+      "title": "A Baby Blessing",
+      "price": 4.76,
+      "imageUrl": "/data/book-img/a-baby-blessing-1.jpg",
+      "quantity": 1
     },
-  }
+    {
+      "bookId": "682023424a1ae581e044535a",
+      "title": "A Twist in the Tale",
+      "price": 2.65,
+      "imageUrl": "/data/book-img/a-twist-in-the-tale-1.jpg",
+      "quantity": 1
+    },
+    {
+      "bookId": "682023424a1ae581e044535b",
+      "title": "An Armory of Swords",
+      "price": 3.67,
+      "imageUrl": "/data/book-img/an-armory-of-swords-1.jpg",
+      "quantity": 1
+    },
+    {
+      "bookId": "682023424a1ae581e044535c",
+      "title": "Anywhere but Here",
+      "price": 3.74,
+      "imageUrl": "/data/book-img/anywhere-but-here-1.jpg",
+      "quantity": 1
+    },
+    {
+      "bookId": "682023424a1ae581e044535f",
+      "title": "CURE FOR THE COMMON LIFE",
+      "price": 2.65,
+      "imageUrl": "/data/book-img/cure-for-the-common-life-1.jpg",
+      "quantity": 1
+    }
+  ],
+  "totalAmount": 33.87,
+  "payment": {
+    "method": "momo",
+    "transactions": [
+      {
+        "transactionId": "398956cd-302d-4b66-95cf-d42fb18581d9",
+        "status": "PENDING",
+        "amount": 33.87,
+        "rawResponse": "Pending payment: 33.87",
+        "createdAt": {
+          "$date": "2025-06-08T20:49:32.458Z"
+        }
+      },
+      {
+        "transactionId": "b1c2d3e4-f5g6-7890-hjkl-1234567890mn",
+        "status": "SUCCESSFUL",
+        "amount": 33.87,
+        "rawResponse": "Momo payment confirmed and successful.",
+        "createdAt": {
+          "$date": "2025-06-09T03:53:08.000Z"
+        }
+      }
+    ]
+  },
+  "orderStatus": "COMPLETED",
+  "shippingInformation": {
+    "firstName": "Jane",
+    "lastName": "Loe",
+    "email": "janee@gmail.com",
+    "phoneNumber": "18529501239",
+    "address": {
+      "street": "123 Atestoe St",
+      "city": "Anahola",
+      "cityId": 0,
+      "state": "Hawaii",
+      "stateId": 0,
+      "postalCode": "123123",
+      "country": "United States",
+      "countryId": 0
+    }
+  },
+  "isReviewed": true,
+  "addedAt": {
+    "$date": "2025-06-08T20:49:32.458Z"
+  },
+  "modifiedAt": {
+    "$date": "2025-06-08T20:58:06.519Z"
+  },
+  "_class": "com.dominator.bookify.model.Order"
+},
+{
+  "_id": {
+    "$oid": "6845fb99f6159c1e348dcc81"
+  },
+  "userId": "6845f24ef6159c1e348dcc6a",
+  "items": [
+    {
+      "bookId": "682023424a1ae581e044537d",
+      "title": "The Diabetic Gourmet",
+      "price": 5.29,
+      "imageUrl": "/data/book-img/the-diabetic-gourmet-1.jpg",
+      "quantity": 1
+    },
+    {
+      "bookId": "682023424a1ae581e044537c",
+      "title": "The Devil in Vienna",
+      "price": 5.29,
+      "imageUrl": "/data/book-img/the-devil-in-vienna-1.jpg",
+      "quantity": 1
+    }
+  ],
+  "totalAmount": 26.43,
+  "payment": {
+    "method": "momo",
+    "transactions": [
+      {
+        "transactionId": "be236bac-a7d2-4dd7-93dc-d6c4d6786508",
+        "status": "PENDING",
+        "amount": 26.43,
+        "rawResponse": "Pending payment: 26.43",
+        "createdAt": {
+          "$date": "2025-06-08T21:07:37.634Z"
+        }
+      },
+      {
+        "transactionId": "c1d2e3f4-g5h6-7890-ijkl-1234567890op",
+        "status": "SUCCESSFUL",
+        "amount": 26.43,
+        "rawResponse": "Momo payment confirmed and successful.",
+        "createdAt": {
+          "$date": "2025-06-09T04:10:00.000Z"
+        }
+      }
+    ]
+  },
+  "orderStatus": "COMPLETED",
+  "shippingInformation": {
+    "firstName": "Jane",
+    "lastName": "Loe",
+    "email": "janee@gmail.com",
+    "phoneNumber": "18529501239",
+    "address": {
+      "street": "123 Atestoe St",
+      "city": "Anahola",
+      "cityId": 0,
+      "state": "Hawaii",
+      "stateId": 0,
+      "postalCode": "123123",
+      "country": "United States",
+      "countryId": 0
+    }
+  },
+  "isReviewed": true,
+  "addedAt": {
+    "$date": "2025-06-08T21:07:37.635Z"
+  },
+  "modifiedAt": {
+    "$date": "2025-06-08T21:12:35.061Z"
+  },
+  "_class": "com.dominator.bookify.model.Order"
+},
+{
+  "_id": {
+    "$oid": "6845fd28f6159c1e348dcc86"
+  },
+  "userId": "6845f2a2f6159c1e348dcc6c",
+  "items": [
+    {
+      "bookId": "682023424a1ae581e0445357",
+      "title": "A Baby Blessing",
+      "price": 4.76,
+      "imageUrl": "/data/book-img/a-baby-blessing-1.jpg",
+      "quantity": 1
+    },
+    {
+      "bookId": "682023424a1ae581e0445358",
+      "title": "A Royal Quest",
+      "price": 5.64,
+      "imageUrl": "/data/book-img/a-royal-quest-1.jpg",
+      "quantity": 1
+    },
+    {
+      "bookId": "682023424a1ae581e044535b",
+      "title": "An Armory of Swords",
+      "price": 3.67,
+      "imageUrl": "/data/book-img/an-armory-of-swords-1.jpg",
+      "quantity": 1
+    },
+    {
+      "bookId": "682023424a1ae581e044535c",
+      "title": "Anywhere but Here",
+      "price": 3.74,
+      "imageUrl": "/data/book-img/anywhere-but-here-1.jpg",
+      "quantity": 1
+    },
+    {
+      "bookId": "682023424a1ae581e0445360",
+      "title": "Cut And Run",
+      "price": 3.74,
+      "imageUrl": "/data/book-img/cut-and-run-1.jpg",
+      "quantity": 1
+    }
+  ],
+  "totalAmount": 38.27,
+  "payment": {
+    "method": "momo",
+    "transactions": [
+      {
+        "transactionId": "411d8edf-438a-412c-a360-25bfe81a860c",
+        "status": "PENDING",
+        "amount": 38.27,
+        "rawResponse": "Pending payment: 38.27",
+        "createdAt": {
+          "$date": "2025-06-08T21:14:16.132Z"
+        }
+      },
+      {
+        "transactionId": "d1e2f3g4-h5i6-7890-jklm-1234567890qr",
+        "status": "SUCCESSFUL",
+        "amount": 38.27,
+        "rawResponse": "Momo payment confirmed and successful.",
+        "createdAt": {
+          "$date": "2025-06-09T04:16:40.000Z"
+        }
+      }
+    ]
+  },
+  "orderStatus": "COMPLETED",
+  "shippingInformation": {
+    "firstName": "Josh",
+    "lastName": "Danniel",
+    "email": "josh@gmail.com",
+    "phoneNumber": "18529501239",
+    "address": {
+      "street": "32 Amsterdam St",
+      "city": "Alameda County",
+      "cityId": 0,
+      "state": "California",
+      "stateId": 0,
+      "postalCode": "123123",
+      "country": "United States",
+      "countryId": 0
+    }
+  },
+  "isReviewed": true,
+  "addedAt": {
+    "$date": "2025-06-08T21:14:16.132Z"
+  },
+  "modifiedAt": {
+    "$date": "2025-06-08T21:19:20.242Z"
+  },
+  "_class": "com.dominator.bookify.model.Order"
+},
+{
+  "_id": {
+    "$oid": "6845fe87f6159c1e348dcc8c"
+  },
+  "userId": "6845f2a2f6159c1e348dcc6c",
+  "items": [
+    {
+      "bookId": "682023424a1ae581e0445361",
+      "title": "Decline and Fall",
+      "price": 4.76,
+      "imageUrl": "/data/book-img/decline-and-fall-1.jpg",
+      "quantity": 1
+    },
+    {
+      "bookId": "682023424a1ae581e044535d",
+      "title": "Barnyard Banter",
+      "price": 4.76,
+      "imageUrl": "/data/book-img/barnyard-banter-1.jpg",
+      "quantity": 1
+    },
+    {
+      "bookId": "682023424a1ae581e0445362",
+      "title": "Dictionary of Napoleonic Wars",
+      "price": 9.89,
+      "imageUrl": "/data/book-img/dictionary-of-napoleonic-wars-1.jpg",
+      "quantity": 1
+    },
+    {
+      "bookId": "682023424a1ae581e0445363",
+      "title": "Donald Duk",
+      "price": 4.76,
+      "imageUrl": "/data/book-img/donald-duk-1.jpg",
+      "quantity": 2
+    }
+  ],
+  "totalAmount": 46.24,
+  "payment": {
+    "method": "momo",
+    "transactions": [
+      {
+        "transactionId": "aa29a5c7-a4b7-4bf0-9db3-652c47ad7faa",
+        "status": "PENDING",
+        "amount": 46.24,
+        "rawResponse": "Pending payment: 46.24",
+        "createdAt": {
+          "$date": "2025-06-08T21:20:07.967Z"
+        }
+      },
+      {
+        "transactionId": "e1f2g3h4-i5j6-7890-klmn-1234567890st",
+        "status": "SUCCESSFUL",
+        "amount": 46.24,
+        "rawResponse": "Momo payment confirmed and successful.",
+        "createdAt": {
+          "$date": "2025-06-09T04:26:07.000Z"
+        }
+      }
+    ]
+  },
+  "orderStatus": "COMPLETED",
+  "shippingInformation": {
+    "firstName": "Josh",
+    "lastName": "Danniel",
+    "email": "josh@gmail.com",
+    "phoneNumber": "18529501239",
+    "address": {
+      "street": "32 Amsterdam St",
+      "city": "Alameda County",
+      "cityId": 0,
+      "state": "California",
+      "stateId": 0,
+      "postalCode": "123123",
+      "country": "United States",
+      "countryId": 0
+    }
+  },
+  "isReviewed": true,
+  "addedAt": {
+    "$date": "2025-06-08T21:20:07.967Z"
+  },
+  "modifiedAt": {
+    "$date": "2025-06-08T21:28:54.931Z"
+  },
+  "_class": "com.dominator.bookify.model.Order"
+},
+{
+  "_id": {
+    "$oid": "68460132f6159c1e348dcc93"
+  },
+  "userId": "6845f327f6159c1e348dcc6e",
+  "items": [
+    {
+      "bookId": "682023424a1ae581e044535b",
+      "title": "An Armory of Swords",
+      "price": 3.67,
+      "imageUrl": "/data/book-img/an-armory-of-swords-1.jpg",
+      "quantity": 1
+    },
+    {
+      "bookId": "682023424a1ae581e044537c",
+      "title": "The Devil in Vienna",
+      "price": 5.29,
+      "imageUrl": "/data/book-img/the-devil-in-vienna-1.jpg",
+      "quantity": 1
+    },
+    {
+      "bookId": "682023424a1ae581e044537f",
+      "title": "The Night Before the Wedding",
+      "price": 3.74,
+      "imageUrl": "/data/book-img/the-night-before-the-wedding-1.jpg",
+      "quantity": 1
+    },
+    {
+      "bookId": "682023424a1ae581e044537e",
+      "title": "The Mind",
+      "price": 2.65,
+      "imageUrl": "/data/book-img/the-mind-1.jpg",
+      "quantity": 1
+    },
+    {
+      "bookId": "682023424a1ae581e0445383",
+      "title": "Tumble Bumble",
+      "price": 2.65,
+      "imageUrl": "/data/book-img/tumble-bumble-1.jpg",
+      "quantity": 1
+    }
+  ],
+  "totalAmount": 34.44,
+  "payment": {
+    "method": "momo",
+    "transactions": [
+      {
+        "transactionId": "9c121e51-0fe1-4d90-aadc-09172d8b2666",
+        "status": "PENDING",
+        "amount": 34.44,
+        "rawResponse": "Pending payment: 34.44",
+        "createdAt": {
+          "$date": "2025-06-08T21:31:30.348Z"
+        }
+      },
+      {
+        "transactionId": "4505178591",
+        "status": "SUCCESSFUL",
+        "amount": 34.44,
+        "rawResponse": "MomoNotifyRequest[partnerCode=MOMO, requestId=Bookify-68460132f6159c1e348dcc93, orderId=Bookify-68460132f6159c1e348dcc93, amount=898368, orderInfo=Bookify Purchase - Order #68460132f6159c1e348dcc93, orderType=, transId=4505178591, resultCode=0, message=Successful., responseTime=1749418357447, extraData=eyJvcmRlcklkIjoiNjg0NjAxMzJmNjE1OWMxZTM0OGRjYzkzIn0=, signature=c2a6d1cad590d662e5c0dc952f9841568854ed8b65df6a0e95fd780cc9de64ab]",
+        "createdAt": {
+          "$date": "2025-06-08T21:33:14.688Z"
+        }
+      }
+    ]
+  },
+  "orderStatus": "COMPLETED",
+  "shippingInformation": {
+    "firstName": "Paul",
+    "lastName": "Howler",
+    "email": "paul@gmail.com",
+    "phoneNumber": "13424243243",
+    "address": {
+      "street": "632 Trester St",
+      "city": "Alameda County",
+      "cityId": 0,
+      "state": "California",
+      "stateId": 0,
+      "postalCode": "123123",
+      "country": "United States",
+      "countryId": 0
+    }
+  },
+  "isReviewed": true,
+  "addedAt": {
+    "$date": "2025-06-08T21:31:30.349Z"
+  },
+  "modifiedAt": {
+    "$date": "2025-06-08T21:38:42.165Z"
+  },
+  "_class": "com.dominator.bookify.model.Order"
+},
+{
+  "_id": {
+    "$oid": "684601e2f6159c1e348dcc94"
+  },
+  "userId": "6845f327f6159c1e348dcc6e",
+  "items": [
+    {
+      "bookId": "682023424a1ae581e0445385",
+      "title": "Viewing Violence",
+      "price": 4.99,
+      "imageUrl": "/data/book-img/viewing-violence-1.jpg",
+      "quantity": 1
+    },
+    {
+      "bookId": "682023424a1ae581e0445386",
+      "title": "Warning Signs",
+      "price": 4.49,
+      "imageUrl": "/data/book-img/warning-signs-1.jpg",
+      "quantity": 1
+    },
+    {
+      "bookId": "682023424a1ae581e0445387",
+      "title": "While My Sister Sleeps",
+      "price": 4.76,
+      "imageUrl": "/data/book-img/while-my-sister-sleeps-1.jpg",
+      "quantity": 1
+    }
+  ],
+  "totalAmount": 30.38,
+  "payment": {
+    "method": "cod",
+    "transactions": [
+      {
+        "transactionId": "2fe7b5da-8d27-4ee6-92ab-5ddd57154a6f",
+        "status": "PENDING",
+        "amount": 30.38,
+        "rawResponse": "Pending payment: 30.38",
+        "createdAt": {
+          "$date": "2025-06-08T21:34:26.335Z"
+        }
+      },
+      {
+        "transactionId": "f1g2h3i4-j5k6-7890-lmno-1234567890pq",
+        "status": "SUCCESSFUL",
+        "amount": 30.38,
+        "rawResponse": "COD payment collected successfully.",
+        "createdAt": {
+          "$date": "2025-06-09T04:34:40.000Z"
+        }
+      }
+    ]
+  },
+  "orderStatus": "COMPLETED",
+  "shippingInformation": {
+    "firstName": "Paul",
+    "lastName": "Howler",
+    "email": "paul@gmail.com",
+    "phoneNumber": "13424243243",
+    "address": {
+      "street": "632 Trester St",
+      "city": "Alameda County",
+      "cityId": 0,
+      "state": "California",
+      "stateId": 0,
+      "postalCode": "123123",
+      "country": "United States",
+      "countryId": 0
+    }
+  },
+  "isReviewed": true,
+  "addedAt": {
+    "$date": "2025-06-08T21:34:26.335Z"
+  },
+  "modifiedAt": {
+    "$date": "2025-06-08T21:37:02.602Z"
+  },
+  "_class": "com.dominator.bookify.model.Order"
+},
+{
+  "_id": {
+    "$oid": "68460334f6159c1e348dcc9f"
+  },
+  "userId": "6845f366f6159c1e348dcc70",
+  "items": [
+    {
+      "bookId": "682023424a1ae581e0445357",
+      "title": "A Baby Blessing",
+      "price": 4.76,
+      "imageUrl": "/data/book-img/a-baby-blessing-1.jpg",
+      "quantity": 2
+    },
+    {
+      "bookId": "682023424a1ae581e0445358",
+      "title": "A Royal Quest",
+      "price": 5.64,
+      "imageUrl": "/data/book-img/a-royal-quest-1.jpg",
+      "quantity": 1
+    },
+    {
+      "bookId": "682023424a1ae581e0445359",
+      "title": "A Tour of the Calculus",
+      "price": 4.99,
+      "imageUrl": "/data/book-img/a-tour-of-the-calculus-1.jpg",
+      "quantity": 1
+    },
+    {
+      "bookId": "682023424a1ae581e0445361",
+      "title": "Decline and Fall",
+      "price": 4.76,
+      "imageUrl": "/data/book-img/decline-and-fall-1.jpg",
+      "quantity": 1
+    },
+    {
+      "bookId": "682023424a1ae581e0445362",
+      "title": "Dictionary of Napoleonic Wars",
+      "price": 9.89,
+      "imageUrl": "/data/book-img/dictionary-of-napoleonic-wars-1.jpg",
+      "quantity": 1
+    }
+  ],
+  "totalAmount": 37.58,
+  "payment": {
+    "method": "momo",
+    "transactions": [
+      {
+        "transactionId": "ab4cb136-2fee-44e4-bca7-c692c8b1e2f0",
+        "status": "PENDING",
+        "amount": 37.58,
+        "rawResponse": "Pending payment: 37.58",
+        "createdAt": {
+          "$date": "2025-06-08T21:40:04.330Z"
+        }
+      },
+      {
+        "transactionId": "g1h2i3j4-k5l6-7890-mnop-1234567890uv",
+        "status": "SUCCESSFUL",
+        "amount": 37.58,
+        "rawResponse": "Momo payment confirmed and successful.",
+        "createdAt": {
+          "$date": "2025-06-09T04:40:53.000Z"
+        }
+      }
+    ]
+  },
+  "orderStatus": "COMPLETED",
+  "shippingInformation": {
+    "firstName": "Dan",
+    "lastName": "Huer",
+    "email": "dan@gmail.com",
+    "phoneNumber": "13424243243",
+    "address": {
+      "street": "37 Valley St",
+      "city": "Horizon West",
+      "cityId": 0,
+      "state": "Florida",
+      "stateId": 0,
+      "postalCode": "123123",
+      "country": "United States",
+      "countryId": 0
+    }
+  },
+  "isReviewed": true,
+  "addedAt": {
+    "$date": "2025-06-08T21:40:04.330Z"
+  },
+  "modifiedAt": {
+    "$date": "2025-06-08T21:46:40.975Z"
+  },
+  "_class": "com.dominator.bookify.model.Order"
+},
+{
+  "_id": {
+    "$oid": "684603b8f6159c1e348dcca0"
+  },
+  "userId": "6845f366f6159c1e348dcc70",
+  "items": [
+    {
+      "bookId": "682023424a1ae581e0445380",
+      "title": "The Thomas Berryman Number",
+      "price": 4.89,
+      "imageUrl": "/data/book-img/the-thomas-berryman-number-1.jpg",
+      "quantity": 1
+    }
+  ],
+  "totalAmount": 20.28,
+  "payment": {
+    "method": "momo",
+    "transactions": [
+      {
+        "transactionId": "53d79fc4-dd25-440f-bd56-03b6c20d9c09",
+        "status": "PENDING",
+        "amount": 20.28,
+        "rawResponse": "Pending payment: 20.28",
+        "createdAt": {
+          "$date": "2025-06-08T21:42:16.611Z"
+        }
+      },
+      {
+        "transactionId": "4505182497",
+        "status": "SUCCESSFUL",
+        "amount": 20.28,
+        "rawResponse": "MomoNotifyRequest[partnerCode=MOMO, requestId=Bookify-684603b8f6159c1e348dcca0, orderId=Bookify-684603b8f6159c1e348dcca0, amount=529004, orderInfo=Bookify Purchase - Order #684603b8f6159c1e348dcca0, orderType=, transId=4505182497, resultCode=0, message=Successful., responseTime=1749418927845, extraData=eyJvcmRlcklkIjoiNjg0NjAzYjhmNjE1OWMxZTM0OGRjY2EwIn0=, signature=273f25f94a77126c5463510ce657887251fa333a07143c27398e89a2de428772]",
+        "createdAt": {
+          "$date": "2025-06-08T21:42:44.783Z"
+        }
+      }
+    ]
+  },
+  "orderStatus": "COMPLETED",
+  "shippingInformation": {
+    "firstName": "Dan",
+    "lastName": "Huer",
+    "email": "dan@gmail.com",
+    "phoneNumber": "13424243243",
+    "address": {
+      "street": "37 Valley St",
+      "city": "Horizon West",
+      "cityId": 0,
+      "state": "Florida",
+      "stateId": 0,
+      "postalCode": "123123",
+      "country": "United States",
+      "countryId": 0
+    }
+  },
+  "isReviewed": true,
+  "addedAt": {
+    "$date": "2025-06-08T21:42:16.611Z"
+  },
+  "modifiedAt": {
+    "$date": "2025-06-08T21:47:19.663Z"
+  },
+  "_class": "com.dominator.bookify.model.Order"
+},
+{
+  "_id": {
+    "$oid": "68460530f6159c1e348dcca9"
+  },
+  "userId": "6845f3caf6159c1e348dcc72",
+  "items": [
+    {
+      "bookId": "682023424a1ae581e0445381",
+      "title": "The Thousand",
+      "price": 2.5,
+      "imageUrl": "/data/book-img/the-thousand-1.jpg",
+      "quantity": 1
+    },
+    {
+      "bookId": "682023424a1ae581e0445384",
+      "title": "Van Gogh in Arles",
+      "price": 9.89,
+      "imageUrl": "/data/book-img/van-gogh-in-arles-1.jpg",
+      "quantity": 1
+    },
+    {
+      "bookId": "682023424a1ae581e0445389",
+      "title": "Too good to be true ",
+      "price": 7.5,
+      "imageUrl": "/data/book-img/too-good-to-be-true-1.jpg",
+      "quantity": 1
+    },
+    {
+      "bookId": "682023424a1ae581e0445365",
+      "title": "Generation React",
+      "price": 5.29,
+      "imageUrl": "/data/book-img/generation-react-1.jpg",
+      "quantity": 1
+    }
+  ],
+  "totalAmount": 42.19,
+  "payment": {
+    "method": "cod",
+    "transactions": [
+      {
+        "transactionId": "ad9fdeac-9314-441a-aa52-ce258e23caf9",
+        "status": "PENDING",
+        "amount": 42.19,
+        "rawResponse": "Pending payment: 42.19",
+        "createdAt": {
+          "$date": "2025-06-08T21:48:32.105Z"
+        }
+      },
+      {
+        "transactionId": "h1i2j3k4-l5m6-7890-nopq-1234567890tu",
+        "status": "SUCCESSFUL",
+        "amount": 42.19,
+        "rawResponse": "COD payment collected successfully.",
+        "createdAt": {
+          "$date": "2025-06-09T04:52:07.000Z"
+        }
+      }
+    ]
+  },
+  "orderStatus": "COMPLETED",
+  "shippingInformation": {
+    "firstName": "Peter",
+    "lastName": "Poll",
+    "email": "peter@gmail.com",
+    "phoneNumber": "13484320342",
+    "address": {
+      "street": "866 Luis St",
+      "city": "North Arlington",
+      "cityId": 0,
+      "state": "New Jersey",
+      "stateId": 0,
+      "postalCode": "123123",
+      "country": "United States",
+      "countryId": 0
+    }
+  },
+  "isReviewed": true,
+  "addedAt": {
+    "$date": "2025-06-08T21:48:32.105Z"
+  },
+  "modifiedAt": {
+    "$date": "2025-06-08T22:08:39.977Z"
+  },
+  "_class": "com.dominator.bookify.model.Order"
+},
+{
+  "_id": {
+    "$oid": "684605d6f6159c1e348dccaa"
+  },
+  "userId": "6845f3caf6159c1e348dcc72",
+  "items": [
+    {
+      "bookId": "682023424a1ae581e0445358",
+      "title": "A Royal Quest",
+      "price": 5.64,
+      "imageUrl": "/data/book-img/a-royal-quest-1.jpg",
+      "quantity": 1
+    },
+    {
+      "bookId": "682023424a1ae581e0445359",
+      "title": "A Tour of the Calculus",
+      "price": 4.99,
+      "imageUrl": "/data/book-img/a-tour-of-the-calculus-1.jpg",
+      "quantity": 1
+    }
+  ],
+  "totalAmount": 26.48,
+  "payment": {
+    "method": "cod",
+    "transactions": [
+      {
+        "transactionId": "e80fbe4c-3940-4b38-979c-a05307380e77",
+        "status": "PENDING",
+        "amount": 26.48,
+        "rawResponse": "Pending payment: 26.48",
+        "createdAt": {
+          "$date": "2025-06-08T21:51:18.956Z"
+        }
+      },
+      {
+        "transactionId": "i1j2k3l4-m5n6-7890-opqr-1234567890st",
+        "status": "SUCCESSFUL",
+        "amount": 26.48,
+        "rawResponse": "COD payment collected successfully.",
+        "createdAt": {
+          "$date": "2025-06-09T04:53:00.000Z"
+        }
+      }
+    ]
+  },
+  "orderStatus": "COMPLETED",
+  "shippingInformation": {
+    "firstName": "Peter",
+    "lastName": "Poll",
+    "email": "peter@gmail.com",
+    "phoneNumber": "13484320342",
+    "address": {
+      "street": "866 Luis St",
+      "city": "North Arlington",
+      "cityId": 122965,
+      "state": "New Jersey",
+      "stateId": 1417,
+      "postalCode": "123123",
+      "country": "United States",
+      "countryId": 233
+    }
+  },
+  "isReviewed": true,
+  "addedAt": {
+    "$date": "2025-06-08T21:51:18.956Z"
+  },
+  "modifiedAt": {
+    "$date": "2025-06-08T22:07:50.863Z"
+  },
+  "_class": "com.dominator.bookify.model.Order"
+},
+{
+  "_id": {
+    "$oid": "684606b2f6159c1e348dccab"
+  },
+  "userId": "6845f3caf6159c1e348dcc72",
+  "items": [
+    {
+      "bookId": "682023424a1ae581e0445370",
+      "title": "Mind Prey",
+      "price": 2.6,
+      "imageUrl": "/data/book-img/mind-prey-1.jpg",
+      "quantity": 1
+    }
+  ],
+  "totalAmount": 17.81,
+  "payment": {
+    "method": "cod",
+    "transactions": [
+      {
+        "transactionId": "c89b758b-3068-45be-a6c8-756eb7da284f",
+        "status": "PENDING",
+        "amount": 17.81,
+        "rawResponse": "Pending payment: 17.81",
+        "createdAt": {
+          "$date": "2025-06-08T21:54:58.248Z"
+        }
+      }
+    ]
+  },
+  "orderStatus": "CANCELLED",
+  "shippingInformation": {
+    "firstName": "Peter",
+    "lastName": "Poll",
+    "email": "peter@gmail.com",
+    "phoneNumber": "13484320342",
+    "address": {
+      "street": "866 Luis St",
+      "city": "North Arlington",
+      "cityId": 122965,
+      "state": "New Jersey",
+      "stateId": 1417,
+      "postalCode": "123123",
+      "country": "United States",
+      "countryId": 233
+    }
+  },
+  "isReviewed": false,
+  "note": "No longer needed",
+  "addedAt": {
+    "$date": "2025-06-08T21:54:58.248Z"
+  },
+  "modifiedAt": {
+    "$date": "2025-06-08T22:08:55.842Z"
+  },
+  "_class": "com.dominator.bookify.model.Order"
+},
+{
+  "_id": {
+    "$oid": "68460943f6159c1e348dccae"
+  },
+  "userId": "6845f3caf6159c1e348dcc72",
+  "items": [
+    {
+      "bookId": "682023424a1ae581e0445373",
+      "title": "Raising Strong Daughters",
+      "price": 4.76,
+      "imageUrl": "/data/book-img/raising-strong-daughters-1.jpg",
+      "quantity": 1
+    },
+    {
+      "bookId": "682023424a1ae581e0445374",
+      "title": "Scarlet And Gold",
+      "price": 4.49,
+      "imageUrl": "/data/book-img/scarlet-and-gold-1.jpg",
+      "quantity": 1
+    },
+    {
+      "bookId": "682023424a1ae581e044537a",
+      "title": "The Center of Everything",
+      "price": 3.74,
+      "imageUrl": "/data/book-img/the-center-of-everything-1.jpg",
+      "quantity": 1
+    },
+    {
+      "bookId": "682023424a1ae581e0445379",
+      "title": "The Breaker",
+      "price": 3.74,
+      "imageUrl": "/data/book-img/the-breaker-1.jpg",
+      "quantity": 1
+    }
+  ],
+  "totalAmount": 33.07,
+  "payment": {
+    "method": "momo",
+    "transactions": [
+      {
+        "transactionId": "600e4a09-1282-48ca-8e57-01a6da7a6d52",
+        "status": "PENDING",
+        "amount": 33.07,
+        "rawResponse": "Pending payment: 33.07",
+        "createdAt": {
+          "$date": "2025-06-08T22:05:55.351Z"
+        }
+      },
+      {
+        "transactionId": "4505188874",
+        "status": "SUCCESSFUL",
+        "amount": 33.07,
+        "rawResponse": "MomoNotifyRequest[partnerCode=MOMO, requestId=Bookify-68460943f6159c1e348dccae, orderId=Bookify-68460943f6159c1e348dccae, amount=862632, orderInfo=Bookify Purchase - Order #68460943f6159c1e348dccae, orderType=, transId=4505188874, resultCode=0, message=Successful., responseTime=1749420348115, extraData=eyJvcmRlcklkIjoiNjg0NjA5NDNmNjE1OWMxZTM0OGRjY2FlIn0=, signature=79f4325b136510e91c89db05a5f1c86fd8e9c0ae0221d7e070794c06d7d89165]",
+        "createdAt": {
+          "$date": "2025-06-08T22:06:25.055Z"
+        }
+      },
+      {
+        "transactionId": "8624e506-585c-469d-a9f5-3cdbfc9a800e",
+        "status": "PENDING_REFUND",
+        "amount": 33.07,
+        "rawResponse": "Refund initiated for order: 68460943f6159c1e348dccae",
+        "createdAt": {
+          "$date": "2025-06-08T22:09:18.576Z"
+        }
+      },
+      {
+        "transactionId": "j1k2l3m4-n5o6-7890-pqrs-1234567890vw",
+        "status": "REFUNDED",
+        "amount": 33.07,
+        "rawResponse": "Refund processed and completed for order: 68460943f6159c1e348dccae",
+        "createdAt": {
+          "$date": "2025-06-09T05:10:00.000Z"
+        }
+      }
+    ]
+  },
+  "orderStatus": "REFUNDED",
+  "shippingInformation": {
+    "firstName": "Peter",
+    "lastName": "Poll",
+    "email": "peter@gmail.com",
+    "phoneNumber": "13484320342",
+    "address": {
+      "street": "866 Luis St",
+      "city": "North Arlington",
+      "cityId": 122965,
+      "state": "New Jersey",
+      "stateId": 1417,
+      "postalCode": "123123",
+      "country": "United States",
+      "countryId": 233
+    }
+  },
+  "isReviewed": false,
+  "note": "Found a better price elsewhere",
+  "addedAt": {
+    "$date": "2025-06-08T22:05:55.353Z"
+  },
+  "modifiedAt": {
+    "$date": "2025-06-09T05:10:00.000Z"
+  },
+  "_class": "com.dominator.bookify.model.Order"
+},
+{
+  "_id": {
+    "$oid": "68460b09f6159c1e348dccb5"
+  },
+  "userId": "6845f3caf6159c1e348dcc72",
+  "items": [
+    {
+      "bookId": "682023424a1ae581e0445357",
+      "title": "A Baby Blessing",
+      "price": 4.76,
+      "imageUrl": "/data/book-img/a-baby-blessing-1.jpg",
+      "quantity": 1
+    }
+  ],
+  "totalAmount": 20.14,
+  "payment": {
+    "method": "momo",
+    "transactions": [
+      {
+        "transactionId": "ffe4e3e9-0103-46cc-8864-f32ffde3bf8e",
+        "status": "PENDING",
+        "amount": 20.14,
+        "rawResponse": "Pending payment: 20.14",
+        "createdAt": {
+          "$date": "2025-06-08T22:13:29.922Z"
+        }
+      },
+      {
+        "transactionId": "4505190715",
+        "status": "SUCCESSFUL",
+        "amount": 20.14,
+        "rawResponse": "MomoNotifyRequest[partnerCode=MOMO, requestId=Bookify-68460b09f6159c1e348dccb5, orderId=Bookify-68460b09f6159c1e348dccb5, amount=525352, orderInfo=Bookify Purchase - Order #68460b09f6159c1e348dccb5, orderType=, transId=4505190715, resultCode=0, message=Successful., responseTime=1749420804454, extraData=eyJvcmRlcklkIjoiNjg0NjBiMDlmNjE1OWMxZTM0OGRjY2I1In0=, signature=afa4f390a7f5378950bfd4470f6465fc83e8fda861f5406196a6845d5a812273]",
+        "createdAt": {
+          "$date": "2025-06-08T22:14:01.122Z"
+        }
+      }
+    ]
+  },
+  "orderStatus": "COMPLETED",
+  "shippingInformation": {
+    "firstName": "Peter",
+    "lastName": "Poll",
+    "email": "peter@gmail.com",
+    "phoneNumber": "13484320342",
+    "address": {
+      "street": "866 Luis St",
+      "city": "North Arlington",
+      "cityId": 122965,
+      "state": "New Jersey",
+      "stateId": 1417,
+      "postalCode": "123123",
+      "country": "United States",
+      "countryId": 233
+    }
+  },
+  "isReviewed": true,
+  "addedAt": {
+    "$date": "2025-06-08T22:13:29.922Z"
+  },
+  "modifiedAt": {
+    "$date": "2025-06-08T22:15:35.778Z"
+  },
+  "_class": "com.dominator.bookify.model.Order"
+}]
