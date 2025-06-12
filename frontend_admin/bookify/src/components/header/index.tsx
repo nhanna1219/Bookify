@@ -170,7 +170,7 @@ export const Header: React.FC = () => {
 
   useEffect(() => {
     setOptions([]);
-    // refetchOrders();
+    refetchOrders();
     // refetchCouriers();
     // refetchStores();
   }, [value]);

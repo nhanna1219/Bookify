@@ -150,15 +150,15 @@ export interface IUserFilterVariables {
   isActive: boolean;
 }
 
-export interface IReview {
-  id: number;
-  order: IOrder;
-  user: IUser;
-  star: number;
-  createDate: string;
-  status: "pending" | "approved" | "rejected";
-  comment: string[];
-}
+// export interface IReview {
+//   id: number;
+//   order: IOrder;
+//   user: IUser;
+//   star: number;
+//   createDate: string;
+//   status: "pending" | "approved" | "rejected";
+//   comment: string[];
+// }
 
 export type IVehicle = {
   model: string;
@@ -280,4 +280,19 @@ export interface IShippingInformation {
   email: string;
   phoneNumber: string;
   address: IAddress;
+}
+
+export type ReviewStatus = "PENDING" | "APPROVED" | "REJECTED";
+
+export interface IReview {
+  id: string;
+  bookTitle: string;
+  orderId: string;
+  userName: string;
+  rating: number;
+  subject: string;
+  comment: string;
+  status: ReviewStatus;
+  addedAt: string;
+  modifiedAt: string;
 }

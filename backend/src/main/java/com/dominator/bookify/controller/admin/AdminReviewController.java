@@ -2,7 +2,9 @@ package com.dominator.bookify.controller.admin;
 
 import java.util.List;
 
+import com.dominator.bookify.dto.AdminReviewResponseDTO;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -21,8 +23,8 @@ public class AdminReviewController {
     private AdminReviewService reviewService;
 
     @GetMapping
-    public List<Review> getAllReviews() {
-        return reviewService.getAllReviews();
+    public ResponseEntity<List<AdminReviewResponseDTO>> getAll() {
+        return ResponseEntity.ok(reviewService.getAllReviews());
     }
 
     @GetMapping("/status/{status}")

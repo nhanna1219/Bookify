@@ -20,6 +20,7 @@ import {
   UserOutlined,
   UnorderedListOutlined,
   TagsOutlined,
+  FormOutlined,
 } from "@ant-design/icons";
 import jsonServerDataProvider from "@refinedev/simple-rest";
 import { authProvider } from "./authProvider";
@@ -48,6 +49,7 @@ import { useAutoLoginForDemo } from "./hooks";
 import "@refinedev/antd/dist/reset.css";
 import { BookCreate, BookEdit, BookList, BookShow } from "./pages/books";
 import { AdminUserList, UserShow } from "./pages/users";
+import { ReviewList } from "./pages/reviews";
 
 // const App: React.FC = () => {
 //   // This hook is used to automatically login the user.
@@ -357,6 +359,13 @@ const App: React.FC = () => {
                 },
               },
               {
+                name: "reviews",
+                list: "/reviews",
+                meta: {
+                  icon: <FormOutlined />,
+                },
+              },
+              {
                 name: "products",
                 list: "/products",
                 create: "/products/new",
@@ -479,6 +488,19 @@ const App: React.FC = () => {
                     <BookList>
                       <Outlet />
                     </BookList>
+                  }
+                >
+                  <Route path="new" element={<BookCreate />} />
+                  <Route path=":id" element={<BookShow />} />
+                  <Route path=":id/edit" element={<BookEdit />} />
+                </Route>
+
+                <Route
+                  path="/reviews"
+                  element={
+                    <ReviewList>
+                      <Outlet />
+                    </ReviewList>
                   }
                 >
                   <Route path="new" element={<BookCreate />} />
