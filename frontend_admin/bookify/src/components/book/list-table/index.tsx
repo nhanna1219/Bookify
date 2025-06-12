@@ -23,6 +23,7 @@ import {
   Table,
   Typography,
   theme,
+  Tag,
 } from "antd";
 import { EyeOutlined, SearchOutlined } from "@ant-design/icons";
 import { useLocation } from "react-router";
@@ -95,20 +96,20 @@ export const BookListTable: React.FC = () => {
       {/*/>*/}
 
       {/* Cover Image */}
-      <Table.Column
-        title="Cover"
-        dataIndex="images"
-        key="images"
-        render={(images: IBook["images"]) => (
-          <Avatar
-            shape="square"
-            // src={images?.[0]?.thumbnailUrl || images?.[0]?.url}
-            src={
-              images?.[0]?.url ? `${backendOrigin}${images[0].url}` : undefined
-            }
-          />
-        )}
-      />
+      {/*<Table.Column*/}
+      {/*  title="Cover"*/}
+      {/*  dataIndex="images"*/}
+      {/*  key="images"*/}
+      {/*  render={(images: IBook["images"]) => (*/}
+      {/*    <Avatar*/}
+      {/*      shape="square"*/}
+      {/*      // src={images?.[0]?.thumbnailUrl || images?.[0]?.url}*/}
+      {/*      src={*/}
+      {/*        images?.[0]?.url ? `${backendOrigin}${images[0].url}` : undefined*/}
+      {/*      }*/}
+      {/*    />*/}
+      {/*  )}*/}
+      {/*/>*/}
 
       {/* Title */}
       <Table.Column
@@ -165,6 +166,33 @@ export const BookListTable: React.FC = () => {
             options={{ style: "currency", currency: "USD" }}
           />
         )}
+      />
+
+      {/* Condition with colored badge */}
+      <Table.Column
+        title="Condition"
+        dataIndex="condition"
+        key="condition"
+        render={(condition: string) => {
+          let color: string;
+          switch (condition) {
+            case "NEW":
+              color = "green";
+              break;
+            case "LIKE NEW":
+              color = "blue";
+              break;
+            case "GOOD":
+              color = "cyan";
+              break;
+            case "ACCEPTABLE":
+              color = "orange";
+              break;
+            default:
+              color = "default";
+          }
+          return <Tag color={color}>{condition}</Tag>;
+        }}
       />
 
       {/* Stock */}

@@ -1,6 +1,7 @@
 package com.dominator.bookify.dto;
 
 import com.dominator.bookify.model.Address;
+import com.dominator.bookify.model.UserStatus;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -26,4 +27,5 @@ public class AdminUserDTO {
     private List<String> favorites;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
+    private UserStatus status;
 }

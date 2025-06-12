@@ -66,6 +66,7 @@ export const AdminUserList: React.FC = ({ children }: PropsWithChildren) => {
       verified: item.verified,
       createdAt: item.createdAt,
       updatedAt: item.updatedAt,
+      status: item.status,
     }),
   });
 
@@ -145,6 +146,23 @@ export const AdminUserList: React.FC = ({ children }: PropsWithChildren) => {
           key="email"
           dataIndex="email"
           title={t("users.fields.email", "Email")}
+          filterIcon={(filtered) => (
+            <SearchOutlined
+              style={{ color: filtered ? token.colorPrimary : undefined }}
+            />
+          )}
+          defaultFilteredValue={getDefaultFilter("email", filters, "contains")}
+          filterDropdown={(props) => (
+            <FilterDropdown {...props}>
+              <Input
+                placeholder={t(
+                  "users.filter.email.placeholder",
+                  "Search email..."
+                )}
+                style={{ width: "100%" }}
+              />
+            </FilterDropdown>
+          )}
         />
 
         {/* Phone */}

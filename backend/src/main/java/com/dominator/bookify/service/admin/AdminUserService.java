@@ -9,6 +9,8 @@ import com.dominator.bookify.dto.BookUpdateDTO;
 import java.util.List;
 
 public interface AdminUserService {
-    List<AdminUserDTO> getAllUsers();
+    List<AdminUserDTO> getAllUsers(String fullNameLike, String emailLike);
     AdminUserDTO getUserById(String id);
+    boolean activateUser(String id);
+    boolean deactivateUser(String id);
 }

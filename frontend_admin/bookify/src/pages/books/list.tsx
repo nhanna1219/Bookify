@@ -83,7 +83,7 @@ export const BookList = ({ children }: PropsWithChildren) => {
       ]}
     >
       {view === "table" && <BookListTable />}
-      {view === "card" && <ProductListCard />}
+      {/*{view === "card" && <ProductListCard />}*/}
       {children}
     </List>
   );

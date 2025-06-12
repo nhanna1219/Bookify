@@ -22,9 +22,13 @@ public class AdminUserController {
     private final AdminUserService adminUserService;
 
     @GetMapping
-    public ResponseEntity<?> getAllUsers(){
+    public ResponseEntity<?> getAllUsers(
+            @RequestParam(value = "fullName_like", required = false)String fullNameLike,
+            @RequestParam(value = "email", required = false)String emailLike
+
+    ){
         try {
-            return ResponseEntity.ok().body(adminUserService.getAllUsers());
+            return ResponseEntity.ok().body(adminUserService.getAllUsers(fullNameLike, emailLike));
         }catch (ResponseStatusException e) {
             return ResponseEntity
                     .status(e.getStatusCode())
@@ -40,6 +44,30 @@ public class AdminUserController {
             return ResponseEntity
                     .status(e.getStatusCode())
                     .body(Map.of("error", e.getReason()));
+        }
+    }
+
+    @PostMapping("/{id}/activate")
+    public ResponseEntity<?> activateUser(@PathVariable String id){
+        try {
+            boolean result = adminUserService.activateUser(id);
+            return ResponseEntity.ok().body(result);
+        }catch (ResponseStatusException e) {
+            return ResponseEntity
+                   .status(e.getStatusCode())
+                   .body(Map.of("error", e.getReason()));
+        }
+    }
+
+    @PostMapping("/{id}/deactivate")
+    public ResponseEntity<?> deactivateUser(@PathVariable String id){
+        try {
+            var result = adminUserService.deactivateUser(id);
+            return ResponseEntity.ok().body(result);
+        }catch (ResponseStatusException e) {
+            return ResponseEntity
+                   .status(e.getStatusCode())
+                   .body(Map.of("error", e.getReason()));
         }
     }
 }

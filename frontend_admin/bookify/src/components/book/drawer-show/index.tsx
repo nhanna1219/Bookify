@@ -204,7 +204,7 @@ export const BookDrawerShow: React.FC<Props> = ({
         <DeleteButton
           type="text"
           recordItemId={book?.id}
-          resource="admin/books"
+          resource="books"
           onSuccess={handleDrawerClose}
         />
         <Button
