@@ -296,3 +296,48 @@ export interface IReview {
   addedAt: string;
   modifiedAt: string;
 }
+
+export interface BestSellerDTO {
+  bookId: string;
+  title: string;
+  authors: string[];
+  price: number;
+  totalSold: number;
+}
+
+export interface BookQuantityDTO {
+  bookId: string;
+  title: string;
+  totalQuantitySold: number;
+}
+
+export interface TopCategoryQuantityDTO {
+  categoryId: string;
+  categoryName: string;
+  top10Books: BookQuantityDTO[];
+}
+
+export interface BookInLowStockDTO {
+  id: string;
+  title: string;
+  stock: number;
+}
+
+export interface LoyalCustomerDTO {
+  userId: string;
+  fullName: string;
+  email: string;
+  phone: string;
+  totalOrders: number;
+  totalSpending: number;
+  firstOrder: string; // ISO date string
+  lastOrder: string;  // ISO date string
+}
+
+export interface TopAvgOrderValueUserDTO {
+  userId: string;
+  fullName: string;
+  email: string;
+  averageOrderValue: number;
+}
+

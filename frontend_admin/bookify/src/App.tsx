@@ -31,7 +31,6 @@ import { DashboardPage } from "./pages/dashboard";
 import { OrderCreate, OrderList, OrderShow } from "./pages/orders";
 import { AuthPage } from "./pages/auth";
 import { CustomerShow, CustomerList } from "./pages/customers";
-import { CourierList, CourierCreate, CourierEdit } from "./pages/couriers";
 import {
   ProductList,
   ProductCreate,
@@ -42,7 +41,7 @@ import { StoreCreate, StoreEdit, StoreList } from "./pages/stores";
 import { CategoryList } from "./pages/categories";
 import { useTranslation } from "react-i18next";
 import { Header, Title } from "./components";
-import { BikeWhiteIcon } from "./components/icons";
+// import { BikeWhiteIcon } from "./components/icons";
 import { ConfigProvider } from "./context";
 import { useAutoLoginForDemo } from "./hooks";
 
@@ -434,8 +433,9 @@ const App: React.FC = () => {
                   </Authenticated>
                 }
               >
-                <Route index element={<div />} />
-
+                {/* Dashboard */}
+                <Route index element={<DashboardPage />} />
+                {/* End Dashboard*/}
                 {/*<Route path="/orders">*/}
                 {/*    <Route index element={<OrderList/>}/>*/}
                 {/*    <Route path=":id" element={<OrderShow/>}/>*/}
