@@ -99,6 +99,16 @@ public class AdminBookServiceImpl implements AdminBookService {
         return toDto(saved);
     }
 
+    @Override
+    public boolean deleteBook(String id) {
+        try {
+            bookRepository.deleteById(id);
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
     private AdminBookDTO toDto(Book book) {
         AdminBookDTO dto = new AdminBookDTO();
         BeanUtils.copyProperties(book, dto, "categoryIds", "categoryNames");

@@ -3,9 +3,7 @@ package com.dominator.bookify.service.admin;
 import com.dominator.bookify.dto.OrderPatchDTO;
 import com.dominator.bookify.dto.QuantitySoldDTO;
 import com.dominator.bookify.dto.TopSellerDTO;
-import com.dominator.bookify.model.Order;
-import com.dominator.bookify.model.OrderStatus;
-import com.dominator.bookify.model.TimeFrame;
+import com.dominator.bookify.model.*;
 import com.dominator.bookify.repository.OrderRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.BeanUtils;
@@ -18,6 +16,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.time.Instant;
+import java.util.ArrayList;
 import java.util.List;
 
 import static org.springframework.data.mongodb.core.aggregation.Aggregation.*;
@@ -220,10 +219,14 @@ public class OrderServiceImpl implements OrderService {
         if (!order.getOrderStatus().equals(OrderStatus.SHIPPED)) {
             return false;
         }
+
         order.setOrderStatus(OrderStatus.valueOf("DELIVERED"));
         order.setModifiedAt(Instant.now());
-        orderRepository.save(order);
-        return true;
+//        orderRepository.save(order);
+
+        Transaction tx = new Transaction();
+        tx.setStatus(TransactionStatus.SUCCESSFUL);
+        return test(order, tx);
     }
 
     @Override
@@ -236,8 +239,10 @@ public class OrderServiceImpl implements OrderService {
         }
         order.setOrderStatus(OrderStatus.valueOf("PENDING_REFUND"));
         order.setModifiedAt(Instant.now());
-        orderRepository.save(order);
-        return true;
+
+        Transaction tx = new Transaction();
+        tx.setStatus(TransactionStatus.PENDING_REFUND);
+        return test(order, tx);
     }
 
     @Override
@@ -250,6 +255,27 @@ public class OrderServiceImpl implements OrderService {
         }
         order.setOrderStatus(OrderStatus.valueOf("REFUNDED"));
         order.setModifiedAt(Instant.now());
+
+        Transaction tx = new Transaction();
+        tx.setStatus(TransactionStatus.REFUNDED);
+        return test(order, tx);
+    }
+
+    private boolean test(Order order, Transaction tx) {
+        tx.setAmount(order.getTotalAmount());
+
+        Payment payment = order.getPayment();
+        if (payment == null) {
+            payment = new Payment();
+            payment.setMethod("UNKNOWN");
+            payment.setTransactions(new ArrayList<>());
+            order.setPayment(payment);
+        }
+        if (payment.getTransactions() == null) {
+            payment.setTransactions(new ArrayList<>());
+        }
+        payment.getTransactions().add(tx);
+
         orderRepository.save(order);
         return true;
     }

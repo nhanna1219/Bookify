@@ -115,4 +115,17 @@ public class AdminBookController {
             return ResponseEntity.status(400).body(Map.of("error", e.getMessage()));
         }
     }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<?> deleteBook(@PathVariable String id) {
+        try {
+            boolean deleted = adminBookService.deleteBook(id);
+            if (!deleted) {
+                return ResponseEntity.status(404).body(Map.of("error", "Book not found"));
+            }
+            return ResponseEntity.noContent().build();
+        } catch (Exception e) {
+            return ResponseEntity.status(400).body(Map.of("error", e.getMessage()));
+        }
+    }
 }

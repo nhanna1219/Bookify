@@ -19,6 +19,7 @@ import { Button, Input, Select, Table, Typography, theme, Tag } from "antd";
 import { EyeOutlined, SearchOutlined } from "@ant-design/icons";
 import { useLocation } from "react-router";
 import { PaginationTotal } from "../../paginationTotal";
+import { ReviewActions } from "../review-actions";
 
 export const ReviewListTable: React.FC = () => {
   const { token } = theme.useToken();
@@ -260,24 +261,30 @@ export const ReviewListTable: React.FC = () => {
       {/*/>*/}
 
       {/* Actions */}
-      <Table.Column
+      {/*<Table.Column*/}
+      {/*  title={t("table.actions", "Actions")}*/}
+      {/*  key="actions"*/}
+      {/*  fixed="right"*/}
+      {/*  align="center"*/}
+      {/*  render={(_, record: IReview) => (*/}
+      {/*    <Button*/}
+      {/*      icon={<EyeOutlined />}*/}
+      {/*      onClick={() =>*/}
+      {/*        go({*/}
+      {/*          to: `${showUrl("reviews", record.id)}`,*/}
+      {/*          query: { to: pathname },*/}
+      {/*          options: { keepQuery: true },*/}
+      {/*          type: "replace",*/}
+      {/*        })*/}
+      {/*      }*/}
+      {/*    />*/}
+      {/*  )}*/}
+      {/*/>*/}
+      <Table.Column<IReview>
+        fixed="right"
         title={t("table.actions", "Actions")}
         key="actions"
-        fixed="right"
-        align="center"
-        render={(_, record: IReview) => (
-          <Button
-            icon={<EyeOutlined />}
-            onClick={() =>
-              go({
-                to: `${showUrl("reviews", record.id)}`,
-                query: { to: pathname },
-                options: { keepQuery: true },
-                type: "replace",
-              })
-            }
-          />
-        )}
+        render={(_, record) => <ReviewActions record={record} />}
       />
     </Table>
   );

@@ -5,11 +5,7 @@ import java.util.List;
 import com.dominator.bookify.dto.AdminReviewResponseDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import com.dominator.bookify.model.Review;
 import com.dominator.bookify.model.ReviewStatus;
@@ -32,12 +28,12 @@ public class AdminReviewController {
         return reviewService.getReviewsByStatus(status);
     }
 
-    @PutMapping("/{id}/approve")
+    @PostMapping("/{id}/approve")
     public Review approve(@PathVariable String id) {
         return reviewService.approveReview(id);
     }
 
-    @PutMapping("/{id}/reject")
+    @PostMapping("/{id}/reject")
     public Review reject(@PathVariable String id) {
         return reviewService.rejectReview(id);
     }

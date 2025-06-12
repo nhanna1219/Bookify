@@ -211,6 +211,8 @@ export interface IAddress {
   country: string;
 }
 
+export type UserStatus = "ACTIVE" | "INACTIVE";
+
 export interface IUser {
   id: string;
   firstName: string;
@@ -221,6 +223,7 @@ export interface IUser {
   phone: string;
   address: IAddress;
   role: string;
+  status: UserStatus;
   verified: boolean;
   /** list of favorite book IDs */
   favorites: string[];

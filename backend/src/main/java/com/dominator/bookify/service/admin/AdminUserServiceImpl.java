@@ -7,6 +7,7 @@ import com.dominator.bookify.dto.BookUpdateDTO;
 import com.dominator.bookify.model.Book;
 import com.dominator.bookify.model.Category;
 import com.dominator.bookify.model.User;
+import com.dominator.bookify.model.UserStatus;
 import com.dominator.bookify.repository.BookRepository;
 import com.dominator.bookify.repository.CategoryRepository;
 import com.dominator.bookify.repository.UserRepository;
@@ -26,8 +27,26 @@ public class AdminUserServiceImpl implements AdminUserService {
     private final UserRepository userRepository;
 
     @Override
-    public List<AdminUserDTO> getAllUsers() {
-        List<User> users = userRepository.findAll();
+    public List<AdminUserDTO> getAllUsers(String fullNameLike, String emailLike) {
+        List<User> users;
+
+        boolean hasName = fullNameLike != null && !fullNameLike.isBlank();
+        boolean hasEmail = emailLike!= null &&!emailLike.isBlank();
+
+        if (hasName && hasEmail) {
+            users = userRepository
+                    .findAllByFullNameContainingIgnoreCaseAndEmailContainingIgnoreCase(
+                            fullNameLike,
+                            emailLike
+                    );
+        } else if (hasName) {
+            users = userRepository.findAllByFullNameContainingIgnoreCase(fullNameLike);
+        } else if (hasEmail) {
+            users = userRepository.findAllByEmailContainingIgnoreCase(emailLike);
+        } else {
+            users = userRepository.findAll();
+        }
+
         return users.stream().map(this::toDto).collect(Collectors.toList());
     }
 
@@ -37,6 +56,24 @@ public class AdminUserServiceImpl implements AdminUserService {
         User user = userRepository.findById(id).orElseThrow(() ->
                 new ResponseStatusException(HttpStatus.NOT_FOUND, "User not found"));
         return toDto(user);
+    }
+
+    @Override
+    public boolean activateUser(String id) {
+        User user = userRepository.findById(id).orElseThrow(() ->
+                new ResponseStatusException(HttpStatus.NOT_FOUND, "User not found"));
+        user.setStatus(UserStatus.ACTIVE);
+        userRepository.save(user);
+        return true;
+    }
+
+    @Override
+    public boolean deactivateUser(String id) {
+        User user = userRepository.findById(id).orElseThrow(() ->
+                new ResponseStatusException(HttpStatus.NOT_FOUND, "User not found"));
+        user.setStatus(UserStatus.INACTIVE);
+        userRepository.save(user);
+        return true;
     }
 
     private AdminUserDTO toDto(User user) {

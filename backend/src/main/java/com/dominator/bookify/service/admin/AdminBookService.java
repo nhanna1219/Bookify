@@ -12,4 +12,5 @@ public interface AdminBookService {
     AdminBookDTO getBookById(String id);
     AdminBookDTO createBook(BookCreateDTO dto);
     AdminBookDTO updateBook(String id, BookUpdateDTO dto);
+    boolean deleteBook(String id);
 }
