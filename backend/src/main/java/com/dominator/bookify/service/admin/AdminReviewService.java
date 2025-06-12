@@ -21,14 +21,14 @@ public class AdminReviewService {
         return reviewRepo.findAll().stream().map(review -> {
             ReviewCheckingForAminDTO rv = new ReviewCheckingForAminDTO();
             rv.setId(review.getId());
-            rv.setBookId(review.getBookId());
+            rv.setBookId(review.getBookId().toString());
             rv.setComment(review.getComment());
             rv.setStatus(review.getStatus());
             rv.setAddedAt(review.getAddedAt());
             rv.setModifiedAt(review.getModifiedAt());
             rv.setRating(review.getRating());
             rv.setSubject(review.getSubject());
-            rv.setUserId(review.getUserId());
+            rv.setUserId(review.getUserId().toString());
             return rv;
         }).collect(Collectors.toList());
     }
@@ -37,14 +37,14 @@ public class AdminReviewService {
         return reviewRepo.findReviewByStatus(status).stream().map(review -> {
             ReviewCheckingForAminDTO rv = new ReviewCheckingForAminDTO();
             rv.setId(review.getId());
-            rv.setBookId(review.getBookId());
+            rv.setBookId(review.getBookId().toString());
             rv.setComment(review.getComment());
             rv.setStatus(review.getStatus());
             rv.setAddedAt(review.getAddedAt());
             rv.setModifiedAt(review.getModifiedAt());
             rv.setRating(review.getRating());
             rv.setSubject(review.getSubject());
-            rv.setUserId(review.getUserId());
+            rv.setUserId(review.getUserId().toString());
             return rv;
         }).collect(Collectors.toList());
     }

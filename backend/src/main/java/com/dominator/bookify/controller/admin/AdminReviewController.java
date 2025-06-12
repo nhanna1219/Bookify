@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.dominator.bookify.dto.ReviewCheckingForAminDTO;
 import com.dominator.bookify.model.Review;
 import com.dominator.bookify.model.ReviewStatus;
 import com.dominator.bookify.service.admin.AdminReviewService;
@@ -20,13 +21,13 @@ public class AdminReviewController {
     @Autowired
     private AdminReviewService reviewService;
 
-    @GetMapping
-    public List<Review> getAllReviews() {
+    @GetMapping("/all")
+    public List<ReviewCheckingForAminDTO> getAllReviews() {
         return reviewService.getAllReviews();
     }
 
     @GetMapping("/status/{status}")
-    public List<Review> getReviewsByStatus(@PathVariable ReviewStatus status) {
+    public List<ReviewCheckingForAminDTO> getReviewsByStatus(@PathVariable ReviewStatus status) {
         return reviewService.getReviewsByStatus(status);
     }
 
