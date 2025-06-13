@@ -65,8 +65,8 @@ export const UserOrderHistory: React.FC<Props> = ({ user }) => {
 
             {/* Status */}
             <Table.Column
-                key="status"
-                dataIndex="status"
+                key="orderStatus"
+                dataIndex="orderStatus"
                 title={t("orders.fields.status", "Status")}
                 render={(status) => <OrderStatus status={status} />}
             />
@@ -95,8 +95,8 @@ export const UserOrderHistory: React.FC<Props> = ({ user }) => {
 
             {/* Date */}
             <Table.Column
-                key="doneAt"
-                dataIndex="doneAt"
+                key="addedAt"
+                dataIndex="addedAt"
                 title={t("orders.fields.createdAt", "Date")}
                 render={(value: string) => (
                     <DateField value={value} format="LLL" />

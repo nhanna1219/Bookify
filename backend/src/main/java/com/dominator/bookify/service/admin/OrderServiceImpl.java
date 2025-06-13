@@ -18,6 +18,7 @@ import org.springframework.web.server.ResponseStatusException;
 import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 import static org.springframework.data.mongodb.core.aggregation.Aggregation.*;
 
@@ -117,8 +118,24 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     public Order createOrder(Order order) {
+        order.setOrderStatus(OrderStatus.PENDING);
         order.setAddedAt(Instant.now());
         order.setModifiedAt(Instant.now());
+
+        Transaction tx = new Transaction();
+        tx.setTransactionId(UUID.randomUUID().toString());
+        tx.setStatus(TransactionStatus.PENDING);
+        tx.setAmount(order.getTotalAmount());
+        tx.setCreatedAt(Instant.now());
+
+        Payment payment = new Payment();
+        if (payment.getTransactions() == null) {
+            payment.setMethod("cod");
+            payment.setTransactions(new ArrayList<>());
+        }
+        payment.getTransactions().add(tx);
+
+        order.setPayment(payment);
         return orderRepository.save(order);
     }
 
@@ -193,6 +210,7 @@ public class OrderServiceImpl implements OrderService {
         }
         order.setOrderStatus(OrderStatus.valueOf("PROCESSING"));
         order.setModifiedAt(Instant.now());
+
         orderRepository.save(order);
         return true;
     }
@@ -222,10 +240,10 @@ public class OrderServiceImpl implements OrderService {
 
         order.setOrderStatus(OrderStatus.valueOf("DELIVERED"));
         order.setModifiedAt(Instant.now());
-//        orderRepository.save(order);
 
         Transaction tx = new Transaction();
         tx.setStatus(TransactionStatus.SUCCESSFUL);
+        tx.setRawResponse("Payment successful");
         return test(order, tx);
     }
 
@@ -242,6 +260,7 @@ public class OrderServiceImpl implements OrderService {
 
         Transaction tx = new Transaction();
         tx.setStatus(TransactionStatus.PENDING_REFUND);
+        tx.setRawResponse("Pending refund...");
         return test(order, tx);
     }
 
@@ -258,16 +277,19 @@ public class OrderServiceImpl implements OrderService {
 
         Transaction tx = new Transaction();
         tx.setStatus(TransactionStatus.REFUNDED);
+        tx.setRawResponse("Refund...");
         return test(order, tx);
     }
 
     private boolean test(Order order, Transaction tx) {
+        tx.setTransactionId(UUID.randomUUID().toString());
         tx.setAmount(order.getTotalAmount());
+        tx.setCreatedAt(Instant.now());
 
         Payment payment = order.getPayment();
         if (payment == null) {
             payment = new Payment();
-            payment.setMethod("UNKNOWN");
+            payment.setMethod("cod");
             payment.setTransactions(new ArrayList<>());
             order.setPayment(payment);
         }
@@ -279,7 +301,6 @@ public class OrderServiceImpl implements OrderService {
         orderRepository.save(order);
         return true;
     }
-
 
     private MatchOperation buildMatch(TimeFrame timeFrame) {
         Criteria criteria = Criteria.where("orderstatus").is("COMPLETED");

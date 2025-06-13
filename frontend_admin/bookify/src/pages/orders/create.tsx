@@ -26,7 +26,7 @@ export const OrderCreate: React.FC = () => {
           country: "",
         },
       },
-      payment: { method: "CREDIT_CARD" },
+      payment: { method: "cod" },
     },
   });
 
@@ -251,17 +251,7 @@ export const OrderCreate: React.FC = () => {
         </Form.Item>
 
         {/* Payment Method */}
-        <Form.Item
-          label="Payment Method"
-          name={["payment", "method"]}
-          rules={[{ required: true }]}
-        >
-          <Select>
-            <Select.Option value="CREDIT_CARD">Credit Card</Select.Option>
-            <Select.Option value="PAYPAL">PayPal</Select.Option>
-            <Select.Option value="BANK_TRANSFER">Bank Transfer</Select.Option>
-          </Select>
-        </Form.Item>
+
 
         {/* Shipping Information */}
         <Form.Item
@@ -311,6 +301,7 @@ export const OrderCreate: React.FC = () => {
         <Form.Item
           label="State"
           name={["shippingInformation", "address", "state"]}
+          rules={[{ required: true }]}
         >
           <Input />
         </Form.Item>

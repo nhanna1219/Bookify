@@ -4,7 +4,7 @@ import {
   useExport,
   useNavigation,
   HttpError,
-  getDefaultFilter,
+  getDefaultFilter, useGo,
 } from "@refinedev/core";
 import {
   List,
@@ -13,7 +13,7 @@ import {
   DateField,
   NumberField,
   FilterDropdown,
-  ExportButton,
+  ExportButton, CreateButton,
 } from "@refinedev/antd";
 import { Table, Typography, Select, InputNumber, theme } from "antd";
 import { SearchOutlined } from "@ant-design/icons";
@@ -25,9 +25,13 @@ import {
 } from "../../components";
 import type { IOrder } from "../../interfaces";
 import { ImportCsvOrdersButton } from "../../components/importCsv";
+import {useLocation} from "react-router";
 
 export const OrderList: React.FC = () => {
   const t = useTranslate();
+  const go = useGo();
+  const { pathname } = useLocation();
+  const { createUrl } = useNavigation();
   const { show } = useNavigation();
   const { token } = theme.useToken();
 
@@ -62,6 +66,25 @@ export const OrderList: React.FC = () => {
       // }}
       headerButtons={() => (
         <>
+          <CreateButton
+              key="create"
+              size="large"
+              onClick={() => {
+                return go({
+                  to: `${createUrl("orders")}`,
+                  query: {
+                    to: pathname,
+                  },
+                  options: {
+                    keepQuery: true,
+                  },
+                  type: "replace",
+                });
+              }}
+          >
+            {t("orders.actions.add", "Add")}
+          </CreateButton>
+
           {/* Import CSV Orders */}
           <ImportCsvOrdersButton />
 

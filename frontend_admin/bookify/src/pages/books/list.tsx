@@ -76,7 +76,7 @@ export const BookList = ({ children }: PropsWithChildren) => {
             });
           }}
         >
-          {t("books.actions.add")}
+          {t("books.actions.add", "Add")}
         </CreateButton>,
         <ImportBookCsvButton />,
         <ImageUploadButton />,

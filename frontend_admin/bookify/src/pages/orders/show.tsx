@@ -10,7 +10,6 @@ import {
     RocketOutlined,
     DollarCircleOutlined,
 } from "@ant-design/icons";
-import { ButtonSuccess } from "../../button";
 import {
     CardWithContent,
     OrderDeliveryMap,
@@ -37,7 +36,7 @@ export const OrderShow = () => {
             const result = await res.json();
             if (result === true) {
                 open?.({ type: "success", message: t(successMsg) });
-                invalidate({ resource: "orders", invalidates: ["list", "detail"] });
+                invalidate({ resource: "orders", invalidates: ["all"] });
             } else {
                 open?.({ type: "error", message: t(errorMsg) });
             }

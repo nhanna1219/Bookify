@@ -49,21 +49,21 @@ export const ReviewList: React.FC<PropsWithChildren> = ({ children }) => {
         />,
 
         // 2) create new review
-        <CreateButton
-          {...props.createButtonProps}
-          key="create"
-          size="large"
-          onClick={() =>
-            go({
-              to: createUrl("reviews"),
-              query: { to: pathname },
-              options: { keepQuery: true },
-              type: "replace",
-            })
-          }
-        >
-          {t("reviews.actions.add", "Add Review")}
-        </CreateButton>,
+        // <CreateButton
+        //   {...props.createButtonProps}
+        //   key="create"
+        //   size="large"
+        //   onClick={() =>
+        //     go({
+        //       to: createUrl("reviews"),
+        //       query: { to: pathname },
+        //       options: { keepQuery: true },
+        //       type: "replace",
+        //     })
+        //   }
+        // >
+        //   {t("reviews.actions.add", "Add Review")}
+        // </CreateButton>,
 
         // 3) import bulk via CSV
         // <ImportReviewCsvButton key="import" />,

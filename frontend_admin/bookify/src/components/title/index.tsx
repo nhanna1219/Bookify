@@ -1,40 +1,27 @@
-import { useLink } from "@refinedev/core";
-import { Space, theme } from "antd";
+import {useLink} from "@refinedev/core";
+import {Space, theme} from "antd";
 
-import { FinefoodsLogoIcon, FinefoodsLogoText } from "../../components";
-import { Logo } from "./styled";
+import {Logo} from "./styled";
 
 type TitleProps = {
-  collapsed: boolean;
+    collapsed: boolean;
 };
 
-export const Title: React.FC<TitleProps> = ({ collapsed }) => {
-  const { token } = theme.useToken();
-  const Link = useLink();
+export const Title: React.FC<TitleProps> = ({collapsed}) => {
+    const {token} = theme.useToken();
+    const isDarkMode = token.colorBgContainer === "#141414" || token.colorBgContainer === "#1f1f1f"
+    const Link = useLink();
 
-  return (
-    <Logo>
-      <Link to="/">
-        {collapsed ? (
-          <FinefoodsLogoIcon />
-        ) : (
-          <Space size={12}>
-            <FinefoodsLogoIcon
-              style={{
-                fontSize: "32px",
-                color: token.colorTextHeading,
-              }}
-            />
-            <FinefoodsLogoText
-              style={{
-                color: token.colorTextHeading,
-                width: "100%",
-                height: "auto",
-              }}
-            />
-          </Space>
-        )}
-      </Link>
-    </Logo>
-  );
+    return (
+        <Logo>
+            <Link to="/">
+                {collapsed ? isDarkMode ? (<img src={"/images/brand-logo-white.png"} width={140} height={60}/>) : (<img src={"/images/brand-logo-black.png"} width={140} height={60}/>)
+                    : (
+                    <Space size={12}>
+                        {isDarkMode ? (<img src={"/images/brand-logo-white.png"} width={140} height={60}/>) : (<img src={"/images/brand-logo-black.png"} width={140} height={60}/>)}
+                    </Space>
+                )}
+            </Link>
+        </Logo>
+    );
 };

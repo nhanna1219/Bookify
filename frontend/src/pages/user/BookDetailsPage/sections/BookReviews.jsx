@@ -76,7 +76,9 @@ export default function BookReviews({averageRating, ratingCount, bookReview, rat
                 <>
                     {/* Review List */}
                     <div className="space-y-4 mb-10" ref={reviewListRef}>
-                        {reviews.map(({id, rating, userName, addedAt, subject, comment}) => (
+                        {[...reviews]
+                            .sort((a, b) => new Date(b.addedAt).getTime() - new Date(a.addedAt).getTime())
+                            .map(({id, rating, userName, addedAt, subject, comment}) => (
                             <div key={id} className="border border-gray-200 rounded-md p-8 bg-white">
                                 <div className="flex items-start justify-between mb-2">
                                     <RatingStar ratingValue={rating}/>

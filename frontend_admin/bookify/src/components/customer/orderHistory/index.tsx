@@ -65,11 +65,12 @@ export const CustomerOrderHistory = ({ customer }: Props) => {
         )}
       />
       <Table.Column
-        key="status.text"
-        dataIndex="status"
+        key="orderStatus"
+        dataIndex="orderStatus"
         title={t("orders.fields.status")}
-        render={(status) => {
-          return <OrderStatus status={status.text} />;
+        render={(value, record) => {
+            console.log("Order record:", record);
+            return <OrderStatus status={value} />;
         }}
       />
       <Table.Column<IOrder>

@@ -91,8 +91,8 @@ export const authProvider: AuthProvider = {
 
     return {
       id: 1,
-      name: "James Sullivan",
-      avatar: "https://i.pravatar.cc/150",
+      name: "Nhan Nguyen",
+      avatar: "https://png.pngtree.com/element_our/20200610/ourmid/pngtree-default-avatar-image_2238788.jpg",
     };
   },
 };

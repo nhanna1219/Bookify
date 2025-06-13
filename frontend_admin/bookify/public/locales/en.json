@@ -305,16 +305,35 @@
   },
   "enum": {
     "orderStatuses": {
-      "Pending": "Pending",
-      "Ready": "Ready",
-      "On The Way": "On the way",
-      "Delivered": "Delivered",
-      "Cancelled": "Cancelled"
+      "PENDING": "Pending",
+      "PROCESSING": "Processing",
+      "SHIPPED": "Shipped",
+      "DELIVERED": "Delivered",
+      "COMPLETED": "Completed",
+      "CANCELLED": "Cancelled",
+      "PENDING_REFUND": "Pending Refund",
+      "REFUNDED": "Refunded"
     }
   },
   "orders": {
     "orders": "Orders",
     "order": "Order",
+    "notifications": {
+      "processed": "Order processed successfully",
+      "processError": "Failed to process order",
+      "shipped": "Order marked as shipped",
+      "shippedError": "Failed to mark order as shipped",
+      "delivered": "Order delivered",
+      "deliveredError": "Failed to mark as delivered",
+      "pendingRefundSuccess": "Refund process initiated",
+      "pendingRefundError": "Failed to initiate refund",
+      "completeSuccess": "Order completed successfully",
+      "completeError": "Failed to complete order",
+      "refundSuccess": "Refund completed",
+      "refundError": "Failed to complete refund",
+      "cancelSuccess": "Order cancelled",
+      "cancelError": "Failed to cancel order"
+    },
     "titles": {
       "deliveryMap": "Delivery Map",
       "deliveryDetails": "Delivery Details",
@@ -446,7 +465,29 @@
       "edit": "Edit product"
     }
   },
-  "reviews": {
+  "books": {
+    "actions": {
+      "add": "Add Book"
+    },
+    "fields": {
+      "title": "Title",
+      "authors": "Authors",
+      "description": "Description",
+      "price": "Price",
+      "originalPrice": "Original Price",
+      "condition": "Condition",
+      "stock": "Stock",
+      "categories": "Categories",
+      "images": {
+        "placeholder": "Upload cover"
+      }
+    }
+  },
+  "actions": {
+    "cancel": "Cancel",
+    "save": "Save"
+  },
+"reviews": {
     "reviews": "Reviews",
     "titles": {
       "list": "Reviews"
