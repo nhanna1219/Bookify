@@ -31,6 +31,12 @@ Bookify is a comprehensive online bookstore platform designed to facilitate the 
 - **Data Handling:** REST APIs, JWT for authentication
 - **Deployment:** Docker, GitHub
 
+# Database Scripting
+To use the application more cheerfully, it's recommended that we should import the json data to MongoDB from the directory below:
+```bash
+backend/src/main/java/com/dominator/bookify/data
+``` 
+
 ## Installation
 1. Clone the repository:
 ```bash
